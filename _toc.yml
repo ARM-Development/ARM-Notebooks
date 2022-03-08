@@ -1,0 +1,15 @@
+format: jb-book
+root: README
+parts:
+  - caption: Instruments
+    chapters:
+    - glob: Instruments/*/*
+  - caption: Modeling
+    chapters:
+    - glob: Modeling/*/*
+  - caption: Tutorials
+    chapters:
+    - glob: Tutorials/*/*
+  - caption: Tutorials
+    chapters:
+    - glob: VAPs/*/*
