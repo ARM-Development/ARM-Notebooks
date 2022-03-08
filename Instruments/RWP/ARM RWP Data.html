@@ -1,0 +1,539 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARM RWP Data &#8212; ARM Tutorials</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Github Tutorial" href="../../Tutorials/Git_Tutorials/AOS_Git_Tutorial.html" />
+    <link rel="prev" title="ARM-Notebooks" href="../../README.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/arm_logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">ARM Tutorials</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../README.html">
+   ARM-Notebooks
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Instruments
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   ARM RWP Data
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Tutorials/Git_Tutorials/AOS_Git_Tutorial.html">
+   Github Tutorial
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Tutorials/Xarray_Tutorial/Xarray_Overview.html">
+   Xarray Overview
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Instruments/RWP/ARM RWP Data.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Instruments/RWP/ARM RWP Data.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>ARM RWP Data</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="arm-rwp-data">
+<h1>ARM RWP Data<a class="headerlink" href="#arm-rwp-data" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">act</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hi_file</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;./sgp915rwpprecipmomhiC1.a0/*&#39;</span><span class="p">)</span>
+<span class="n">lo_file</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;./sgp915rwpprecipmomloC1.a0/*&#39;</span><span class="p">)</span>
+<span class="n">dis_file</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;./sgpldquantsC1.c1/*&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hi_obj</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">armfiles</span><span class="o">.</span><span class="n">read_netcdf</span><span class="p">(</span><span class="n">hi_file</span><span class="p">)</span>
+<span class="n">lo_obj</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">armfiles</span><span class="o">.</span><span class="n">read_netcdf</span><span class="p">(</span><span class="n">lo_file</span><span class="p">)</span>
+<span class="n">dis_obj</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">armfiles</span><span class="o">.</span><span class="n">read_netcdf</span><span class="p">(</span><span class="n">dis_file</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">TimeSeriesDisplay</span><span class="p">({</span><span class="s1">&#39;lo&#39;</span><span class="p">:</span> <span class="n">lo_obj</span><span class="p">,</span> <span class="s1">&#39;hi&#39;</span><span class="p">:</span> <span class="n">hi_obj</span><span class="p">},</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="n">subplot_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;signal_to_noise_ratio&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;lo&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;radial_velocity&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;lo&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;spectral_width&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;lo&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;signal_to_noise_ratio&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;hi&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;radial_velocity&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;hi&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;spectral_width&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;hi&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;hi spectral_width on 20210627&#39;}, xlabel=&#39;Time [UTC]&#39;, ylabel=&#39;(m)&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/ARM RWP Data_4_1.png" src="../../_images/ARM RWP Data_4_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># SNR Filter for lo mode</span>
+<span class="c1"># Take last 2 points</span>
+<span class="n">snr_lo</span> <span class="o">=</span> <span class="n">lo_obj</span><span class="p">[</span><span class="s1">&#39;signal_to_noise_ratio&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[:,</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
+
+<span class="c1"># Throw out larger return that could be echo</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">snr_lo</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">snr_lo</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">lo_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">snr_lo</span><span class="p">)</span>
+<span class="n">lo_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanstd</span><span class="p">(</span><span class="n">snr_lo</span><span class="p">)</span>
+<span class="n">lo_threshold</span> <span class="o">=</span> <span class="n">lo_mean</span> <span class="o">+</span> <span class="mf">10.</span> <span class="o">*</span> <span class="n">lo_std</span>
+
+<span class="c1"># SNR Filter for lo mode</span>
+<span class="c1"># Take last 2 points</span>
+<span class="n">snr_hi</span> <span class="o">=</span> <span class="n">hi_obj</span><span class="p">[</span><span class="s1">&#39;signal_to_noise_ratio&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[:,</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
+
+<span class="c1"># Throw out larger return that could be echo</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">snr_hi</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">snr_hi</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">hi_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">snr_hi</span><span class="p">)</span>
+<span class="n">hi_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanstd</span><span class="p">(</span><span class="n">snr_hi</span><span class="p">)</span>
+<span class="n">hi_threshold</span> <span class="o">=</span> <span class="n">hi_mean</span> <span class="o">+</span> <span class="mf">10.</span> <span class="o">*</span> <span class="n">hi_std</span>
+
+<span class="n">lo_obj</span> <span class="o">=</span> <span class="n">lo_obj</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">lo_obj</span><span class="o">.</span><span class="n">signal_to_noise_ratio</span> <span class="o">&gt;</span> <span class="n">lo_threshold</span><span class="p">)</span>
+<span class="n">hi_obj</span> <span class="o">=</span> <span class="n">hi_obj</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">hi_obj</span><span class="o">.</span><span class="n">signal_to_noise_ratio</span> <span class="o">&gt;</span> <span class="n">hi_threshold</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lo_threshold</span><span class="p">,</span> <span class="n">hi_threshold</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-6.326678037643433 -3.76545786857605
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Boxcar filter</span>
+<span class="n">snr_lo</span> <span class="o">=</span> <span class="n">lo_obj</span><span class="p">[</span><span class="s1">&#39;signal_to_noise_ratio&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">vr_lo</span> <span class="o">=</span> <span class="n">lo_obj</span><span class="p">[</span><span class="s1">&#39;radial_velocity&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">sw_lo</span> <span class="o">=</span> <span class="n">lo_obj</span><span class="p">[</span><span class="s1">&#39;spectral_width&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="c1">#LO Boxcar</span>
+<span class="n">n_time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">snr_lo</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">n_bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">snr_lo</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">ct</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">n_time</span><span class="p">,</span> <span class="n">n_bins</span><span class="p">])</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_time</span><span class="o">-</span><span class="mi">3</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_bins</span><span class="o">-</span><span class="mi">3</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">snr_lo</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="n">j</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">j</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">lo_threshold</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+            <span class="n">ct</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ct</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">snr_lo</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">vr_lo</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">sw_lo</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">lo_obj</span><span class="o">.</span><span class="n">signal_to_noise_ratio</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">snr_lo</span>
+<span class="n">lo_obj</span><span class="o">.</span><span class="n">radial_velocity</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">vr_lo</span>
+<span class="n">lo_obj</span><span class="o">.</span><span class="n">spectral_width</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">sw_lo</span>
+
+<span class="c1"># HI Boxcar</span>
+<span class="n">snr_hi</span> <span class="o">=</span> <span class="n">hi_obj</span><span class="p">[</span><span class="s1">&#39;signal_to_noise_ratio&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">vr_hi</span> <span class="o">=</span> <span class="n">hi_obj</span><span class="p">[</span><span class="s1">&#39;radial_velocity&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">sw_hi</span> <span class="o">=</span> <span class="n">hi_obj</span><span class="p">[</span><span class="s1">&#39;spectral_width&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">n_time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">snr_hi</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">n_bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">snr_hi</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">ct</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">([</span><span class="n">n_time</span><span class="p">,</span> <span class="n">n_bins</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_time</span><span class="o">-</span><span class="mi">3</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_bins</span><span class="o">-</span><span class="mi">3</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">snr_hi</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="n">j</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">j</span><span class="o">+</span><span class="mi">2</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">hi_threshold</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+            <span class="n">ct</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+            
+<span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ct</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">snr_hi</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">vr_hi</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">sw_hi</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+<span class="n">hi_obj</span><span class="o">.</span><span class="n">signal_to_noise_ratio</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">snr_hi</span>
+<span class="n">hi_obj</span><span class="o">.</span><span class="n">radial_velocity</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">vr_hi</span>
+<span class="n">hi_obj</span><span class="o">.</span><span class="n">spectral_width</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">sw_hi</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">TimeSeriesDisplay</span><span class="p">({</span><span class="s1">&#39;lo&#39;</span><span class="p">:</span> <span class="n">lo_obj</span><span class="p">,</span> <span class="s1">&#39;hi&#39;</span><span class="p">:</span> <span class="n">hi_obj</span><span class="p">},</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="n">subplot_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;signal_to_noise_ratio&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;lo&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;radial_velocity&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;lo&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;spectral_width&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;lo&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;signal_to_noise_ratio&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;hi&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;radial_velocity&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;hi&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;spectral_width&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;hi&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:title={&#39;center&#39;:&#39;hi spectral_width on 20210627&#39;}, xlabel=&#39;Time [UTC]&#39;, ylabel=&#39;(m)&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/ARM RWP Data_7_1.png" src="../../_images/ARM RWP Data_7_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">variable</span> <span class="o">=</span> <span class="s1">&#39;reflectivity_factor_sband20c&#39;</span>
+
+<span class="c1"># Resample data to 1 minute grid to get on same time</span>
+<span class="n">lo_obj</span> <span class="o">=</span> <span class="n">lo_obj</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s1">&#39;1min&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">nearest</span><span class="p">()</span>
+<span class="n">dis_obj</span> <span class="o">=</span> <span class="n">dis_obj</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s1">&#39;1min&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">nearest</span><span class="p">()</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">merge</span><span class="p">([</span><span class="n">lo_obj</span><span class="p">,</span> <span class="n">dis_obj</span><span class="p">],</span> <span class="n">compat</span><span class="o">=</span><span class="s1">&#39;override&#39;</span><span class="p">)</span>
+
+<span class="c1"># Get snr and height data</span>
+<span class="n">snr_lo</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="s1">&#39;signal_to_noise_ratio&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">height</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="c1"># Get height index closest to 500</span>
+<span class="n">h_ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">height</span><span class="o">-</span><span class="mf">500.</span><span class="p">))</span>
+
+<span class="c1"># Z = SNR + 20.0*Log(range) - COEFF</span>
+<span class="n">rwp_z</span> <span class="o">=</span> <span class="n">snr_lo</span> <span class="o">+</span> <span class="mf">20.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">height</span><span class="o">/</span><span class="mf">1000.</span><span class="p">)</span>
+<span class="n">rwp_z</span> <span class="o">=</span> <span class="n">rwp_z</span><span class="p">[:,</span><span class="n">h_ind</span><span class="p">]</span>
+
+<span class="c1"># Only use data between 30 and 35 dB</span>
+<span class="n">dis_z</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="n">variable</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">dis_z</span> <span class="o">&gt;</span> <span class="mf">35.</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">dis_z</span> <span class="o">&lt;</span> <span class="mf">30.</span><span class="p">))</span>
+<span class="n">dis_z</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+<span class="c1"># Different between rwp calculated Z and disdrometer Z</span>
+<span class="n">lo_diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">rwp_z</span> <span class="o">-</span> <span class="n">dis_z</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lo_diff</span><span class="p">)</span>
+
+<span class="c1"># Plot out disdrometer data and compare</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">TimeSeriesDisplay</span><span class="p">(</span><span class="n">dis_obj</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
+<span class="n">display</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">rwp_z</span> <span class="o">-</span> <span class="n">lo_diff</span><span class="p">,</span> <span class="s1">&#39;r.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-11.351636
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fbaaf8d21f0&gt;]
+</pre></div>
+</div>
+<img alt="../../_images/ARM RWP Data_8_2.png" src="../../_images/ARM RWP Data_8_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">variable</span> <span class="o">=</span> <span class="s1">&#39;reflectivity_factor_sband20c&#39;</span>
+
+<span class="c1"># Resample data to 1 minute grid to get on same time</span>
+<span class="n">hi_obj</span> <span class="o">=</span> <span class="n">hi_obj</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s1">&#39;1min&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">nearest</span><span class="p">()</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">merge</span><span class="p">([</span><span class="n">hi_obj</span><span class="p">,</span> <span class="n">dis_obj</span><span class="p">],</span> <span class="n">compat</span><span class="o">=</span><span class="s1">&#39;override&#39;</span><span class="p">)</span>
+
+<span class="c1"># Get snr and height data</span>
+<span class="n">snr_hi</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="s1">&#39;signal_to_noise_ratio&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">height</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="s1">&#39;height&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="c1"># Get height index closest to 500</span>
+<span class="n">h_ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">height</span><span class="o">-</span><span class="mf">500.</span><span class="p">))</span>
+
+<span class="c1"># Z = SNR + 20.0*Log(range) - COEFF</span>
+<span class="n">rwp_z</span> <span class="o">=</span> <span class="n">snr_hi</span> <span class="o">+</span> <span class="mf">20.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">height</span><span class="o">/</span><span class="mf">1000.</span><span class="p">)</span>
+<span class="n">rwp_z</span> <span class="o">=</span> <span class="n">rwp_z</span><span class="p">[:,</span><span class="n">h_ind</span><span class="p">]</span>
+
+<span class="c1"># Only use data between 25 and 35 dB</span>
+<span class="n">dis_z</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="n">variable</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">dis_z</span> <span class="o">&gt;</span> <span class="mf">35.</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">dis_z</span> <span class="o">&lt;</span> <span class="mf">30.</span><span class="p">))</span>
+<span class="n">dis_z</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+<span class="c1"># Different between rwp calculated Z and disdrometer Z</span>
+<span class="n">hi_diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">rwp_z</span> <span class="o">-</span> <span class="n">dis_z</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hi_diff</span><span class="p">)</span>
+
+<span class="c1"># Plot out disdrometer data and compare</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">TimeSeriesDisplay</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
+<span class="n">display</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">rwp_z</span> <span class="o">-</span> <span class="n">hi_diff</span><span class="p">,</span> <span class="s1">&#39;r.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-21.42427
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fbaaf90f8e0&gt;]
+</pre></div>
+</div>
+<img alt="../../_images/ARM RWP Data_9_2.png" src="../../_images/ARM RWP Data_9_2.png" />
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Instruments/RWP"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../../README.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">ARM-Notebooks</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../../Tutorials/Git_Tutorials/AOS_Git_Tutorial.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Github Tutorial</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By ARM Development Team<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
