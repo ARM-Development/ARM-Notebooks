@@ -1,6 +1,9 @@
 format: jb-book
 root: README
 parts:
+  - caption: Open Science Workshop
+    chapters:
+    - file: Open-Science-Workshop/README
   - caption: Instruments
     chapters:
     - glob: Instruments/*/*
