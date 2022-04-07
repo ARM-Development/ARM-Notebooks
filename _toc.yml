@@ -3,7 +3,7 @@ root: README
 parts:
   - caption: Open Science Workshop
     chapters:
-    - file: Open-Science-Workshop/README
+    - file: Open-Science-Workshop-2022/README
   - caption: Instruments
     chapters:
     - glob: Instruments/*/*
