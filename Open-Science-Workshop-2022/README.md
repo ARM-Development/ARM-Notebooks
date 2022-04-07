@@ -1,4 +1,4 @@
-# ARM/ASR Open Science Workshop
+# Overview
 
 The ARM/ASR Open Science Virtual Workshop 2022 will serve as a mechanism to bring this larger community together to discuss and collaborate on open science topics, which include but are not limited to software, hardware, and data.
 
