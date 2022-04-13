@@ -22,4 +22,4 @@ Presentations and tutorials are being solicited from the ARM/ASR and broader sci
 |    :---:     |    :----:     |    :---:      |
 | PyART Basics | Zach Sherman  | Max Grover    |
 | ACT Basics   | Adam Thiesen  | Ken Kehoe     |
-| Other Talks  | TBD           | TBD           |
+| MetPy        | Ryan May      | Drew Camron   |
