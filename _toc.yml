@@ -4,6 +4,7 @@ parts:
   - caption: Open Science Workshop
     chapters:
     - file: Open-Science-Workshop-2022/README
+    - file: Tutorials/PyART/pyart-basics
   - caption: Instruments
     chapters:
     - glob: Instruments/*/*
