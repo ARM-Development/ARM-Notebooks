@@ -53,8 +53,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Gridding with PyART" href="pyart-gridding.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="dealias-lidar-data.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -105,22 +103,22 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../Open-Science-Workshop-2022/README.html">
+  <a class="reference internal" href="../README.html">
    Overview
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../Open-Science-Workshop-2022/tutorials/jupyter-intro.html">
+  <a class="reference internal" href="jupyter-intro.html">
    JupyterLab
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../Open-Science-Workshop-2022/tutorials/github-intro.html">
+  <a class="reference internal" href="github-intro.html">
    An Introduction to Github
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../Open-Science-Workshop-2022/tutorials/python-intro.html">
+  <a class="reference internal" href="python-intro.html">
    Quickstart: zero to Python
   </a>
  </li>
@@ -142,24 +140,24 @@ const thebe_selector_output = ".output, .cell_output"
   Tutorials
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../Git_Tutorials/AOS_Git_Tutorial.html">
+  <a class="reference internal" href="../../Tutorials/Git_Tutorials/AOS_Git_Tutorial.html">
    Github Tutorial
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Tutorials/PyART_Tutorial/pyart-basics.html">
    PyART Basics
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="pyart-gridding.html">
+  <a class="reference internal" href="../../Tutorials/PyART_Tutorial/pyart-gridding.html">
    Gridding with PyART
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Xarray_Tutorial/Xarray_Overview.html">
+  <a class="reference internal" href="../../Tutorials/Xarray_Tutorial/Xarray_Overview.html">
    Xarray Overview
   </a>
  </li>
@@ -204,7 +202,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/Tutorials/PyART_Tutorial/pyart-basics.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/Open-Science-Workshop-2022/tutorials/pyart-basics.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -229,14 +227,14 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/ARM-Development/ARM-Notebooks/main?urlpath=tree/Tutorials/PyART_Tutorial/pyart-basics.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ARM-Development/ARM-Notebooks/main?urlpath=tree/Open-Science-Workshop-2022/tutorials/pyart-basics.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
-        <a class="jupyterhub-button" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https://github.com/ARM-Development/ARM-Notebooks&urlpath=tree/ARM-Notebooks/Tutorials/PyART_Tutorial/pyart-basics.ipynb&branch=main"><button type="button"
+        <a class="jupyterhub-button" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https://github.com/ARM-Development/ARM-Notebooks&urlpath=tree/ARM-Notebooks/Open-Science-Workshop-2022/tutorials/pyart-basics.ipynb&branch=main"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../../_static/images/logo_jupyterhub.svg"
@@ -863,7 +861,7 @@ the contents of that field.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/pyart-basics_34_01.png" src="../../_images/pyart-basics_34_01.png" />
+<img alt="../../_images/pyart-basics_34_0.png" src="../../_images/pyart-basics_34_0.png" />
 </div>
 </div>
 <p>By default, it will plot the elevation scan, the the default colormap from <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>… let’s customize!</p>
@@ -890,7 +888,7 @@ the contents of that field.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/pyart-basics_36_01.png" src="../../_images/pyart-basics_36_01.png" />
+<img alt="../../_images/pyart-basics_36_0.png" src="../../_images/pyart-basics_36_0.png" />
 </div>
 </div>
 <p>You can change many parameters in the graph by changing the arguments to plot_ppi_map. As you can recall from earlier. simply view these arguments in a Jupyter notebook by typing:</p>
@@ -1069,7 +1067,7 @@ alpha : float or None
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/pyart-basics_40_01.png" src="../../_images/pyart-basics_40_01.png" />
+<img alt="../../_images/pyart-basics_40_0.png" src="../../_images/pyart-basics_40_0.png" />
 </div>
 </div>
 <p>Or, let’s view a different elevation scan! To do this, change the sweep parameter in the plot_ppi_map function.</p>
@@ -1088,7 +1086,7 @@ alpha : float or None
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/pyart-basics_42_01.png" src="../../_images/pyart-basics_42_01.png" />
+<img alt="../../_images/pyart-basics_42_0.png" src="../../_images/pyart-basics_42_0.png" />
 </div>
 </div>
 <p>Let’s take a look at a different field - for example, correlation coefficient (<code class="docutils literal notranslate"><span class="pre">corr_coeff</span></code>)</p>
@@ -1107,7 +1105,7 @@ alpha : float or None
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/pyart-basics_44_01.png" src="../../_images/pyart-basics_44_01.png" />
+<img alt="../../_images/pyart-basics_44_0.png" src="../../_images/pyart-basics_44_0.png" />
 </div>
 </div>
 </div>
@@ -1152,7 +1150,7 @@ alpha : float or None
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./Tutorials/PyART_Tutorial"
+            path: "./Open-Science-Workshop-2022/tutorials"
         },
         predefinedOutput: true
     }
@@ -1163,21 +1161,7 @@ alpha : float or None
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="dealias-lidar-data.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">&lt;no title&gt;</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="pyart-gridding.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Gridding with PyART</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
+<div class='prev-next-area'>
 </div>
             
         </div>
