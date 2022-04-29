@@ -23,7 +23,7 @@ Presentations and tutorials are being solicited from the ARM/ASR and broader sci
 |    :---:     |    :----:     |    :---:      |
 | ARM Data     | Maggie Davis  |    -------    |
 | ESMac Diags  | Shuaiqi Tang  |    -------    |
-| EMC2         | Bobby Jackson |    -------    |
+| EMC2         | Israel Silber | Bobby Jackson |
 
 ### Day 3 - 2:00 - 4:00 PM CST Thursday May 12, 2022
 
