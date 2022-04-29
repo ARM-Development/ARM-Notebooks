@@ -32,7 +32,7 @@ Presentations and tutorials are being solicited from the ARM/ASR and broader sci
 | MetPy        | Ryan May      | Drew Camron   |
 | ACT Basics   | Adam Thiesen  | Ken Kehoe     |
 
-### Day 4 - 2:00 - 4:00 PM EDT Friday May 13, 2022
+### Day 4 - 12:00 - 2:00 PM EDT Friday May 13, 2022
 
 | Topic        | Presenter 1   | Presenter 2   |
 |    :---:     |    :----:     |    :---:      |
