@@ -8,6 +8,9 @@ parts:
     - file: Open-Science-Workshop-2022/tutorials/github-intro
     - file: Open-Science-Workshop-2022/tutorials/python-intro
     - file: Open-Science-Workshop-2022/tutorials/python-basics
+    - file: Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Numpy.ipynb
+    - file: Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Pandas.ipynb
+    - file: Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Xarray.ipynb
   - caption: Instruments
     chapters:
     - glob: Instruments/*/*
