@@ -12,6 +12,7 @@ dependencies:
   - act-atmos
   - metpy
   - cartopy
+  - emc2
   - pip
-  pip:
-    - jupyter-book
+  - pip:
+      - jupyter-book
