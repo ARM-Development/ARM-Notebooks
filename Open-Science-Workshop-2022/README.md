@@ -8,16 +8,16 @@ Presentations and tutorials are being solicited from the ARM/ASR and broader sci
 
 ## Tutorial Schedule
 
-### Day 1 - 2:00 - 4:00 PM CST Tuesday May 10, 2022
+### Day 1 - 2:00 - 4:00 PM EDT Tuesday May 10, 2022
 
 | Topic            | Presenter 1       | Presenter 2   |
 | :---:            |    :----:         |    :---:      |
-| Intro to Github  | Zach Sherman      | Max Grover    |
-| Intro to Jupyter | Max Grover        | Jitu Kumar    |
+| Intro to Jupyter | Max Grover        |               |
 | Intro to Python  | Ken Kehoe         | Max Grover    |
+| Intro to Github  | Zach Sherman      | Max Grover    |
 
 
-### Day 2 - 2:00 - 4:00 PM CST Wednesday May 11, 2022
+### Day 2 - 2:00 - 4:00 PM EDT Wednesday May 11, 2022
 
 | Topic        | Presenter 1   | Presenter 2   |
 |    :---:     |    :----:     |    :---:      |
@@ -25,16 +25,16 @@ Presentations and tutorials are being solicited from the ARM/ASR and broader sci
 | ESMac Diags  | Shuaiqi Tang  |    -------    |
 | EMC2         | Israel Silber | Bobby Jackson |
 
-### Day 3 - 2:00 - 4:00 PM CST Thursday May 12, 2022
+### Day 3 - 1:30 - 3:30 PM EDT Thursday May 12, 2022
 
 | Topic        | Presenter 1   | Presenter 2   |
 |    :---:     |    :----:     |    :---:      |
-| MetPy        | Ryan May      | Drew Camron   |
+| MetPy        | Drew Camron   | Ryan May      |
 | ACT Basics   | Adam Thiesen  | Ken Kehoe     |
 
-### Day 4 - 2:00 - 4:00 PM CST Friday May 13, 2022
+### Day 4 - 12:00 - 2:00 PM EDT Friday May 13, 2022
 
 | Topic        | Presenter 1   | Presenter 2   |
 |    :---:     |    :----:     |    :---:      |
-| PyART Basics | Zach Sherman  | Max Grover    |
+| Py-ART Basics | Zach Sherman  | Max Grover    |
 | Pangeo Basics| Max Grover    |   -------     |
