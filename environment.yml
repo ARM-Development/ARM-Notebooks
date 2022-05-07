@@ -1,18 +1,20 @@
-name: arm-tutorial-dev
+name: esmac_diags
 channels:
   - conda-forge
+  - anaconda
+  - defaults
 dependencies:
-  - jupyter
-  - jupyterlab
-  - xarray
-  - matplotlib
-  - dask
-  - distributed
-  - arm_pyart
-  - act-atmos
-  - metpy
-  - cartopy
-  - emc2
   - pip
-  - pip:
-      - jupyter-book
+  - matplotlib
+  - numpy
+  - scipy
+  - sphinx
+  - conda-build
+  - pytest
+  - pytest-shutil
+  - ipython
+  - black
+  - netCDF4
+  - xarray
+  - pandas
+  - dask

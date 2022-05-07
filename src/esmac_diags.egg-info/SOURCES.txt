@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/esmac_diags/__init__.py
+src/esmac_diags.egg-info/PKG-INFO
+src/esmac_diags.egg-info/SOURCES.txt
+src/esmac_diags.egg-info/dependency_links.txt
+src/esmac_diags.egg-info/requires.txt
+src/esmac_diags.egg-info/top_level.txt
