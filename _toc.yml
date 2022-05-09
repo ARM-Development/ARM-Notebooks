@@ -12,5 +12,6 @@ parts:
     - file: Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Pandas.ipynb
     - file: Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Xarray.ipynb
     - file: Open-Science-Workshop-2022/tutorials/EMC2_demo_w_E3SM
+    - file: Open-Science-Workshop-2022/tutorials/ESMAC_Diags
     - file: Open-Science-Workshop-2022/tutorials/act-basics
     - file: Open-Science-Workshop-2022/tutorials/xarray
