@@ -17,3 +17,4 @@ dependencies:
   - pip
   - pip:
       - jupyter-book
+      - git+https://github.com/eagles-project/ESMAC_diags
