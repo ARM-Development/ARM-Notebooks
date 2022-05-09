@@ -36,5 +36,5 @@ Presentations and tutorials are being solicited from the ARM/ASR and broader sci
 
 | Topic        | Presenter 1   | Presenter 2   |
 |    :---:     |    :----:     |    :---:      |
-| Py-ART Basics | Zach Sherman  | Max Grover    |
+| Py-ART Basics | Zach Sherman  | Max Grover   |
 | Pangeo Basics| Max Grover    |   -------     |
