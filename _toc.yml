@@ -11,15 +11,6 @@ parts:
     - file: Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Numpy.ipynb
     - file: Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Pandas.ipynb
     - file: Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Xarray.ipynb
-  - caption: Instruments
-    chapters:
-    - glob: Instruments/*/*
-  - caption: Modeling
-    chapters:
-    - glob: Modeling/*/*
-  - caption: Tutorials
-    chapters:
-    - glob: Tutorials/*/*
-  - caption: Tutorials
-    chapters:
-    - glob: VAPs/*/*
+    - file: Open-Science-Workshop-2022/tutorials/EMC2_demo_w_E3SM
+    - file: Open-Science-Workshop-2022/tutorials/act-basics
+    - file: Open-Science-Workshop-2022/tutorials/xarray
