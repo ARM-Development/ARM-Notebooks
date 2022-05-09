@@ -1,5 +1,0 @@
-numpy
-pytest
-matplotlib
-netCDF4
-pip
