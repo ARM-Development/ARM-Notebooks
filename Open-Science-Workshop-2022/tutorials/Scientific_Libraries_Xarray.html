@@ -414,7 +414,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Here we create some data with Numpy and put into an Xarray DataArray. Notice how there is a concept of dimentionality built into DataArray. “xarray.DataArray  (dim_0: 10000)”. But because we didn’t define the dimention name a generic one was created for us.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>  <span class="c1"># This is a numpy array</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10_000</span><span class="p">)</span>  <span class="c1"># This is a numpy array</span>
 <span class="n">xr_da</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>  <span class="c1"># Create the Xarray DataArray using Numpy array.</span>
 <span class="n">xr_da</span>
 </pre></div>

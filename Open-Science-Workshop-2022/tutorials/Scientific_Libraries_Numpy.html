@@ -563,7 +563,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="making-numpy-arrays">
 <h3>Making Numpy Arrays<a class="headerlink" href="#making-numpy-arrays" title="Permalink to this headline">¶</a></h3>
-<p>Numpy also comes with a large number of methods to create data arrays so you don’t have to</p>
+<p>Numpy also comes with a large number of methods to create data arrays so you don’t have to. Chances are Numpy has a method to do what you want, so search there first.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>   <span class="c1"># Converts the itterator range function to numpy array</span>
@@ -600,6 +600,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># Create a 1-D array</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;c.shape:&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>  <span class="c1"># Change to a 2-D array</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;c:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;c.shape:&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
@@ -664,7 +665,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Here we use shorthand notiation to add a constant of 1000 to every value in the array.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">+=</span> <span class="mi">1000</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">8</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1000</span>
 <span class="n">a</span>
 </pre></div>
 </div>
@@ -711,7 +712,6 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a.min():&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>      <span class="c1"># This is Python min method, not numpy. Maybe slower?</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;np.min(a):&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>  <span class="c1"># This is numpy min function</span>
 </pre></div>
 </div>
@@ -814,7 +814,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s1">&#39;2012-03&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;datetime64[us]&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s1">&#39;2012-03&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;datetime64[ns]&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
