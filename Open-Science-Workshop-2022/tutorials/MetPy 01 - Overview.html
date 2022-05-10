@@ -774,9 +774,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Imports<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># get_test_data is primarily for internal testing and documentation</span>
-<span class="kn">from</span> <span class="nn">metpy.cbook</span> <span class="kn">import</span> <span class="n">get_test_data</span>
-<span class="kn">from</span> <span class="nn">metpy.io</span> <span class="kn">import</span> <span class="n">GempakSounding</span><span class="p">,</span> <span class="n">parse_metar_file</span><span class="p">,</span> <span class="n">Level3File</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metpy.io</span> <span class="kn">import</span> <span class="n">GempakSounding</span><span class="p">,</span> <span class="n">parse_metar_file</span><span class="p">,</span> <span class="n">Level3File</span>
 <span class="kn">from</span> <span class="nn">metpy.units</span> <span class="kn">import</span> <span class="n">pandas_dataframe_to_unit_arrays</span>
 </pre></div>
 </div>
@@ -789,9 +787,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p><img alt="image.png" src="Open-Science-Workshop-2022/tutorials/attachment:1d9a1dce-fe5e-4579-bd68-fa98daaff4d4.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">input_file</span> <span class="o">=</span> <span class="n">get_test_data</span><span class="p">(</span><span class="s1">&#39;metar_20190701_1200.txt&#39;</span><span class="p">,</span> <span class="n">as_file_obj</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">parse_metar_file</span><span class="p">(</span><span class="n">input_file</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">parse_metar_file</span><span class="p">(</span><span class="s1">&#39;data/metar_20190701_1200.txt&#39;</span><span class="p">)</span>
 <span class="n">df</span>
 </pre></div>
 </div>
@@ -809,9 +805,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>Gempak<a class="headerlink" href="#gempak" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">input_file</span> <span class="o">=</span> <span class="n">get_test_data</span><span class="p">(</span><span class="s1">&#39;gem_model_mrg.snd&#39;</span><span class="p">)</span>
-
-<span class="n">gso</span> <span class="o">=</span> <span class="n">GempakSounding</span><span class="p">(</span><span class="n">input_file</span><span class="p">)</span><span class="o">.</span><span class="n">snxarray</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gso</span> <span class="o">=</span> <span class="n">GempakSounding</span><span class="p">(</span><span class="s1">&#39;data/gem_model_mrg.snd&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">snxarray</span><span class="p">()</span>
 <span class="n">gso</span>
 </pre></div>
 </div>
@@ -822,8 +816,7 @@ const thebe_selector_output = ".output, .cell_output"
 <h2>NEXRAD<a class="headerlink" href="#nexrad" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">input_file</span> <span class="o">=</span> <span class="n">get_test_data</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;nids/KOUN_SDUS54_N0QTLX_201305202016&#39;</span><span class="p">,</span> <span class="n">as_file_obj</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">f</span> <span class="o">=</span> <span class="n">Level3File</span><span class="p">(</span><span class="n">input_file</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">Level3File</span><span class="p">(</span><span class="s1">&#39;data/KOUN_SDUS54_N0QTLX_201305202016&#39;</span><span class="p">)</span>
 <span class="n">f</span>
 </pre></div>
 </div>
@@ -891,8 +884,6 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
 
-<span class="c1"># get_test_data is primarily for internal testing and documentation</span>
-<span class="kn">from</span> <span class="nn">metpy.cbook</span> <span class="kn">import</span> <span class="n">get_test_data</span>
 <span class="kn">from</span> <span class="nn">metpy.units</span> <span class="kn">import</span> <span class="n">units</span>
 </pre></div>
 </div>
@@ -1005,7 +996,7 @@ units:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open the netCDF file as a xarray Dataset</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">get_test_data</span><span class="p">(</span><span class="s1">&#39;irma_gfs_example.nc&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;data/irma_gfs_example.nc&#39;</span><span class="p">)</span>
 
 <span class="c1"># View a summary of the Dataset</span>
 <span class="n">data</span>
@@ -1213,9 +1204,7 @@ using the attached coordinate data/metadata to determine grid arguments.</p>
 <span class="kn">import</span> <span class="nn">metpy.calc</span> <span class="k">as</span> <span class="nn">mpcalc</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="c1"># get_test_data is primarily for internal testing and documentation</span>
 <span class="kn">from</span> <span class="nn">mpl_toolkits.axes_grid1.inset_locator</span> <span class="kn">import</span> <span class="n">inset_axes</span>
-<span class="kn">from</span> <span class="nn">metpy.cbook</span> <span class="kn">import</span> <span class="n">get_test_data</span>
 <span class="kn">from</span> <span class="nn">metpy.io</span> <span class="kn">import</span> <span class="n">parse_metar_file</span>
 <span class="kn">from</span> <span class="nn">metpy.plots</span> <span class="kn">import</span> <span class="n">current_weather</span><span class="p">,</span> <span class="n">sky_cover</span><span class="p">,</span> <span class="n">Hodograph</span><span class="p">,</span> <span class="n">SkewT</span><span class="p">,</span> <span class="n">StationPlot</span><span class="p">,</span> <span class="n">PlotGeometry</span><span class="p">,</span> <span class="n">PlotObs</span><span class="p">,</span> <span class="n">MapPanel</span><span class="p">,</span> <span class="n">PanelContainer</span>
 <span class="kn">from</span> <span class="nn">metpy.units</span> <span class="kn">import</span> <span class="n">units</span>
@@ -1230,7 +1219,7 @@ using the attached coordinate data/metadata to determine grid arguments.</p>
 <p><img alt="image.png" src="Open-Science-Workshop-2022/tutorials/attachment:a71b4222-f0be-46c3-a844-ecf55438c169.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">parse_metar_file</span><span class="p">(</span><span class="n">get_test_data</span><span class="p">(</span><span class="s1">&#39;metar_20190701_1200.txt&#39;</span><span class="p">,</span> <span class="n">as_file_obj</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">parse_metar_file</span><span class="p">(</span><span class="s1">&#39;data/metar_20190701_1200.txt&#39;</span><span class="p">)</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;any&#39;</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;wind_direction&#39;</span><span class="p">,</span> <span class="s1">&#39;wind_speed&#39;</span><span class="p">])</span>
 </pre></div>
@@ -1308,26 +1297,22 @@ using the attached coordinate data/metadata to determine grid arguments.</p>
 <h3><a class="reference external" href="https://unidata.github.io/MetPy/latest/examples/plots/surface_declarative.html#sphx-glr-examples-plots-surface-declarative-py">Surface station plots</a>, again?<a class="headerlink" href="#surface-station-plots-again" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">get_test_data</span><span class="p">(</span><span class="s1">&#39;SFC_obs.csv&#39;</span><span class="p">,</span> <span class="n">as_file_obj</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
-                   <span class="n">infer_datetime_format</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;valid&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plotting the Observations using a 15 minute time window for surface observations</span>
 <span class="n">obs</span> <span class="o">=</span> <span class="n">PlotObs</span><span class="p">()</span>
 <span class="n">obs</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
-<span class="n">obs</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">1993</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span>
+<span class="n">obs</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
 <span class="n">obs</span><span class="o">.</span><span class="n">time_window</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">minutes</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 <span class="n">obs</span><span class="o">.</span><span class="n">level</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="n">obs</span><span class="o">.</span><span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;tmpf&#39;</span><span class="p">,</span> <span class="s1">&#39;dwpf&#39;</span><span class="p">,</span> <span class="s1">&#39;emsl&#39;</span><span class="p">,</span> <span class="s1">&#39;cloud_cover&#39;</span><span class="p">,</span> <span class="s1">&#39;wxsym&#39;</span><span class="p">]</span>
+<span class="n">obs</span><span class="o">.</span><span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;air_temperature&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;dew_point_temperature&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;air_pressure_at_sea_level&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;cloud_coverage&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;current_wx1_symbol&#39;</span><span class="p">]</span>
 <span class="n">obs</span><span class="o">.</span><span class="n">locations</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;NW&#39;</span><span class="p">,</span> <span class="s1">&#39;SW&#39;</span><span class="p">,</span> <span class="s1">&#39;NE&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;W&#39;</span><span class="p">]</span>
 <span class="n">obs</span><span class="o">.</span><span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">]</span>
 <span class="n">obs</span><span class="o">.</span><span class="n">formats</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">v</span><span class="p">:</span> <span class="nb">format</span><span class="p">(</span><span class="mi">10</span> <span class="o">*</span> <span class="n">v</span><span class="p">,</span> <span class="s1">&#39;.0f&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">3</span><span class="p">:],</span> <span class="s1">&#39;sky_cover&#39;</span><span class="p">,</span>
                <span class="s1">&#39;current_weather&#39;</span><span class="p">]</span>
-<span class="n">obs</span><span class="o">.</span><span class="n">vector_field</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;uwind&#39;</span><span class="p">,</span> <span class="s1">&#39;vwind&#39;</span><span class="p">)</span>
+<span class="n">obs</span><span class="o">.</span><span class="n">vector_field</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;eastward_wind&#39;</span><span class="p">,</span> <span class="s1">&#39;northward_wind&#39;</span><span class="p">)</span>
 <span class="n">obs</span><span class="o">.</span><span class="n">reduce_points</span> <span class="o">=</span> <span class="mi">1</span>
 
 <span class="c1"># Add map features for the particular panel</span>

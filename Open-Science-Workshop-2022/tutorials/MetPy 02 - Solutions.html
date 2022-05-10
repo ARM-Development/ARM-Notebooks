@@ -452,13 +452,12 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### IN CASE OF EMERGENCY USE TEST DATA</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">metpy.cbook</span> <span class="kn">import</span> <span class="n">get_test_data</span>
 
 <span class="n">col_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pressure&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">,</span> <span class="s1">&#39;temperature&#39;</span><span class="p">,</span> <span class="s1">&#39;dewpoint&#39;</span><span class="p">,</span> <span class="s1">&#39;direction&#39;</span><span class="p">,</span> <span class="s1">&#39;speed&#39;</span><span class="p">]</span>
 <span class="n">col_units</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;hPa&#39;</span><span class="p">,</span> <span class="s1">&#39;hPa&#39;</span><span class="p">,</span> <span class="s1">&#39;degC&#39;</span><span class="p">,</span> <span class="s1">&#39;degC&#39;</span><span class="p">,</span> <span class="s1">&#39;degrees&#39;</span><span class="p">,</span> <span class="s1">&#39;knots&#39;</span><span class="p">]</span>
 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_fwf</span><span class="p">(</span><span class="n">get_test_data</span><span class="p">(</span><span class="s1">&#39;may4_sounding.txt&#39;</span><span class="p">,</span> <span class="n">as_file_obj</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
-                 <span class="n">skiprows</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="n">names</span><span class="o">=</span><span class="n">col_names</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_fwf</span><span class="p">(</span><span class="s1">&#39;data/may4_sounding.txt&#39;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+                 <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="n">names</span><span class="o">=</span><span class="n">col_names</span><span class="p">)</span>
 
 <span class="c1"># Drop any rows with all NaN values for T, Td, winds</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;temperature&#39;</span><span class="p">,</span> <span class="s1">&#39;dewpoint&#39;</span><span class="p">,</span> <span class="s1">&#39;direction&#39;</span><span class="p">,</span> <span class="s1">&#39;speed&#39;</span>
@@ -484,6 +483,8 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table><tbody><tr><th>Magnitude</th><td style='text-align:left;'><pre>[959.0 931.3 925.0 899.3 892.0 867.9 850.0 814.0 807.9 790.0 779.2 751.3<br> 724.3 700.0 655.0 647.5 599.4 554.7 550.0 500.0 472.5 449.0 400.0 383.7<br> 336.4 321.9 308.1 300.0 269.0 268.6]</pre></td></tr><tr><th>Units</th><td style='text-align:left;'>hectopascal</td></tr></tbody></table></div></div>
 </div>
 </div>
 </div>
@@ -499,6 +500,9 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/MetPy 02 - Solutions_14_0.png" src="../../_images/MetPy 02 - Solutions_14_0.png" />
+</div>
 </div>
 <p>With our new <code class="docutils literal notranslate"><span class="pre">skew</span></code> object, we have access to many of our usual Matplotlib plotting methods,</p>
 <div class="cell docutils container">
@@ -512,6 +516,9 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/MetPy 02 - Solutions_16_0.png" src="../../_images/MetPy 02 - Solutions_16_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -523,6 +530,9 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/MetPy 02 - Solutions_17_0.png" src="../../_images/MetPy 02 - Solutions_17_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -532,6 +542,9 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">fig</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/MetPy 02 - Solutions_18_0.png" src="../../_images/MetPy 02 - Solutions_18_0.png" />
 </div>
 </div>
 <p>as well as a few unique methods that MetPy provides to make a great Skew-T.</p>
@@ -543,10 +556,56 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/MetPy 02 - Solutions_20_0.png" src="../../_images/MetPy 02 - Solutions_20_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">skew</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;__class__&#39;,
+ &#39;__delattr__&#39;,
+ &#39;__dict__&#39;,
+ &#39;__dir__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__eq__&#39;,
+ &#39;__format__&#39;,
+ &#39;__ge__&#39;,
+ &#39;__getattribute__&#39;,
+ &#39;__gt__&#39;,
+ &#39;__hash__&#39;,
+ &#39;__init__&#39;,
+ &#39;__init_subclass__&#39;,
+ &#39;__le__&#39;,
+ &#39;__lt__&#39;,
+ &#39;__module__&#39;,
+ &#39;__ne__&#39;,
+ &#39;__new__&#39;,
+ &#39;__reduce__&#39;,
+ &#39;__reduce_ex__&#39;,
+ &#39;__repr__&#39;,
+ &#39;__setattr__&#39;,
+ &#39;__sizeof__&#39;,
+ &#39;__str__&#39;,
+ &#39;__subclasshook__&#39;,
+ &#39;__weakref__&#39;,
+ &#39;_fig&#39;,
+ &#39;ax&#39;,
+ &#39;dry_adiabats&#39;,
+ &#39;mixing_lines&#39;,
+ &#39;moist_adiabats&#39;,
+ &#39;plot&#39;,
+ &#39;plot_barbs&#39;,
+ &#39;plot_dry_adiabats&#39;,
+ &#39;plot_mixing_lines&#39;,
+ &#39;plot_moist_adiabats&#39;,
+ &#39;shade_area&#39;,
+ &#39;shade_cape&#39;,
+ &#39;shade_cin&#39;]
 </pre></div>
 </div>
 </div>
@@ -559,6 +618,53 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>mpcalc.parcel_profile<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Signature:</span> mpcalc<span class=" -Color -Color-Blue">.</span>parcel_profile<span class=" -Color -Color-Blue">(</span>pressure<span class=" -Color -Color-Blue">,</span> temperature<span class=" -Color -Color-Blue">,</span> dewpoint<span class=" -Color -Color-Blue">)</span>
+<span class=" -Color -Color-Red">Docstring:</span>
+Calculate the profile a parcel takes through the atmosphere.
+
+The parcel starts at `temperature`, and `dewpoint`, lifted up
+dry adiabatically to the LCL, and then moist adiabatically from there.
+`pressure` specifies the pressure levels for the profile.
+
+Parameters
+----------
+pressure : `pint.Quantity`
+    Atmospheric pressure level(s) of interest. This array must be from
+    high to low pressure.
+
+temperature : `pint.Quantity`
+    Starting temperature
+
+dewpoint : `pint.Quantity`
+    Starting dewpoint
+
+Returns
+-------
+`pint.Quantity`
+    The parcel&#39;s temperatures at the specified pressure levels
+
+See Also
+--------
+lcl, moist_lapse, dry_lapse, parcel_profile_with_lcl, parcel_profile_with_lcl_as_dataset
+
+Notes
+-----
+Only functions on 1D profiles (not higher-dimension vertical cross sections or grids).
+Duplicate pressure levels return duplicate parcel temperatures. Consider preprocessing
+low-precision, high frequency profiles with tools like `scipy.medfilt`,
+`pandas.drop_duplicates`, or `numpy.unique`.
+
+Will only return Pint Quantities, even when given xarray DataArray profiles. To
+obtain a xarray Dataset instead, use `parcel_profile_with_lcl_as_dataset` instead.
+
+.. versionchanged:: 1.0
+   Renamed ``dewpt`` parameter to ``dewpoint``
+<span class=" -Color -Color-Red">File:</span>      ~/mambaforge/envs/arm-tutorial-dev/lib/python3.10/site-packages/metpy/calc/thermo.py
+<span class=" -Color -Color-Red">Type:</span>      function
 </pre></div>
 </div>
 </div>
@@ -580,6 +686,9 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/MetPy 02 - Solutions_26_0.png" src="../../_images/MetPy 02 - Solutions_26_0.png" />
+</div>
 </div>
 </div>
 <hr class="docutils" />
@@ -592,6 +701,9 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">fig</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/MetPy 02 - Solutions_28_0.png" src="../../_images/MetPy 02 - Solutions_28_0.png" />
 </div>
 </div>
 <div class="alert alert-success">
@@ -629,6 +741,9 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/MetPy 02 - Solutions_30_0.png" src="../../_images/MetPy 02 - Solutions_30_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -638,6 +753,12 @@ const thebe_selector_output = ".output, .cell_output"
                             <span class="n">sounding</span><span class="p">[</span><span class="s1">&#39;profile&#39;</span><span class="p">])</span>
 
 <span class="n">cape</span><span class="p">,</span> <span class="n">cin</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2329.4548234555755 &lt;Unit(&#39;joule / kilogram&#39;)&gt;,
+ -92.32207524951897 &lt;Unit(&#39;joule / kilogram&#39;)&gt;)
 </pre></div>
 </div>
 </div>
@@ -657,6 +778,13 @@ const thebe_selector_output = ".output, .cell_output"
                                         <span class="n">sounding</span><span class="p">[</span><span class="s1">&#39;dewpoint&#39;</span><span class="p">])</span>
 
 <span class="n">lcl_pressure</span><span class="p">,</span> <span class="n">lfc_pressure</span><span class="p">,</span> <span class="n">el_pressure</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(914.8213254198571 &lt;Unit(&#39;hectopascal&#39;)&gt;,
+ 727.3714111316563 &lt;Unit(&#39;hectopascal&#39;)&gt;,
+ nan &lt;Unit(&#39;hectopascal&#39;)&gt;)
 </pre></div>
 </div>
 </div>
