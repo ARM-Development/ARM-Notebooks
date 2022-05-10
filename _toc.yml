@@ -3,7 +3,7 @@ root: Open-Science-Workshop-2022/README
 parts:
   - caption: Open Science Workshop
     chapters:
-    - file: Open-Science-Workshop-2022/presentations/view-program
+    - file: Open-Science-Workshop-2022/presentations/view-abstracts
     - file: Open-Science-Workshop-2022/tutorials/day1-overview
       sections:
         - file: Open-Science-Workshop-2022/tutorials/jupyter-intro
