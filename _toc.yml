@@ -1,24 +1,25 @@
 format: jb-book
-root: README
+root: Open-Science-Workshop-2022/README
 parts:
   - caption: Open Science Workshop
     chapters:
-    - file: Open-Science-Workshop-2022/README
+    - file: Open-Science-Workshop-2022/presentations/view-program
     - file: Open-Science-Workshop-2022/tutorials/day1-overview
       sections:
         - file: Open-Science-Workshop-2022/tutorials/jupyter-intro
         - file: Open-Science-Workshop-2022/tutorials/github-intro
-        - file: Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Numpy.ipynb
-        - file: Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Pandas.ipynb
-        - file: Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Xarray.ipynb
+        - file: Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Numpy
+        - file: Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Pandas
+        - file: Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Xarray
     - file: Open-Science-Workshop-2022/tutorials/day2-overview
       sections:
+        - file: Open-Science-Workshop-2022/tutorials/ARM-Data-Access
+        - file: Open-Science-Workshop-2022/tutorials/ESMAC_diags/esmac-diags
         - file: Open-Science-Workshop-2022/tutorials/EMC2_demo_w_E3SM
-        - file: Open-Science-Workshop-2022/tutorials/ESMAC_Diags/README.md
     - file: Open-Science-Workshop-2022/tutorials/day3-overview
       sections:
-        - file: Open-Science-Workshop-2022/tutorials/MetPy 01 - Overview.ipynb
-        - file: Open-Science-Workshop-2022/tutorials/MetPy 02 - Making a SkewT.ipynb
+        - file: Open-Science-Workshop-2022/tutorials/MetPy 01 - Overview
+        - file: Open-Science-Workshop-2022/tutorials/MetPy 02 - Making a SkewT
         - file: Open-Science-Workshop-2022/tutorials/act-basics
     - file: Open-Science-Workshop-2022/tutorials/day4-overview
       sections:
