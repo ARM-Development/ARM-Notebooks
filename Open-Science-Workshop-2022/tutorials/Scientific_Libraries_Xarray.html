@@ -93,8 +93,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../README.html">
-   ARM-Notebooks
+  <a class="reference internal" href="../README.html">
+   Overview
   </a>
  </li>
 </ul>
@@ -104,11 +104,6 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../README.html">
-   Overview
-  </a>
- </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="day1-overview.html">
    Day 1 - Introductions!
@@ -127,6 +122,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="github-intro.html">
      An Introduction to Github
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="branching-forking-github-ui.html">
+     Branching and Pull Requests on the Github Website
     </a>
    </li>
    <li class="toctree-l2">
@@ -157,6 +157,16 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="ARM-Data-Access.html">
+     Accessing ARM Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ESMAC_diags/esmac-diags.html">
+     ESMAC Diagnostics
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="EMC2_demo_w_E3SM.html">
      Using EMC² to Process E3SM Output
     </a>
@@ -165,7 +175,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="day3-overview.html">
-   Day 3 - Meteorology-Focused Packages
+   Day 3 - MetPy and ACT
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -207,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="pyart-gridding.html">
-     Gridding
+     Py-ART Gridding
     </a>
    </li>
    <li class="toctree-l2">
@@ -397,10 +407,10 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="working-with-xarray">
 <h1>Working with Xarray<a class="headerlink" href="#working-with-xarray" title="Permalink to this headline">¶</a></h1>
-<p>Xarry is a class of objects added to the regular python system that allows storing data in a more organized method. The format is very similar to netCDF classic model (netCDF3). It can read netCDF files efficiently and handle some issues associated with incorrectly designed netCDF files.</p>
-<p>Xarray also has extetions to use the Numpy, Pandas, Dask and SciPy libaries directly. Think of Xarray as a tool for orgnaizing data in a way that other libaries can be used on the data efficiently.</p>
+<p>Xarray is a class of objects added to the regular python system that allows storing data in a more organized method. The format is very similar to netCDF classic model (netCDF3). It can read netCDF files efficiently and handle some issues associated with incorrectly designed netCDF files.</p>
+<p>Xarray also has extetions to use the Numpy, Pandas, Dask and SciPy libaries directly. Think of Xarray as a tool for organizing data in a way that other libaries can be used on the data efficiently.</p>
 <p>The primary difference between Xarray and Pandas is that Pandas is designed to handle 1-D data while Xarray can handle n-D data and metadata about the data.</p>
-<p>The one downside is that Xarry has very powerful functions with less great documentation. May need to dig a bit to get the best way to perform a task.</p>
+<p>The one downside is that Xarray has very powerful functions with less great documentation. May need to dig a bit to get the best way to perform a task.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -679,7 +689,7 @@ Here we use pandas to make a time array with a 6 hour time step for four years.<
 </div>
 </div>
 </div>
-<p>We can also define the grouping size by using the .resample() method and pass in the funciton to use using the .reduce() method. If there is no data to perform the operation, a new time step is added with a NaN data value.</p>
+<p>We can also define the grouping size by using the .resample() method and pass in the function to use using the .reduce() method. If there is no data to perform the operation, a new time step is added with a NaN data value.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_mean</span> <span class="o">=</span> <span class="n">xr_ds</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s1">&#39;30min&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">)</span>
