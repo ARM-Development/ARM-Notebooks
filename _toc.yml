@@ -7,11 +7,12 @@ parts:
     - file: Open-Science-Workshop-2022/tutorials/day1-overview
       sections:
         - file: Open-Science-Workshop-2022/tutorials/jupyter-intro
-        - file: Open-Science-Workshop-2022/tutorials/github-intro
-        - file: Open-Science-Workshop-2022/tutorials/branching-forking-github-ui
         - file: Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Numpy
         - file: Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Pandas
         - file: Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Xarray
+        - file: Open-Science-Workshop-2022/tutorials/github-intro
+        - file: Open-Science-Workshop-2022/tutorials/forking_cloning
+        - file: Open-Science-Workshop-2022/tutorials/branching-forking-github-ui
     - file: Open-Science-Workshop-2022/tutorials/day2-overview
       sections:
         - file: Open-Science-Workshop-2022/tutorials/ARM-Data-Access
