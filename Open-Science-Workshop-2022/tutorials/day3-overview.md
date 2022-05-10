@@ -1,4 +1,4 @@
-# Day 3 - Meteorology-Focused Packages
+# Day 3 - MetPy and ACT
 
 ## 1:30 - 3:30 PM EDT Thursday May 12, 2022
 
