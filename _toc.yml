@@ -17,8 +17,7 @@ parts:
       sections:
         - file: Open-Science-Workshop-2022/tutorials/ARM-Data-Access
         - file: Open-Science-Workshop-2022/tutorials/ESMAC_diags/esmac-diags
-        - file: Open-Science-Workshop-2022/tutorials/ESMAC_diags/notebooks/example_plot_hist
-        - file: Open-Science-Workshop-2022/tutorials/ESMAC_diags/notebooks/example_plot_mean_size
+        - glob: Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example*
         - file: Open-Science-Workshop-2022/tutorials/EMC2_demo_w_E3SM
     - file: Open-Science-Workshop-2022/tutorials/day3-overview
       sections:
