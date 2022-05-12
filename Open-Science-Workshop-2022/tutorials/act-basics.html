@@ -623,6 +623,9 @@ In this tutorial, you will learn some of the basic features of ACT with a focus 
 <p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">act-atmos</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">act-atmos</span></code></p>
 <p>Some features of ACT are only available if you have some optional dependencies installed.  For example, Skew-T plots of radiosonde data will require that <strong><a class="reference external" href="https://unidata.github.io/MetPy/latest/index.html">MetPy</a></strong> is installed.  Additional optional dependencies are listed in <strong><a class="reference external" href="https://arm-doe.github.io/ACT/index.html">ACT’s documentation</a></strong></p>
+<p>If you have ACT already installed, it will be important to ensure the latest version is installed.  On the ADC JupyterHub, you can bring up a terminal and enter</p>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">act-atmos</span> <span class="pre">--user</span> <span class="pre">--upgrade</span></code></p>
+<p>After that, in the JupyterHub, select ‘Kernel’ from the menu and ‘Restart’</p>
 </div>
 <div class="section" id="imports">
 <h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">¶</a></h2>
@@ -631,6 +634,14 @@ In this tutorial, you will learn some of the basic features of ACT with a focus 
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">act</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check the ACT version to ensure it&#39;s 1.1.6</span>
+<span class="n">act</span><span class="o">.</span><span class="n">__version__</span>
 </pre></div>
 </div>
 </div>
@@ -893,7 +904,7 @@ In this tutorial, you will learn some of the basic features of ACT with a focus 
 <span class="n">display</span><span class="o">.</span><span class="n">plot_barbs_from_spd_dir</span><span class="p">(</span><span class="s1">&#39;wind_direction&#39;</span><span class="p">,</span> <span class="s1">&#39;wind_speed&#39;</span><span class="p">,</span> <span class="n">invert_y_axis</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="c1">#Update the x-limits to make sure both wind profiles are shown</span>
-<span class="c1">#display.axes[0].set_xlim([np.datetime64(&#39;2019-10-15T11:45&#39;), np.datetime64(&#39;2019-10-15T12:30&#39;)])</span>
+<span class="n">display</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s1">&#39;2019-10-15T11:45&#39;</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s1">&#39;2019-10-15T12:30&#39;</span><span class="p">)])</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
