@@ -30,3 +30,4 @@ parts:
         - file: Open-Science-Workshop-2022/tutorials/pyart-gridding
         - file: Open-Science-Workshop-2022/tutorials/pyart-corrections
         - file: Open-Science-Workshop-2022/tutorials/xarray
+        - file: Open-Science-Workshop-2022/tutorials/xarray-computation-masking
