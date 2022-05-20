@@ -1,33 +1,33 @@
 format: jb-book
-root: Open-Science-Workshop-2022/README
+root: Tutorials/Open-Science-Workshop-2022/README
 parts:
   - caption: Open Science Workshop
     chapters:
-    - file: Open-Science-Workshop-2022/presentations/view-abstracts
-    - file: Open-Science-Workshop-2022/tutorials/day1-overview
+    - file: Tutorials/Open-Science-Workshop-2022/presentations/view-abstracts
+    - file: Tutorials/Open-Science-Workshop-2022/tutorials/day1-overview
       sections:
-        - file: Open-Science-Workshop-2022/tutorials/jupyter-intro
-        - file: Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Numpy
-        - file: Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Pandas
-        - file: Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Xarray
-        - file: Open-Science-Workshop-2022/tutorials/github-intro
-        - file: Open-Science-Workshop-2022/tutorials/forking_cloning
-        - file: Open-Science-Workshop-2022/tutorials/branching-forking-github-ui
-    - file: Open-Science-Workshop-2022/tutorials/day2-overview
+        - file: Tutorials/Open-Science-Workshop-2022/tutorials/jupyter-intro
+        - file: Tutorials/Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Numpy
+        - file: Tutorials/Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Pandas
+        - file: Tutorials/Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Xarray
+        - file: Tutorials/Open-Science-Workshop-2022/tutorials/github-intro
+        - file: Tutorials/Open-Science-Workshop-2022/tutorials/forking_cloning
+        - file: Tutorials/Open-Science-Workshop-2022/tutorials/branching-forking-github-ui
+    - file: Tutorials/Open-Science-Workshop-2022/tutorials/day2-overview
       sections:
-        - file: Open-Science-Workshop-2022/tutorials/ARM-Data-Access
-        - file: Open-Science-Workshop-2022/tutorials/ESMAC_diags/esmac-diags
-        - glob: Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example*
-        - file: Open-Science-Workshop-2022/tutorials/EMC2_demo_w_E3SM
+        - file: Tutorials/Open-Science-Workshop-2022/tutorials/ARM-Data-Access
+        - file: Tutorials/Open-Science-Workshop-2022/tutorials/ESMAC_diags/esmac-diags
+        - glob: Tutorials/Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example*
+        - file: Tutorials/Open-Science-Workshop-2022/tutorials/EMC2_demo_w_E3SM
     - file: Open-Science-Workshop-2022/tutorials/day3-overview
       sections:
-        - file: Open-Science-Workshop-2022/tutorials/MetPy 01 - Overview
-        - file: Open-Science-Workshop-2022/tutorials/MetPy 02 - Making a SkewT
-        - file: Open-Science-Workshop-2022/tutorials/act-basics
+        - file: Tutorials/Open-Science-Workshop-2022/tutorials/MetPy 01 - Overview
+        - file: Tutorials/Open-Science-Workshop-2022/tutorials/MetPy 02 - Making a SkewT
+        - file: Tutorials/Open-Science-Workshop-2022/tutorials/act-basics
     - file: Open-Science-Workshop-2022/tutorials/day4-overview
       sections:
-        - file: Open-Science-Workshop-2022/tutorials/pyart-basics
-        - file: Open-Science-Workshop-2022/tutorials/pyart-gridding
-        - file: Open-Science-Workshop-2022/tutorials/pyart-corrections
-        - file: Open-Science-Workshop-2022/tutorials/xarray
-        - file: Open-Science-Workshop-2022/tutorials/xarray-computation-masking
+        - file: Tutorials/Open-Science-Workshop-2022/tutorials/pyart-basics
+        - file: Tutorials/Open-Science-Workshop-2022/tutorials/pyart-gridding
+        - file: Tutorials/Open-Science-Workshop-2022/tutorials/pyart-corrections
+        - file: Tutorials/Open-Science-Workshop-2022/tutorials/xarray
+        - file: Tutorials/Open-Science-Workshop-2022/tutorials/xarray-computation-masking
