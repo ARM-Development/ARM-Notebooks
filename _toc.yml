@@ -19,12 +19,12 @@ parts:
         - file: Tutorials/Open-Science-Workshop-2022/tutorials/ESMAC_diags/esmac-diags
         - glob: Tutorials/Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example*
         - file: Tutorials/Open-Science-Workshop-2022/tutorials/EMC2_demo_w_E3SM
-    - file: Open-Science-Workshop-2022/tutorials/day3-overview
+    - file: Tutorials/Open-Science-Workshop-2022/tutorials/day3-overview
       sections:
         - file: Tutorials/Open-Science-Workshop-2022/tutorials/MetPy 01 - Overview
         - file: Tutorials/Open-Science-Workshop-2022/tutorials/MetPy 02 - Making a SkewT
         - file: Tutorials/Open-Science-Workshop-2022/tutorials/act-basics
-    - file: Open-Science-Workshop-2022/tutorials/day4-overview
+    - file: Tutorials/Open-Science-Workshop-2022/tutorials/day4-overview
       sections:
         - file: Tutorials/Open-Science-Workshop-2022/tutorials/pyart-basics
         - file: Tutorials/Open-Science-Workshop-2022/tutorials/pyart-gridding
