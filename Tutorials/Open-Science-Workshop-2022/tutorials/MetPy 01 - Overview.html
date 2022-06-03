@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>MetPy Tutorial - Overview &#8212; ARM Tutorials</title>
     
-  <link href="../../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -62,7 +61,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -71,9 +84,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -91,14 +105,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../README.html">
-   Overview
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    Overview
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Open Science Workshop
  </span>
@@ -280,97 +295,182 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/Tutorials/Open-Science-Workshop-2022/tutorials/MetPy 01 - Overview.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/ARM-Development/ARM-Notebooks/main?urlpath=lab/tree/Tutorials/Open-Science-Workshop-2022/tutorials/MetPy 01 - Overview.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        <a class="jupyterhub-button" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https://github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/Tutorials/Open-Science-Workshop-2022/tutorials/MetPy 01 - Overview.ipynb&branch=main"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
-                data-placement="left"><img class="jupyterhub-button-logo"
-                    src="../../../_static/images/logo_jupyterhub.svg"
-                    alt="Interact on JupyterHub">JupyterHub</button></a>
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/ARM-Development/ARM-Notebooks/main?urlpath=lab/tree/Tutorials/Open-Science-Workshop-2022/tutorials/MetPy 01 - Overview.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https://github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/Tutorials/Open-Science-Workshop-2022/tutorials/MetPy 01 - Overview.ipynb&branch=main"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on JupyterHub"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="headerbtn__text-container">JupyterHub</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/Tutorials/Open-Science-Workshop-2022/tutorials/MetPy 01 - Overview.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
    MetPy Tutorial - Overview
@@ -534,12 +634,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>MetPy Tutorial - Overview</h1>
@@ -719,21 +818,22 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <p><a class="reference internal" href="https://github.com/Unidata/MetPy/raw/main/docs/_static/metpy_150x150.png"><img alt="MetPy logo" src="https://github.com/Unidata/MetPy/raw/main/docs/_static/metpy_150x150.png" style="width: 150px;" /></a></img>
 <a class="reference internal" href="https://github.com/Unidata/MetPy/raw/main/docs/_static/unidata_150x150.png"><img alt="Unidata logo" src="https://github.com/Unidata/MetPy/raw/main/docs/_static/unidata_150x150.png" style="width: 150px;" /></a></img></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="metpy-tutorial-overview">
-<h1>MetPy Tutorial - Overview<a class="headerlink" href="#metpy-tutorial-overview" title="Permalink to this headline">¶</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="metpy-tutorial-overview">
+<h1>MetPy Tutorial - Overview<a class="headerlink" href="#metpy-tutorial-overview" title="Permalink to this headline">#</a></h1>
 <hr class="docutils" />
-<div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://github.com/Unidata/MetPy">MetPy</a> is a collection of tools in Python for reading, visualizing, and performing calculations with weather data built on and within the scientific Python ecosystem and an open development model. MetPy thrives on community contributions, feedback, guidance, and expertise.</p>
 <p>This tutorial will provide an overview of MetPy’s wide breadth of functionality, as well as take a deeper dive into demonstrating how MetPy might be useful for your work!</p>
-</div>
-<div class="section" id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <p>Depending on which of the tools within MetPy you come to rely on, it may be necessary to be familiar with a variety of other libraries in the scientific Python ecosystem,</p>
 <table class="colwidths-auto table">
 <thead>
@@ -769,10 +869,10 @@ const thebe_selector_output = ".output, .cell_output"
 </tr>
 </tbody>
 </table>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="imports">
-<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">¶</a></h2>
+<section id="imports">
+<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">metpy</span>
@@ -816,11 +916,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="reading-files">
-<h1>Reading files<a class="headerlink" href="#reading-files" title="Permalink to this headline">¶</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="reading-files">
+<h1>Reading files<a class="headerlink" href="#reading-files" title="Permalink to this headline">#</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">metpy.io</span></code> contains various tools for reading some special meteorological data formats. Notably, these tools can allow you to explore</p>
 <ul class="simple">
 <li><p>METARs, and files full of them!</p></li>
@@ -828,8 +928,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>NEXRAD Level 2 and Level 3 files</p></li>
 <li><p>GINI satellite files</p></li>
 </ul>
-<div class="section" id="id1">
-<h2>Imports<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<section id="id1">
+<h2>Imports<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">metpy.io</span> <span class="kn">import</span> <span class="n">GempakSounding</span><span class="p">,</span> <span class="n">parse_metar_file</span><span class="p">,</span> <span class="n">Level3File</span>
@@ -838,9 +938,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="metar">
-<h2>METAR<a class="headerlink" href="#metar" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="metar">
+<h2>METAR<a class="headerlink" href="#metar" title="Permalink to this headline">#</a></h2>
 <p>For parsing <span class="xref myst">entire files</span> or individual <a class="reference external" href="https://unidata.github.io/MetPy/latest/api/generated/metpy.io.parse_metar_to_dataframe.html">text reports</a> into <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code>s.</p>
 <p><img alt="image.png" src="Tutorials/Open-Science-Workshop-2022/tutorials/attachment:1d9a1dce-fe5e-4579-bd68-fa98daaff4d4.png" /></p>
 <div class="cell docutils container">
@@ -858,9 +958,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="gempak">
-<h2>Gempak<a class="headerlink" href="#gempak" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="gempak">
+<h2>Gempak<a class="headerlink" href="#gempak" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gso</span> <span class="o">=</span> <span class="n">GempakSounding</span><span class="p">(</span><span class="s1">&#39;data/gem_model_mrg.snd&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">snxarray</span><span class="p">()</span>
@@ -869,9 +969,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="nexrad">
-<h2>NEXRAD<a class="headerlink" href="#nexrad" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="nexrad">
+<h2>NEXRAD<a class="headerlink" href="#nexrad" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">Level3File</span><span class="p">(</span><span class="s1">&#39;data/KOUN_SDUS54_N0QTLX_201305202016&#39;</span><span class="p">)</span>
@@ -880,11 +980,11 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="calculations">
-<h1>Calculations<a class="headerlink" href="#calculations" title="Permalink to this headline">¶</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="calculations">
+<h1>Calculations<a class="headerlink" href="#calculations" title="Permalink to this headline">#</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">metpy.calc</span></code> is a large suite of a variety of unit-aware meteorological calculations loosely gathered in the following categories,</p>
 <ul class="simple">
 <li><p>Dry and Moist thermodynamics</p></li>
@@ -897,8 +997,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Miscellaneous!</p></li>
 </ul>
 <p>Separately, <code class="docutils literal notranslate"><span class="pre">metpy.interpolate</span></code> contains tools for interpolation for grids, points, profiles, slices, and more. These rely on a variety of SciPy interpolation tools or internally-developed routines.</p>
-<div class="section" id="id2">
-<h2>Imports<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<section id="id2">
+<h2>Imports<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">metpy.calc</span> <span class="k">as</span> <span class="nn">mpcalc</span>
@@ -907,9 +1007,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="meteorological-calculations">
-<h2><a class="reference external" href="https://unidata.github.io/MetPy/latest/api/generated/metpy.calc.html">Meteorological calculations</a><a class="headerlink" href="#meteorological-calculations" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="meteorological-calculations">
+<h2><a class="reference external" href="https://unidata.github.io/MetPy/latest/api/generated/metpy.calc.html">Meteorological calculations</a><a class="headerlink" href="#meteorological-calculations" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">mpcalc</span><span class="p">)</span>
@@ -917,9 +1017,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="interpolation">
-<h2><a class="reference external" href="https://unidata.github.io/MetPy/latest/api/generated/metpy.interpolate.html">Interpolation</a><a class="headerlink" href="#interpolation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="interpolation">
+<h2><a class="reference external" href="https://unidata.github.io/MetPy/latest/api/generated/metpy.interpolate.html">Interpolation</a><a class="headerlink" href="#interpolation" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">metpy</span><span class="o">.</span><span class="n">interpolate</span><span class="p">)</span>
@@ -927,15 +1027,15 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="units-and-xarray">
-<h1>Units and xarray<a class="headerlink" href="#units-and-xarray" title="Permalink to this headline">¶</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="units-and-xarray">
+<h1>Units and xarray<a class="headerlink" href="#units-and-xarray" title="Permalink to this headline">#</a></h1>
 <p>The core of this presentation is to introduce to you the required usage of the <a class="reference external" href="https://pint.readthedocs.io/en/stable/">Pint</a>-based <code class="docutils literal notranslate"><span class="pre">metpy.units</span></code> for making MetPy’s calculations unit-aware and correct! Understanding Pint, while required, can also enable for you a lot of convenience and sparing of headaches moving forward.</p>
 <p>Similarly, MetPy now heavily relies on <a class="reference external" href="https://docs.xarray.dev/en/stable/">xarray</a>. For some functionality, xarray is required. However, for most of MetPy, xarray instead can be used for convenience and speed in your day-to-day science.</p>
-<div class="section" id="id3">
-<h2>Imports<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<section id="id3">
+<h2>Imports<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">metpy.calc</span> <span class="k">as</span> <span class="nn">mpcalc</span>
@@ -948,16 +1048,16 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <p>For this, note that <strong>any</strong> import of <code class="docutils literal notranslate"><span class="pre">metpy</span></code> will enable access to the xarray accessors, which we’ll cover below.</p>
-</div>
-<div class="section" id="pint">
-<h2>Pint<a class="headerlink" href="#pint" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="pint">
+<h2>Pint<a class="headerlink" href="#pint" title="Permalink to this headline">#</a></h2>
 <p>The unit registry encapsulates all of the available units, as well as any pertinent settings.
 The registry also understands unit prefixes and suffixes; this allows the registry to
 understand <code class="docutils literal notranslate"><span class="pre">'kilometer'</span></code> and <code class="docutils literal notranslate"><span class="pre">'meters'</span></code> in addition to the base <code class="docutils literal notranslate"><span class="pre">'meter'</span></code> unit.</p>
 <p>In general, using units is only a small step on top of using the <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>
 object.</p>
-<div class="section" id="adding-units-to-data">
-<h3>Adding Units to Data<a class="headerlink" href="#adding-units-to-data" title="Permalink to this headline">¶</a></h3>
+<section id="adding-units-to-data">
+<h3>Adding Units to Data<a class="headerlink" href="#adding-units-to-data" title="Permalink to this headline">#</a></h3>
 <p>The easiest way to attach units to an array (or integer, float, etc.) is to multiply by the
 units:</p>
 <div class="cell docutils container">
@@ -1031,10 +1131,10 @@ units:</p>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="units-in-metpy-calculations">
-<h2>Units in MetPy Calculations<a class="headerlink" href="#units-in-metpy-calculations" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="units-in-metpy-calculations">
+<h2>Units in MetPy Calculations<a class="headerlink" href="#units-in-metpy-calculations" title="Permalink to this headline">#</a></h2>
 <p>We’ll explore this further when we dive into today’s exercise, but let’s introduce one of MetPy’s calculations, <code class="docutils literal notranslate"><span class="pre">metpy.calc.dewpoint_from_relative_humidity</span></code>, to show units in action.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1046,9 +1146,9 @@ units:</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="xarray">
-<h2>Xarray<a class="headerlink" href="#xarray" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="xarray">
+<h2>Xarray<a class="headerlink" href="#xarray" title="Permalink to this headline">#</a></h2>
 <p>MetPy also provides DataArray and Dataset <em>accessors</em>, which are collections of methods and properties under the <code class="docutils literal notranslate"><span class="pre">.metpy</span></code> name for coordinate/CRS and unit operations.</p>
 <p>Let’s open some sample data to work with.</p>
 <div class="cell docutils container">
@@ -1070,8 +1170,8 @@ units:</p>
 </div>
 </div>
 </div>
-<div class="section" id="coordinates-and-coordinate-reference-systems">
-<h3>Coordinates and Coordinate Reference Systems<a class="headerlink" href="#coordinates-and-coordinate-reference-systems" title="Permalink to this headline">¶</a></h3>
+<section id="coordinates-and-coordinate-reference-systems">
+<h3>Coordinates and Coordinate Reference Systems<a class="headerlink" href="#coordinates-and-coordinate-reference-systems" title="Permalink to this headline">#</a></h3>
 <p>MetPy’s first set of helpers comes with identifying <em>coordinate types</em>. In a given dataset,
 coordinates can have a variety of different names and yet refer to the same type (such as
 “isobaric1” and “isobaric3” both referring to vertical isobaric coordinates). Following
@@ -1165,9 +1265,9 @@ corresponding to this CRS:</p>
 </div>
 <p>If your dataset doesn’t have a CF-conforming grid mapping variable, you can manually specify
 the CRS using the ``.assign_crs()` method. Please check out the <a class="reference external" href="https://unidata.github.io/MetPy/latest/tutorials/xarray_tutorial.html#non-compliant-dataset-example">documentation</a> for more information.</p>
-</div>
-<div class="section" id="units">
-<h3>Units<a class="headerlink" href="#units" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="units">
+<h3>Units<a class="headerlink" href="#units" title="Permalink to this headline">#</a></h3>
 <p>By relying on xarray, Pint, and some of its own magic, MetPy enables some new unit-based convenience when working with xarray! Let’s shrink one of our DataArrays to explore.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1222,9 +1322,9 @@ the CRS using the ``.assign_crs()` method. Please check out the <a class="refere
 </div>
 </div>
 <p>For more information, check out <a class="reference external" href="https://unidata.github.io/MetPy/latest/tutorials/xarray_tutorial.html#units">this section</a> of our MetPy with xarray tutorial.</p>
-</div>
-<div class="section" id="id4">
-<h3>Calculations<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id4">
+<h3>Calculations<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
 <p>MetPy’s xarray integration extends to its calculation suite as well. Most grid-capable
 calculations (such as thermodynamics, kinematics, and smoothers) fully support xarray
 <code class="docutils literal notranslate"><span class="pre">DataArray</span></code>s by accepting them as inputs, returning them as outputs, and automatically
@@ -1237,12 +1337,12 @@ using the attached coordinate data/metadata to determine grid arguments.</p>
 </div>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 <hr class="docutils" />
-<div class="tex2jax_ignore mathjax_ignore section" id="plots">
-<h1>Plots<a class="headerlink" href="#plots" title="Permalink to this headline">¶</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="plots">
+<h1>Plots<a class="headerlink" href="#plots" title="Permalink to this headline">#</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">metpy.plots</span></code> contains a variety of tools to either enable creation of unique meteorological plots otherwise difficult or time-consuming to re-create in Python,</p>
 <ul class="simple">
 <li><p>SkewTs</p></li>
@@ -1250,8 +1350,8 @@ using the attached coordinate data/metadata to determine grid arguments.</p>
 <li><p>Surface and upper-air observation station model plots</p></li>
 </ul>
 <p>or tools to make day-to-day scientific exploration easier, more convenient, or more accessible to those with a variety of backgrounds in meteorology and computing. This is primarily enabled through our <em>Declarative</em> plotting interface.</p>
-<div class="section" id="id5">
-<h2>Imports<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<section id="id5">
+<h2>Imports<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
@@ -1270,9 +1370,9 @@ using the attached coordinate data/metadata to determine grid arguments.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="station-plots">
-<h2><a class="reference external" href="https://unidata.github.io/MetPy/latest/examples/plots/Station_Plot.html#sphx-glr-examples-plots-station-plot-py">Station Plots</a><a class="headerlink" href="#station-plots" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="station-plots">
+<h2><a class="reference external" href="https://unidata.github.io/MetPy/latest/examples/plots/Station_Plot.html#sphx-glr-examples-plots-station-plot-py">Station Plots</a><a class="headerlink" href="#station-plots" title="Permalink to this headline">#</a></h2>
 <p>For plotting Meteorological station models for surface or upper-air observations.</p>
 <p><img alt="image.png" src="Tutorials/Open-Science-Workshop-2022/tutorials/attachment:a71b4222-f0be-46c3-a844-ecf55438c169.png" /></p>
 <div class="cell docutils container">
@@ -1348,11 +1448,11 @@ using the attached coordinate data/metadata to determine grid arguments.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="declarative-plotting">
-<h2>Declarative Plotting<a class="headerlink" href="#declarative-plotting" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="surface-station-plots-again">
-<h3><a class="reference external" href="https://unidata.github.io/MetPy/latest/examples/plots/surface_declarative.html#sphx-glr-examples-plots-surface-declarative-py">Surface station plots</a>, again?<a class="headerlink" href="#surface-station-plots-again" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="declarative-plotting">
+<h2>Declarative Plotting<a class="headerlink" href="#declarative-plotting" title="Permalink to this headline">#</a></h2>
+<section id="surface-station-plots-again">
+<h3><a class="reference external" href="https://unidata.github.io/MetPy/latest/examples/plots/surface_declarative.html#sphx-glr-examples-plots-surface-declarative-py">Surface station plots</a>, again?<a class="headerlink" href="#surface-station-plots-again" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plotting the Observations using a 15 minute time window for surface observations</span>
@@ -1392,15 +1492,15 @@ using the attached coordinate data/metadata to determine grid arguments.</p>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="plotgeometry">
-<h3><a class="reference external" href="https://unidata.github.io/MetPy/latest/examples/plots/spc_convective_outlook.html#sphx-glr-examples-plots-spc-convective-outlook-py">PlotGeometry</a><a class="headerlink" href="#plotgeometry" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="plotgeometry">
+<h3><a class="reference external" href="https://unidata.github.io/MetPy/latest/examples/plots/spc_convective_outlook.html#sphx-glr-examples-plots-spc-convective-outlook-py">PlotGeometry</a><a class="headerlink" href="#plotgeometry" title="Permalink to this headline">#</a></h3>
 <p>… and we’ll save that SkewT for last :)</p>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="resources-and-references">
-<h2>Resources and references<a class="headerlink" href="#resources-and-references" title="Permalink to this headline">¶</a></h2>
+<section id="resources-and-references">
+<h2>Resources and references<a class="headerlink" href="#resources-and-references" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://unidata.github.io/MetPy/latest/index.html">MetPy documentation</a></p></li>
 <li><p><a class="reference external" href="https://github.com/Unidata/MetPy/">MetPy GitHub repository</a></p></li>
@@ -1414,8 +1514,8 @@ using the attached coordinate data/metadata to determine grid arguments.</p>
 </ul>
 </li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1439,9 +1539,11 @@ using the attached coordinate data/metadata to determine grid arguments.</p>
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="day3-overview.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1457,24 +1559,28 @@ using the attached coordinate data/metadata to determine grid arguments.</p>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By ARM Development Team<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By ARM Development Team<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

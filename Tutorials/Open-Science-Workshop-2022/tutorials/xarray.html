@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Introduction to Xarray &#8212; ARM Tutorials</title>
     
-  <link href="../../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -62,7 +61,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -71,9 +84,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -91,14 +105,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../README.html">
-   Overview
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    Overview
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Open Science Workshop
  </span>
@@ -280,97 +295,182 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/Tutorials/Open-Science-Workshop-2022/tutorials/xarray.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/ARM-Development/ARM-Notebooks/main?urlpath=lab/tree/Tutorials/Open-Science-Workshop-2022/tutorials/xarray.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        <a class="jupyterhub-button" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https://github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/Tutorials/Open-Science-Workshop-2022/tutorials/xarray.ipynb&branch=main"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
-                data-placement="left"><img class="jupyterhub-button-logo"
-                    src="../../../_static/images/logo_jupyterhub.svg"
-                    alt="Interact on JupyterHub">JupyterHub</button></a>
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/ARM-Development/ARM-Notebooks/main?urlpath=lab/tree/Tutorials/Open-Science-Workshop-2022/tutorials/xarray.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https://github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/Tutorials/Open-Science-Workshop-2022/tutorials/xarray.ipynb&branch=main"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on JupyterHub"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="headerbtn__text-container">JupyterHub</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/Tutorials/Open-Science-Workshop-2022/tutorials/xarray.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#overview">
    Overview
@@ -654,12 +754,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Introduction to Xarray</h1>
@@ -959,15 +1058,16 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <p><img alt="xarray Logo" src="http://xarray.pydata.org/en/stable/_static/dataset-diagram-logo.png" /></p>
-<div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-xarray">
-<h1>Introduction to Xarray<a class="headerlink" href="#introduction-to-xarray" title="Permalink to this headline">¶</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="introduction-to-xarray">
+<h1>Introduction to Xarray<a class="headerlink" href="#introduction-to-xarray" title="Permalink to this headline">#</a></h1>
 <hr class="docutils" />
-<div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
 <p>This notebook will introduce the basics of gridded, labeled data with Xarray. Since Xarray introduces additional abstractions on top of plain arrays of data, our goal is to show why these abstractions are useful and how they frequently lead to simpler, more robust code.</p>
 <p>We’ll cover these topics:</p>
 <ol class="simple">
@@ -979,9 +1079,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Basic subsetting and aggregation of a <code class="docutils literal notranslate"><span class="pre">Dataset</span></code></p></li>
 <li><p>Brief introduction to plotting with Xarray</p></li>
 </ol>
-</div>
-<div class="section" id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Concepts</p></th>
@@ -1019,10 +1119,10 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="simple">
 <li><p><strong>Time to learn</strong>: 30 minutes</p></li>
 </ul>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="imports">
-<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">¶</a></h2>
+<section id="imports">
+<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">#</a></h2>
 <p>Simmilar to <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">np</span></code>; <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">pd</span></code>; you may often encounter <code class="docutils literal notranslate"><span class="pre">xarray</span></code> imported within a shortened namespace as <code class="docutils literal notranslate"><span class="pre">xr</span></code>. <code class="docutils literal notranslate"><span class="pre">pythia_datasets</span></code> provides example data for us to work with.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1035,20 +1135,20 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="introducing-the-dataarray-and-dataset">
-<h2>Introducing the <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> and <code class="docutils literal notranslate"><span class="pre">Dataset</span></code><a class="headerlink" href="#introducing-the-dataarray-and-dataset" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="introducing-the-dataarray-and-dataset">
+<h2>Introducing the <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> and <code class="docutils literal notranslate"><span class="pre">Dataset</span></code><a class="headerlink" href="#introducing-the-dataarray-and-dataset" title="Permalink to this headline">#</a></h2>
 <p>Xarray expands on the capabilities on NumPy arrays, providing a lot of streamlined data manipulation. It is similar in that respect to Pandas, but whereas Pandas excels at working with tabular data, Xarray is focused on N-dimensional arrays of data (i.e. grids). Its interface is based largely on the netCDF data model (variables, attributes, and dimensions), but it goes beyond the traditional netCDF interfaces to provide functionality similar to netCDF-java’s <a class="reference external" href="https://docs.unidata.ucar.edu/netcdf-java/current/userguide/common_data_model_overview.html">Common Data Model (CDM)</a>.</p>
-<div class="section" id="creation-of-a-dataarray-object">
-<h3>Creation of a <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> object<a class="headerlink" href="#creation-of-a-dataarray-object" title="Permalink to this headline">¶</a></h3>
+<section id="creation-of-a-dataarray-object">
+<h3>Creation of a <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> object<a class="headerlink" href="#creation-of-a-dataarray-object" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> is one of the basic building blocks of Xarray (see docs <a class="reference external" href="http://xarray.pydata.org/en/stable/user-guide/data-structures.html#dataarray">here</a>). It provides a <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>-like object that expands to provide two critical pieces of functionality:</p>
 <ol class="simple">
 <li><p>Coordinate names and values are stored with the data, making slicing and indexing much more powerful</p></li>
 <li><p>It has a built-in container for attributes</p></li>
 </ol>
 <p>Here we’ll initialize a <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> object by wrapping a plain NumPy array, and explore a few of its properties.</p>
-<div class="section" id="generate-a-random-numpy-array">
-<h4>Generate a random numpy array<a class="headerlink" href="#generate-a-random-numpy-array" title="Permalink to this headline">¶</a></h4>
+<section id="generate-a-random-numpy-array">
+<h4>Generate a random numpy array<a class="headerlink" href="#generate-a-random-numpy-array" title="Permalink to this headline">#</a></h4>
 <p>For our first example, we’ll just create a random array of “temperature” data in units of Kelvin:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1081,9 +1181,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="wrap-the-array-first-attempt">
-<h4>Wrap the array: first attempt<a class="headerlink" href="#wrap-the-array-first-attempt" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="wrap-the-array-first-attempt">
+<h4>Wrap the array: first attempt<a class="headerlink" href="#wrap-the-array-first-attempt" title="Permalink to this headline">#</a></h4>
 <p>Now we create a basic <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> just by passing our plain <code class="docutils literal notranslate"><span class="pre">data</span></code> as input:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1489,9 +1589,9 @@ Dimensions without coordinates: dim_0, dim_1, dim_2</pre><div class='xr-wrap' st
 <li><p>Xarray generates some basic dimension names for us (<code class="docutils literal notranslate"><span class="pre">dim_0</span></code>, <code class="docutils literal notranslate"><span class="pre">dim_1</span></code>, <code class="docutils literal notranslate"><span class="pre">dim_2</span></code>). We’ll improve this with better names in the next example.</p></li>
 <li><p>Wrapping the numpy array in a <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> gives us a rich display in the notebook! (Try clicking the array symbol to expand or collapse the view)</p></li>
 </ol>
-</div>
-<div class="section" id="assign-dimension-names">
-<h4>Assign dimension names<a class="headerlink" href="#assign-dimension-names" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="assign-dimension-names">
+<h4>Assign dimension names<a class="headerlink" href="#assign-dimension-names" title="Permalink to this headline">#</a></h4>
 <p>Much of the power of Xarray comes from making use of named dimensions. So let’s add some more useful names! We can do that by passing an ordered list of names using the keyword argument <code class="docutils literal notranslate"><span class="pre">dims</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1893,12 +1993,12 @@ Dimensions without coordinates: time, lat, lon</pre><div class='xr-wrap' style='
         [287.24469751, 278.57895038, 274.98691215, 286.79385506]]])</pre></div></div></li><li class='xr-section-item'><input id='section-4927fe10-5efd-4845-ab10-8bc6076f0a71' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-4927fe10-5efd-4845-ab10-8bc6076f0a71' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-649e6a52-59cd-4a04-bf66-bc1a4ec4c904' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-649e6a52-59cd-4a04-bf66-bc1a4ec4c904' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 <p>This is already improved upon from a NumPy array, because we have names for each of the dimensions (or axes in NumPy parlance). Even better, we can take arrays representing the values for the coordinates for each of these dimensions and associate them with the data when we create the <code class="docutils literal notranslate"><span class="pre">DataArray</span></code>. We’ll see this in the next example.</p>
-</div>
-</div>
-<div class="section" id="create-a-dataarray-with-named-coordinates">
-<h3>Create a <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> with named Coordinates<a class="headerlink" href="#create-a-dataarray-with-named-coordinates" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="make-time-and-space-coordinates">
-<h4>Make time and space coordinates<a class="headerlink" href="#make-time-and-space-coordinates" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="create-a-dataarray-with-named-coordinates">
+<h3>Create a <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> with named Coordinates<a class="headerlink" href="#create-a-dataarray-with-named-coordinates" title="Permalink to this headline">#</a></h3>
+<section id="make-time-and-space-coordinates">
+<h4>Make time and space coordinates<a class="headerlink" href="#make-time-and-space-coordinates" title="Permalink to this headline">#</a></h4>
 <p>Here we will use <span class="xref myst">Pandas</span> to create an array of <span class="xref myst">datetime data</span>, which we will then use to create a <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> with a named coordinate <code class="docutils literal notranslate"><span class="pre">time</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1924,9 +2024,9 @@ Dimensions without coordinates: time, lat, lon</pre><div class='xr-wrap' style='
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="initialize-the-dataarray-with-complete-coordinate-info">
-<h4>Initialize the <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> with complete coordinate info<a class="headerlink" href="#initialize-the-dataarray-with-complete-coordinate-info" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="initialize-the-dataarray-with-complete-coordinate-info">
+<h4>Initialize the <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> with complete coordinate info<a class="headerlink" href="#initialize-the-dataarray-with-complete-coordinate-info" title="Permalink to this headline">#</a></h4>
 <p>When we create the <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> instance, we pass in the arrays we just created:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2332,9 +2432,9 @@ Coordinates:
        &#x27;2018-01-03T00:00:00.000000000&#x27;, &#x27;2018-01-04T00:00:00.000000000&#x27;,
        &#x27;2018-01-05T00:00:00.000000000&#x27;], dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lat</span></div><div class='xr-var-dims'>(lat)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>25.0 40.0 55.0</div><input id='attrs-edc6926c-3555-4edf-818d-b947cef3d995' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-edc6926c-3555-4edf-818d-b947cef3d995' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1fcd8ef0-66ea-4d7f-a3d5-92533ca1f03e' class='xr-var-data-in' type='checkbox'><label for='data-1fcd8ef0-66ea-4d7f-a3d5-92533ca1f03e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([25., 40., 55.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lon</span></div><div class='xr-var-dims'>(lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-120.0 -100.0 -80.0 -60.0</div><input id='attrs-542e132f-620f-4a4c-b4ab-27521ed3375e' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-542e132f-620f-4a4c-b4ab-27521ed3375e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-16362917-19f5-4935-9ab2-b03c0f48361e' class='xr-var-data-in' type='checkbox'><label for='data-16362917-19f5-4935-9ab2-b03c0f48361e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-120., -100.,  -80.,  -60.])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-82da7397-c001-4358-94b3-ebabd4b85639' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-82da7397-c001-4358-94b3-ebabd4b85639' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
-</div>
-<div class="section" id="set-useful-attributes">
-<h4>Set useful attributes<a class="headerlink" href="#set-useful-attributes" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="set-useful-attributes">
+<h4>Set useful attributes<a class="headerlink" href="#set-useful-attributes" title="Permalink to this headline">#</a></h4>
 <p>…and while we’re at it, we can also set some attribute metadata:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2745,9 +2845,9 @@ Attributes:
        &#x27;2018-01-03T00:00:00.000000000&#x27;, &#x27;2018-01-04T00:00:00.000000000&#x27;,
        &#x27;2018-01-05T00:00:00.000000000&#x27;], dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lat</span></div><div class='xr-var-dims'>(lat)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>25.0 40.0 55.0</div><input id='attrs-5b0710bc-3689-4476-91b4-b7a7c9ae7d16' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-5b0710bc-3689-4476-91b4-b7a7c9ae7d16' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9fe483b3-3e8d-40ef-9740-a5dbe8c400f0' class='xr-var-data-in' type='checkbox'><label for='data-9fe483b3-3e8d-40ef-9740-a5dbe8c400f0' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([25., 40., 55.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lon</span></div><div class='xr-var-dims'>(lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-120.0 -100.0 -80.0 -60.0</div><input id='attrs-805b54f7-f291-4814-8ed7-241388eab2c3' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-805b54f7-f291-4814-8ed7-241388eab2c3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e232406d-11e3-4e99-864d-80b4cfa1ff10' class='xr-var-data-in' type='checkbox'><label for='data-e232406d-11e3-4e99-864d-80b4cfa1ff10' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-120., -100.,  -80.,  -60.])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-f2dc8da6-4510-4d75-adc4-a9d55eca0c81' class='xr-section-summary-in' type='checkbox'  checked><label for='section-f2dc8da6-4510-4d75-adc4-a9d55eca0c81' class='xr-section-summary' >Attributes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>kelvin</dd><dt><span>standard_name :</span></dt><dd>air_temperature</dd></dl></div></li></ul></div></div></div></div>
 </div>
-</div>
-<div class="section" id="attributes-are-not-preserved-by-default">
-<h4>Attributes are not preserved by default!<a class="headerlink" href="#attributes-are-not-preserved-by-default" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="attributes-are-not-preserved-by-default">
+<h4>Attributes are not preserved by default!<a class="headerlink" href="#attributes-are-not-preserved-by-default" title="Permalink to this headline">#</a></h4>
 <p>Notice what happens if we perform a mathematical operaton with the <code class="docutils literal notranslate"><span class="pre">DataArray</span></code>: the coordinate values persist, but the attributes are lost. This is done because it is very challenging to know if the attribute metadata is still correct or appropriate after arbitrary arithmetic operations.</p>
 <p>To illustrate this, we’ll do a simple unit conversion from Kelvin to Celsius:</p>
 <div class="cell docutils container">
@@ -3155,15 +3255,15 @@ Coordinates:
        &#x27;2018-01-05T00:00:00.000000000&#x27;], dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lat</span></div><div class='xr-var-dims'>(lat)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>25.0 40.0 55.0</div><input id='attrs-4f6ec536-2ff7-4785-8ef0-1b80950c64b7' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-4f6ec536-2ff7-4785-8ef0-1b80950c64b7' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-26bfb283-537a-40fc-a987-def19ec3a238' class='xr-var-data-in' type='checkbox'><label for='data-26bfb283-537a-40fc-a987-def19ec3a238' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([25., 40., 55.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lon</span></div><div class='xr-var-dims'>(lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-120.0 -100.0 -80.0 -60.0</div><input id='attrs-6d619389-10b6-4d9e-97bc-8230d6e36df5' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-6d619389-10b6-4d9e-97bc-8230d6e36df5' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-bf62ca2b-02e8-47a5-aabd-b18bebd785f2' class='xr-var-data-in' type='checkbox'><label for='data-bf62ca2b-02e8-47a5-aabd-b18bebd785f2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-120., -100.,  -80.,  -60.])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-2da6d0ea-e416-471b-8fe8-2f3e86bec25b' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-2da6d0ea-e416-471b-8fe8-2f3e86bec25b' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 <p>For an in-depth discussion of how Xarray handles metadata, start in the Xarray docs <a class="reference external" href="http://xarray.pydata.org/en/stable/getting-started-guide/faq.html#approach-to-metadata">here</a>.</p>
-</div>
-</div>
-<div class="section" id="the-dataset-a-container-for-dataarrays-with-shared-coordinates">
-<h3>The <code class="docutils literal notranslate"><span class="pre">Dataset</span></code>: a container for <code class="docutils literal notranslate"><span class="pre">DataArray</span></code>s with shared coordinates<a class="headerlink" href="#the-dataset-a-container-for-dataarrays-with-shared-coordinates" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="the-dataset-a-container-for-dataarrays-with-shared-coordinates">
+<h3>The <code class="docutils literal notranslate"><span class="pre">Dataset</span></code>: a container for <code class="docutils literal notranslate"><span class="pre">DataArray</span></code>s with shared coordinates<a class="headerlink" href="#the-dataset-a-container-for-dataarrays-with-shared-coordinates" title="Permalink to this headline">#</a></h3>
 <p>Along with <code class="docutils literal notranslate"><span class="pre">DataArray</span></code>, the other key object type in Xarray is the <code class="docutils literal notranslate"><span class="pre">Dataset</span></code>: a dictionary-like container that holds one or more <code class="docutils literal notranslate"><span class="pre">DataArray</span></code>s, which can also optionally share coordinates (see docs <a class="reference external" href="http://xarray.pydata.org/en/stable/user-guide/data-structures.html#dataset">here</a>).</p>
 <p>The most common way to create a <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> object is to load data from a file (see <a class="reference external" href="#Opening-netCDF-data">below</a>). Here, instead, we will create another <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> and combine it with our <code class="docutils literal notranslate"><span class="pre">temp</span></code> data.</p>
 <p>This will illustrate how the information about common coordinate axes is used.</p>
-<div class="section" id="create-a-pressure-dataarray-using-the-same-coordinates">
-<h4>Create a pressure <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> using the same coordinates<a class="headerlink" href="#create-a-pressure-dataarray-using-the-same-coordinates" title="Permalink to this headline">¶</a></h4>
+<section id="create-a-pressure-dataarray-using-the-same-coordinates">
+<h4>Create a pressure <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> using the same coordinates<a class="headerlink" href="#create-a-pressure-dataarray-using-the-same-coordinates" title="Permalink to this headline">#</a></h4>
 <p>This code mirrors how we created the <code class="docutils literal notranslate"><span class="pre">temp</span></code> object above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3578,9 +3678,9 @@ Attributes:
        &#x27;2018-01-03T00:00:00.000000000&#x27;, &#x27;2018-01-04T00:00:00.000000000&#x27;,
        &#x27;2018-01-05T00:00:00.000000000&#x27;], dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lat</span></div><div class='xr-var-dims'>(lat)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>25.0 40.0 55.0</div><input id='attrs-214d0690-150a-470c-a1f9-99757324e582' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-214d0690-150a-470c-a1f9-99757324e582' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-204b9aaf-cbde-4a33-ab28-93389ed8e6b4' class='xr-var-data-in' type='checkbox'><label for='data-204b9aaf-cbde-4a33-ab28-93389ed8e6b4' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([25., 40., 55.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lon</span></div><div class='xr-var-dims'>(lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-120.0 -100.0 -80.0 -60.0</div><input id='attrs-254357b8-4393-4ff0-aaa8-ca06f7d94771' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-254357b8-4393-4ff0-aaa8-ca06f7d94771' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-55e33d60-7d77-4a46-9300-0e306e56be08' class='xr-var-data-in' type='checkbox'><label for='data-55e33d60-7d77-4a46-9300-0e306e56be08' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-120., -100.,  -80.,  -60.])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-25a2439c-36cd-42db-8fb5-64055d841e3e' class='xr-section-summary-in' type='checkbox'  checked><label for='section-25a2439c-36cd-42db-8fb5-64055d841e3e' class='xr-section-summary' >Attributes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>hPa</dd><dt><span>standard_name :</span></dt><dd>air_pressure</dd></dl></div></li></ul></div></div></div></div>
 </div>
-</div>
-<div class="section" id="create-a-dataset-object">
-<h4>Create a <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> object<a class="headerlink" href="#create-a-dataset-object" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="create-a-dataset-object">
+<h4>Create a <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> object<a class="headerlink" href="#create-a-dataset-object" title="Permalink to this headline">#</a></h4>
 <p>Each <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> in our <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> needs a name!</p>
 <p>The most straightforward way to create a <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> with our <code class="docutils literal notranslate"><span class="pre">temp</span></code> and <code class="docutils literal notranslate"><span class="pre">pressure</span></code> arrays is to pass a dictionary using the keyword argument <code class="docutils literal notranslate"><span class="pre">data_vars</span></code>:</p>
 <div class="cell docutils container">
@@ -3991,9 +4091,9 @@ Data variables:
         [1000.34911889, 1007.53228997,  993.79203594, 1003.99056356]]])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-2931706d-1ebd-4d57-90b3-d316e31e1729' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-2931706d-1ebd-4d57-90b3-d316e31e1729' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 <p>Notice that the <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> object <code class="docutils literal notranslate"><span class="pre">ds</span></code> is aware that both data arrays sit on the same coordinate axes.</p>
-</div>
-<div class="section" id="access-data-variables-and-coordinates-in-a-dataset">
-<h4>Access Data variables and Coordinates in a <code class="docutils literal notranslate"><span class="pre">Dataset</span></code><a class="headerlink" href="#access-data-variables-and-coordinates-in-a-dataset" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="access-data-variables-and-coordinates-in-a-dataset">
+<h4>Access Data variables and Coordinates in a <code class="docutils literal notranslate"><span class="pre">Dataset</span></code><a class="headerlink" href="#access-data-variables-and-coordinates-in-a-dataset" title="Permalink to this headline">#</a></h4>
 <p>We can pull out any of the individual <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> objects in a few different ways.</p>
 <p>Using the “dot” notation:</p>
 <div class="cell docutils container">
@@ -4810,14 +4910,14 @@ Attributes:
        &#x27;2018-01-05T00:00:00.000000000&#x27;], dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lat</span></div><div class='xr-var-dims'>(lat)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>25.0 40.0 55.0</div><input id='attrs-7ef9f9a7-5a73-489b-9ba2-fef2473574cc' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-7ef9f9a7-5a73-489b-9ba2-fef2473574cc' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9f303534-085a-4f36-9317-132e28233c26' class='xr-var-data-in' type='checkbox'><label for='data-9f303534-085a-4f36-9317-132e28233c26' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([25., 40., 55.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lon</span></div><div class='xr-var-dims'>(lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-120.0 -100.0 -80.0 -60.0</div><input id='attrs-cce57e16-2440-46cb-98ed-3468a2078cee' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-cce57e16-2440-46cb-98ed-3468a2078cee' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-107da9e1-d565-482e-b64d-4fd8e94d7e3d' class='xr-var-data-in' type='checkbox'><label for='data-107da9e1-d565-482e-b64d-4fd8e94d7e3d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-120., -100.,  -80.,  -60.])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-226f5bf9-1b3f-473a-b65a-006f1032e785' class='xr-section-summary-in' type='checkbox'  checked><label for='section-226f5bf9-1b3f-473a-b65a-006f1032e785' class='xr-section-summary' >Attributes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>hPa</dd><dt><span>standard_name :</span></dt><dd>air_pressure</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <p>We’ll return to the <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> object when we start loading data from files.</p>
-</div>
-</div>
-</div>
-<div class="section" id="subsetting-and-selection-by-coordinate-values">
-<h2>Subsetting and selection by coordinate values<a class="headerlink" href="#subsetting-and-selection-by-coordinate-values" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+</section>
+<section id="subsetting-and-selection-by-coordinate-values">
+<h2>Subsetting and selection by coordinate values<a class="headerlink" href="#subsetting-and-selection-by-coordinate-values" title="Permalink to this headline">#</a></h2>
 <p>Much of the power of labeled coordinates comes from the ability to select data based on coordinate names and values, rather than array indices. We’ll explore this briefly here.</p>
-<div class="section" id="numpy-like-selection">
-<h3>NumPy-like selection<a class="headerlink" href="#numpy-like-selection" title="Permalink to this headline">¶</a></h3>
+<section id="numpy-like-selection">
+<h3>NumPy-like selection<a class="headerlink" href="#numpy-like-selection" title="Permalink to this headline">#</a></h3>
 <p>Suppose we want to extract all the spatial data for one single date: January 2, 2018. It’s possible to achieve that with NumPy-like index selection:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5194,9 +5294,9 @@ Attributes:
 </div>
 <p>HOWEVER, notice that this requires us (the user / programmer) to have <strong>detailed knowledge</strong> of the order of the axes and the meaning of the indices along those axes!</p>
 <p><em><strong>Named coordinates free us from this burden…</strong></em></p>
-</div>
-<div class="section" id="selecting-with-sel">
-<h3>Selecting with <code class="docutils literal notranslate"><span class="pre">.sel()</span></code><a class="headerlink" href="#selecting-with-sel" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="selecting-with-sel">
+<h3>Selecting with <code class="docutils literal notranslate"><span class="pre">.sel()</span></code><a class="headerlink" href="#selecting-with-sel" title="Permalink to this headline">#</a></h3>
 <p>We can instead select data based on coordinate values using the <code class="docutils literal notranslate"><span class="pre">.sel()</span></code> method, which takes one or more named coordinate(s) as keyword argument:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5577,12 +5677,12 @@ Attributes:
 <li><p>our code is agnostic about how many dimensions we are dealing with</p></li>
 <li><p>the intended meaning of our code is much clearer!</p></li>
 </ul>
-</div>
-<div class="section" id="approximate-selection-and-interpolation">
-<h3>Approximate selection and interpolation<a class="headerlink" href="#approximate-selection-and-interpolation" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="approximate-selection-and-interpolation">
+<h3>Approximate selection and interpolation<a class="headerlink" href="#approximate-selection-and-interpolation" title="Permalink to this headline">#</a></h3>
 <p>With time and space data, we frequently want to sample “near” the coordinate points in our dataset. Here are a few simple ways to achieve that.</p>
-<div class="section" id="nearest-neighbor-sampling">
-<h4>Nearest-neighbor sampling<a class="headerlink" href="#nearest-neighbor-sampling" title="Permalink to this headline">¶</a></h4>
+<section id="nearest-neighbor-sampling">
+<h4>Nearest-neighbor sampling<a class="headerlink" href="#nearest-neighbor-sampling" title="Permalink to this headline">#</a></h4>
 <p>Suppose we want to sample the nearest datapoint within 2 days of date <code class="docutils literal notranslate"><span class="pre">2018-01-07</span></code>. Since the last day on our <code class="docutils literal notranslate"><span class="pre">time</span></code> axis is <code class="docutils literal notranslate"><span class="pre">2018-01-05</span></code>, this is well-posed.</p>
 <p><code class="docutils literal notranslate"><span class="pre">.sel</span></code> has the flexibility to perform nearest neighbor sampling, taking an optional tolerance:</p>
 <div class="cell docutils container">
@@ -5958,9 +6058,9 @@ Attributes:
        [287.24469751, 278.57895038, 274.98691215, 286.79385506]])</pre></div></div></li><li class='xr-section-item'><input id='section-c989103b-bd2f-48d0-a4a0-f889bb4549fc' class='xr-section-summary-in' type='checkbox'  checked><label for='section-c989103b-bd2f-48d0-a4a0-f889bb4549fc' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>time</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2018-01-05</div><input id='attrs-145ca079-d471-4153-96b6-4d3061c01bfb' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-145ca079-d471-4153-96b6-4d3061c01bfb' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6782e462-217f-440e-8515-7a7c5b932728' class='xr-var-data-in' type='checkbox'><label for='data-6782e462-217f-440e-8515-7a7c5b932728' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array(&#x27;2018-01-05T00:00:00.000000000&#x27;, dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lat</span></div><div class='xr-var-dims'>(lat)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>25.0 40.0 55.0</div><input id='attrs-4849d1ab-f1d7-4b1a-addf-6aa5eea6cd8d' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-4849d1ab-f1d7-4b1a-addf-6aa5eea6cd8d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-7b3fe022-fbb3-4d00-a4ba-cda8f2dfca98' class='xr-var-data-in' type='checkbox'><label for='data-7b3fe022-fbb3-4d00-a4ba-cda8f2dfca98' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([25., 40., 55.])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lon</span></div><div class='xr-var-dims'>(lon)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-120.0 -100.0 -80.0 -60.0</div><input id='attrs-36ed3034-5df8-4994-9a73-69ae4fe286d9' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-36ed3034-5df8-4994-9a73-69ae4fe286d9' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-55efdffc-52ef-43c4-a6ac-c1ab042646e0' class='xr-var-data-in' type='checkbox'><label for='data-55efdffc-52ef-43c4-a6ac-c1ab042646e0' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-120., -100.,  -80.,  -60.])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-b21ef4df-9227-4ba8-8d61-d32943c906c0' class='xr-section-summary-in' type='checkbox'  checked><label for='section-b21ef4df-9227-4ba8-8d61-d32943c906c0' class='xr-section-summary' >Attributes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>kelvin</dd><dt><span>standard_name :</span></dt><dd>air_temperature</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <p>where we see that <code class="docutils literal notranslate"><span class="pre">.sel</span></code> indeed pulled out the data for date <code class="docutils literal notranslate"><span class="pre">2018-01-05</span></code>.</p>
-</div>
-<div class="section" id="interpolation">
-<h4>Interpolation<a class="headerlink" href="#interpolation" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="interpolation">
+<h4>Interpolation<a class="headerlink" href="#interpolation" title="Permalink to this headline">#</a></h4>
 <p>Suppose we want to extract a timeseries for Boulder (40°N, 105°W). Since <code class="docutils literal notranslate"><span class="pre">lon=-105</span></code> is <em>not</em> a point on our longitude axis, this requires interpolation between data points.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">.interp()</span></code> method (see the docs <a class="reference external" href="http://xarray.pydata.org/en/stable/interpolation.html">here</a>) works similarly to <code class="docutils literal notranslate"><span class="pre">.sel()</span></code>. Using <code class="docutils literal notranslate"><span class="pre">.interp()</span></code>, we can interpolate to any latitude/longitude location:</p>
 <div class="cell docutils container">
@@ -6338,10 +6438,10 @@ Attributes:
 <div class="admonition alert alert-info">
     <p class="admonition-title" style="font-weight:bold">Info</p>
     Xarray's interpolation functionality requires the <a href="https://scipy.org/">SciPy</a> package!
-</div></div>
-</div>
-<div class="section" id="slicing-along-coordinates">
-<h3>Slicing along coordinates<a class="headerlink" href="#slicing-along-coordinates" title="Permalink to this headline">¶</a></h3>
+</div></section>
+</section>
+<section id="slicing-along-coordinates">
+<h3>Slicing along coordinates<a class="headerlink" href="#slicing-along-coordinates" title="Permalink to this headline">#</a></h3>
 <p>Frequently we want to select a range (or <em>slice</em>) along one or more coordinate(s). We can achieve this by passing a Python <a class="reference external" href="https://docs.python.org/3/library/functions.html#slice">slice</a> object to <code class="docutils literal notranslate"><span class="pre">.sel()</span></code>, as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -6732,9 +6832,9 @@ Attributes:
     <p class="admonition-title" style="font-weight:bold">Info</p>
     The calling sequence for <code>slice</code> always looks like <code>slice(start, stop[, step])</code>, where <code>step</code> is optional.
 </div><p>Notice how the length of each coordinate axis has changed due to our slicing.</p>
-</div>
-<div class="section" id="one-more-selection-method-loc">
-<h3>One more selection method: <code class="docutils literal notranslate"><span class="pre">.loc</span></code><a class="headerlink" href="#one-more-selection-method-loc" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="one-more-selection-method-loc">
+<h3>One more selection method: <code class="docutils literal notranslate"><span class="pre">.loc</span></code><a class="headerlink" href="#one-more-selection-method-loc" title="Permalink to this headline">#</a></h3>
 <p>All of these operations can also be done within square brackets on the <code class="docutils literal notranslate"><span class="pre">.loc</span></code> attribute of the <code class="docutils literal notranslate"><span class="pre">DataArray</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -7890,13 +7990,13 @@ Attributes:
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="opening-netcdf-data">
-<h2>Opening netCDF data<a class="headerlink" href="#opening-netcdf-data" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="opening-netcdf-data">
+<h2>Opening netCDF data<a class="headerlink" href="#opening-netcdf-data" title="Permalink to this headline">#</a></h2>
 <p>With its close ties to the netCDF data model, Xarray also supports netCDF as a first-class file format. This means it has easy support for opening netCDF datasets, so long as they conform to some of Xarray’s limitations (such as 1-dimensional coordinates).</p>
-<div class="section" id="access-netcdf-data-with-xr-open-dataset">
-<h3>Access netCDF data with <code class="docutils literal notranslate"><span class="pre">xr.open_dataset</span></code><a class="headerlink" href="#access-netcdf-data-with-xr-open-dataset" title="Permalink to this headline">¶</a></h3>
+<section id="access-netcdf-data-with-xr-open-dataset">
+<h3>Access netCDF data with <code class="docutils literal notranslate"><span class="pre">xr.open_dataset</span></code><a class="headerlink" href="#access-netcdf-data-with-xr-open-dataset" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filepath</span> <span class="o">=</span> <span class="s1">&#39;data/NARR_19930313_0000.nc&#39;</span>
@@ -8345,9 +8445,9 @@ Attributes:
          -42.908296]])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Geopotential_height_isobaric</span></div><div class='xr-var-dims'>(time1, isobaric1, y, x)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-0d4c2e30-e0ec-409d-a24a-2d11ab59e05b' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-0d4c2e30-e0ec-409d-a24a-2d11ab59e05b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f051f991-e56a-4ffa-b3a4-4249b11effe5' class='xr-var-data-in' type='checkbox'><label for='data-f051f991-e56a-4ffa-b3a4-4249b11effe5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Geopotential height @ Isobaric surface</dd><dt><span>units :</span></dt><dd>gpm</dd><dt><span>description :</span></dt><dd>Geopotential height</dd><dt><span>grid_mapping :</span></dt><dd>LambertConformal_Projection</dd><dt><span>Grib_Variable_Id :</span></dt><dd>VAR_7-15-131-7_L100</dd><dt><span>Grib1_Center :</span></dt><dd>7</dd><dt><span>Grib1_Subcenter :</span></dt><dd>15</dd><dt><span>Grib1_TableVersion :</span></dt><dd>131</dd><dt><span>Grib1_Parameter :</span></dt><dd>7</dd><dt><span>Grib1_Level_Type :</span></dt><dd>100</dd><dt><span>Grib1_Level_Desc :</span></dt><dd>Isobaric surface</dd></dl></div><div class='xr-var-data'><pre>[924868 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>v-component_of_wind_isobaric</span></div><div class='xr-var-dims'>(time1, isobaric1, y, x)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-75b67808-2127-471a-b75f-eabecb555747' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-75b67808-2127-471a-b75f-eabecb555747' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-fe46e9ef-2d64-49bb-be95-6c276c0c71a7' class='xr-var-data-in' type='checkbox'><label for='data-fe46e9ef-2d64-49bb-be95-6c276c0c71a7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>v-component of wind @ Isobaric surface</dd><dt><span>units :</span></dt><dd>m s^-1</dd><dt><span>description :</span></dt><dd>v-component of wind</dd><dt><span>grid_mapping :</span></dt><dd>LambertConformal_Projection</dd><dt><span>Grib_Variable_Id :</span></dt><dd>VAR_7-15-131-34_L100</dd><dt><span>Grib1_Center :</span></dt><dd>7</dd><dt><span>Grib1_Subcenter :</span></dt><dd>15</dd><dt><span>Grib1_TableVersion :</span></dt><dd>131</dd><dt><span>Grib1_Parameter :</span></dt><dd>34</dd><dt><span>Grib1_Level_Type :</span></dt><dd>100</dd><dt><span>Grib1_Level_Desc :</span></dt><dd>Isobaric surface</dd></dl></div><div class='xr-var-data'><pre>[924868 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Temperature_isobaric</span></div><div class='xr-var-dims'>(time1, isobaric1, y, x)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-8b98248f-26ab-403e-ae2a-1c8e0901df69' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-8b98248f-26ab-403e-ae2a-1c8e0901df69' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-77cd039b-cd2c-4def-bb68-eef7b89240a8' class='xr-var-data-in' type='checkbox'><label for='data-77cd039b-cd2c-4def-bb68-eef7b89240a8' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Temperature @ Isobaric surface</dd><dt><span>units :</span></dt><dd>K</dd><dt><span>description :</span></dt><dd>Temperature</dd><dt><span>grid_mapping :</span></dt><dd>LambertConformal_Projection</dd><dt><span>Grib_Variable_Id :</span></dt><dd>VAR_7-15-131-11_L100</dd><dt><span>Grib1_Center :</span></dt><dd>7</dd><dt><span>Grib1_Subcenter :</span></dt><dd>15</dd><dt><span>Grib1_TableVersion :</span></dt><dd>131</dd><dt><span>Grib1_Parameter :</span></dt><dd>11</dd><dt><span>Grib1_Level_Type :</span></dt><dd>100</dd><dt><span>Grib1_Level_Desc :</span></dt><dd>Isobaric surface</dd></dl></div><div class='xr-var-data'><pre>[924868 values with dtype=float32]</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-7c033301-a607-4ce2-94f7-a972eec5f44f' class='xr-section-summary-in' type='checkbox'  ><label for='section-7c033301-a607-4ce2-94f7-a972eec5f44f' class='xr-section-summary' >Attributes: <span>(12)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Originating_or_generating_Center :</span></dt><dd>US National Weather Service, National Centres for Environmental Prediction (NCEP)</dd><dt><span>Originating_or_generating_Subcenter :</span></dt><dd>North American Regional Reanalysis Project</dd><dt><span>GRIB_table_version :</span></dt><dd>0,131</dd><dt><span>Generating_process_or_model :</span></dt><dd>North American Regional Reanalysis (NARR)</dd><dt><span>Conventions :</span></dt><dd>CF-1.6</dd><dt><span>history :</span></dt><dd>Read using CDM IOSP GribCollection v3</dd><dt><span>featureType :</span></dt><dd>GRID</dd><dt><span>History :</span></dt><dd>Translated to CF-1.0 Conventions by Netcdf-Java CDM (CFGridWriter2)
 Original Dataset = DatasetScan#narr-a_221_19930313_0000_000.grb; Translation Date = 2018-01-04T23:57:16.043Z</dd><dt><span>geospatial_lat_min :</span></dt><dd>10.753308882144761</dd><dt><span>geospatial_lat_max :</span></dt><dd>46.8308828962289</dd><dt><span>geospatial_lon_min :</span></dt><dd>-153.88242040519995</dd><dt><span>geospatial_lon_max :</span></dt><dd>-42.666108129242815</dd></dl></div></li></ul></div></div></div></div>
 </div>
-</div>
-<div class="section" id="subsetting-the-dataset">
-<h3>Subsetting the <code class="docutils literal notranslate"><span class="pre">Dataset</span></code><a class="headerlink" href="#subsetting-the-dataset" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="subsetting-the-dataset">
+<h3>Subsetting the <code class="docutils literal notranslate"><span class="pre">Dataset</span></code><a class="headerlink" href="#subsetting-the-dataset" title="Permalink to this headline">#</a></h3>
 <p>Our call to <code class="docutils literal notranslate"><span class="pre">xr.open_dataset()</span></code> above returned a <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> object that we’ve decided to call <code class="docutils literal notranslate"><span class="pre">ds</span></code>. We can then pull out individual fields:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -9600,9 +9700,9 @@ Attributes:
         6.491600e+02,  6.816229e+02,  7.140859e+02], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>x</span></div><div class='xr-var-dims'>(x)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>-3.324e+03 -3.292e+03 ... 5.343e+03</div><input id='attrs-cddcf3ec-a6be-40e4-981c-41deb605a3dd' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-cddcf3ec-a6be-40e4-981c-41deb605a3dd' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-20ed54d7-797f-4592-96fe-a6da63a8befe' class='xr-var-data-in' type='checkbox'><label for='data-20ed54d7-797f-4592-96fe-a6da63a8befe' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>projection_x_coordinate</dd><dt><span>units :</span></dt><dd>km</dd><dt><span>_CoordinateAxisType :</span></dt><dd>GeoX</dd></dl></div><div class='xr-var-data'><pre>array([-3324.4707, -3292.0078, -3259.5447, ...,  5278.2246,  5310.6875,
         5343.1504], dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-d35300b3-c857-4326-be68-0f38a4ba216b' class='xr-section-summary-in' type='checkbox'  ><label for='section-d35300b3-c857-4326-be68-0f38a4ba216b' class='xr-section-summary' >Attributes: <span>(11)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Temperature @ Isobaric surface</dd><dt><span>units :</span></dt><dd>K</dd><dt><span>description :</span></dt><dd>Temperature</dd><dt><span>grid_mapping :</span></dt><dd>LambertConformal_Projection</dd><dt><span>Grib_Variable_Id :</span></dt><dd>VAR_7-15-131-11_L100</dd><dt><span>Grib1_Center :</span></dt><dd>7</dd><dt><span>Grib1_Subcenter :</span></dt><dd>15</dd><dt><span>Grib1_TableVersion :</span></dt><dd>131</dd><dt><span>Grib1_Parameter :</span></dt><dd>11</dd><dt><span>Grib1_Level_Type :</span></dt><dd>100</dd><dt><span>Grib1_Level_Desc :</span></dt><dd>Isobaric surface</dd></dl></div></li></ul></div></div></div></div>
 </div>
-</div>
-<div class="section" id="aggregation-operations">
-<h3>Aggregation operations<a class="headerlink" href="#aggregation-operations" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="aggregation-operations">
+<h3>Aggregation operations<a class="headerlink" href="#aggregation-operations" title="Permalink to this headline">#</a></h3>
 <p>Not only can you use the named dimensions for manual slicing and indexing of data, but you can also use it to control aggregation operations, like <code class="docutils literal notranslate"><span class="pre">std</span></code> (standard deviation):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -10371,13 +10471,13 @@ Coordinates:
         800.,  825.,  850.,  875.,  900.,  925.,  950.,  975., 1000.],
       dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-30054938-0362-4dd6-af2d-ef8dba4f194e' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-30054938-0362-4dd6-af2d-ef8dba4f194e' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
-</div>
-</div>
-<div class="section" id="plotting-with-xarray">
-<h2>Plotting with Xarray<a class="headerlink" href="#plotting-with-xarray" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="plotting-with-xarray">
+<h2>Plotting with Xarray<a class="headerlink" href="#plotting-with-xarray" title="Permalink to this headline">#</a></h2>
 <p>Another major benefit of using labeled data structures is that they enable automated plotting with sensible axis labels.</p>
-<div class="section" id="simple-visualization-with-plot">
-<h3>Simple visualization with <code class="docutils literal notranslate"><span class="pre">.plot()</span></code><a class="headerlink" href="#simple-visualization-with-plot" title="Permalink to this headline">¶</a></h3>
+<section id="simple-visualization-with-plot">
+<h3>Simple visualization with <code class="docutils literal notranslate"><span class="pre">.plot()</span></code><a class="headerlink" href="#simple-visualization-with-plot" title="Permalink to this headline">#</a></h3>
 <p>Much like we saw in <span class="xref myst">Pandas</span>, Xarray includes an interface to <span class="xref myst">Matplotlib</span> that we can access through the <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> method of every <code class="docutils literal notranslate"><span class="pre">DataArray</span></code>.</p>
 <p>For quick and easy data exploration, we can just call <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> without any modifiers:</p>
 <div class="cell docutils container">
@@ -10394,9 +10494,9 @@ Coordinates:
 </div>
 </div>
 <p>Here Xarray has generated a line plot of the temperature data against the coordinate variable <code class="docutils literal notranslate"><span class="pre">isobaric</span></code>. Also the metadata are used to auto-generate axis labels and units.</p>
-</div>
-<div class="section" id="customizing-the-plot">
-<h3>Customizing the plot<a class="headerlink" href="#customizing-the-plot" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="customizing-the-plot">
+<h3>Customizing the plot<a class="headerlink" href="#customizing-the-plot" title="Permalink to this headline">#</a></h3>
 <p>As in Pandas, the <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> method is mostly just a wrapper to Matplotlib, so we can customize our plot in familiar ways.</p>
 <p>In this air temperature profile example, we would like to make two changes:</p>
 <ul class="simple">
@@ -10417,9 +10517,9 @@ Coordinates:
 <img alt="../../../_images/xarray_84_1.png" src="../../../_images/xarray_84_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="plotting-2d-data">
-<h3>Plotting 2D data<a class="headerlink" href="#plotting-2d-data" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="plotting-2d-data">
+<h3>Plotting 2D data<a class="headerlink" href="#plotting-2d-data" title="Permalink to this headline">#</a></h3>
 <p>In the example above, the <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> method produced a line plot.</p>
 <p>What if we call <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> on a 2D array?</p>
 <div class="cell docutils container">
@@ -10437,14 +10537,14 @@ Coordinates:
 </div>
 <p>Xarray has recognized that the <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> object calling the plot method has two coordinate variables, and generates a 2D plot using the <code class="docutils literal notranslate"><span class="pre">pcolormesh</span></code> method from Matplotlib.</p>
 <p>In this case, we are looking at air temperatures on the 1000 hPa isobaric surface over North America. We could of course improve this figure by using <span class="xref myst">Cartopy</span> to handle the map projection and geographic features!</p>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
 <p>Xarray brings the joy of Pandas-style labeled data operations to N-dimensional data. As such, it has become a central workhorse in the geoscience community for the analysis of gridded datasets. Xarray allows us to open self-describing NetCDF files and make full use of the coordinate axes, labels, units, and other metadata. By making use of labeled coordinates, our code is often easier to write, easier to read, and more robust.</p>
-<div class="section" id="what-s-next">
-<h3>What’s next?<a class="headerlink" href="#what-s-next" title="Permalink to this headline">¶</a></h3>
+<section id="what-s-next">
+<h3>What’s next?<a class="headerlink" href="#what-s-next" title="Permalink to this headline">#</a></h3>
 <p>Additional notebooks to appear in this section will go into more detail about</p>
 <ul class="simple">
 <li><p>arithemtic and broadcasting with Xarray data structures</p></li>
@@ -10452,10 +10552,10 @@ Coordinates:
 <li><p>remote data access with OpenDAP</p></li>
 <li><p>more advanced visualization including map integration with Cartopy</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="resources-and-references">
-<h2>Resources and references<a class="headerlink" href="#resources-and-references" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="resources-and-references">
+<h2>Resources and references<a class="headerlink" href="#resources-and-references" title="Permalink to this headline">#</a></h2>
 <p>This notebook was adapated from material in <a class="reference external" href="https://unidata.github.io/python-training/workshop/XArray/xarray-and-cf/">Unidata’s Python Training</a>.</p>
 <p>The best resource for Xarray is the <a class="reference external" href="http://xarray.pydata.org/en/stable/">Xarray documentation</a>. See in particular</p>
 <ul class="simple">
@@ -10464,8 +10564,8 @@ Coordinates:
 <li><p><a class="reference external" href="http://xarray.pydata.org/en/stable/gallery.html">Example gallery</a></p></li>
 </ul>
 <p>Another excellent resource is this <a class="reference external" href="https://xarray-contrib.github.io/xarray-tutorial/">Xarray Tutorial collection</a>.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -10489,9 +10589,11 @@ Coordinates:
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="pyart-corrections.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -10507,24 +10609,28 @@ Coordinates:
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By ARM Development Team<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By ARM Development Team<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

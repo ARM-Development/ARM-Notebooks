@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Using EMC² to Process E3SM Output &#8212; ARM Tutorials</title>
     
-  <link href="../../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,20 +20,16 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
@@ -39,12 +37,13 @@
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -62,7 +61,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -71,9 +84,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -91,14 +105,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../README.html">
-   Overview
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    Overview
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Open Science Workshop
  </span>
@@ -280,97 +295,182 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/Tutorials/Open-Science-Workshop-2022/tutorials/EMC2_demo_w_E3SM.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/ARM-Development/ARM-Notebooks/main?urlpath=lab/tree/Tutorials/Open-Science-Workshop-2022/tutorials/EMC2_demo_w_E3SM.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        <a class="jupyterhub-button" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https://github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/Tutorials/Open-Science-Workshop-2022/tutorials/EMC2_demo_w_E3SM.ipynb&branch=main"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
-                data-placement="left"><img class="jupyterhub-button-logo"
-                    src="../../../_static/images/logo_jupyterhub.svg"
-                    alt="Interact on JupyterHub">JupyterHub</button></a>
-        
-        
-        
-    </div>
-</div>
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/ARM-Development/ARM-Notebooks/main?urlpath=lab/tree/Tutorials/Open-Science-Workshop-2022/tutorials/EMC2_demo_w_E3SM.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https://github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/Tutorials/Open-Science-Workshop-2022/tutorials/EMC2_demo_w_E3SM.ipynb&branch=main"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on JupyterHub"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="headerbtn__text-container">JupyterHub</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/Tutorials/Open-Science-Workshop-2022/tutorials/EMC2_demo_w_E3SM.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#overview-of-emc2">
    Overview of EMC²
@@ -433,12 +533,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Using EMC² to Process E3SM Output</h1>
@@ -517,27 +616,28 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="using-emc2-to-process-e3sm-output">
-<h1>Using EMC² to Process E3SM Output<a class="headerlink" href="#using-emc2-to-process-e3sm-output" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="using-emc2-to-process-e3sm-output">
+<h1>Using EMC² to Process E3SM Output<a class="headerlink" href="#using-emc2-to-process-e3sm-output" title="Permalink to this headline">#</a></h1>
 <hr class="docutils" />
-<div class="section" id="overview-of-emc2">
-<h2>Overview of EMC²<a class="headerlink" href="#overview-of-emc2" title="Permalink to this headline">¶</a></h2>
+<section id="overview-of-emc2">
+<h2>Overview of EMC²<a class="headerlink" href="#overview-of-emc2" title="Permalink to this headline">#</a></h2>
 <p>EMC² can be used to simulate radar and lidar observables faithful to large-scale model physics. Here, we will demonstrate using EMC² to evaluate a climate model’s output. We will process E3SM regional output around the fixed ARM site at Utqiagvik, North Slope of Alaska site, using EMC² radiation approach (fastest processing; faithful to E3SM’s radiation logic; similar general approach to that used for the on-line COSP).</p>
-<div class="section" id="we-will-briefly-explore">
-<h3>We will briefly explore:<a class="headerlink" href="#we-will-briefly-explore" title="Permalink to this headline">¶</a></h3>
+<section id="we-will-briefly-explore">
+<h3>We will briefly explore:<a class="headerlink" href="#we-will-briefly-explore" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>Reading model output file using EMC²</p></li>
 <li><p>Generating subcolumns and running the radar and lidar instrument simualtors</p></li>
 <li><p>Classifying the simulator output</p></li>
 <li><p>Plotting the simulated observables to evaluate the model output</p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="imports">
-<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="imports">
+<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">emc2</span>
@@ -548,9 +648,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="initializing-instrument-class-objects">
-<h2>Initializing Instrument Class Objects<a class="headerlink" href="#initializing-instrument-class-objects" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="initializing-instrument-class-objects">
+<h2>Initializing Instrument Class Objects<a class="headerlink" href="#initializing-instrument-class-objects" title="Permalink to this headline">#</a></h2>
 <p>We begin with generating instrument class objects representing instruments deployed at Utqiagvik; that is, high spectral resolution lidar (HSRL) <code class="docutils literal notranslate"><span class="pre">emc2.core.instruments.HSRL</span></code> and ARM Ka-band Zenith Radar (KAZR) <code class="docutils literal notranslate"><span class="pre">emc2.core.instruments.KAZR</span></code> objects. Among other radar and lidar instruments, EMC² includes instrument sub-classes for the full ARM radar and lidar instrument suite. Note that in the case of the KAZR class object (as in the case of different radar object) we specify the ARM site string to initialize the KAZR class object with the correct radar attributes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -567,9 +667,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="initializing-a-model-class-object">
-<h2>Initializing a Model Class Object<a class="headerlink" href="#initializing-a-model-class-object" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="initializing-a-model-class-object">
+<h2>Initializing a Model Class Object<a class="headerlink" href="#initializing-a-model-class-object" title="Permalink to this headline">#</a></h2>
 <p>Let’s take a look at the model output data file from EAM (E3SM’s atmospheric component) using the <code class="docutils literal notranslate"><span class="pre">xarray</span></code> Python package.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -11003,9 +11103,9 @@ Attributes: (12/15)
     </tr>
 </table></div></li></ul></div></li><li class='xr-section-item'><input id='section-4e017c23-e942-4f53-90bd-9170524e2501' class='xr-section-summary-in' type='checkbox'  ><label for='section-4e017c23-e942-4f53-90bd-9170524e2501' class='xr-section-summary' >Attributes: <span>(15)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Conventions :</span></dt><dd>CF-1.0</dd><dt><span>source :</span></dt><dd>CAM</dd><dt><span>case :</span></dt><dd>EAMv1_ARM_Freerun_1</dd><dt><span>title :</span></dt><dd>UNSET</dd><dt><span>logname :</span></dt><dd>yshi</dd><dt><span>host :</span></dt><dd>cori07</dd><dt><span>Version :</span></dt><dd>$Name$</dd><dt><span>revision_Id :</span></dt><dd>$Id$</dd><dt><span>initial_file :</span></dt><dd>/global/cfs/cdirs/e3sm/inputdata/atm/cam/inic/homme/cami_mam3_Linoz_ne30np4_L72_c160214.nc</dd><dt><span>topography_file :</span></dt><dd>/global/cfs/cdirs/e3sm/inputdata/atm/cam/topo/USGS-gtopo30_ne30np4_16xdel2-PFC-consistentSGH.nc</dd><dt><span>time_period_freq :</span></dt><dd>hour_1</dd><dt><span>_file_dates :</span></dt><dd>[&#x27;20121031&#x27;]</dd><dt><span>_file_times :</span></dt><dd>[&#x27;010000&#x27;]</dd><dt><span>_datastream :</span></dt><dd>act_datastream</dd><dt><span>_arm_standards_flag :</span></dt><dd>0</dd></dl></div></li></ul></div></div></div></div>
 </div>
-</div>
-<div class="section" id="running-the-subcolumn-generator-and-instrument-simulator">
-<h2>Running the Subcolumn Generator and Instrument Simulator<a class="headerlink" href="#running-the-subcolumn-generator-and-instrument-simulator" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="running-the-subcolumn-generator-and-instrument-simulator">
+<h2>Running the Subcolumn Generator and Instrument Simulator<a class="headerlink" href="#running-the-subcolumn-generator-and-instrument-simulator" title="Permalink to this headline">#</a></h2>
 <p>Now, we use the <code class="docutils literal notranslate"><span class="pre">emc2.simulator.main.make_simulated_data</span></code> method to have EMC² perform a set of (optional) tasks:</p>
 <ol class="simple">
 <li><p>Generate user-specified number of subcolumns per model grid cell.</p></li>
@@ -11058,8 +11158,8 @@ radar processing done!
 </div>
 </div>
 </div>
-<div class="section" id="we-can-examine-the-simulator-output-dataset-saved-under-an-xr-dataset-object-we-can-see-that-for-most-lidar-and-radar-observables-the-equivalent-reflectivity-factor-ze-the-backscatter-cross-section-beta-p-etc-we-have-fields-per-hydrometeor-class-in-addition-to-the-field-representing-the-total">
-<h3>We can examine the simulator output dataset saved under an <code class="docutils literal notranslate"><span class="pre">xr.Dataset</span></code> object. We can see that for most lidar and radar observables (the equivalent reflectivity factor Ze, the backscatter cross-section beta_p, etc.) we have fields per hydrometeor class in addition to the field representing the total.<a class="headerlink" href="#we-can-examine-the-simulator-output-dataset-saved-under-an-xr-dataset-object-we-can-see-that-for-most-lidar-and-radar-observables-the-equivalent-reflectivity-factor-ze-the-backscatter-cross-section-beta-p-etc-we-have-fields-per-hydrometeor-class-in-addition-to-the-field-representing-the-total" title="Permalink to this headline">¶</a></h3>
+<section id="we-can-examine-the-simulator-output-dataset-saved-under-an-xr-dataset-object-we-can-see-that-for-most-lidar-and-radar-observables-the-equivalent-reflectivity-factor-ze-the-backscatter-cross-section-beta-p-etc-we-have-fields-per-hydrometeor-class-in-addition-to-the-field-representing-the-total">
+<h3>We can examine the simulator output dataset saved under an <code class="docutils literal notranslate"><span class="pre">xr.Dataset</span></code> object. We can see that for most lidar and radar observables (the equivalent reflectivity factor Ze, the backscatter cross-section beta_p, etc.) we have fields per hydrometeor class in addition to the field representing the total.<a class="headerlink" href="#we-can-examine-the-simulator-output-dataset-saved-under-an-xr-dataset-object-we-can-see-that-for-most-lidar-and-radar-observables-the-equivalent-reflectivity-factor-ze-the-backscatter-cross-section-beta-p-etc-we-have-fields-per-hydrometeor-class-in-addition-to-the-field-representing-the-total" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_e3sm</span><span class="o">.</span><span class="n">ds</span>
@@ -21154,10 +21254,10 @@ Attributes: (12/15)
          [nan, nan, nan],
          [nan, nan, nan]]]])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-39bbd1ac-c99f-4ee0-87e0-fc651ca38e98' class='xr-section-summary-in' type='checkbox'  ><label for='section-39bbd1ac-c99f-4ee0-87e0-fc651ca38e98' class='xr-section-summary' >Attributes: <span>(15)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Conventions :</span></dt><dd>CF-1.0</dd><dt><span>source :</span></dt><dd>CAM</dd><dt><span>case :</span></dt><dd>EAMv1_ARM_Freerun_1</dd><dt><span>title :</span></dt><dd>UNSET</dd><dt><span>logname :</span></dt><dd>yshi</dd><dt><span>host :</span></dt><dd>cori07</dd><dt><span>Version :</span></dt><dd>$Name$</dd><dt><span>revision_Id :</span></dt><dd>$Id$</dd><dt><span>initial_file :</span></dt><dd>/global/cfs/cdirs/e3sm/inputdata/atm/cam/inic/homme/cami_mam3_Linoz_ne30np4_L72_c160214.nc</dd><dt><span>topography_file :</span></dt><dd>/global/cfs/cdirs/e3sm/inputdata/atm/cam/topo/USGS-gtopo30_ne30np4_16xdel2-PFC-consistentSGH.nc</dd><dt><span>time_period_freq :</span></dt><dd>hour_1</dd><dt><span>_file_dates :</span></dt><dd>[&#x27;20121031&#x27;]</dd><dt><span>_file_times :</span></dt><dd>[&#x27;010000&#x27;]</dd><dt><span>_datastream :</span></dt><dd>act_datastream</dd><dt><span>_arm_standards_flag :</span></dt><dd>0</dd></dl></div></li></ul></div></div></div></div>
 </div>
-</div>
-</div>
-<div class="section" id="visualization">
-<h2>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="visualization">
+<h2>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">#</a></h2>
 <p>We can plot EMC² output using matplotlib, xarray’s internal methods, or EMC²’s <code class="docutils literal notranslate"><span class="pre">emc2.plotting.SubcolumnDisplay</span></code> object, which is based on the <a class="reference external" href="https://arm-doe.github.io/ACT/">ACT</a> package. Here, using the <code class="docutils literal notranslate"><span class="pre">SubcolumnDisplay</span></code>’s <code class="docutils literal notranslate"><span class="pre">plot_subcolumn_timeseries</span></code> method, we show the height x time curtain of the first subcolumn (out of the 50 specified) in the grid cell closest to the coordinates of the Utqiagvik specified using the <code class="docutils literal notranslate"><span class="pre">lat_sel</span></code> and <code class="docutils literal notranslate"><span class="pre">lon_sel</span></code> keywords. The hatch patterns invoked by setting <code class="docutils literal notranslate"><span class="pre">hatched_mask=True</span></code>, designate subcolumn bins not detected by the simulated instrument.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -21321,20 +21421,20 @@ Attributes: (12/15)
 <img alt="../../../_images/EMC2_demo_w_E3SM_27_1.png" src="../../../_images/EMC2_demo_w_E3SM_27_1.png" />
 </div>
 </div>
-</div>
-<div class="section" id="concluding-remarks">
-<h2>Concluding Remarks<a class="headerlink" href="#concluding-remarks" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="concluding-remarks">
+<h2>Concluding Remarks<a class="headerlink" href="#concluding-remarks" title="Permalink to this headline">#</a></h2>
 <p><strong>EMC² includes support for a large number of instruments including the full ARM radar and lidar instrument suite and has already been operated on ESM, SCM, and LES outputs. The software include multiple methods for phase classification and partitioning, scattering calculations, and more. See and follow the continuously updated <a class="reference external" href="https://github.com/columncolab/EMC2">EMC² GitHub repository</a> for more information.</strong></p>
-</div>
-<div class="section" id="resources-and-references">
-<h2>Resources and References<a class="headerlink" href="#resources-and-references" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="resources-and-references">
+<h2>Resources and References<a class="headerlink" href="#resources-and-references" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://doi.org/10.5194/gmd-15-901-2022">The EMC² manuscript (Silber et al. GMD, 2022)</a></p></li>
 <li><p><a class="reference external" href="https://columncolab.github.io/EMC2/">EMC² documentation</a></p></li>
 <li><p><a class="reference external" href="https://github.com/columncolab/EMC2">EMC² source code</a></p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -21358,9 +21458,11 @@ Attributes: (12/15)
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_mean_size.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -21376,24 +21478,28 @@ Attributes: (12/15)
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By ARM Development Team<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By ARM Development Team<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
