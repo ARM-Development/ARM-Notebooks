@@ -31,6 +31,3 @@ parts:
         - file: Tutorials/Open-Science-Workshop-2022/tutorials/pyart-corrections
         - file: Tutorials/Open-Science-Workshop-2022/tutorials/xarray
         - file: Tutorials/Open-Science-Workshop-2022/tutorials/xarray-computation-masking
-  - caption: Value Added Products (VAPs)
-    chapters:
-    - glob: VAPs/*/*
