@@ -566,7 +566,7 @@ title="Print to PDF"
 <h2>To install<a class="headerlink" href="#to-install" title="Permalink to this headline">#</a></h2>
 <p><strong>For this tutorial, we have already install ESMAC diagnostics</strong></p>
 <p>If you are interested in running this after the tutorial, this package is best run using a conda virtual environment. To install the required environment one can do</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda env create -f environment.yml
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment.yml
 </pre></div>
 </div>
 <p>to set up a esmac_diags environment. Note if running this on a HPC system, you may need to load the appropriate module for anaconda.</p>
@@ -575,7 +575,7 @@ title="Print to PDF"
 </pre></div>
 </div>
 <p>and then this code can be installed with</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install -e .
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.
 </pre></div>
 </div>
 <p>Which will install the code as editable allowing you to make changes to the codebase and it be reflected in the installed package.</p>
@@ -583,7 +583,7 @@ title="Print to PDF"
 <section id="test-run">
 <h2>Test run<a class="headerlink" href="#test-run" title="Permalink to this headline">#</a></h2>
 <p>To verify the package, enter scripts/ directory and run</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python run_testcase.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>run_testcase.py
 </pre></div>
 </div>
 <p>Then go to the directory in <code class="docutils literal notranslate"><span class="pre">ESMAC_Diags_testcase/figures</span></code>. Compare the output figure with the plot <code class="docutils literal notranslate"><span class="pre">ESMAC_Diags_testcase/figures/figures_verify/timeseries_organic_HISCALE.png</span></code>. If the two figures look the same, the testcase is successfully run.</p>

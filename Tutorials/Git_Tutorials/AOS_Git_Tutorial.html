@@ -488,7 +488,7 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s check to make sure git is installed on your system</span>
 <span class="c1"># Note the ! to run a unix command</span>
-<span class="o">!</span>git --version
+<span class="o">!</span>git<span class="w"> </span>--version
 </pre></div>
 </div>
 </div>
@@ -498,7 +498,7 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># If the above command returns an error then Git is likely not installed</span>
 <span class="c1"># and you will need to install it.  The easiest way to do this is using conda.</span>
 <span class="c1"># If the above gave you a version number you can skip this step</span>
-<span class="o">!</span>conda install -c anaconda --yes --prefix <span class="o">{</span>sys.prefix<span class="o">}</span> git
+<span class="o">!</span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>anaconda<span class="w"> </span>--yes<span class="w"> </span>--prefix<span class="w"> </span><span class="o">{</span>sys.prefix<span class="o">}</span><span class="w"> </span>git
 </pre></div>
 </div>
 </div>
@@ -507,7 +507,7 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Next we need to clone your fork to your area</span>
 <span class="c1"># Please replace the URL below with the URL to your fork</span>
-<span class="o">!</span>git clone https://github.com/AdamTheisen/Aerosol-Mentors-Processing-Routines.git
+<span class="o">!</span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/AdamTheisen/Aerosol-Mentors-Processing-Routines.git
 </pre></div>
 </div>
 </div>
@@ -516,7 +516,7 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s check our directory</span>
 <span class="o">!</span>ls
-<span class="o">!</span>ls *
+<span class="o">!</span>ls<span class="w"> </span>*
 </pre></div>
 </div>
 </div>
@@ -535,7 +535,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The appropriate way to add changes back to a fork for inclusion is to create a branch</span>
-<span class="o">!</span>git checkout -b test
+<span class="o">!</span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>test
 </pre></div>
 </div>
 </div>
@@ -543,7 +543,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check the status of git</span>
-<span class="o">!</span>git status
+<span class="o">!</span>git<span class="w"> </span>status
 </pre></div>
 </div>
 </div>
@@ -553,7 +553,7 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Go ahead and navigate to an instrument/language directory and create a test file</span>
 <span class="c1"># It&#39;s OK, we&#39;ll wait</span>
 <span class="c1">#  Ready?  Okay, let&#39;s go check the status</span>
-<span class="o">!</span>git status
+<span class="o">!</span>git<span class="w"> </span>status
 </pre></div>
 </div>
 </div>
@@ -562,7 +562,7 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We can see that we changed a file, but we have not actually added it</span>
 <span class="c1"># Let&#39;s go ahead and do that</span>
-<span class="o">!</span>git add ./CCN/Python/test.py
+<span class="o">!</span>git<span class="w"> </span>add<span class="w"> </span>./CCN/Python/test.py
 </pre></div>
 </div>
 </div>
@@ -570,7 +570,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># And check the status again</span>
-<span class="o">!</span>git status
+<span class="o">!</span>git<span class="w"> </span>status
 </pre></div>
 </div>
 </div>
@@ -578,7 +578,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># You can commit the file using</span>
-<span class="o">!</span>git commit ./CCN/Python/test.py -m <span class="s2">&quot;ENH: Adding test file&quot;</span>
+<span class="o">!</span>git<span class="w"> </span>commit<span class="w"> </span>./CCN/Python/test.py<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;ENH: Adding test file&quot;</span>
 
 <span class="c1"># Note, you can also remove the -m and enter a message in the GUI interface</span>
 <span class="c1"># You could also do git commit -a if you have a lot of changes you want to commit</span>
@@ -589,8 +589,8 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># You commit is staged and ready to push to your fork</span>
-<span class="o">!</span>git push --set-upstream origin <span class="nb">test</span> # this only needs to be <span class="k">done</span> once <span class="k">for</span> each branch
-<span class="o">!</span>git push
+<span class="o">!</span>git<span class="w"> </span>push<span class="w"> </span>--set-upstream<span class="w"> </span>origin<span class="w"> </span><span class="nb">test</span><span class="w"> </span>#<span class="w"> </span>this<span class="w"> </span>only<span class="w"> </span>needs<span class="w"> </span>to<span class="w"> </span>be<span class="w"> </span><span class="k">done</span><span class="w"> </span>once<span class="w"> </span><span class="k">for</span><span class="w"> </span>each<span class="w"> </span>branch
+<span class="o">!</span>git<span class="w"> </span>push
 </pre></div>
 </div>
 </div>
@@ -611,7 +611,7 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Next you will want an easy way to get other peoples changes</span>
 <span class="c1"># You can do that through the github interface or through the command line</span>
 <span class="c1"># First set your upstream to point to</span>
-<span class="o">!</span>git remote add upstream https://github.com/ARM-Development/Aerosol-Mentors-Processing-Routines.git
+<span class="o">!</span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>upstream<span class="w"> </span>https://github.com/ARM-Development/Aerosol-Mentors-Processing-Routines.git
 </pre></div>
 </div>
 </div>
@@ -619,9 +619,9 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Then fetch the upstream changes and merge them with yours</span>
-<span class="o">!</span>git fetch upstream
-<span class="o">!</span>git merge upstream/main
-<span class="o">!</span>git push
+<span class="o">!</span>git<span class="w"> </span>fetch<span class="w"> </span>upstream
+<span class="o">!</span>git<span class="w"> </span>merge<span class="w"> </span>upstream/main
+<span class="o">!</span>git<span class="w"> </span>push
 </pre></div>
 </div>
 </div>
