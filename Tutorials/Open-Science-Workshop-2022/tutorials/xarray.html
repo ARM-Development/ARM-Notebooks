@@ -1,48 +1,59 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Introduction to Xarray &#8212; ARM Tutorials</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -50,61 +61,93 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Tutorials/Open-Science-Workshop-2022/tutorials/xarray';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Computations and Masks with Xarray" href="xarray-computation-masking.html" />
     <link rel="prev" title="Py-ART Corrections" href="pyart-corrections.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../../_static/arm_logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">ARM Tutorials</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../../../_static/arm_logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../_static/arm_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -113,964 +156,301 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Open Science Workshop
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Open Science Workshop</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../presentations/view-abstracts.html">
-   Workshop Abstracts
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="day1-overview.html">
-   Day 1 - Introductions!
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="jupyter-intro.html">
-     JupyterLab
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Scientific_Libraries_Numpy.html">
-     Working with Numpy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Scientific_Libraries_Pandas.html">
-     Working with Pandas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Scientific_Libraries_Xarray.html">
-     Working with Xarray
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="github-intro.html">
-     An Introduction to Github
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="forking_cloning.html">
-     Forking a Repository
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="branching-forking-github-ui.html">
-     Branching and Pull Requests on the Github Website
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="day2-overview.html">
-   Day 2 - Data + Packages
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ARM-Data-Access.html">
-     Accessing ARM Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ESMAC_diags/esmac-diags.html">
-     ESMAC Diagnostics
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_2d_timeseries.html">
-     ESMAC: Generate timeseries of size distribution
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_size_diurnalcycle.html">
-     ESMAC: Generate diurnal cycle of size distribution
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_size_timeseries.html">
-     ESMAC: Generate timeseries of size distribution
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_bar_composition.html">
-     ESMAC: Generate bar plot for aerosol composition
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_hist.html">
-     ESMAC: Generate a 1-D Historgram Plot
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_mean_size.html">
-     ESMAC: Generate mean size distribution
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="EMC2_demo_w_E3SM.html">
-     Using EMC² to Process E3SM Output
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="day3-overview.html">
-   Day 3 - MetPy and ACT
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="MetPy%2001%20-%20Overview.html">
-     MetPy Tutorial - Overview
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="MetPy%2002%20-%20Making%20a%20SkewT.html">
-     MetPy Tutorial - Making a Skew-T!
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="act-basics.html">
-     ACT Basics
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="day4-overview.html">
-   Day 3 - Py-ART and Pangeo
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="pyart-basics.html">
-     PyART Basics
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pyart-gridding.html">
-     Py-ART Gridding
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pyart-corrections.html">
-     Py-ART Corrections
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Introduction to Xarray
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="xarray-computation-masking.html">
-     Computations and Masks with Xarray
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../presentations/view-abstracts.html">Workshop Abstracts</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="day1-overview.html">Day 1 - Introductions!</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="jupyter-intro.html">JupyterLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Scientific_Libraries_Numpy.html">Working with Numpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Scientific_Libraries_Pandas.html">Working with Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Scientific_Libraries_Xarray.html">Working with Xarray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="github-intro.html">An Introduction to Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forking_cloning.html">Forking a Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="branching-forking-github-ui.html">Branching and Pull Requests on the Github Website</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="day2-overview.html">Day 2 - Data + Packages</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="ARM-Data-Access.html">Accessing ARM Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ESMAC_diags/esmac-diags.html">ESMAC Diagnostics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_2d_timeseries.html">ESMAC: Generate timeseries of size distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_size_diurnalcycle.html">ESMAC: Generate diurnal cycle of size distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_size_timeseries.html">ESMAC: Generate timeseries of size distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_bar_composition.html">ESMAC: Generate bar plot for aerosol composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_hist.html">ESMAC: Generate a 1-D Historgram Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_mean_size.html">ESMAC: Generate mean size distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EMC2_demo_w_E3SM.html">Using EMC² to Process E3SM Output</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="day3-overview.html">Day 3 - MetPy and ACT</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="MetPy%2001%20-%20Overview.html">MetPy Tutorial - Overview</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="MetPy%2002%20-%20Making%20a%20SkewT.html">MetPy Tutorial - Making a Skew-T!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="act-basics.html">ACT Basics</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="day4-overview.html">Day 3 - Py-ART and Pangeo</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="pyart-basics.html">PyART Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyart-gridding.html">Py-ART Gridding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyart-corrections.html">Py-ART Corrections</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Introduction to Xarray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xarray-computation-masking.html">Computations and Masks with Xarray</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/ARM-Development/ARM-Notebooks/main?urlpath=lab/tree/Tutorials/Open-Science-Workshop-2022/tutorials/xarray.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
   
-    <img src="../../../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
+  <div id="rtd-footer-container"></div>
 
-      </li>
+
+      </div>
       
-      <li>
-        <a href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/Tutorials/Open-Science-Workshop-2022/tutorials/xarray.ipynb&branch=main"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on JupyterHub"
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/Tutorials/Open-Science-Workshop-2022/tutorials/xarray.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../../../_static/images/logo_jupyterhub.svg">
   </span>
-<span class="headerbtn__text-container">JupyterHub</span>
+<span class="btn__text-container">JupyterHub</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/Tutorials/Open-Science-Workshop-2022/tutorials/xarray.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../../_sources/Tutorials/Open-Science-Workshop-2022/tutorials/xarray.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#overview">
-   Overview
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#prerequisites">
-   Prerequisites
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#imports">
-   Imports
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introducing-the-dataarray-and-dataset">
-   Introducing the
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     DataArray
-    </span>
-   </code>
-   and
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Dataset
-    </span>
-   </code>
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creation-of-a-dataarray-object">
-     Creation of a
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       DataArray
-      </span>
-     </code>
-     object
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#generate-a-random-numpy-array">
-       Generate a random numpy array
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#wrap-the-array-first-attempt">
-       Wrap the array: first attempt
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#assign-dimension-names">
-       Assign dimension names
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-a-dataarray-with-named-coordinates">
-     Create a
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       DataArray
-      </span>
-     </code>
-     with named Coordinates
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#make-time-and-space-coordinates">
-       Make time and space coordinates
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#initialize-the-dataarray-with-complete-coordinate-info">
-       Initialize the
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         DataArray
-        </span>
-       </code>
-       with complete coordinate info
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#set-useful-attributes">
-       Set useful attributes
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#attributes-are-not-preserved-by-default">
-       Attributes are not preserved by default!
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-dataset-a-container-for-dataarrays-with-shared-coordinates">
-     The
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Dataset
-      </span>
-     </code>
-     : a container for
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       DataArray
-      </span>
-     </code>
-     s with shared coordinates
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#create-a-pressure-dataarray-using-the-same-coordinates">
-       Create a pressure
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         DataArray
-        </span>
-       </code>
-       using the same coordinates
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#create-a-dataset-object">
-       Create a
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         Dataset
-        </span>
-       </code>
-       object
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#access-data-variables-and-coordinates-in-a-dataset">
-       Access Data variables and Coordinates in a
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         Dataset
-        </span>
-       </code>
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#subsetting-and-selection-by-coordinate-values">
-   Subsetting and selection by coordinate values
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#numpy-like-selection">
-     NumPy-like selection
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#selecting-with-sel">
-     Selecting with
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       .sel()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#approximate-selection-and-interpolation">
-     Approximate selection and interpolation
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#nearest-neighbor-sampling">
-       Nearest-neighbor sampling
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#interpolation">
-       Interpolation
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#slicing-along-coordinates">
-     Slicing along coordinates
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#one-more-selection-method-loc">
-     One more selection method:
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       .loc
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#opening-netcdf-data">
-   Opening netCDF data
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#access-netcdf-data-with-xr-open-dataset">
-     Access netCDF data with
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       xr.open_dataset
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#subsetting-the-dataset">
-     Subsetting the
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Dataset
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aggregation-operations">
-     Aggregation operations
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plotting-with-xarray">
-   Plotting with Xarray
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#simple-visualization-with-plot">
-     Simple visualization with
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       .plot()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#customizing-the-plot">
-     Customizing the plot
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plotting-2d-data">
-     Plotting 2D data
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   Summary
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-s-next">
-     What’s next?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#resources-and-references">
-   Resources and references
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Introduction to Xarray</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#overview">
-   Overview
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#prerequisites">
-   Prerequisites
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#imports">
-   Imports
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introducing-the-dataarray-and-dataset">
-   Introducing the
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     DataArray
-    </span>
-   </code>
-   and
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     Dataset
-    </span>
-   </code>
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creation-of-a-dataarray-object">
-     Creation of a
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       DataArray
-      </span>
-     </code>
-     object
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#generate-a-random-numpy-array">
-       Generate a random numpy array
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#wrap-the-array-first-attempt">
-       Wrap the array: first attempt
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#assign-dimension-names">
-       Assign dimension names
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-a-dataarray-with-named-coordinates">
-     Create a
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       DataArray
-      </span>
-     </code>
-     with named Coordinates
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#make-time-and-space-coordinates">
-       Make time and space coordinates
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#initialize-the-dataarray-with-complete-coordinate-info">
-       Initialize the
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         DataArray
-        </span>
-       </code>
-       with complete coordinate info
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#set-useful-attributes">
-       Set useful attributes
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#attributes-are-not-preserved-by-default">
-       Attributes are not preserved by default!
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-dataset-a-container-for-dataarrays-with-shared-coordinates">
-     The
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Dataset
-      </span>
-     </code>
-     : a container for
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       DataArray
-      </span>
-     </code>
-     s with shared coordinates
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#create-a-pressure-dataarray-using-the-same-coordinates">
-       Create a pressure
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         DataArray
-        </span>
-       </code>
-       using the same coordinates
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#create-a-dataset-object">
-       Create a
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         Dataset
-        </span>
-       </code>
-       object
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#access-data-variables-and-coordinates-in-a-dataset">
-       Access Data variables and Coordinates in a
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         Dataset
-        </span>
-       </code>
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#subsetting-and-selection-by-coordinate-values">
-   Subsetting and selection by coordinate values
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#numpy-like-selection">
-     NumPy-like selection
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#selecting-with-sel">
-     Selecting with
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       .sel()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#approximate-selection-and-interpolation">
-     Approximate selection and interpolation
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#nearest-neighbor-sampling">
-       Nearest-neighbor sampling
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#interpolation">
-       Interpolation
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#slicing-along-coordinates">
-     Slicing along coordinates
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#one-more-selection-method-loc">
-     One more selection method:
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       .loc
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#opening-netcdf-data">
-   Opening netCDF data
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#access-netcdf-data-with-xr-open-dataset">
-     Access netCDF data with
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       xr.open_dataset
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#subsetting-the-dataset">
-     Subsetting the
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Dataset
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#aggregation-operations">
-     Aggregation operations
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plotting-with-xarray">
-   Plotting with Xarray
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#simple-visualization-with-plot">
-     Simple visualization with
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       .plot()
-      </span>
-     </code>
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#customizing-the-plot">
-     Customizing the plot
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#plotting-2d-data">
-     Plotting 2D data
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   Summary
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-s-next">
-     What’s next?
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#resources-and-references">
-   Resources and references
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction to Xarray</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introducing-the-dataarray-and-dataset">Introducing the <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> and <code class="docutils literal notranslate"><span class="pre">Dataset</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creation-of-a-dataarray-object">Creation of a <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> object</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-a-random-numpy-array">Generate a random numpy array</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wrap-the-array-first-attempt">Wrap the array: first attempt</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#assign-dimension-names">Assign dimension names</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-dataarray-with-named-coordinates">Create a <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> with named Coordinates</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#make-time-and-space-coordinates">Make time and space coordinates</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#initialize-the-dataarray-with-complete-coordinate-info">Initialize the <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> with complete coordinate info</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#set-useful-attributes">Set useful attributes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes-are-not-preserved-by-default">Attributes are not preserved by default!</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-dataset-a-container-for-dataarrays-with-shared-coordinates">The <code class="docutils literal notranslate"><span class="pre">Dataset</span></code>: a container for <code class="docutils literal notranslate"><span class="pre">DataArray</span></code>s with shared coordinates</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-pressure-dataarray-using-the-same-coordinates">Create a pressure <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> using the same coordinates</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-dataset-object">Create a <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> object</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#access-data-variables-and-coordinates-in-a-dataset">Access Data variables and Coordinates in a <code class="docutils literal notranslate"><span class="pre">Dataset</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subsetting-and-selection-by-coordinate-values">Subsetting and selection by coordinate values</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-like-selection">NumPy-like selection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-with-sel">Selecting with <code class="docutils literal notranslate"><span class="pre">.sel()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#approximate-selection-and-interpolation">Approximate selection and interpolation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nearest-neighbor-sampling">Nearest-neighbor sampling</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolation">Interpolation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-along-coordinates">Slicing along coordinates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-more-selection-method-loc">One more selection method: <code class="docutils literal notranslate"><span class="pre">.loc</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-netcdf-data">Opening netCDF data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#access-netcdf-data-with-xr-open-dataset">Access netCDF data with <code class="docutils literal notranslate"><span class="pre">xr.open_dataset</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subsetting-the-dataset">Subsetting the <code class="docutils literal notranslate"><span class="pre">Dataset</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregation-operations">Aggregation operations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-with-xarray">Plotting with Xarray</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-visualization-with-plot">Simple visualization with <code class="docutils literal notranslate"><span class="pre">.plot()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#customizing-the-plot">Customizing the plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-2d-data">Plotting 2D data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-s-next">What’s next?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources-and-references">Resources and references</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <p><img alt="xarray Logo" src="http://xarray.pydata.org/en/stable/_static/dataset-diagram-logo.png" /></p>
-<section class="tex2jax_ignore mathjax_ignore" id="introduction-to-xarray">
-<h1>Introduction to Xarray<a class="headerlink" href="#introduction-to-xarray" title="Permalink to this headline">#</a></h1>
+<section id="introduction-to-xarray">
+<h1>Introduction to Xarray<a class="headerlink" href="#introduction-to-xarray" title="Permalink to this heading">#</a></h1>
 <hr class="docutils" />
 <section id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
 <p>This notebook will introduce the basics of gridded, labeled data with Xarray. Since Xarray introduces additional abstractions on top of plain arrays of data, our goal is to show why these abstractions are useful and how they frequently lead to simpler, more robust code.</p>
 <p>We’ll cover these topics:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Create a <code class="docutils literal notranslate"><span class="pre">DataArray</span></code>, one of the core object types in Xarray</p></li>
 <li><p>Understand how to use named coordinates and metadata in a <code class="docutils literal notranslate"><span class="pre">DataArray</span></code></p></li>
 <li><p>Combine individual <code class="docutils literal notranslate"><span class="pre">DataArrays</span></code> into a <code class="docutils literal notranslate"><span class="pre">Dataset</span></code>, the other core object type in Xarray</p></li>
@@ -1081,8 +461,8 @@ title="Print to PDF"
 </ol>
 </section>
 <section id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h2>
-<table class="colwidths-auto table">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Concepts</p></th>
 <th class="head"><p>Importance</p></th>
@@ -1122,7 +502,7 @@ title="Print to PDF"
 </section>
 <hr class="docutils" />
 <section id="imports">
-<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">#</a></h2>
+<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this heading">#</a></h2>
 <p>Simmilar to <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">np</span></code>; <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, <code class="docutils literal notranslate"><span class="pre">pd</span></code>; you may often encounter <code class="docutils literal notranslate"><span class="pre">xarray</span></code> imported within a shortened namespace as <code class="docutils literal notranslate"><span class="pre">xr</span></code>. <code class="docutils literal notranslate"><span class="pre">pythia_datasets</span></code> provides example data for us to work with.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1137,18 +517,18 @@ title="Print to PDF"
 </div>
 </section>
 <section id="introducing-the-dataarray-and-dataset">
-<h2>Introducing the <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> and <code class="docutils literal notranslate"><span class="pre">Dataset</span></code><a class="headerlink" href="#introducing-the-dataarray-and-dataset" title="Permalink to this headline">#</a></h2>
+<h2>Introducing the <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> and <code class="docutils literal notranslate"><span class="pre">Dataset</span></code><a class="headerlink" href="#introducing-the-dataarray-and-dataset" title="Permalink to this heading">#</a></h2>
 <p>Xarray expands on the capabilities on NumPy arrays, providing a lot of streamlined data manipulation. It is similar in that respect to Pandas, but whereas Pandas excels at working with tabular data, Xarray is focused on N-dimensional arrays of data (i.e. grids). Its interface is based largely on the netCDF data model (variables, attributes, and dimensions), but it goes beyond the traditional netCDF interfaces to provide functionality similar to netCDF-java’s <a class="reference external" href="https://docs.unidata.ucar.edu/netcdf-java/current/userguide/common_data_model_overview.html">Common Data Model (CDM)</a>.</p>
 <section id="creation-of-a-dataarray-object">
-<h3>Creation of a <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> object<a class="headerlink" href="#creation-of-a-dataarray-object" title="Permalink to this headline">#</a></h3>
+<h3>Creation of a <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> object<a class="headerlink" href="#creation-of-a-dataarray-object" title="Permalink to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> is one of the basic building blocks of Xarray (see docs <a class="reference external" href="http://xarray.pydata.org/en/stable/user-guide/data-structures.html#dataarray">here</a>). It provides a <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>-like object that expands to provide two critical pieces of functionality:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Coordinate names and values are stored with the data, making slicing and indexing much more powerful</p></li>
 <li><p>It has a built-in container for attributes</p></li>
 </ol>
 <p>Here we’ll initialize a <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> object by wrapping a plain NumPy array, and explore a few of its properties.</p>
 <section id="generate-a-random-numpy-array">
-<h4>Generate a random numpy array<a class="headerlink" href="#generate-a-random-numpy-array" title="Permalink to this headline">#</a></h4>
+<h4>Generate a random numpy array<a class="headerlink" href="#generate-a-random-numpy-array" title="Permalink to this heading">#</a></h4>
 <p>For our first example, we’ll just create a random array of “temperature” data in units of Kelvin:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1183,7 +563,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="wrap-the-array-first-attempt">
-<h4>Wrap the array: first attempt<a class="headerlink" href="#wrap-the-array-first-attempt" title="Permalink to this headline">#</a></h4>
+<h4>Wrap the array: first attempt<a class="headerlink" href="#wrap-the-array-first-attempt" title="Permalink to this heading">#</a></h4>
 <p>Now we create a basic <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> just by passing our plain <code class="docutils literal notranslate"><span class="pre">data</span></code> as input:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1585,13 +965,13 @@ Dimensions without coordinates: dim_0, dim_1, dim_2</pre><div class='xr-wrap' st
         [287.24469751, 278.57895038, 274.98691215, 286.79385506]]])</pre></div></div></li><li class='xr-section-item'><input id='section-a2b582cc-f4ff-4de9-a10d-5f5cea7c56c7' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-a2b582cc-f4ff-4de9-a10d-5f5cea7c56c7' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-047ca2b6-2aa4-416c-b730-d0a6b32042fb' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-047ca2b6-2aa4-416c-b730-d0a6b32042fb' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 <p>Note two things:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Xarray generates some basic dimension names for us (<code class="docutils literal notranslate"><span class="pre">dim_0</span></code>, <code class="docutils literal notranslate"><span class="pre">dim_1</span></code>, <code class="docutils literal notranslate"><span class="pre">dim_2</span></code>). We’ll improve this with better names in the next example.</p></li>
 <li><p>Wrapping the numpy array in a <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> gives us a rich display in the notebook! (Try clicking the array symbol to expand or collapse the view)</p></li>
 </ol>
 </section>
 <section id="assign-dimension-names">
-<h4>Assign dimension names<a class="headerlink" href="#assign-dimension-names" title="Permalink to this headline">#</a></h4>
+<h4>Assign dimension names<a class="headerlink" href="#assign-dimension-names" title="Permalink to this heading">#</a></h4>
 <p>Much of the power of Xarray comes from making use of named dimensions. So let’s add some more useful names! We can do that by passing an ordered list of names using the keyword argument <code class="docutils literal notranslate"><span class="pre">dims</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1996,9 +1376,9 @@ Dimensions without coordinates: time, lat, lon</pre><div class='xr-wrap' style='
 </section>
 </section>
 <section id="create-a-dataarray-with-named-coordinates">
-<h3>Create a <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> with named Coordinates<a class="headerlink" href="#create-a-dataarray-with-named-coordinates" title="Permalink to this headline">#</a></h3>
+<h3>Create a <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> with named Coordinates<a class="headerlink" href="#create-a-dataarray-with-named-coordinates" title="Permalink to this heading">#</a></h3>
 <section id="make-time-and-space-coordinates">
-<h4>Make time and space coordinates<a class="headerlink" href="#make-time-and-space-coordinates" title="Permalink to this headline">#</a></h4>
+<h4>Make time and space coordinates<a class="headerlink" href="#make-time-and-space-coordinates" title="Permalink to this heading">#</a></h4>
 <p>Here we will use <span class="xref myst">Pandas</span> to create an array of <span class="xref myst">datetime data</span>, which we will then use to create a <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> with a named coordinate <code class="docutils literal notranslate"><span class="pre">time</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2026,7 +1406,7 @@ Dimensions without coordinates: time, lat, lon</pre><div class='xr-wrap' style='
 </div>
 </section>
 <section id="initialize-the-dataarray-with-complete-coordinate-info">
-<h4>Initialize the <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> with complete coordinate info<a class="headerlink" href="#initialize-the-dataarray-with-complete-coordinate-info" title="Permalink to this headline">#</a></h4>
+<h4>Initialize the <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> with complete coordinate info<a class="headerlink" href="#initialize-the-dataarray-with-complete-coordinate-info" title="Permalink to this heading">#</a></h4>
 <p>When we create the <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> instance, we pass in the arrays we just created:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2434,7 +1814,7 @@ Coordinates:
 </div>
 </section>
 <section id="set-useful-attributes">
-<h4>Set useful attributes<a class="headerlink" href="#set-useful-attributes" title="Permalink to this headline">#</a></h4>
+<h4>Set useful attributes<a class="headerlink" href="#set-useful-attributes" title="Permalink to this heading">#</a></h4>
 <p>…and while we’re at it, we can also set some attribute metadata:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2847,7 +2227,7 @@ Attributes:
 </div>
 </section>
 <section id="attributes-are-not-preserved-by-default">
-<h4>Attributes are not preserved by default!<a class="headerlink" href="#attributes-are-not-preserved-by-default" title="Permalink to this headline">#</a></h4>
+<h4>Attributes are not preserved by default!<a class="headerlink" href="#attributes-are-not-preserved-by-default" title="Permalink to this heading">#</a></h4>
 <p>Notice what happens if we perform a mathematical operaton with the <code class="docutils literal notranslate"><span class="pre">DataArray</span></code>: the coordinate values persist, but the attributes are lost. This is done because it is very challenging to know if the attribute metadata is still correct or appropriate after arbitrary arithmetic operations.</p>
 <p>To illustrate this, we’ll do a simple unit conversion from Kelvin to Celsius:</p>
 <div class="cell docutils container">
@@ -3258,12 +2638,12 @@ Coordinates:
 </section>
 </section>
 <section id="the-dataset-a-container-for-dataarrays-with-shared-coordinates">
-<h3>The <code class="docutils literal notranslate"><span class="pre">Dataset</span></code>: a container for <code class="docutils literal notranslate"><span class="pre">DataArray</span></code>s with shared coordinates<a class="headerlink" href="#the-dataset-a-container-for-dataarrays-with-shared-coordinates" title="Permalink to this headline">#</a></h3>
+<h3>The <code class="docutils literal notranslate"><span class="pre">Dataset</span></code>: a container for <code class="docutils literal notranslate"><span class="pre">DataArray</span></code>s with shared coordinates<a class="headerlink" href="#the-dataset-a-container-for-dataarrays-with-shared-coordinates" title="Permalink to this heading">#</a></h3>
 <p>Along with <code class="docutils literal notranslate"><span class="pre">DataArray</span></code>, the other key object type in Xarray is the <code class="docutils literal notranslate"><span class="pre">Dataset</span></code>: a dictionary-like container that holds one or more <code class="docutils literal notranslate"><span class="pre">DataArray</span></code>s, which can also optionally share coordinates (see docs <a class="reference external" href="http://xarray.pydata.org/en/stable/user-guide/data-structures.html#dataset">here</a>).</p>
-<p>The most common way to create a <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> object is to load data from a file (see <a class="reference external" href="#Opening-netCDF-data">below</a>). Here, instead, we will create another <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> and combine it with our <code class="docutils literal notranslate"><span class="pre">temp</span></code> data.</p>
+<p>The most common way to create a <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> object is to load data from a file (see <span class="xref myst">below</span>). Here, instead, we will create another <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> and combine it with our <code class="docutils literal notranslate"><span class="pre">temp</span></code> data.</p>
 <p>This will illustrate how the information about common coordinate axes is used.</p>
 <section id="create-a-pressure-dataarray-using-the-same-coordinates">
-<h4>Create a pressure <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> using the same coordinates<a class="headerlink" href="#create-a-pressure-dataarray-using-the-same-coordinates" title="Permalink to this headline">#</a></h4>
+<h4>Create a pressure <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> using the same coordinates<a class="headerlink" href="#create-a-pressure-dataarray-using-the-same-coordinates" title="Permalink to this heading">#</a></h4>
 <p>This code mirrors how we created the <code class="docutils literal notranslate"><span class="pre">temp</span></code> object above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3680,7 +3060,7 @@ Attributes:
 </div>
 </section>
 <section id="create-a-dataset-object">
-<h4>Create a <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> object<a class="headerlink" href="#create-a-dataset-object" title="Permalink to this headline">#</a></h4>
+<h4>Create a <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> object<a class="headerlink" href="#create-a-dataset-object" title="Permalink to this heading">#</a></h4>
 <p>Each <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> in our <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> needs a name!</p>
 <p>The most straightforward way to create a <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> with our <code class="docutils literal notranslate"><span class="pre">temp</span></code> and <code class="docutils literal notranslate"><span class="pre">pressure</span></code> arrays is to pass a dictionary using the keyword argument <code class="docutils literal notranslate"><span class="pre">data_vars</span></code>:</p>
 <div class="cell docutils container">
@@ -4093,7 +3473,7 @@ Data variables:
 <p>Notice that the <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> object <code class="docutils literal notranslate"><span class="pre">ds</span></code> is aware that both data arrays sit on the same coordinate axes.</p>
 </section>
 <section id="access-data-variables-and-coordinates-in-a-dataset">
-<h4>Access Data variables and Coordinates in a <code class="docutils literal notranslate"><span class="pre">Dataset</span></code><a class="headerlink" href="#access-data-variables-and-coordinates-in-a-dataset" title="Permalink to this headline">#</a></h4>
+<h4>Access Data variables and Coordinates in a <code class="docutils literal notranslate"><span class="pre">Dataset</span></code><a class="headerlink" href="#access-data-variables-and-coordinates-in-a-dataset" title="Permalink to this heading">#</a></h4>
 <p>We can pull out any of the individual <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> objects in a few different ways.</p>
 <p>Using the “dot” notation:</p>
 <div class="cell docutils container">
@@ -4914,10 +4294,10 @@ Attributes:
 </section>
 </section>
 <section id="subsetting-and-selection-by-coordinate-values">
-<h2>Subsetting and selection by coordinate values<a class="headerlink" href="#subsetting-and-selection-by-coordinate-values" title="Permalink to this headline">#</a></h2>
+<h2>Subsetting and selection by coordinate values<a class="headerlink" href="#subsetting-and-selection-by-coordinate-values" title="Permalink to this heading">#</a></h2>
 <p>Much of the power of labeled coordinates comes from the ability to select data based on coordinate names and values, rather than array indices. We’ll explore this briefly here.</p>
 <section id="numpy-like-selection">
-<h3>NumPy-like selection<a class="headerlink" href="#numpy-like-selection" title="Permalink to this headline">#</a></h3>
+<h3>NumPy-like selection<a class="headerlink" href="#numpy-like-selection" title="Permalink to this heading">#</a></h3>
 <p>Suppose we want to extract all the spatial data for one single date: January 2, 2018. It’s possible to achieve that with NumPy-like index selection:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5296,7 +4676,7 @@ Attributes:
 <p><em><strong>Named coordinates free us from this burden…</strong></em></p>
 </section>
 <section id="selecting-with-sel">
-<h3>Selecting with <code class="docutils literal notranslate"><span class="pre">.sel()</span></code><a class="headerlink" href="#selecting-with-sel" title="Permalink to this headline">#</a></h3>
+<h3>Selecting with <code class="docutils literal notranslate"><span class="pre">.sel()</span></code><a class="headerlink" href="#selecting-with-sel" title="Permalink to this heading">#</a></h3>
 <p>We can instead select data based on coordinate values using the <code class="docutils literal notranslate"><span class="pre">.sel()</span></code> method, which takes one or more named coordinate(s) as keyword argument:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5679,10 +5059,10 @@ Attributes:
 </ul>
 </section>
 <section id="approximate-selection-and-interpolation">
-<h3>Approximate selection and interpolation<a class="headerlink" href="#approximate-selection-and-interpolation" title="Permalink to this headline">#</a></h3>
+<h3>Approximate selection and interpolation<a class="headerlink" href="#approximate-selection-and-interpolation" title="Permalink to this heading">#</a></h3>
 <p>With time and space data, we frequently want to sample “near” the coordinate points in our dataset. Here are a few simple ways to achieve that.</p>
 <section id="nearest-neighbor-sampling">
-<h4>Nearest-neighbor sampling<a class="headerlink" href="#nearest-neighbor-sampling" title="Permalink to this headline">#</a></h4>
+<h4>Nearest-neighbor sampling<a class="headerlink" href="#nearest-neighbor-sampling" title="Permalink to this heading">#</a></h4>
 <p>Suppose we want to sample the nearest datapoint within 2 days of date <code class="docutils literal notranslate"><span class="pre">2018-01-07</span></code>. Since the last day on our <code class="docutils literal notranslate"><span class="pre">time</span></code> axis is <code class="docutils literal notranslate"><span class="pre">2018-01-05</span></code>, this is well-posed.</p>
 <p><code class="docutils literal notranslate"><span class="pre">.sel</span></code> has the flexibility to perform nearest neighbor sampling, taking an optional tolerance:</p>
 <div class="cell docutils container">
@@ -6060,7 +5440,7 @@ Attributes:
 <p>where we see that <code class="docutils literal notranslate"><span class="pre">.sel</span></code> indeed pulled out the data for date <code class="docutils literal notranslate"><span class="pre">2018-01-05</span></code>.</p>
 </section>
 <section id="interpolation">
-<h4>Interpolation<a class="headerlink" href="#interpolation" title="Permalink to this headline">#</a></h4>
+<h4>Interpolation<a class="headerlink" href="#interpolation" title="Permalink to this heading">#</a></h4>
 <p>Suppose we want to extract a timeseries for Boulder (40°N, 105°W). Since <code class="docutils literal notranslate"><span class="pre">lon=-105</span></code> is <em>not</em> a point on our longitude axis, this requires interpolation between data points.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">.interp()</span></code> method (see the docs <a class="reference external" href="http://xarray.pydata.org/en/stable/interpolation.html">here</a>) works similarly to <code class="docutils literal notranslate"><span class="pre">.sel()</span></code>. Using <code class="docutils literal notranslate"><span class="pre">.interp()</span></code>, we can interpolate to any latitude/longitude location:</p>
 <div class="cell docutils container">
@@ -6441,7 +5821,7 @@ Attributes:
 </div></section>
 </section>
 <section id="slicing-along-coordinates">
-<h3>Slicing along coordinates<a class="headerlink" href="#slicing-along-coordinates" title="Permalink to this headline">#</a></h3>
+<h3>Slicing along coordinates<a class="headerlink" href="#slicing-along-coordinates" title="Permalink to this heading">#</a></h3>
 <p>Frequently we want to select a range (or <em>slice</em>) along one or more coordinate(s). We can achieve this by passing a Python <a class="reference external" href="https://docs.python.org/3/library/functions.html#slice">slice</a> object to <code class="docutils literal notranslate"><span class="pre">.sel()</span></code>, as follows:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -6834,7 +6214,7 @@ Attributes:
 </div><p>Notice how the length of each coordinate axis has changed due to our slicing.</p>
 </section>
 <section id="one-more-selection-method-loc">
-<h3>One more selection method: <code class="docutils literal notranslate"><span class="pre">.loc</span></code><a class="headerlink" href="#one-more-selection-method-loc" title="Permalink to this headline">#</a></h3>
+<h3>One more selection method: <code class="docutils literal notranslate"><span class="pre">.loc</span></code><a class="headerlink" href="#one-more-selection-method-loc" title="Permalink to this heading">#</a></h3>
 <p>All of these operations can also be done within square brackets on the <code class="docutils literal notranslate"><span class="pre">.loc</span></code> attribute of the <code class="docutils literal notranslate"><span class="pre">DataArray</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -7993,10 +7373,10 @@ Attributes:
 </section>
 </section>
 <section id="opening-netcdf-data">
-<h2>Opening netCDF data<a class="headerlink" href="#opening-netcdf-data" title="Permalink to this headline">#</a></h2>
+<h2>Opening netCDF data<a class="headerlink" href="#opening-netcdf-data" title="Permalink to this heading">#</a></h2>
 <p>With its close ties to the netCDF data model, Xarray also supports netCDF as a first-class file format. This means it has easy support for opening netCDF datasets, so long as they conform to some of Xarray’s limitations (such as 1-dimensional coordinates).</p>
 <section id="access-netcdf-data-with-xr-open-dataset">
-<h3>Access netCDF data with <code class="docutils literal notranslate"><span class="pre">xr.open_dataset</span></code><a class="headerlink" href="#access-netcdf-data-with-xr-open-dataset" title="Permalink to this headline">#</a></h3>
+<h3>Access netCDF data with <code class="docutils literal notranslate"><span class="pre">xr.open_dataset</span></code><a class="headerlink" href="#access-netcdf-data-with-xr-open-dataset" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filepath</span> <span class="o">=</span> <span class="s1">&#39;data/NARR_19930313_0000.nc&#39;</span>
@@ -8447,7 +7827,7 @@ Original Dataset = DatasetScan#narr-a_221_19930313_0000_000.grb; Translation Dat
 </div>
 </section>
 <section id="subsetting-the-dataset">
-<h3>Subsetting the <code class="docutils literal notranslate"><span class="pre">Dataset</span></code><a class="headerlink" href="#subsetting-the-dataset" title="Permalink to this headline">#</a></h3>
+<h3>Subsetting the <code class="docutils literal notranslate"><span class="pre">Dataset</span></code><a class="headerlink" href="#subsetting-the-dataset" title="Permalink to this heading">#</a></h3>
 <p>Our call to <code class="docutils literal notranslate"><span class="pre">xr.open_dataset()</span></code> above returned a <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> object that we’ve decided to call <code class="docutils literal notranslate"><span class="pre">ds</span></code>. We can then pull out individual fields:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -9702,7 +9082,7 @@ Attributes:
 </div>
 </section>
 <section id="aggregation-operations">
-<h3>Aggregation operations<a class="headerlink" href="#aggregation-operations" title="Permalink to this headline">#</a></h3>
+<h3>Aggregation operations<a class="headerlink" href="#aggregation-operations" title="Permalink to this heading">#</a></h3>
 <p>Not only can you use the named dimensions for manual slicing and indexing of data, but you can also use it to control aggregation operations, like <code class="docutils literal notranslate"><span class="pre">std</span></code> (standard deviation):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -10474,10 +9854,10 @@ Coordinates:
 </section>
 </section>
 <section id="plotting-with-xarray">
-<h2>Plotting with Xarray<a class="headerlink" href="#plotting-with-xarray" title="Permalink to this headline">#</a></h2>
+<h2>Plotting with Xarray<a class="headerlink" href="#plotting-with-xarray" title="Permalink to this heading">#</a></h2>
 <p>Another major benefit of using labeled data structures is that they enable automated plotting with sensible axis labels.</p>
 <section id="simple-visualization-with-plot">
-<h3>Simple visualization with <code class="docutils literal notranslate"><span class="pre">.plot()</span></code><a class="headerlink" href="#simple-visualization-with-plot" title="Permalink to this headline">#</a></h3>
+<h3>Simple visualization with <code class="docutils literal notranslate"><span class="pre">.plot()</span></code><a class="headerlink" href="#simple-visualization-with-plot" title="Permalink to this heading">#</a></h3>
 <p>Much like we saw in <span class="xref myst">Pandas</span>, Xarray includes an interface to <span class="xref myst">Matplotlib</span> that we can access through the <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> method of every <code class="docutils literal notranslate"><span class="pre">DataArray</span></code>.</p>
 <p>For quick and easy data exploration, we can just call <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> without any modifiers:</p>
 <div class="cell docutils container">
@@ -10490,13 +9870,13 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x17feb5f60&gt;]
 </pre></div>
 </div>
-<img alt="../../../_images/xarray_81_1.png" src="../../../_images/xarray_81_1.png" />
+<img alt="../../../_images/50bbb86fccea832e332b9646540e9541722d211e10a36e51d028733e5ee3dde9.png" src="../../../_images/50bbb86fccea832e332b9646540e9541722d211e10a36e51d028733e5ee3dde9.png" />
 </div>
 </div>
 <p>Here Xarray has generated a line plot of the temperature data against the coordinate variable <code class="docutils literal notranslate"><span class="pre">isobaric</span></code>. Also the metadata are used to auto-generate axis labels and units.</p>
 </section>
 <section id="customizing-the-plot">
-<h3>Customizing the plot<a class="headerlink" href="#customizing-the-plot" title="Permalink to this headline">#</a></h3>
+<h3>Customizing the plot<a class="headerlink" href="#customizing-the-plot" title="Permalink to this heading">#</a></h3>
 <p>As in Pandas, the <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> method is mostly just a wrapper to Matplotlib, so we can customize our plot in familiar ways.</p>
 <p>In this air temperature profile example, we would like to make two changes:</p>
 <ul class="simple">
@@ -10514,12 +9894,12 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x17ffae830&gt;]
 </pre></div>
 </div>
-<img alt="../../../_images/xarray_84_1.png" src="../../../_images/xarray_84_1.png" />
+<img alt="../../../_images/68199ca6f7c6203e2caf420995b481ba8ebdac49e5149c1bd970ba9cc106f2fe.png" src="../../../_images/68199ca6f7c6203e2caf420995b481ba8ebdac49e5149c1bd970ba9cc106f2fe.png" />
 </div>
 </div>
 </section>
 <section id="plotting-2d-data">
-<h3>Plotting 2D data<a class="headerlink" href="#plotting-2d-data" title="Permalink to this headline">#</a></h3>
+<h3>Plotting 2D data<a class="headerlink" href="#plotting-2d-data" title="Permalink to this heading">#</a></h3>
 <p>In the example above, the <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> method produced a line plot.</p>
 <p>What if we call <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> on a 2D array?</p>
 <div class="cell docutils container">
@@ -10532,7 +9912,7 @@ Coordinates:
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x18002a0b0&gt;
 </pre></div>
 </div>
-<img alt="../../../_images/xarray_86_1.png" src="../../../_images/xarray_86_1.png" />
+<img alt="../../../_images/64e3d0d38063524c2fca4cafb19e7f920fcd08634afb6b9b86dfb25f6f77c93a.png" src="../../../_images/64e3d0d38063524c2fca4cafb19e7f920fcd08634afb6b9b86dfb25f6f77c93a.png" />
 </div>
 </div>
 <p>Xarray has recognized that the <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> object calling the plot method has two coordinate variables, and generates a 2D plot using the <code class="docutils literal notranslate"><span class="pre">pcolormesh</span></code> method from Matplotlib.</p>
@@ -10541,10 +9921,10 @@ Coordinates:
 </section>
 <hr class="docutils" />
 <section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
 <p>Xarray brings the joy of Pandas-style labeled data operations to N-dimensional data. As such, it has become a central workhorse in the geoscience community for the analysis of gridded datasets. Xarray allows us to open self-describing NetCDF files and make full use of the coordinate axes, labels, units, and other metadata. By making use of labeled coordinates, our code is often easier to write, easier to read, and more robust.</p>
 <section id="what-s-next">
-<h3>What’s next?<a class="headerlink" href="#what-s-next" title="Permalink to this headline">#</a></h3>
+<h3>What’s next?<a class="headerlink" href="#what-s-next" title="Permalink to this heading">#</a></h3>
 <p>Additional notebooks to appear in this section will go into more detail about</p>
 <ul class="simple">
 <li><p>arithemtic and broadcasting with Xarray data structures</p></li>
@@ -10555,12 +9935,12 @@ Coordinates:
 </section>
 </section>
 <section id="resources-and-references">
-<h2>Resources and references<a class="headerlink" href="#resources-and-references" title="Permalink to this headline">#</a></h2>
+<h2>Resources and references<a class="headerlink" href="#resources-and-references" title="Permalink to this heading">#</a></h2>
 <p>This notebook was adapated from material in <a class="reference external" href="https://unidata.github.io/python-training/workshop/XArray/xarray-and-cf/">Unidata’s Python Training</a>.</p>
 <p>The best resource for Xarray is the <a class="reference external" href="http://xarray.pydata.org/en/stable/">Xarray documentation</a>. See in particular</p>
 <ul class="simple">
 <li><p><a class="reference external" href="http://xarray.pydata.org/en/stable/getting-started-guide/why-xarray.html">Why Xarray</a></p></li>
-<li><p><a class="reference external" href="http://xarray.pydata.org/en/stable/getting-started-guide/quick-overview.html">Quick overview</a></p></li>
+<li><p><a class="reference external" href="http://xarray.pydata.org/en/stable/getting-started-guide/quick-overview.html#">Quick overview</a></p></li>
 <li><p><a class="reference external" href="http://xarray.pydata.org/en/stable/gallery.html">Example gallery</a></p></li>
 </ul>
 <p>Another excellent resource is this <a class="reference external" href="https://xarray-contrib.github.io/xarray-tutorial/">Xarray Tutorial collection</a>.</p>
@@ -10579,7 +9959,7 @@ Coordinates:
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./Tutorials/Open-Science-Workshop-2022/tutorials"
         },
         predefinedOutput: true
@@ -10587,50 +9967,158 @@ Coordinates:
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="pyart-corrections.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Py-ART Corrections</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="pyart-corrections.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Py-ART Corrections</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="xarray-computation-masking.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="xarray-computation-masking.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Computations and Masks with Xarray</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By ARM Development Team<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introducing-the-dataarray-and-dataset">Introducing the <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> and <code class="docutils literal notranslate"><span class="pre">Dataset</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creation-of-a-dataarray-object">Creation of a <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> object</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-a-random-numpy-array">Generate a random numpy array</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#wrap-the-array-first-attempt">Wrap the array: first attempt</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#assign-dimension-names">Assign dimension names</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-dataarray-with-named-coordinates">Create a <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> with named Coordinates</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#make-time-and-space-coordinates">Make time and space coordinates</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#initialize-the-dataarray-with-complete-coordinate-info">Initialize the <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> with complete coordinate info</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#set-useful-attributes">Set useful attributes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes-are-not-preserved-by-default">Attributes are not preserved by default!</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-dataset-a-container-for-dataarrays-with-shared-coordinates">The <code class="docutils literal notranslate"><span class="pre">Dataset</span></code>: a container for <code class="docutils literal notranslate"><span class="pre">DataArray</span></code>s with shared coordinates</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-pressure-dataarray-using-the-same-coordinates">Create a pressure <code class="docutils literal notranslate"><span class="pre">DataArray</span></code> using the same coordinates</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-dataset-object">Create a <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> object</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#access-data-variables-and-coordinates-in-a-dataset">Access Data variables and Coordinates in a <code class="docutils literal notranslate"><span class="pre">Dataset</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subsetting-and-selection-by-coordinate-values">Subsetting and selection by coordinate values</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-like-selection">NumPy-like selection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selecting-with-sel">Selecting with <code class="docutils literal notranslate"><span class="pre">.sel()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#approximate-selection-and-interpolation">Approximate selection and interpolation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#nearest-neighbor-sampling">Nearest-neighbor sampling</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolation">Interpolation</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#slicing-along-coordinates">Slicing along coordinates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-more-selection-method-loc">One more selection method: <code class="docutils literal notranslate"><span class="pre">.loc</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-netcdf-data">Opening netCDF data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#access-netcdf-data-with-xr-open-dataset">Access netCDF data with <code class="docutils literal notranslate"><span class="pre">xr.open_dataset</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subsetting-the-dataset">Subsetting the <code class="docutils literal notranslate"><span class="pre">Dataset</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregation-operations">Aggregation operations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-with-xarray">Plotting with Xarray</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-visualization-with-plot">Simple visualization with <code class="docutils literal notranslate"><span class="pre">.plot()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#customizing-the-plot">Customizing the plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-2d-data">Plotting 2D data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-s-next">What’s next?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources-and-references">Resources and references</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ARM Development Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

@@ -1,48 +1,59 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Using EMC² to Process E3SM Output &#8212; ARM Tutorials</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -50,61 +61,93 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Tutorials/Open-Science-Workshop-2022/tutorials/EMC2_demo_w_E3SM';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Day 3 - MetPy and ACT" href="day3-overview.html" />
     <link rel="prev" title="ESMAC: Generate mean size distribution" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_mean_size.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../../_static/arm_logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">ARM Tutorials</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../../../_static/arm_logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../_static/arm_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -113,522 +156,261 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Open Science Workshop
- </span>
-</p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Open Science Workshop</span></p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../presentations/view-abstracts.html">
-   Workshop Abstracts
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="day1-overview.html">
-   Day 1 - Introductions!
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="jupyter-intro.html">
-     JupyterLab
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Scientific_Libraries_Numpy.html">
-     Working with Numpy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Scientific_Libraries_Pandas.html">
-     Working with Pandas
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Scientific_Libraries_Xarray.html">
-     Working with Xarray
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="github-intro.html">
-     An Introduction to Github
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="forking_cloning.html">
-     Forking a Repository
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="branching-forking-github-ui.html">
-     Branching and Pull Requests on the Github Website
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="day2-overview.html">
-   Day 2 - Data + Packages
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="ARM-Data-Access.html">
-     Accessing ARM Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ESMAC_diags/esmac-diags.html">
-     ESMAC Diagnostics
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_2d_timeseries.html">
-     ESMAC: Generate timeseries of size distribution
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_size_diurnalcycle.html">
-     ESMAC: Generate diurnal cycle of size distribution
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_size_timeseries.html">
-     ESMAC: Generate timeseries of size distribution
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_bar_composition.html">
-     ESMAC: Generate bar plot for aerosol composition
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_hist.html">
-     ESMAC: Generate a 1-D Historgram Plot
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_mean_size.html">
-     ESMAC: Generate mean size distribution
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Using EMC² to Process E3SM Output
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="day3-overview.html">
-   Day 3 - MetPy and ACT
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="MetPy%2001%20-%20Overview.html">
-     MetPy Tutorial - Overview
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="MetPy%2002%20-%20Making%20a%20SkewT.html">
-     MetPy Tutorial - Making a Skew-T!
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="act-basics.html">
-     ACT Basics
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="day4-overview.html">
-   Day 3 - Py-ART and Pangeo
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pyart-basics.html">
-     PyART Basics
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pyart-gridding.html">
-     Py-ART Gridding
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pyart-corrections.html">
-     Py-ART Corrections
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="xarray.html">
-     Introduction to Xarray
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="xarray-computation-masking.html">
-     Computations and Masks with Xarray
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../presentations/view-abstracts.html">Workshop Abstracts</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="day1-overview.html">Day 1 - Introductions!</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="jupyter-intro.html">JupyterLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Scientific_Libraries_Numpy.html">Working with Numpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Scientific_Libraries_Pandas.html">Working with Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Scientific_Libraries_Xarray.html">Working with Xarray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="github-intro.html">An Introduction to Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forking_cloning.html">Forking a Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="branching-forking-github-ui.html">Branching and Pull Requests on the Github Website</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="day2-overview.html">Day 2 - Data + Packages</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ARM-Data-Access.html">Accessing ARM Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ESMAC_diags/esmac-diags.html">ESMAC Diagnostics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_2d_timeseries.html">ESMAC: Generate timeseries of size distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_size_diurnalcycle.html">ESMAC: Generate diurnal cycle of size distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_size_timeseries.html">ESMAC: Generate timeseries of size distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_bar_composition.html">ESMAC: Generate bar plot for aerosol composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_hist.html">ESMAC: Generate a 1-D Historgram Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_mean_size.html">ESMAC: Generate mean size distribution</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Using EMC² to Process E3SM Output</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="day3-overview.html">Day 3 - MetPy and ACT</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="MetPy%2001%20-%20Overview.html">MetPy Tutorial - Overview</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="MetPy%2002%20-%20Making%20a%20SkewT.html">MetPy Tutorial - Making a Skew-T!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="act-basics.html">ACT Basics</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="day4-overview.html">Day 3 - Py-ART and Pangeo</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyart-basics.html">PyART Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyart-gridding.html">Py-ART Gridding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyart-corrections.html">Py-ART Corrections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xarray.html">Introduction to Xarray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xarray-computation-masking.html">Computations and Masks with Xarray</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/ARM-Development/ARM-Notebooks/main?urlpath=lab/tree/Tutorials/Open-Science-Workshop-2022/tutorials/EMC2_demo_w_E3SM.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
   
-    <img src="../../../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
+  <div id="rtd-footer-container"></div>
 
-      </li>
+
+      </div>
       
-      <li>
-        <a href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/Tutorials/Open-Science-Workshop-2022/tutorials/EMC2_demo_w_E3SM.ipynb&branch=main"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on JupyterHub"
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/Tutorials/Open-Science-Workshop-2022/tutorials/EMC2_demo_w_E3SM.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../../../_static/images/logo_jupyterhub.svg">
   </span>
-<span class="headerbtn__text-container">JupyterHub</span>
+<span class="btn__text-container">JupyterHub</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/Tutorials/Open-Science-Workshop-2022/tutorials/EMC2_demo_w_E3SM.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../../_sources/Tutorials/Open-Science-Workshop-2022/tutorials/EMC2_demo_w_E3SM.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#overview-of-emc2">
-   Overview of EMC²
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#we-will-briefly-explore">
-     We will briefly explore:
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#imports">
-   Imports
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#initializing-instrument-class-objects">
-   Initializing Instrument Class Objects
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#initializing-a-model-class-object">
-   Initializing a Model Class Object
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#running-the-subcolumn-generator-and-instrument-simulator">
-   Running the Subcolumn Generator and Instrument Simulator
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#we-can-examine-the-simulator-output-dataset-saved-under-an-xr-dataset-object-we-can-see-that-for-most-lidar-and-radar-observables-the-equivalent-reflectivity-factor-ze-the-backscatter-cross-section-beta-p-etc-we-have-fields-per-hydrometeor-class-in-addition-to-the-field-representing-the-total">
-     We can examine the simulator output dataset saved under an
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       xr.Dataset
-      </span>
-     </code>
-     object. We can see that for most lidar and radar observables (the equivalent reflectivity factor Ze, the backscatter cross-section beta_p, etc.) we have fields per hydrometeor class in addition to the field representing the total.
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visualization">
-   Visualization
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concluding-remarks">
-   Concluding Remarks
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#resources-and-references">
-   Resources and References
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Using EMC² to Process E3SM Output</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#overview-of-emc2">
-   Overview of EMC²
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#we-will-briefly-explore">
-     We will briefly explore:
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#imports">
-   Imports
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#initializing-instrument-class-objects">
-   Initializing Instrument Class Objects
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#initializing-a-model-class-object">
-   Initializing a Model Class Object
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#running-the-subcolumn-generator-and-instrument-simulator">
-   Running the Subcolumn Generator and Instrument Simulator
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#we-can-examine-the-simulator-output-dataset-saved-under-an-xr-dataset-object-we-can-see-that-for-most-lidar-and-radar-observables-the-equivalent-reflectivity-factor-ze-the-backscatter-cross-section-beta-p-etc-we-have-fields-per-hydrometeor-class-in-addition-to-the-field-representing-the-total">
-     We can examine the simulator output dataset saved under an
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       xr.Dataset
-      </span>
-     </code>
-     object. We can see that for most lidar and radar observables (the equivalent reflectivity factor Ze, the backscatter cross-section beta_p, etc.) we have fields per hydrometeor class in addition to the field representing the total.
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visualization">
-   Visualization
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#concluding-remarks">
-   Concluding Remarks
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#resources-and-references">
-   Resources and References
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Using EMC² to Process E3SM Output</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-of-emc2">Overview of EMC²</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#we-will-briefly-explore">We will briefly explore:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initializing-instrument-class-objects">Initializing Instrument Class Objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initializing-a-model-class-object">Initializing a Model Class Object</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-subcolumn-generator-and-instrument-simulator">Running the Subcolumn Generator and Instrument Simulator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#we-can-examine-the-simulator-output-dataset-saved-under-an-xr-dataset-object-we-can-see-that-for-most-lidar-and-radar-observables-the-equivalent-reflectivity-factor-ze-the-backscatter-cross-section-beta-p-etc-we-have-fields-per-hydrometeor-class-in-addition-to-the-field-representing-the-total">We can examine the simulator output dataset saved under an <code class="docutils literal notranslate"><span class="pre">xr.Dataset</span></code> object. We can see that for most lidar and radar observables (the equivalent reflectivity factor Ze, the backscatter cross-section beta_p, etc.) we have fields per hydrometeor class in addition to the field representing the total.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization">Visualization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concluding-remarks">Concluding Remarks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources-and-references">Resources and References</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
-  <section class="tex2jax_ignore mathjax_ignore" id="using-emc2-to-process-e3sm-output">
-<h1>Using EMC² to Process E3SM Output<a class="headerlink" href="#using-emc2-to-process-e3sm-output" title="Permalink to this headline">#</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="using-emc2-to-process-e3sm-output">
+<h1>Using EMC² to Process E3SM Output<a class="headerlink" href="#using-emc2-to-process-e3sm-output" title="Permalink to this heading">#</a></h1>
 <hr class="docutils" />
 <section id="overview-of-emc2">
-<h2>Overview of EMC²<a class="headerlink" href="#overview-of-emc2" title="Permalink to this headline">#</a></h2>
+<h2>Overview of EMC²<a class="headerlink" href="#overview-of-emc2" title="Permalink to this heading">#</a></h2>
 <p>EMC² can be used to simulate radar and lidar observables faithful to large-scale model physics. Here, we will demonstrate using EMC² to evaluate a climate model’s output. We will process E3SM regional output around the fixed ARM site at Utqiagvik, North Slope of Alaska site, using EMC² radiation approach (fastest processing; faithful to E3SM’s radiation logic; similar general approach to that used for the on-line COSP).</p>
 <section id="we-will-briefly-explore">
-<h3>We will briefly explore:<a class="headerlink" href="#we-will-briefly-explore" title="Permalink to this headline">#</a></h3>
-<ol class="simple">
+<h3>We will briefly explore:<a class="headerlink" href="#we-will-briefly-explore" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
 <li><p>Reading model output file using EMC²</p></li>
 <li><p>Generating subcolumns and running the radar and lidar instrument simualtors</p></li>
 <li><p>Classifying the simulator output</p></li>
@@ -637,7 +419,7 @@ title="Print to PDF"
 </section>
 </section>
 <section id="imports">
-<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this headline">#</a></h2>
+<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">emc2</span>
@@ -650,7 +432,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="initializing-instrument-class-objects">
-<h2>Initializing Instrument Class Objects<a class="headerlink" href="#initializing-instrument-class-objects" title="Permalink to this headline">#</a></h2>
+<h2>Initializing Instrument Class Objects<a class="headerlink" href="#initializing-instrument-class-objects" title="Permalink to this heading">#</a></h2>
 <p>We begin with generating instrument class objects representing instruments deployed at Utqiagvik; that is, high spectral resolution lidar (HSRL) <code class="docutils literal notranslate"><span class="pre">emc2.core.instruments.HSRL</span></code> and ARM Ka-band Zenith Radar (KAZR) <code class="docutils literal notranslate"><span class="pre">emc2.core.instruments.KAZR</span></code> objects. Among other radar and lidar instruments, EMC² includes instrument sub-classes for the full ARM radar and lidar instrument suite. Note that in the case of the KAZR class object (as in the case of different radar object) we specify the ARM site string to initialize the KAZR class object with the correct radar attributes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -669,7 +451,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="initializing-a-model-class-object">
-<h2>Initializing a Model Class Object<a class="headerlink" href="#initializing-a-model-class-object" title="Permalink to this headline">#</a></h2>
+<h2>Initializing a Model Class Object<a class="headerlink" href="#initializing-a-model-class-object" title="Permalink to this heading">#</a></h2>
 <p>Let’s take a look at the model output data file from EAM (E3SM’s atmospheric component) using the <code class="docutils literal notranslate"><span class="pre">xarray</span></code> Python package.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5464,7 +5246,7 @@ Attributes:
         [6.673959e-17, 5.367670e-17, 5.525207e-17]]], dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-10c0fd7d-d4c0-4e05-9c5d-b37402889a6c' class='xr-section-summary-in' type='checkbox'  ><label for='section-10c0fd7d-d4c0-4e05-9c5d-b37402889a6c' class='xr-section-summary' >Attributes: <span>(11)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Conventions :</span></dt><dd>CF-1.0</dd><dt><span>source :</span></dt><dd>CAM</dd><dt><span>case :</span></dt><dd>EAMv1_ARM_Freerun_1</dd><dt><span>title :</span></dt><dd>UNSET</dd><dt><span>logname :</span></dt><dd>yshi</dd><dt><span>host :</span></dt><dd>cori07</dd><dt><span>Version :</span></dt><dd>$Name$</dd><dt><span>revision_Id :</span></dt><dd>$Id$</dd><dt><span>initial_file :</span></dt><dd>/global/cfs/cdirs/e3sm/inputdata/atm/cam/inic/homme/cami_mam3_Linoz_ne30np4_L72_c160214.nc</dd><dt><span>topography_file :</span></dt><dd>/global/cfs/cdirs/e3sm/inputdata/atm/cam/topo/USGS-gtopo30_ne30np4_16xdel2-PFC-consistentSGH.nc</dd><dt><span>time_period_freq :</span></dt><dd>hour_1</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <p>Instead of explicitly using the xarray package to load the data, EMC² can automatically load the data file when generating an <code class="docutils literal notranslate"><span class="pre">emc2.core.model.E3SM</span></code> object. By using EMC² to load a large-scale model’s output, we are able to handle 2 potential issues exemplified in the examined E3SM output file:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Because E3SM operates a cube-sphere grid, data is not provided in a strict lat-lon grid (two spatial dimensions) but rather on a column basis (one spatial dimension). We need to inform EMC² about that by setting <code class="docutils literal notranslate"><span class="pre">all_appended_in_lat=True</span></code>.</p></li>
 <li><p>The regional output file has appended strings at the end of every field name, the result of post-processing machinery. By setting <code class="docutils literal notranslate"><span class="pre">appended_str=True</span></code>, EMC² can remove these strings by using one of EMC²’s internal methods invoked during initialization.</p></li>
 </ol>
@@ -6010,13 +5792,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 576 B </td>
                         <td> 576 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -6067,13 +5849,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 576 B </td>
                         <td> 576 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -6124,13 +5906,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 112 B </td>
                         <td> 112 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (7, 2) </td>
@@ -6181,13 +5963,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 112 B </td>
                         <td> 112 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (2, 7) </td>
@@ -6238,13 +6020,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 640 B </td>
                         <td> 640 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (2, 40) </td>
@@ -6295,13 +6077,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 240 B </td>
                         <td> 240 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (2, 15) </td>
@@ -6352,13 +6134,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 256 B </td>
                         <td> 256 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (2, 16) </td>
@@ -6409,13 +6191,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 96 B </td>
                         <td> 96 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (2, 6) </td>
@@ -6497,13 +6279,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 584 B </td>
                         <td> 584 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (73,) </td>
@@ -6554,13 +6336,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 584 B </td>
                         <td> 584 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (73,) </td>
@@ -6611,13 +6393,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -6668,13 +6450,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -6725,13 +6507,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 1.12 kiB </td>
                         <td> 1.12 kiB </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72, 2) </td>
@@ -6782,13 +6564,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 576 B </td>
                         <td> 576 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -6839,13 +6621,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 576 B </td>
                         <td> 576 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -6896,13 +6678,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -6953,13 +6735,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -7010,13 +6792,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 576 B </td>
                         <td> 576 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -7067,13 +6849,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 576 B </td>
                         <td> 576 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -7124,13 +6906,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 576 B </td>
                         <td> 576 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -7181,13 +6963,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 576 B </td>
                         <td> 576 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -7238,13 +7020,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 576 B </td>
                         <td> 576 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -7295,13 +7077,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 576 B </td>
                         <td> 576 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -7352,13 +7134,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -7409,13 +7191,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -7466,13 +7248,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -7523,13 +7305,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -7580,13 +7362,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -7685,13 +7467,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -7802,13 +7584,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -7859,13 +7641,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -7940,13 +7722,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -7997,13 +7779,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -8054,13 +7836,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -8183,13 +7965,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -8240,13 +8022,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -8297,13 +8079,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 20.53 kiB </td>
                         <td> 20.53 kiB </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72, 73) </td>
@@ -8354,13 +8136,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 20.53 kiB </td>
                         <td> 20.53 kiB </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72, 73) </td>
@@ -8411,13 +8193,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 20.53 kiB </td>
                         <td> 20.53 kiB </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72, 73) </td>
@@ -8468,13 +8250,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 20.53 kiB </td>
                         <td> 20.53 kiB </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72, 73) </td>
@@ -8537,13 +8319,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -8594,13 +8376,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -8651,13 +8433,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -8708,13 +8490,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -8765,13 +8547,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -8822,13 +8604,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -8879,13 +8661,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -8967,13 +8749,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -9024,13 +8806,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -9081,13 +8863,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -9138,13 +8920,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -9195,13 +8977,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -9252,13 +9034,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -9393,13 +9175,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -9546,13 +9328,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -9603,13 +9385,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -9660,13 +9442,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -9717,13 +9499,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -9774,13 +9556,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -9969,13 +9751,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -10026,13 +9808,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -10095,13 +9877,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -10152,13 +9934,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -10209,13 +9991,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 288 B </td>
                         <td> 288 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72,) </td>
@@ -10993,13 +10775,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 40.50 kiB </td>
                         <td> 40.50 kiB </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72, 72) </td>
@@ -11056,13 +10838,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 40.50 kiB </td>
                         <td> 40.50 kiB </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (72, 72) </td>
@@ -11105,9 +10887,9 @@ Attributes: (12/15)
 </div>
 </section>
 <section id="running-the-subcolumn-generator-and-instrument-simulator">
-<h2>Running the Subcolumn Generator and Instrument Simulator<a class="headerlink" href="#running-the-subcolumn-generator-and-instrument-simulator" title="Permalink to this headline">#</a></h2>
+<h2>Running the Subcolumn Generator and Instrument Simulator<a class="headerlink" href="#running-the-subcolumn-generator-and-instrument-simulator" title="Permalink to this heading">#</a></h2>
 <p>Now, we use the <code class="docutils literal notranslate"><span class="pre">emc2.simulator.main.make_simulated_data</span></code> method to have EMC² perform a set of (optional) tasks:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Generate user-specified number of subcolumns per model grid cell.</p></li>
 <li><p>Run the instrument simualtor.</p></li>
 <li><p>Classify hydrometeor phase using the simulated observables.</p></li>
@@ -11159,7 +10941,7 @@ radar processing done!
 </div>
 </div>
 <section id="we-can-examine-the-simulator-output-dataset-saved-under-an-xr-dataset-object-we-can-see-that-for-most-lidar-and-radar-observables-the-equivalent-reflectivity-factor-ze-the-backscatter-cross-section-beta-p-etc-we-have-fields-per-hydrometeor-class-in-addition-to-the-field-representing-the-total">
-<h3>We can examine the simulator output dataset saved under an <code class="docutils literal notranslate"><span class="pre">xr.Dataset</span></code> object. We can see that for most lidar and radar observables (the equivalent reflectivity factor Ze, the backscatter cross-section beta_p, etc.) we have fields per hydrometeor class in addition to the field representing the total.<a class="headerlink" href="#we-can-examine-the-simulator-output-dataset-saved-under-an-xr-dataset-object-we-can-see-that-for-most-lidar-and-radar-observables-the-equivalent-reflectivity-factor-ze-the-backscatter-cross-section-beta-p-etc-we-have-fields-per-hydrometeor-class-in-addition-to-the-field-representing-the-total" title="Permalink to this headline">#</a></h3>
+<h3>We can examine the simulator output dataset saved under an <code class="docutils literal notranslate"><span class="pre">xr.Dataset</span></code> object. We can see that for most lidar and radar observables (the equivalent reflectivity factor Ze, the backscatter cross-section beta_p, etc.) we have fields per hydrometeor class in addition to the field representing the total.<a class="headerlink" href="#we-can-examine-the-simulator-output-dataset-saved-under-an-xr-dataset-object-we-can-see-that-for-most-lidar-and-radar-observables-the-equivalent-reflectivity-factor-ze-the-backscatter-cross-section-beta-p-etc-we-have-fields-per-hydrometeor-class-in-addition-to-the-field-representing-the-total" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_e3sm</span><span class="o">.</span><span class="n">ds</span>
@@ -11674,13 +11456,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 112 B </td>
                         <td> 112 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (7, 2) </td>
@@ -11731,13 +11513,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 112 B </td>
                         <td> 112 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (2, 7) </td>
@@ -11788,13 +11570,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 640 B </td>
                         <td> 640 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (2, 40) </td>
@@ -11845,13 +11627,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 240 B </td>
                         <td> 240 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (2, 15) </td>
@@ -11902,13 +11684,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 256 B </td>
                         <td> 256 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (2, 16) </td>
@@ -11959,13 +11741,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 96 B </td>
                         <td> 96 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (2, 6) </td>
@@ -12047,13 +11829,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 584 B </td>
                         <td> 584 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (73,) </td>
@@ -12104,13 +11886,13 @@ Attributes: (12/15)
                     </tr>
                 </thead>
                 <tbody>
-
+                    
                     <tr>
                         <th> Bytes </th>
                         <td> 584 B </td>
                         <td> 584 B </td>
                     </tr>
-
+                    
                     <tr>
                         <th> Shape </th>
                         <td> (73,) </td>
@@ -21257,7 +21039,7 @@ Attributes: (12/15)
 </section>
 </section>
 <section id="visualization">
-<h2>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">#</a></h2>
+<h2>Visualization<a class="headerlink" href="#visualization" title="Permalink to this heading">#</a></h2>
 <p>We can plot EMC² output using matplotlib, xarray’s internal methods, or EMC²’s <code class="docutils literal notranslate"><span class="pre">emc2.plotting.SubcolumnDisplay</span></code> object, which is based on the <a class="reference external" href="https://arm-doe.github.io/ACT/">ACT</a> package. Here, using the <code class="docutils literal notranslate"><span class="pre">SubcolumnDisplay</span></code>’s <code class="docutils literal notranslate"><span class="pre">plot_subcolumn_timeseries</span></code> method, we show the height x time curtain of the first subcolumn (out of the 50 specified) in the grid cell closest to the coordinates of the Utqiagvik specified using the <code class="docutils literal notranslate"><span class="pre">lat_sel</span></code> and <code class="docutils literal notranslate"><span class="pre">lon_sel</span></code> keywords. The hatch patterns invoked by setting <code class="docutils literal notranslate"><span class="pre">hatched_mask=True</span></code>, designate subcolumn bins not detected by the simulated instrument.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -21300,7 +21082,7 @@ Attributes: (12/15)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cropping lat dim (lat requested = 71.32)
 </pre></div>
 </div>
-<img alt="../../../_images/EMC2_demo_w_E3SM_19_1.png" src="../../../_images/EMC2_demo_w_E3SM_19_1.png" />
+<img alt="../../../_images/5ff2083aece7f78a90e46b4e0154686d85570434c8b0db67941aaa27d5e2881d.png" src="../../../_images/5ff2083aece7f78a90e46b4e0154686d85570434c8b0db67941aaa27d5e2881d.png" />
 </div>
 </div>
 <p>For a given subcolumn, we can also plot the output from one of the phase classification algorithms (HSRL-based classification in this case) by using the <code class="docutils literal notranslate"><span class="pre">plot_subcolumn_timeseries</span></code> method followed by calling the <code class="docutils literal notranslate"><span class="pre">change_plot_to_class_mask</span></code>.</p>
@@ -21332,7 +21114,7 @@ Attributes: (12/15)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cropping lat dim (lat requested = 71.32)
 </pre></div>
 </div>
-<img alt="../../../_images/EMC2_demo_w_E3SM_21_1.png" src="../../../_images/EMC2_demo_w_E3SM_21_1.png" />
+<img alt="../../../_images/6596e9cbdba5b1e1cd1e818c5ded41cc6b83bc24df13b6139421df2011aafc27.png" src="../../../_images/6596e9cbdba5b1e1cd1e818c5ded41cc6b83bc24df13b6139421df2011aafc27.png" />
 </div>
 </div>
 <p>Recalling that EMC² outputs radar and lidar observables per hydrometeor class, we can examine a breakdown of hydrometeor contribution to every simulated observable. This type of analysis also enables the evaluation of the classification algorithm, generally speaking. Note that because we examine variables per hydrometeor class, we ignore the detectability constraints here. Also note that the user can quite easily edit the “cosmetics” (fontsize, etc.) when calling the plotting method, but we skip these options in this example.</p>
@@ -21366,7 +21148,7 @@ Attributes: (12/15)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cropping lat dim (lat requested = 71.32)
 </pre></div>
 </div>
-<img alt="../../../_images/EMC2_demo_w_E3SM_23_1.png" src="../../../_images/EMC2_demo_w_E3SM_23_1.png" />
+<img alt="../../../_images/b10f8c45697c11eb75b8549711f27d09fb34225bfce414d4b91cad15fbf7485f.png" src="../../../_images/b10f8c45697c11eb75b8549711f27d09fb34225bfce414d4b91cad15fbf7485f.png" />
 </div>
 </div>
 <p>In addition to plotting the temporal evolution of a specific subcolun, we can also plot all subcolumns at a single time step using the <code class="docutils literal notranslate"><span class="pre">SubcolumnDisplay</span></code>’s <code class="docutils literal notranslate"><span class="pre">plot_single_profile</span></code> method.</p>
@@ -21392,7 +21174,7 @@ Attributes: (12/15)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cropping lat dim (lat requested = 71.32)
 </pre></div>
 </div>
-<img alt="../../../_images/EMC2_demo_w_E3SM_25_1.png" src="../../../_images/EMC2_demo_w_E3SM_25_1.png" />
+<img alt="../../../_images/019ccc7fbfee4f686b3b41b146952c25cb7c164352fdbf56fb4e8c02a86e92d4.png" src="../../../_images/019ccc7fbfee4f686b3b41b146952c25cb7c164352fdbf56fb4e8c02a86e92d4.png" />
 </div>
 </div>
 <p>We can also examine mean profiles using the <code class="docutils literal notranslate"><span class="pre">plot_subcolumn_mean_profile</span></code> method. This method also illustrates the stardard deviation as an envelope around the mean. Note that here we plot the mean profile as a function of height instead of pressure coordinates by setting <code class="docutils literal notranslate"><span class="pre">pressure_coords=False</span></code> when invoking the plotting routine.</p>
@@ -21418,16 +21200,16 @@ Attributes: (12/15)
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cropping lat dim (lat requested = 71.32)
 </pre></div>
 </div>
-<img alt="../../../_images/EMC2_demo_w_E3SM_27_1.png" src="../../../_images/EMC2_demo_w_E3SM_27_1.png" />
+<img alt="../../../_images/afd749b8ee1e9a83c69d7bcc7c0ff75f8c2ab23464a31d90d5b334d0a28e5955.png" src="../../../_images/afd749b8ee1e9a83c69d7bcc7c0ff75f8c2ab23464a31d90d5b334d0a28e5955.png" />
 </div>
 </div>
 </section>
 <section id="concluding-remarks">
-<h2>Concluding Remarks<a class="headerlink" href="#concluding-remarks" title="Permalink to this headline">#</a></h2>
+<h2>Concluding Remarks<a class="headerlink" href="#concluding-remarks" title="Permalink to this heading">#</a></h2>
 <p><strong>EMC² includes support for a large number of instruments including the full ARM radar and lidar instrument suite and has already been operated on ESM, SCM, and LES outputs. The software include multiple methods for phase classification and partitioning, scattering calculations, and more. See and follow the continuously updated <a class="reference external" href="https://github.com/columncolab/EMC2">EMC² GitHub repository</a> for more information.</strong></p>
 </section>
 <section id="resources-and-references">
-<h2>Resources and References<a class="headerlink" href="#resources-and-references" title="Permalink to this headline">#</a></h2>
+<h2>Resources and References<a class="headerlink" href="#resources-and-references" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://doi.org/10.5194/gmd-15-901-2022">The EMC² manuscript (Silber et al. GMD, 2022)</a></p></li>
 <li><p><a class="reference external" href="https://columncolab.github.io/EMC2/">EMC² documentation</a></p></li>
@@ -21448,7 +21230,7 @@ Attributes: (12/15)
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./Tutorials/Open-Science-Workshop-2022/tutorials"
         },
         predefinedOutput: true
@@ -21456,50 +21238,118 @@ Attributes: (12/15)
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_mean_size.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">ESMAC: Generate mean size distribution</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_mean_size.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">ESMAC: Generate mean size distribution</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="day3-overview.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="day3-overview.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Day 3 - MetPy and ACT</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By ARM Development Team<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-of-emc2">Overview of EMC²</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#we-will-briefly-explore">We will briefly explore:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initializing-instrument-class-objects">Initializing Instrument Class Objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initializing-a-model-class-object">Initializing a Model Class Object</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-subcolumn-generator-and-instrument-simulator">Running the Subcolumn Generator and Instrument Simulator</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#we-can-examine-the-simulator-output-dataset-saved-under-an-xr-dataset-object-we-can-see-that-for-most-lidar-and-radar-observables-the-equivalent-reflectivity-factor-ze-the-backscatter-cross-section-beta-p-etc-we-have-fields-per-hydrometeor-class-in-addition-to-the-field-representing-the-total">We can examine the simulator output dataset saved under an <code class="docutils literal notranslate"><span class="pre">xr.Dataset</span></code> object. We can see that for most lidar and radar observables (the equivalent reflectivity factor Ze, the backscatter cross-section beta_p, etc.) we have fields per hydrometeor class in addition to the field representing the total.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization">Visualization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concluding-remarks">Concluding Remarks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources-and-references">Resources and References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ARM Development Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

@@ -1,0 +1,1003 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Overview &#8212; ARM Tutorials</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Tutorials/UPR-ACT-2023/5-ACT-Basics-2023';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../Open-Science-Workshop-2022/README.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/arm_logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/arm_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../Open-Science-Workshop-2022/README.html">
+                    Overview
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Open Science Workshop</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Open-Science-Workshop-2022/presentations/view-abstracts.html">Workshop Abstracts</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/day1-overview.html">Day 1 - Introductions!</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/jupyter-intro.html">JupyterLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Numpy.html">Working with Numpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Pandas.html">Working with Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Xarray.html">Working with Xarray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/github-intro.html">An Introduction to Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/forking_cloning.html">Forking a Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/branching-forking-github-ui.html">Branching and Pull Requests on the Github Website</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/day2-overview.html">Day 2 - Data + Packages</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/ARM-Data-Access.html">Accessing ARM Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/ESMAC_diags/esmac-diags.html">ESMAC Diagnostics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_2d_timeseries.html">ESMAC: Generate timeseries of size distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_size_diurnalcycle.html">ESMAC: Generate diurnal cycle of size distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_size_timeseries.html">ESMAC: Generate timeseries of size distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_bar_composition.html">ESMAC: Generate bar plot for aerosol composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_hist.html">ESMAC: Generate a 1-D Historgram Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_mean_size.html">ESMAC: Generate mean size distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/EMC2_demo_w_E3SM.html">Using EMC² to Process E3SM Output</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/day3-overview.html">Day 3 - MetPy and ACT</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/MetPy%2001%20-%20Overview.html">MetPy Tutorial - Overview</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/MetPy%2002%20-%20Making%20a%20SkewT.html">MetPy Tutorial - Making a Skew-T!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/act-basics.html">ACT Basics</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/day4-overview.html">Day 3 - Py-ART and Pangeo</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/pyart-basics.html">PyART Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/pyart-gridding.html">Py-ART Gridding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/pyart-corrections.html">Py-ART Corrections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/xarray.html">Introduction to Xarray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/xarray-computation-masking.html">Computations and Masks with Xarray</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/Tutorials/UPR-ACT-2023/5-ACT-Basics-2023.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/Tutorials/UPR-ACT-2023/5-ACT-Basics-2023.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Overview</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Overview</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-to-act">Intro to ACT</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-discovery-act-discovery">Data Discovery (act.discovery)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-output-act-io">Input/Output (act.io)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-act-plotting">Visualization (act.plotting)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#corrections-act-corrections">Corrections (act.corrections)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quality-control-act-qc">Quality Control (act.qc)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrievals-act-retrievals">Retrievals (act.retrievals)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utilities-act-utils">Utilities (act.utils)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#instrument-overview">Instrument Overview</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-soot-absorption-photometer-psap">Particle Soot Absorption Photometer (PSAP)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-particle-soot-photometer-sp2">Single Particle Soot Photometer (SP2)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aerodynamic-particle-sizer-aps">Aerodynamic Particle Sizer (APS)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aerosol-chemical-speciation-monitor-acsm">Aerosol Chemical Speciation Monitor (ACSM)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#micropulse-lidar-mpl">Micropulse Lidar (MPL)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-and-reading-arm-s-netcdf-data">Downloading and Reading ARM’s NetCDF Data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#quality-controlling-data">Quality Controlling Data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-sources-of-quality-control">Other Sources of Quality Control</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-you-observe">What do you observe?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arm-data-quality-reports-dqr">ARM Data Quality Reports (DQR)!</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-data">Visualizing Data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-for-the-user-to-explore">Questions for the User to Explore</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">Next Steps</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-used-in-this-notebook">Data Used in this Notebook</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <table>
+    <tr>
+        <td>
+            <img src="https://arm.gov/uploads/TRACER_skyline.jpg" style="height: 200px;" alt="TRACER Campaign"></img>
+        </td>
+        <td>
+            <h1>Atmospheric Radiation Measurement user facility (ARM)</h1>
+            <h1>TRacking Aerosol Convection interations ExpeRiment (TRACER)</h1>
+            Notebook for learning the basics of ACT with TRACER data </br>
+            Corresponding Author: Adam Theisen (atheisen@anl.gov)
+        </td>
+    </tr>
+</table><section id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h1>
+<p>The ARM TRACER campaign collected a lot of very interesting data in Houston, TX from October 1, 2021 to September 30, 2022.  One event that stands out is a dust event that occurred from July 16 to July 19, 2022.  This notebook will give an introduction to basic features in ACT, using one of the datastreams from this event</p>
+<ol class="arabic simple">
+<li><p>Intro to ACT</p></li>
+<li><p>Instrument Overview</p></li>
+<li><p>Downloading and Reading in PSAP Data</p></li>
+<li><p>Quality Controlling Data</p></li>
+<li><p>Visualizing Data</p></li>
+<li><p>Questions for the User to Explore</p></li>
+</ol>
+</section>
+<section id="prerequisites">
+<h1>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h1>
+<p>This notebook will rely heavily on Python and the <a class="reference external" href="https://github.com/ARM-DOE/ACT">Atmospheric data Community Toolkit (ACT)</a>.  Don’t worry if you don’t have experience with either, this notebook will walk you though what you need to know.</p>
+<p>You will also need an account and token to download data using the ARM Live webservice.  Navigate to the <a class="reference external" href="https://adc.arm.gov/armlive/">webservice information page</a> and log in to get your token.  Your account username will be your ARM username.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Concepts</p></th>
+<th class="head"><p>Importance</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ARM-DOE/ACT">ACT</a></p></td>
+<td><p>Helpful</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p><strong>Time to learn</strong>: 60 Minutes</p></li>
+<li><p><strong>System requirements</strong>:</p>
+<ul>
+<li><p>Python 3.11 or latest</p></li>
+<li><p>ACT v1.5.0 or latest</p></li>
+<li><p>numpy</p></li>
+<li><p>xarray</p></li>
+<li><p>matplotlib</p></li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+</section>
+<section id="intro-to-act">
+<h1>Intro to ACT<a class="headerlink" href="#intro-to-act" title="Permalink to this heading">#</a></h1>
+<p>The <a class="reference external" href="https://github.com/ARM-DOE/ACT">Atmospheric data Community Toolkit (ACT)</a> is an open-source Python toolkit for exploring and analyzing atmospheric time-series datasets.  Examples can be found in the <a class="reference external" href="https://arm-doe.github.io/ACT/source/auto_examples/index.html">ACT Example Gallery</a>.  The toolkit has modules for many different parts of the scientific process, including:</p>
+<table>
+    <tr>
+        <td>
+<section id="data-discovery-act-discovery">
+<h2>Data Discovery (act.discovery)<a class="headerlink" href="#data-discovery-act-discovery" title="Permalink to this heading">#</a></h2>
+<p>The <a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.discovery.html">discovery</a> module houses functions to download or access data from different groups.  Currently it includes function to get data for ARM, NOAA, EPA, NEON, and more!</p>
+</section>
+<section id="input-output-act-io">
+<h2>Input/Output (act.io)<a class="headerlink" href="#input-output-act-io" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.io.html">io</a> contains functions for reading and writing data from various sources and formats.</p>
+</section>
+<section id="visualization-act-plotting">
+<h2>Visualization (act.plotting)<a class="headerlink" href="#visualization-act-plotting" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.plotting.html">plotting</a> contains various routines, built on matplotlib, to help visualize and explore data.  These include</p>
+<ol class="arabic simple">
+<li><p>Time-series plots</p></li>
+<li><p>Distribution plots like histograms and heatmaps</p></li>
+<li><p>Geographic plots for moving systems like radiosondes or aircraft</p></li>
+<li><p>Skew-T plots for radiosonde data, built off MetPy</p></li>
+<li><p>Wind rose plots for wind and data roses</p></li>
+<li><p>Cross-section plots for working with 3-dimensional data</p></li>
+</ol>
+</section>
+<section id="corrections-act-corrections">
+<h2>Corrections (act.corrections)<a class="headerlink" href="#corrections-act-corrections" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.corrections.html">corrections</a> apply different corrections to data based on need.  A majority of the existing corrections are for lidar data.</p>
+</section>
+<section id="quality-control-act-qc">
+<h2>Quality Control (act.qc)<a class="headerlink" href="#quality-control-act-qc" title="Permalink to this heading">#</a></h2>
+<p>The <a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.qc.html">qc</a> module has a lot of functions for working with quality control information, apply new tests, or filtering data based on existing tests.  We will explore some of that functionality in this notebook.</p>
+</section>
+<section id="retrievals-act-retrievals">
+<h2>Retrievals (act.retrievals)<a class="headerlink" href="#retrievals-act-retrievals" title="Permalink to this heading">#</a></h2>
+<p>There are many cases in which some additional calculations are necessary to get more value from the instrument data.  The <a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.retrievals.html">retrievals</a> module houses some functions for performing these advanced calculations.</p>
+</section>
+<section id="utilities-act-utils">
+<h2>Utilities (act.utils)<a class="headerlink" href="#utilities-act-utils" title="Permalink to this heading">#</a></h2>
+<p>The <a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.utils.html">utils</a> module has a lot of general utilities to help with the data.  Some of these include adding in a solar variable to indicate day/night (useful in filtering data), unit conversions, decoding WMO weather codes, performing weighted averaging, etc…
+</td>
+<td>
+<center>
+<img alt="NEON-ARM" src="https://arm-doe.github.io/ACT/_images/sphx_glr_plot_neon_001.png" /></img>
+<figcaption>ARM and NEON data from Utquivaik, AK</figcaption>
+<img alt="SONDE" src="https://arm-doe.github.io/ACT/_images/sphx_glr_plot_enhanced_skewt_001.png" /></img>
+<figcaption>Enhanced Skew-T plot from ARM’s Southern Great Plains Site (SGP)</figcaption>
+</center>
+</td>
+</tr></p>
+</table><hr class="docutils" />
+</section>
+</section>
+<section id="instrument-overview">
+<h1>Instrument Overview<a class="headerlink" href="#instrument-overview" title="Permalink to this heading">#</a></h1>
+<table>
+    <tr>
+        <td>
+<section id="particle-soot-absorption-photometer-psap">
+<h2>Particle Soot Absorption Photometer (PSAP)<a class="headerlink" href="#particle-soot-absorption-photometer-psap" title="Permalink to this heading">#</a></h2>
+<p>The particle soot absorption photometer collects aerosol particles on a substrate (filter) and measurements the change in light transmission relative to a reference filter.  Bulk particle absorption is derived after correcting for scattering effects.  <a class="reference external" href="https://arm.gov/capabilities/instruments/psap">Lean more</a></p>
+</section>
+<section id="single-particle-soot-photometer-sp2">
+<h2>Single Particle Soot Photometer (SP2)<a class="headerlink" href="#single-particle-soot-photometer-sp2" title="Permalink to this heading">#</a></h2>
+<p>The single-particle soot photometer (SP2) measures the soot (black carbon) mass of individual aerosol particles by laser-induced incandescence down to concentrations as low as ng/m^3. <a class="reference external" href="https://arm.gov/capabilities/instruments/sp2">Learn more</a></p>
+</section>
+<section id="aerodynamic-particle-sizer-aps">
+<h2>Aerodynamic Particle Sizer (APS)<a class="headerlink" href="#aerodynamic-particle-sizer-aps" title="Permalink to this heading">#</a></h2>
+<p>The aerodynamic particle sizer (APS) is a particle size spectrometer that measures both the particle aerodynamic diameter based on particle time of flight and optical diameter based on scattered light intensity. The APS provides the number size distribution for particles with aerodynamic diameters from 0.5 to 20 micrometers and with optical diameters from 0.3 to 20 micrometers. <a class="reference external" href="https://arm.gov/capabilities/instruments/aps">Learn more</a></p>
+</section>
+<section id="aerosol-chemical-speciation-monitor-acsm">
+<h2>Aerosol Chemical Speciation Monitor (ACSM)<a class="headerlink" href="#aerosol-chemical-speciation-monitor-acsm" title="Permalink to this heading">#</a></h2>
+<p>The aerosol chemical speciation monitor is a thermal vaporization, electron impact, ionization mass spectrometer that measures bulk chemical composition of the rapidly evaporating component of sub-micron aerosol particles in real time. Standard measurements include mass concentrations of organics, sulfate, nitrate, ammonium, and chloride. <a class="reference external" href="https://arm.gov/capabilities/instruments/acsm">Learn more</a></p>
+</section>
+<section id="micropulse-lidar-mpl">
+<h2>Micropulse Lidar (MPL)<a class="headerlink" href="#micropulse-lidar-mpl" title="Permalink to this heading">#</a></h2>
+<p>The micropulse lidar (MPL) is a ground-based, optical, remote-sensing system designed primarily to determine the altitude of clouds; however, it is also used for detection of atmospheric aerosols. <a class="reference external" href="https://arm.gov/capabilities/instruments/mpl">Learn more</a>
+</td>
+<td>
+<center>
+<img alt="PSAP" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSg1h63flPTG_EkHS5IUvjncBkqSoC1WYA1O6jJxZyJB_ffmY7b" /></img>
+<figcaption>Particle Soot Absorption Photometer</figcaption>
+<img alt="SP2" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTteorWfZBD2B9M0Ityhf_uCsbfBXrK9Dp_z7KW9GhTFaTaZAoE" /></img>
+<figcaption>Single Particle Soot Photometer</figcaption>
+<img alt="MPL" src="https://live.staticflickr.com/5478/12486199374_23c941c2b7_c.jpg" /></img>
+<figcaption>Micropulse Lidar</figcaption>
+</center>
+</td>
+</tr></p>
+</table><hr class="docutils" />
+</section>
+</section>
+<section id="imports">
+<h1>Imports<a class="headerlink" href="#imports" title="Permalink to this heading">#</a></h1>
+<p>Let’s get started with some data!  But first, we need to import some libraries.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">act</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="downloading-and-reading-arm-s-netcdf-data">
+<h1>Downloading and Reading ARM’s NetCDF Data<a class="headerlink" href="#downloading-and-reading-arm-s-netcdf-data" title="Permalink to this heading">#</a></h1>
+<p>ARM’s standard file format is NetCDF (network Common Data Form) which makes it very easy to work with in Python!  ARM data are available through a data portal called <a class="reference external" href="https://adc.arm.gov/discovery/#/">Data Discovery</a> or through a webservice.  If you didn’t get your username and token earlier, please go back and see the Prerequisites!</p>
+<p>Let’s download some of the PSAP data first but let’s just start with one day.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set your username and token here!</span>
+<span class="n">username</span> <span class="o">=</span> <span class="s1">&#39;YourUsername&#39;</span>
+<span class="n">token</span> <span class="o">=</span> <span class="s1">&#39;YourToken&#39;</span>
+
+<span class="c1"># Set the datastream and start/enddates</span>
+<span class="n">datastream</span> <span class="o">=</span> <span class="s1">&#39;houaospsap3w1mM1.b1&#39;</span>
+<span class="n">startdate</span> <span class="o">=</span> <span class="s1">&#39;2022-07-16&#39;</span>
+<span class="n">enddate</span> <span class="o">=</span> <span class="s1">&#39;2022-07-16&#39;</span>
+
+<span class="c1"># Use ACT to easily download the data.  Watch for the data citation!  Show some support</span>
+<span class="c1"># for ARM&#39;s instrument experts and cite their data if you use it in a publication</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">discovery</span><span class="o">.</span><span class="n">download_data</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">token</span><span class="p">,</span> <span class="n">datastream</span><span class="p">,</span> <span class="n">startdate</span><span class="p">,</span> <span class="n">enddate</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s read in the data using ACT and check out the data</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_netcdf</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="n">ds</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We&#39;re going to be focusing on the following variable, so let&#39;s get some more information about it</span>
+<span class="c1"># We can do this by looking at it&#39;s attributes</span>
+<span class="n">variable</span> <span class="o">=</span> <span class="s1">&#39;Ba_B_Weiss&#39;</span>
+<span class="n">ds</span><span class="p">[</span><span class="n">variable</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># There&#39;s a lot of great functionality in ACT, but there&#39;s also a lot in the base xarray Dataset!</span>
+<span class="n">ds</span><span class="p">[</span><span class="n">variable</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="quality-controlling-data">
+<h1>Quality Controlling Data<a class="headerlink" href="#quality-controlling-data" title="Permalink to this heading">#</a></h1>
+<p>ARM has multiple methods that it uses to communicate data quality information out to the users.  One of these methods is through “embedded QC” variables.  These are variables within the file that have information on automated tests that have been applied.  Many times, they include Min, Max, and Delta tests but as is the case with the AOS instruments, there can be more complicated tests that are applied.</p>
+<p>The results from all these different tests are stored in a single variable using bit-packed QC.  We won’t get into the full details here, but it’s a way to communicate the results of multiple tests in a single integer value by utilizing binary and bits!  You can learn more about bit-packed QC <a class="reference external" href="https://code.arm.gov/docs/QC-flag-examples/-/wikis/home">here</a> but ACT also has many of the tools for working with ARM QC.</p>
+<section id="other-sources-of-quality-control">
+<h2>Other Sources of Quality Control<a class="headerlink" href="#other-sources-of-quality-control" title="Permalink to this heading">#</a></h2>
+<p>ARM also communicates problems with the data quality through Data Quality Reports (DQR).  These reports are normally submitted by the instrument mentor when there’s been a problem with the instrument.  The categories include:</p>
+<ul class="simple">
+<li><p><strong>Data Quality Report Categories</strong></p>
+<ul>
+<li><p>Missing: Data are not available or set to -9999</p></li>
+<li><p>Suspect: The data are not fully incorrect but there are problems that increases the uncertainty of the values. Data should be used with caution.</p></li>
+<li><p>Bad: The data are incorrect and should not be used.</p></li>
+<li><p>Note: Data notes are a way to communicate information that would be useful to the end user but does not rise to the level of suspect or bad data</p></li>
+</ul>
+</li>
+</ul>
+<p>Additionally, data quality information can be found in the Instrument Handbooks, which are included on most instrument pages.  Here is an <a class="reference external" href="https://www.arm.gov/publications/tech_reports/handbooks/psap_handbook.pdf">example</a> of the PSAP handbook.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We can see that there&#39;s some missing data in the plot above so let&#39;s take a look at the embedded QC!</span>
+<span class="c1"># First, for many of the ACT QC features, we need to get the dataset more to CF standard and that</span>
+<span class="c1"># involves cleaning up some of the attributes and ways that ARM has historically handled QC</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">clean</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
+
+<span class="c1"># Next, let&#39;s take a look at visualizing the quality control information</span>
+<span class="c1"># Create a plotting display object with 2 plots</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">TimeSeriesDisplay</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">subplot_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,))</span>
+
+<span class="c1"># Plot up the diffuse variable in the first plot</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">variable</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,))</span>
+
+<span class="c1"># Plot up a day/night background</span>
+<span class="n">display</span><span class="o">.</span><span class="n">day_night_background</span><span class="p">(</span><span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,))</span>
+
+<span class="c1"># Plot up the QC variable in the second plot</span>
+<span class="n">display</span><span class="o">.</span><span class="n">qc_flag_block_plot</span><span class="p">(</span><span class="n">variable</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="what-do-you-observe">
+<h2>What do you observe?<a class="headerlink" href="#what-do-you-observe" title="Permalink to this heading">#</a></h2>
+<p>There are 5 tests being applied to the data. The main ones that are flagged are tests 1, 4, and 5.  Tests 4 and 1 are tripped at the same time and if we look at the description for 4, when that test fails, it sets the data to missing_value for us.  That leaves test 5 which is suspect data so let’s try and filter that data out as well to see what it looks like</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s filter out test 5 using ACT.  Yes, it&#39;s that simple!</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">qcfilter</span><span class="o">.</span><span class="n">datafilter</span><span class="p">(</span><span class="n">variable</span><span class="p">,</span> <span class="n">rm_tests</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">del_qc_var</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># There are other ways we can filter data out as well.  Using the</span>
+<span class="c1"># rm_assessments will filter out by all Bad/Suspect tests that are failing</span>
+<span class="c1"># ds.qcfilter.datafilter(variable, rm_assessments=[&#39;Bad&#39;, &#39;Suspect&#39;], del_qc_var=False)</span>
+
+<span class="c1"># Let&#39;s check out the attributes of the variable</span>
+<span class="c1"># Whenever data are filtered out using the datafilter function</span>
+<span class="c1"># a comment will be added to the variable history for provenance purposes</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="n">variable</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;history&#39;</span><span class="p">])</span>
+
+<span class="c1"># And plot it all again!</span>
+<span class="c1"># Create a plotting display object with 2 plots</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">TimeSeriesDisplay</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">subplot_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,))</span>
+
+<span class="c1"># Plot up the diffuse variable in the first plot</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">variable</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,))</span>
+
+<span class="c1"># Plot up a day/night background</span>
+<span class="n">display</span><span class="o">.</span><span class="n">day_night_background</span><span class="p">(</span><span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,))</span>
+
+<span class="c1"># Plot up the QC variable in the second plot</span>
+<span class="n">display</span><span class="o">.</span><span class="n">qc_flag_block_plot</span><span class="p">(</span><span class="n">variable</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="arm-data-quality-reports-dqr">
+<h2>ARM Data Quality Reports (DQR)!<a class="headerlink" href="#arm-data-quality-reports-dqr" title="Permalink to this heading">#</a></h2>
+<p>ARM’s DQRs can be easily pulled in and added to the QC variables using ACT.  We can do that with the below one line command.  However, for this case, there won’t be any DQRs on the data but let’s visualize it just in case!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Query the ARM DQR Webservice</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">qc</span><span class="o">.</span><span class="n">add_dqr_to_qc</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">variable</span><span class="o">=</span><span class="n">variable</span><span class="p">)</span>
+
+<span class="c1">#And plot again!</span>
+<span class="c1"># Create a plotting display object with 2 plots</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">TimeSeriesDisplay</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">subplot_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,))</span>
+
+<span class="c1"># Plot up the diffuse variable in the first plot</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">variable</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,))</span>
+
+<span class="c1"># Plot up a day/night background</span>
+<span class="n">display</span><span class="o">.</span><span class="n">day_night_background</span><span class="p">(</span><span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,))</span>
+
+<span class="c1"># Plot up the QC variable in the second plot</span>
+<span class="n">display</span><span class="o">.</span><span class="n">qc_flag_block_plot</span><span class="p">(</span><span class="n">variable</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="visualizing-data">
+<h1>Visualizing Data<a class="headerlink" href="#visualizing-data" title="Permalink to this heading">#</a></h1>
+<p>We’ve already worked with visualizing the data in basic ways but what other options are there in ACT?  This section will show you how to create a variety of different plots.  More plotting examples can be found in <a class="reference external" href="https://arm-doe.github.io/ACT/source/auto_examples/index.html#plotting-examples">ACT’s Documentation</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First, let&#39;s plot up a histogram of the data</span>
+<span class="c1"># All the ACT plotting is very similar to what we</span>
+<span class="c1"># did earlier, first we create a display object</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">DistributionDisplay</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+
+<span class="c1"># And then we can plot the data!  Note that we are passing a range into the</span>
+<span class="c1"># histogram function to set the min/max range of the data</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot_stacked_bar_graph</span><span class="p">(</span><span class="n">variable</span><span class="p">,</span> <span class="n">hist_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;range&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">]})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We can create these plots in groups as well but we need to know</span>
+<span class="c1"># how many there will be ahead of time for the shape</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">DistributionDisplay</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="n">subplot_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">groupby</span> <span class="o">=</span> <span class="n">display</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="s1">&#39;hour&#39;</span><span class="p">)</span>
+
+<span class="c1"># And then we can plot the data in groups!  The main issue is that it doesn&#39;t automatically</span>
+<span class="c1"># Annotate the group on the plot.  We&#39;re also setting the titile to blank to save space</span>
+<span class="n">groupby</span><span class="o">.</span><span class="n">plot_group</span><span class="p">(</span><span class="s1">&#39;plot_stacked_bar_graph&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">field</span><span class="o">=</span><span class="n">variable</span><span class="p">,</span> <span class="n">set_title</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">hist_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;range&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">]})</span>
+
+<span class="c1"># We want these graphs to have the same axes, so we can easily run through</span>
+<span class="c1"># each plot and modify the axes.  Right now, we can just hard code these in</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">display</span><span class="o">.</span><span class="n">axes</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">display</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">])):</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+        <span class="n">display</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">])</span>
+        
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Next up, let&#39;s do some scatter plots to compare some variables</span>
+<span class="c1"># Scatter plots are also found in the DistributionDisplay module</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">DistributionDisplay</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+
+<span class="c1"># And then we can plot the data!</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot_scatter</span><span class="p">(</span><span class="n">variable</span><span class="p">,</span> <span class="s1">&#39;transmittance_blue&#39;</span><span class="p">,</span> <span class="n">m_field</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+
+<span class="c1"># You can adjust the x-range as you need</span>
+<span class="c1"># display.set_xrng([0, 20])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sometimes these scatter plots hide the number of points there actually</span>
+<span class="c1"># are in some areas so let&#39;s try a heatmap as well</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">DistributionDisplay</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">subplot_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="c1"># And then we can plot the data!</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot_scatter</span><span class="p">(</span><span class="n">variable</span><span class="p">,</span> <span class="s1">&#39;transmittance_blue&#39;</span><span class="p">,</span> <span class="n">m_field</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="c1"># This can be used to adjust the axes limits</span>
+<span class="c1"># display.set_xrng([0, 20], subplot_index=(0, 0))</span>
+
+<span class="c1"># we can also pass in an array of values for the bins using np.arange(start, stop, step)</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot_heatmap</span><span class="p">(</span><span class="n">variable</span><span class="p">,</span> <span class="s1">&#39;transmittance_blue&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">x_bins</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">y_bins</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s try one last plot type with this dataset</span>
+<span class="c1"># Violin plots!</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">DistributionDisplay</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+
+<span class="c1"># And then we can plot the data!</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot_violin</span><span class="p">(</span><span class="n">variable</span><span class="p">,</span> <span class="n">positions</span><span class="o">=</span><span class="p">[</span><span class="mf">1.0</span><span class="p">])</span>
+
+<span class="c1"># And we can add more variables to it as well!</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot_violin</span><span class="p">(</span><span class="s1">&#39;Ba_R_Weiss&#39;</span><span class="p">,</span> <span class="n">positions</span><span class="o">=</span><span class="p">[</span><span class="mf">2.0</span><span class="p">])</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot_violin</span><span class="p">(</span><span class="s1">&#39;Ba_G_Weiss&#39;</span><span class="p">,</span> <span class="n">positions</span><span class="o">=</span><span class="p">[</span><span class="mf">3.0</span><span class="p">])</span>
+
+<span class="c1"># Let&#39;s add some more information to the plots</span>
+<span class="c1"># Update the tick information</span>
+<span class="n">display</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">])</span>
+<span class="n">display</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+                                 <span class="s1">&#39;Blue Channel</span><span class="se">\n</span><span class="s1">Absoprtion&#39;</span><span class="p">,</span>
+                                 <span class="s1">&#39;Red Channel</span><span class="se">\n</span><span class="s1">Absorption&#39;</span><span class="p">,</span>
+                                 <span class="s1">&#39;Green Channel</span><span class="se">\n</span><span class="s1">Absorption&#39;</span><span class="p">,</span>
+                                 <span class="s1">&#39;&#39;</span><span class="p">]</span>
+                                <span class="p">)</span>
+
+<span class="c1"># Update the y-axis label</span>
+<span class="n">display</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Aerosol Light Absorption Coefficient&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+</section>
+<section id="questions-for-the-user-to-explore">
+<h1>Questions for the User to Explore<a class="headerlink" href="#questions-for-the-user-to-explore" title="Permalink to this heading">#</a></h1>
+<ol class="arabic simple">
+<li><p>What does the data look like for the full month of July?  Do we have to do more to properly visualize the data?</p></li>
+<li><p>What do the scatter plots look like when plotted against the red channel absorption coefficient vs the transmittance?</p></li>
+<li><p>Can you change the groupby plot to be for each day instead of by hour?</p></li>
+</ol>
+<hr class="docutils" />
+</section>
+<section id="next-steps">
+<h1>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this heading">#</a></h1>
+<p>The next notebook in this series will help the users explore other datasets that can be utilized to analyze this dust event.  These include using data from the instruments previously noted here.</p>
+<section id="data-used-in-this-notebook">
+<h2>Data Used in this Notebook<a class="headerlink" href="#data-used-in-this-notebook" title="Permalink to this heading">#</a></h2>
+<p>Ermold, B., &amp; Flynn, C. Particle Soot Absorption Photometer (AOSPSAP3W1M). Atmospheric Radiation Measurement (ARM) User Facility. https://doi.org/10.5439/1225037</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Tutorials/UPR-ACT-2023"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Overview</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-to-act">Intro to ACT</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-discovery-act-discovery">Data Discovery (act.discovery)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-output-act-io">Input/Output (act.io)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-act-plotting">Visualization (act.plotting)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#corrections-act-corrections">Corrections (act.corrections)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quality-control-act-qc">Quality Control (act.qc)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrievals-act-retrievals">Retrievals (act.retrievals)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utilities-act-utils">Utilities (act.utils)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#instrument-overview">Instrument Overview</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#particle-soot-absorption-photometer-psap">Particle Soot Absorption Photometer (PSAP)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-particle-soot-photometer-sp2">Single Particle Soot Photometer (SP2)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aerodynamic-particle-sizer-aps">Aerodynamic Particle Sizer (APS)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aerosol-chemical-speciation-monitor-acsm">Aerosol Chemical Speciation Monitor (ACSM)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#micropulse-lidar-mpl">Micropulse Lidar (MPL)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-and-reading-arm-s-netcdf-data">Downloading and Reading ARM’s NetCDF Data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#quality-controlling-data">Quality Controlling Data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-sources-of-quality-control">Other Sources of Quality Control</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-do-you-observe">What do you observe?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arm-data-quality-reports-dqr">ARM Data Quality Reports (DQR)!</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-data">Visualizing Data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-for-the-user-to-explore">Questions for the User to Explore</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">Next Steps</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-used-in-this-notebook">Data Used in this Notebook</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ARM Development Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
