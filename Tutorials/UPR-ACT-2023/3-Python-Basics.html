@@ -395,6 +395,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-now">What Now?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib-scientific-data-visualization">Matplotlib - Scientific Data Visualization</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources-and-references">Resources and References</a></li>
 </ul>
             </nav>
@@ -615,6 +616,64 @@ document.write(`
 <li><p>Now that the Python basics have been reintroduced, let’s take a look a specific libraries that are useful in scientific applications</p></li>
 </ul>
 </section>
+<section id="matplotlib-scientific-data-visualization">
+<h2>Matplotlib - Scientific Data Visualization<a class="headerlink" href="#matplotlib-scientific-data-visualization" title="Permalink to this heading">#</a></h2>
+<p>From the <a class="reference external" href="https://matplotlib.org/stable/index.html">Matplotlib Documentation</a>:</p>
+<blockquote>
+<div><p>Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python. Matplotlib makes easy things easy and hard things possible.</p>
+</div></blockquote>
+<blockquote>
+<div><ul class="simple">
+<li><p>Create publication quality plots.</p></li>
+<li><p>Make interactive figures that can zoom, pan, update.</p></li>
+<li><p>Cus tomize visual style and layout.</p></li>
+<li><p>Export to many file formats.</p></li>
+<li><p>Embed in JupyterLab and Graphical User Interfaces.</p></li>
+<li><p>Use a rich array of third-party packages built on Matplotlib.</p></li>
+</ul>
+</div></blockquote>
+<p>Additional Tutorials:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://foundations.projectpythia.org/core/matplotlib.html">ProjectPythia Matplotlib</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data we wish to display</span>
+<span class="n">varA</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">varB</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">varC</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># Convention is to import and rename. Best to stick with convention</span>
+
+<span class="c1"># Create a Figure</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+
+<span class="c1"># Add an axis to display data in</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Plot the first set of data</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">varA</span><span class="p">,</span> <span class="n">varB</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;y = x&#39;</span><span class="p">)</span> <span class="c1"># include a label!</span>
+<span class="c1"># Plot the second set of data</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">varA</span><span class="p">,</span> <span class="n">varC</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;y = x$^2$&#39;</span><span class="p">)</span>
+<span class="c1"># Label your axes</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y Values [#]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;X Values [#]&#39;</span><span class="p">)</span>
+<span class="c1"># Add a title</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;First Matplotlib Plot&#39;</span><span class="p">)</span>
+<span class="c1"># Add a legend</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
+<span class="c1"># Display!</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="resources-and-references">
 <h2>Resources and References<a class="headerlink" href="#resources-and-references" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
@@ -693,6 +752,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-now">What Now?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib-scientific-data-visualization">Matplotlib - Scientific Data Visualization</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources-and-references">Resources and References</a></li>
 </ul>
   </nav></div>
