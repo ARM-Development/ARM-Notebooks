@@ -388,9 +388,14 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-visualizations-and-processing">Advanced Visualizations and Processing</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checkout-the-area">Checkout the area</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#now-back-to-the-dust-event">Now back to the dust event!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#excercises">Excercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series-of-ratios-of-fine-particles-vs-coarse-particles-using-smps-and-aps-data">Time series of ratios of fine particles vs. coarse particles using SMPS and APS data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compare-chemical-composition-between-events">Compare Chemical Composition Between Events</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-for-the-user-to-explore">Questions for the User to Explore</a><ul class="visible nav section-nav flex-column">
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-questions-for-the-user-to-explore">Additional Questions for the User to Explore</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-advanced">More Advanced</a></li>
 </ul>
 </li>
@@ -818,11 +823,55 @@ document.write(`
 </div>
 </div>
 </div>
+</section>
+<hr class="docutils" />
+<section id="excercises">
+<h2>Excercises<a class="headerlink" href="#excercises" title="Permalink to this heading">#</a></h2>
+<p>Here are a couple additional excercises that users can work through on their own time.</p>
+<section id="time-series-of-ratios-of-fine-particles-vs-coarse-particles-using-smps-and-aps-data">
+<h3>Time series of ratios of fine particles vs. coarse particles using SMPS and APS data<a class="headerlink" href="#time-series-of-ratios-of-fine-particles-vs-coarse-particles-using-smps-and-aps-data" title="Permalink to this heading">#</a></h3>
+<p>Using the SMPS (ds_smps) and APS (ds_aps) data, can you calculate a ratio of fine to coarse particles?  Remember, that this data would need to be on the same timestep.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First, let&#39;s resample to 1-minute averages.  Note, that this may take some time with this much data.</span>
+<span class="c1"># The other option is to grab the nearest value</span>
+
+
+<span class="c1"># But wait, the concentration variables have the same name!  We need to rename</span>
+
+
+<span class="c1"># Next, let&#39;s calculate the ratio</span>
+
+<span class="c1"># Then we can add it back to the Dataset as a variable</span>
+
+<span class="c1"># And then plot it wil ACT!</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="compare-chemical-composition-between-events">
+<h3>Compare Chemical Composition Between Events<a class="headerlink" href="#compare-chemical-composition-between-events" title="Permalink to this heading">#</a></h3>
+<p>Make a chart of aerosol composition on July 12, 13, and compare it to that from 17-18.  This will require subsetting the ds_acsm data and plotting it using Matplotlib</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First subset the data for both sets</span>
+
+
+<span class="c1"># Run through and get data</span>
+
+
+<span class="c1"># Plot the data using matplotlib bar plots</span>
+</pre></div>
+</div>
+</div>
+</div>
 <hr class="docutils" />
 </section>
 </section>
-<section id="questions-for-the-user-to-explore">
-<h1>Questions for the User to Explore<a class="headerlink" href="#questions-for-the-user-to-explore" title="Permalink to this heading">#</a></h1>
+</section>
+<section id="additional-questions-for-the-user-to-explore">
+<h1>Additional Questions for the User to Explore<a class="headerlink" href="#additional-questions-for-the-user-to-explore" title="Permalink to this heading">#</a></h1>
 <ol class="arabic simple">
 <li><p>Can you improve these matplotlib plots to make them more readable?</p></li>
 <li><p>Are there other variables that you would be interested in for the data roses?</p></li>
@@ -915,9 +964,14 @@ User Facility. https://doi.org/10.5439/1508389</p>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-visualizations-and-processing">Advanced Visualizations and Processing</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checkout-the-area">Checkout the area</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#now-back-to-the-dust-event">Now back to the dust event!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#excercises">Excercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series-of-ratios-of-fine-particles-vs-coarse-particles-using-smps-and-aps-data">Time series of ratios of fine particles vs. coarse particles using SMPS and APS data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compare-chemical-composition-between-events">Compare Chemical Composition Between Events</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#questions-for-the-user-to-explore">Questions for the User to Explore</a><ul class="visible nav section-nav flex-column">
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-questions-for-the-user-to-explore">Additional Questions for the User to Explore</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-advanced">More Advanced</a></li>
 </ul>
 </li>
