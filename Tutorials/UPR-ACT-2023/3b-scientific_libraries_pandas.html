@@ -393,7 +393,15 @@ document.write(`
                   
   <section id="working-with-pandas">
 <h1>Working with Pandas<a class="headerlink" href="#working-with-pandas" title="Permalink to this heading">#</a></h1>
+<p>From the <a class="reference external" href="https://pandas.pydata.org/docs/getting_started/overview.html">Pandas Documentation</a></p>
+<blockquote>
+<div><p>pandas is a Python package providing fast, flexible, and expressive data structures designed to make working with “relational” or “labeled” data both easy and intuitive. It aims to be the fundamental high-level building block for doing practical, real-world data analysis in Python. Additionally, it has the broader goal of becoming the most powerful and flexible open source data analysis/manipulation tool available in any language. It is already well on its way toward this goal.</p>
+</div></blockquote>
 <p>Pandas is an extension of the Numpy data model to structure and organize data into DataFrames. A DataFrame resembles a spreadsheet in looks, but is much more powerful.</p>
+<p>Additional Tutorials</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://foundations.projectpythia.org/core/pandas.html">ProjectPythia Pandas Tutorial</a></p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>  <span class="c1"># Convention suggest to import as pd</span>
@@ -480,7 +488,7 @@ document.write(`
 <p>Using the path to a specific file we read the data into a Pandas Data Frame. This is something you will use very often if you have data in ASCII column files. Get to know this method well. The method has keywords to help describe how to read the column data including the delimter, number of header rows, and which column is the time stamp. If it can parse the time stamp it will convert to Pandas native time type.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;sgpmetE13.b1&#39;</span><span class="p">,</span> <span class="s1">&#39;sgpmetE13.00.20191105.150801.raw.dat&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;MET&#39;</span><span class="p">,</span> <span class="s1">&#39;sgpmetE13.00.20230707.205900.raw.MET_Table1.20230707200000.dat&#39;</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
 <span class="n">data</span>
@@ -621,7 +629,7 @@ document.write(`
 <p>Calculate a rolling max on the entire DataFrame.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rh_rolling_mean</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">min_periods</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rh_rolling_mean</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;RH_Avg&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">min_periods</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 <span class="n">rh_rolling_mean</span>
 </pre></div>
 </div>

@@ -393,14 +393,28 @@ document.write(`
                   
   <section id="working-with-xarray">
 <h1>Working with Xarray<a class="headerlink" href="#working-with-xarray" title="Permalink to this heading">#</a></h1>
+<p>From the <a class="reference external" href="https://docs.xarray.dev/en/stable/getting-started-guide/why-xarray.html">Xarray Documentation</a></p>
+<blockquote>
+<div><p>Multi-dimensional (a.k.a. N-dimensional, ND) arrays (sometimes called “tensors”) are an essential part of computational science. They are encountered in a wide range of fields, including physics, astronomy, geoscience, bioinformatics, engineering, finance, and deep learning. In Python, NumPy provides the fundamental data structure and API for working with raw ND arrays. However, real-world datasets are usually more than just raw numbers; they have labels which encode information about how the array values map to locations in space, time, etc.</p>
+</div></blockquote>
+<blockquote>
+<div><p>Xarray doesn’t just keep track of labels on arrays – it uses them to provide a powerful and concise interface.</p>
+</div></blockquote>
 <p>Xarray is a class of objects added to the regular python system that allows storing data in a more organized method. The format is very similar to netCDF classic model (netCDF3). It can read netCDF files efficiently and handle some issues associated with incorrectly designed netCDF files.</p>
 <p>Xarray also has extetions to use the Numpy, Pandas, Dask and SciPy libaries directly. Think of Xarray as a tool for organizing data in a way that other libaries can be used on the data efficiently.</p>
-<p>The primary difference between Xarray and Pandas is that Pandas is designed to handle 1-D data while Xarray can handle n-D data and metadata about the data.</p>
-<p>The one downside is that Xarray has very powerful functions with less great documentation. May need to dig a bit to get the best way to perform a task.</p>
+<p><strong>The primary difference between Xarray and Pandas is that Pandas is designed to handle 1-D data while Xarray can handle n-D data and metadata about the data.</strong></p>
+<p>Additional Tutorials:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://foundations.projectpythia.org/core/xarray.html">ProjectPythia Xarray Tutorial</a></p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>  <span class="c1"># Convention is to import xarray as xr</span>
+
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">UserWarning</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -574,7 +588,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
-<span class="n">filename</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;sgpmetE13.b1&#39;</span><span class="p">,</span> <span class="s1">&#39;sgpmetE13.b1.20191101.000000.cdf&#39;</span><span class="p">)</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;MET&#39;</span><span class="p">,</span> <span class="s1">&#39;sgpmetE13.b1.20230707.000000.cdf&#39;</span><span class="p">)</span>
 <span class="n">met_ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 <span class="n">met_ds</span>
 </pre></div>
@@ -585,7 +599,7 @@ document.write(`
 <p>The filename glob is understood by open_mfdataset() and correctly grabs all the files that match the file glob. Using parallel=True allows it to use multiple cores for reading the data. This may depend on your machine and number of cores available, and may be faster or may not. We can also reduce the amount of memory required by excluding some variables from being read.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;sgpmetE13.b1&#39;</span><span class="p">,</span> <span class="s1">&#39;sgpmetE13.b1.*.cdf&#39;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;MET&#39;</span><span class="p">,</span> <span class="s1">&#39;sgpmetE13.b1.*.cdf&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -632,7 +646,8 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span> <span class="c1"># changes width between subplots</span>
 <span class="n">met_ds</span><span class="p">[</span><span class="s1">&#39;temp_mean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">met_ds</span><span class="p">[</span><span class="s1">&#39;rh_mean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>

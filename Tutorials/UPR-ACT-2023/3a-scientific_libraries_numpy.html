@@ -399,6 +399,15 @@ document.write(`
                   
   <section id="working-with-numpy">
 <h1>Working with Numpy<a class="headerlink" href="#working-with-numpy" title="Permalink to this heading">#</a></h1>
+<p>From the <a class="reference external" href="https://numpy.org/doc/stable/user/whatisnumpy.html">NumPy documentation</a>:</p>
+<blockquote>
+<div><p>NumPy is the fundamental package for scientific computing in Python. It is a Python library that provides a multidimensional array object, various derived objects (such as masked arrays and matrices), and an assortment of routines for fast operations on arrays, including mathematical, logical, shape manipulation, sorting, selecting, I/O, discrete Fourier transforms, basic linear algebra, basic statistical operations, random simulation, and much more.</p>
+</div></blockquote>
+<p>NumPy’s position at the center of the scientific Python ecosystem means that all users should start here in their learning journey through the core scientific packages.</p>
+<p>Additional Tutorials:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://foundations.projectpythia.org/core/numpy.html">Project Pythia NumPy</a></p></li>
+</ul>
 <section id="what-is-the-difference-between-regular-python-and-numpy-python">
 <h2>What is the difference between regular Python and Numpy Python?<a class="headerlink" href="#what-is-the-difference-between-regular-python-and-numpy-python" title="Permalink to this heading">#</a></h2>
 <section id="data-types">
@@ -444,7 +453,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Numpy is based on arrays of data, with all values having the same data type in the array. This greatly increases computational performance. Can convert between basic Python and Numpy data space easily and quickly.</p>
+<p>Numpy is based on arrays of data, with <strong>all values having the same data type in the array</strong>. This greatly increases computational performance. Can convert between basic Python and Numpy data space easily and quickly.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>  <span class="c1"># Create a Python list</span>
@@ -632,7 +641,7 @@ document.write(`
 </section>
 <section id="the-ieee-not-a-number-value">
 <h3>The IEEE Not A Number value<a class="headerlink" href="#the-ieee-not-a-number-value" title="Permalink to this heading">#</a></h3>
-<p>There is a special Numpy value called NaN which is used in calculations to represent a value that is not a number. Think of it as missing data, or a bad value that should not be propigated through the data. One of the most important things to remember about NaN is that it taints anything it touches!</p>
+<p>There is a special Numpy value called NaN which is used in calculations to represent a value that is <strong>not a number</strong>. Think of it as missing data, or a bad value that should not be propigated through the data. One of the most important things to remember about NaN is that it taints anything it touches!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
