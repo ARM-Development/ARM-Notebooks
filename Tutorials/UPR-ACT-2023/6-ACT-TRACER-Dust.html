@@ -712,7 +712,7 @@ document.write(`
 <span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;Ba_B_Weiss&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;psap&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,))</span>
 <span class="n">display</span><span class="o">.</span><span class="n">day_night_background</span><span class="p">(</span><span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;psap&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,))</span>
 
-<span class="c1"># AOSMET Wind Plot</span>
+<span class="c1"># MET Wind Plot</span>
 <span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;wdir_vec_mean&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;met&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,),</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
 <span class="c1">#display.plot(&#39;wspd_vec_mean&#39;, dsname=&#39;met&#39;, subplot_index=(6,), marker=None, secondary_y=True, color=&#39;orange&#39;, label=&#39;Wind Speed&#39;)</span>
 <span class="n">display</span><span class="o">.</span><span class="n">day_night_background</span><span class="p">(</span><span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;met&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,))</span>
@@ -835,16 +835,27 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First, let&#39;s resample to 1-minute averages.  Note, that this may take some time with this much data.</span>
 <span class="c1"># The other option is to grab the nearest value</span>
-
+<span class="n">ds_smps_1m</span> <span class="o">=</span> <span class="n">ds_smps</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s1">&#39;1min&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">nearest</span><span class="p">()</span>
+<span class="n">ds_aps_1m</span> <span class="o">=</span> <span class="n">ds_aps</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s1">&#39;1min&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">nearest</span><span class="p">()</span>
 
 <span class="c1"># But wait, the concentration variables have the same name!  We need to rename</span>
-
+<span class="n">ds_aps_1m</span> <span class="o">=</span> <span class="n">ds_aps_1m</span><span class="o">.</span><span class="n">rename_vars</span><span class="p">({</span><span class="s1">&#39;total_N_conc&#39;</span><span class="p">:</span> <span class="s1">&#39;total_N_conc_aps&#39;</span><span class="p">})</span>
+<span class="n">ds_merge</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">merge</span><span class="p">([</span><span class="n">ds_smps_1m</span><span class="p">,</span> <span class="n">ds_aps_1m</span><span class="p">],</span> <span class="n">compat</span><span class="o">=</span><span class="s1">&#39;override&#39;</span><span class="p">)</span>
 
 <span class="c1"># Next, let&#39;s calculate the ratio</span>
+<span class="n">ratio</span> <span class="o">=</span> <span class="n">ds_merge</span><span class="p">[</span><span class="s1">&#39;total_N_conc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">/</span> <span class="n">ds_merge</span><span class="p">[</span><span class="s1">&#39;total_N_conc_aps&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 
 <span class="c1"># Then we can add it back to the Dataset as a variable</span>
+<span class="n">atts</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;units&#39;</span><span class="p">:</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;long_name&#39;</span><span class="p">:</span> <span class="s1">&#39;Ration of SMPS to APS total_N_conc&#39;</span><span class="p">}</span>
+<span class="n">da</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">(</span><span class="n">ratio</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="n">ds_merge</span><span class="p">[</span><span class="s1">&#39;total_N_conc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">dims</span><span class="o">=</span><span class="n">ds_merge</span><span class="p">[</span><span class="s1">&#39;total_N_conc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dims</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="n">atts</span><span class="p">)</span>
+<span class="n">ds_merge</span><span class="p">[</span><span class="s1">&#39;smps_aps_ratio&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">da</span>
 
 <span class="c1"># And then plot it wil ACT!</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">TimeSeriesDisplay</span><span class="p">(</span><span class="n">ds_merge</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">subplot_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,))</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;smps_aps_ratio&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,))</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;total_N_conc&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,))</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;total_N_conc_aps&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -856,12 +867,29 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First subset the data for both sets</span>
-
+<span class="n">ds_acsm_12</span> <span class="o">=</span> <span class="n">ds_acsm</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="s1">&#39;2022-07-12&#39;</span><span class="p">,</span> <span class="s1">&#39;2022-07-13&#39;</span><span class="p">))</span>
+<span class="n">ds_acsm_17</span> <span class="o">=</span> <span class="n">ds_acsm</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="s1">&#39;2022-07-17&#39;</span><span class="p">,</span> <span class="s1">&#39;2022-07-18&#39;</span><span class="p">))</span>
 
 <span class="c1"># Run through and get data</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;total_organics&#39;</span><span class="p">,</span> <span class="s1">&#39;sulfate&#39;</span><span class="p">,</span> <span class="s1">&#39;nitrate&#39;</span><span class="p">,</span> <span class="s1">&#39;ammonium&#39;</span><span class="p">,</span> <span class="s1">&#39;chloride&#39;</span><span class="p">]</span>
+<span class="n">data12</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">data17</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">labels</span><span class="p">:</span>
+    <span class="n">data12</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">ds_acsm_12</span><span class="p">[</span><span class="n">label</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()))</span>
+    <span class="n">data17</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">ds_acsm_17</span><span class="p">[</span><span class="n">label</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()))</span>
+    
+<span class="c1"># Pie charts use values that add up to 100% so we have to adjust the data</span>
+<span class="c1">#data12 = data12 / np.sum(data12)</span>
+<span class="c1">#data17 = data17 / np.sum(data17)</span>
 
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)),</span> <span class="n">data12</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;July 12-13&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)),</span> <span class="n">labels</span><span class="p">)</span>
 
-<span class="c1"># Plot the data using matplotlib bar plots</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)),</span> <span class="n">data17</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;July 17-18&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)),</span> <span class="n">labels</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
