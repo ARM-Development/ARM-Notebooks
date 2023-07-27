@@ -1,6 +1,9 @@
 format: jb-book
 root: Tutorials/Open-Science-Workshop-2022/README
 parts:
+  - caption: ARM/ASR PI Meeting 2023 Open Science Tutorials
+    chapters:
+    - file: Tutorials/arm-asr-pi-meeting-2023/README.md
   - caption: Open Science Workshop
     chapters:
     - file: Tutorials/Open-Science-Workshop-2022/presentations/view-abstracts
