@@ -1,0 +1,14 @@
+CalName	CalValue
+c0Mass1	0.10811
+c1Mass1	0.00025254
+c2Mass1	0
+c0Mass2	0.10811
+c1Mass2	0.00248814
+c2Mass2	0
+c0Scat1	0
+c1Scat1	140
+c2Scat1	0
+c0Scat2	0
+c1Scat2	1367
+c2Scat2	0.00931
+
