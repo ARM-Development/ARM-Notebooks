@@ -4,6 +4,11 @@ parts:
   - caption: ARM/ASR PI Meeting 2023 Open Science Tutorials
     chapters:
     - file: Tutorials/arm-asr-pi-meeting-2023/README.md
+      sections:
+        - file: Tutorials/arm-asr-pi-meeting-2023/pyart_tutorial/pyart-basics
+        - file: Tutorials/arm-asr-pi-meeting-2023/pyart_tutorial/pyart-gridding
+        - file: Tutorials/arm-asr-pi-meeting-2023/PySP2_tutorial/PySP2_tutorial
+        - file: Tutorials/arm-asr-pi-meeting-2023/EMC2_tutorial/EMC2_ARM_ASR_2023_Tutorial
   - caption: Open Science Workshop
     chapters:
     - file: Tutorials/Open-Science-Workshop-2022/presentations/view-abstracts
