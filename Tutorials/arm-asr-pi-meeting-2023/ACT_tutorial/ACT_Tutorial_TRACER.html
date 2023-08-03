@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Overview &#8212; ARM Tutorials</title>
+    <title>ACT Basics &#8212; ARM Tutorials</title>
   
   
   
@@ -161,16 +161,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../README.html">ARM/ASR PI Meeting Open Science Tutorials</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../pyart_tutorial/pyart-basics.html">Py-ART Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../pyart_tutorial/pyart-gridding.html">Py-ART Gridding</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Overview</a></li>
-
-
-
-
-
-
-
-
-
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">ACT Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../PySP2_tutorial/PySP2_tutorial.html">PySP2</a></li>
 
 
@@ -397,7 +388,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Overview</h1>
+    <h1>ACT Basics</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -407,56 +398,55 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Overview</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-to-act">Intro to ACT</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-discovery-act-discovery">Data Discovery (act.discovery)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-output-act-io">Input/Output (act.io)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-act-plotting">Visualization (act.plotting)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#corrections-act-corrections">Corrections (act.corrections)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quality-control-act-qc">Quality Control (act.qc)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrievals-act-retrievals">Retrievals (act.retrievals)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utilities-act-utils">Utilities (act.utils)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-to-act">Intro to ACT</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-discovery-act-discovery">Data Discovery (act.discovery)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-output-act-io">Input/Output (act.io)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-act-plotting">Visualization (act.plotting)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#corrections-act-corrections">Corrections (act.corrections)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quality-control-act-qc">Quality Control (act.qc)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retrievals-act-retrievals">Retrievals (act.retrievals)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utilities-act-utils">Utilities (act.utils)</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-and-reading-arm-s-netcdf-data">Downloading and Reading ARM’s NetCDF Data</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#quality-controlling-data">Quality Controlling Data</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-sources-of-quality-control">Other Sources of Quality Control</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-data">Filtering data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arm-data-quality-reports-dqr">ARM Data Quality Reports (DQR)!</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aerosol-instrument-overview">Aerosol Instrument Overview</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-particle-soot-photometer-sp2">Single Particle Soot Photometer (SP2)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aerodynamic-particle-sizer-aps">Aerodynamic Particle Sizer (APS)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aerosol-chemical-speciation-monitor-acsm">Aerosol Chemical Speciation Monitor (ACSM)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-and-qcing-the-aerosol-data">Downloading and QCing the Aerosol Data</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-data">Visualizing Data</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-rose-plots">Data Rose Plots</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checkout-the-area">Checkout the area</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#back-to-the-visualizations">Back to the visualizations!</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms">Histograms</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plots-and-heatmaps">Scatter Plots and Heatmaps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-and-reading-arm-s-netcdf-data">Downloading and Reading ARM’s NetCDF Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quality-controlling-data">Quality Controlling Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-sources-of-quality-control">Other Sources of Quality Control</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-data">Filtering data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#arm-data-quality-reports-dqr">ARM Data Quality Reports (DQR)!</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-features-in-act">Additional Features in ACT</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skew-t-plots">Skew-T Plots</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wind-roses">Wind Roses</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#present-weather-codes">Present Weather Codes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accumulating-precipitation">Accumulating Precipitation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#doppler-lidar-wind-retrievals">Doppler Lidar Wind Retrievals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aerosol-instrument-overview">Aerosol Instrument Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-particle-soot-photometer-sp2">Single Particle Soot Photometer (SP2)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aerodynamic-particle-sizer-aps">Aerodynamic Particle Sizer (APS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aerosol-chemical-speciation-monitor-acsm">Aerosol Chemical Speciation Monitor (ACSM)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-and-qcing-the-aerosol-data">Downloading and QCing the Aerosol Data</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mimic-arm-data-files">Mimic ARM Data Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-data">Visualizing Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-rose-plots">Data Rose Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checkout-the-area">Checkout the area</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#back-to-the-visualizations">Back to the visualizations!</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms">Histograms</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plots-and-heatmaps">Scatter Plots and Heatmaps</a></li>
 </ul>
-
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-features-in-act">Additional Features in ACT</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skew-t-plots">Skew-T Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wind-roses">Wind Roses</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#present-weather-codes">Present Weather Codes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accumulating-precipitation">Accumulating Precipitation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#doppler-lidar-wind-retrievals">Doppler Lidar Wind Retrievals</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mimic-arm-data-files">Mimic ARM Data Files</a></li>
+</ul>
             </nav>
         </div>
     </div>
@@ -467,21 +457,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <table>
-    <tr>
-        <td>
-            <img src="https://arm.gov/img/ARM_Logo.png" style="height: 200px;" alt="ARM Logo"></img>
-        </td>
-        <td>
-            <h1>Atmospheric data Community Toolkit (ACT) Tutorial</h1>
-            Notebook for learning the basics of ACT using data from a dust event during the 
-            TRacking Aerosol Convection interactions ExpeRiment (TRACER) campaign in Houston, TX</br>
-            Corresponding Author: Adam Theisen (atheisen@anl.gov)
-        </td>
-    </tr>
-</table><section id="overview">
-<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h1>
-<p>The ARM TRACER campaign collected a lot of very interesting data in Houston, TX from October 1, 2021 to September 30, 2022.  One event that stands out is a dust event that occurred from July 16 to July 19, 2022.  This notebook will give an introduction to basic features in ACT, using one of the datastreams from this event</p>
+  <a class="reference internal image-reference" href="https://raw.githubusercontent.com/ProjectPythiaCookbooks/radar-cookbook/main/thumbnail.png"><img alt="https://raw.githubusercontent.com/ProjectPythiaCookbooks/radar-cookbook/main/thumbnail.png" src="https://raw.githubusercontent.com/ProjectPythiaCookbooks/radar-cookbook/main/thumbnail.png" style="width: 500px;" /></a>
+<section id="act-basics">
+<h1>ACT Basics<a class="headerlink" href="#act-basics" title="Permalink to this heading">#</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<p>The ARM TRACER campaign collected a lot of very interesting data in Houston, TX from October 1, 2021 to September 30, 2022.  One event that stands out is a dust event that occurred from July 16 to July 19, 2022.  This notebook will give an introduction to basic features in ACT, using some relevant datastreams from this event</p>
 <ol class="arabic simple">
 <li><p>Intro to ACT</p></li>
 <li><p>Downloading and Reading in Data</p></li>
@@ -492,7 +473,7 @@ document.write(`
 </ol>
 </section>
 <section id="prerequisites">
-<h1>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h1>
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
 <p>This notebook will rely heavily on Python and the <a class="reference external" href="https://github.com/ARM-DOE/ACT">Atmospheric data Community Toolkit (ACT)</a>.  Don’t worry if you don’t have experience with either, this notebook will walk you though what you need to know.</p>
 <p>You will also need an account and token to download data using the ARM Live webservice.  Navigate to the <a class="reference external" href="https://adc.arm.gov/armlive/">webservice information page</a> and log in to get your token.  Your account username will be your ARM username.</p>
 <table class="table">
@@ -521,24 +502,24 @@ document.write(`
 </ul>
 </li>
 </ul>
-<hr class="docutils" />
 </section>
+<hr class="docutils" />
 <section id="intro-to-act">
-<h1>Intro to ACT<a class="headerlink" href="#intro-to-act" title="Permalink to this heading">#</a></h1>
+<h2>Intro to ACT<a class="headerlink" href="#intro-to-act" title="Permalink to this heading">#</a></h2>
 <p>The <a class="reference external" href="https://github.com/ARM-DOE/ACT">Atmospheric data Community Toolkit (ACT)</a> is an open-source Python toolkit for exploring and analyzing atmospheric time-series datasets.  Examples can be found in the <a class="reference external" href="https://arm-doe.github.io/ACT/source/auto_examples/index.html">ACT Example Gallery</a>.  The toolkit has modules for many different parts of the scientific process, including:</p>
 <table style='font-size:100%'>
     <tr>
         <td>
 <section id="data-discovery-act-discovery">
-<h2>Data Discovery (act.discovery)<a class="headerlink" href="#data-discovery-act-discovery" title="Permalink to this heading">#</a></h2>
+<h3>Data Discovery (act.discovery)<a class="headerlink" href="#data-discovery-act-discovery" title="Permalink to this heading">#</a></h3>
 <p>The <a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.discovery.html">discovery</a> module houses functions to download or access data from different groups.  Currently it includes function to get data for ARM, NOAA, EPA, NEON, and more!</p>
 </section>
 <section id="input-output-act-io">
-<h2>Input/Output (act.io)<a class="headerlink" href="#input-output-act-io" title="Permalink to this heading">#</a></h2>
+<h3>Input/Output (act.io)<a class="headerlink" href="#input-output-act-io" title="Permalink to this heading">#</a></h3>
 <p><a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.io.html">io</a> contains functions for reading and writing data from various sources and formats.</p>
 </section>
 <section id="visualization-act-plotting">
-<h2>Visualization (act.plotting)<a class="headerlink" href="#visualization-act-plotting" title="Permalink to this heading">#</a></h2>
+<h3>Visualization (act.plotting)<a class="headerlink" href="#visualization-act-plotting" title="Permalink to this heading">#</a></h3>
 <p><a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.plotting.html">plotting</a> contains various routines, built on matplotlib, to help visualize and explore data.  These include</p>
 <ol class="arabic simple">
 <li><p>Time-series plots</p></li>
@@ -550,19 +531,19 @@ document.write(`
 </ol>
 </section>
 <section id="corrections-act-corrections">
-<h2>Corrections (act.corrections)<a class="headerlink" href="#corrections-act-corrections" title="Permalink to this heading">#</a></h2>
+<h3>Corrections (act.corrections)<a class="headerlink" href="#corrections-act-corrections" title="Permalink to this heading">#</a></h3>
 <p><a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.corrections.html">corrections</a> apply different corrections to data based on need.  A majority of the existing corrections are for lidar data.</p>
 </section>
 <section id="quality-control-act-qc">
-<h2>Quality Control (act.qc)<a class="headerlink" href="#quality-control-act-qc" title="Permalink to this heading">#</a></h2>
+<h3>Quality Control (act.qc)<a class="headerlink" href="#quality-control-act-qc" title="Permalink to this heading">#</a></h3>
 <p>The <a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.qc.html">qc</a> module has a lot of functions for working with quality control information, apply new tests, or filtering data based on existing tests.  We will explore some of that functionality in this notebook.</p>
 </section>
 <section id="retrievals-act-retrievals">
-<h2>Retrievals (act.retrievals)<a class="headerlink" href="#retrievals-act-retrievals" title="Permalink to this heading">#</a></h2>
+<h3>Retrievals (act.retrievals)<a class="headerlink" href="#retrievals-act-retrievals" title="Permalink to this heading">#</a></h3>
 <p>There are many cases in which some additional calculations are necessary to get more value from the instrument data.  The <a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.retrievals.html">retrievals</a> module houses some functions for performing these advanced calculations.</p>
 </section>
 <section id="utilities-act-utils">
-<h2>Utilities (act.utils)<a class="headerlink" href="#utilities-act-utils" title="Permalink to this heading">#</a></h2>
+<h3>Utilities (act.utils)<a class="headerlink" href="#utilities-act-utils" title="Permalink to this heading">#</a></h3>
 <p>The <a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.utils.html">utils</a> module has a lot of general utilities to help with the data.  Some of these include adding in a solar variable to indicate day/night (useful in filtering data), unit conversions, decoding WMO weather codes, performing weighted averaging, etc…
 </td>
 <td>
@@ -574,11 +555,11 @@ document.write(`
 </center>
 </td>
 </tr></p>
-</table><hr class="docutils" />
+</table></section>
 </section>
-</section>
+<hr class="docutils" />
 <section id="imports">
-<h1>Imports<a class="headerlink" href="#imports" title="Permalink to this heading">#</a></h1>
+<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this heading">#</a></h2>
 <p>Let’s get started with some data!  But first, we need to import some libraries.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -592,7 +573,7 @@ document.write(`
 </div>
 </section>
 <section id="downloading-and-reading-arm-s-netcdf-data">
-<h1>Downloading and Reading ARM’s NetCDF Data<a class="headerlink" href="#downloading-and-reading-arm-s-netcdf-data" title="Permalink to this heading">#</a></h1>
+<h2>Downloading and Reading ARM’s NetCDF Data<a class="headerlink" href="#downloading-and-reading-arm-s-netcdf-data" title="Permalink to this heading">#</a></h2>
 <p>ARM’s standard file format is NetCDF (network Common Data Form) which makes it very easy to work with in Python!  ARM data are available through a data portal called <a class="reference external" href="https://adc.arm.gov/discovery/#/">Data Discovery</a> or through a webservice.  If you didn’t get your username and token earlier, please go back and see the Prerequisites!</p>
 <p>Let’s download some of the MPL data first but let’s just start with one day.</p>
 <div class="cell docutils container">
@@ -630,14 +611,14 @@ document.write(`
 </div>
 </div>
 </div>
-<hr class="docutils" />
 </section>
+<hr class="docutils" />
 <section id="quality-controlling-data">
-<h1>Quality Controlling Data<a class="headerlink" href="#quality-controlling-data" title="Permalink to this heading">#</a></h1>
+<h2>Quality Controlling Data<a class="headerlink" href="#quality-controlling-data" title="Permalink to this heading">#</a></h2>
 <p>ARM has multiple methods that it uses to communicate data quality information out to the users.  One of these methods is through “embedded QC” variables.  These are variables within the file that have information on automated tests that have been applied.  Many times, they include Min, Max, and Delta tests but as is the case with the AOS instruments, there can be more complicated tests that are applied.</p>
 <p>The results from all these different tests are stored in a single variable using bit-packed QC.  We won’t get into the full details here, but it’s a way to communicate the results of multiple tests in a single integer value by utilizing binary and bits!  You can learn more about bit-packed QC <a class="reference external" href="https://code.arm.gov/docs/QC-flag-examples/-/wikis/home">here</a> but ACT also has many of the tools for working with ARM QC.</p>
 <section id="other-sources-of-quality-control">
-<h2>Other Sources of Quality Control<a class="headerlink" href="#other-sources-of-quality-control" title="Permalink to this heading">#</a></h2>
+<h3>Other Sources of Quality Control<a class="headerlink" href="#other-sources-of-quality-control" title="Permalink to this heading">#</a></h3>
 <p>ARM also communicates problems with the data quality through Data Quality Reports (DQR).  These reports are normally submitted by the instrument mentor when there’s been a problem with the instrument.  The categories include:</p>
 <ul class="simple">
 <li><p><strong>Data Quality Report Categories</strong></p>
@@ -679,7 +660,7 @@ document.write(`
 </div>
 </section>
 <section id="filtering-data">
-<h2>Filtering data<a class="headerlink" href="#filtering-data" title="Permalink to this heading">#</a></h2>
+<h3>Filtering data<a class="headerlink" href="#filtering-data" title="Permalink to this heading">#</a></h3>
 <p>It’s easy to filter out data failing tests with ACT.  This will show you how to filter data by test or by assessment.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -713,7 +694,7 @@ document.write(`
 </div>
 </div>
 <section id="arm-data-quality-reports-dqr">
-<h3>ARM Data Quality Reports (DQR)!<a class="headerlink" href="#arm-data-quality-reports-dqr" title="Permalink to this heading">#</a></h3>
+<h4>ARM Data Quality Reports (DQR)!<a class="headerlink" href="#arm-data-quality-reports-dqr" title="Permalink to this heading">#</a></h4>
 <p>ARM’s DQRs can be easily pulled in and added to the QC variables using ACT.  We can do that with the below one line command.  However, for this case, there won’t be any DQRs on the data but let’s visualize it just in case!  Check out the <a class="reference external" href="https://arm-doe.github.io/ACT/source/auto_examples/index.html#quality-control-examples">ACT QC Examples</a> for more use cases!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -725,25 +706,25 @@ document.write(`
 </div>
 </div>
 </div>
+</section>
+</section>
+</section>
 <hr class="docutils" />
-</section>
-</section>
-</section>
 <section id="aerosol-instrument-overview">
-<h1>Aerosol Instrument Overview<a class="headerlink" href="#aerosol-instrument-overview" title="Permalink to this heading">#</a></h1>
+<h2>Aerosol Instrument Overview<a class="headerlink" href="#aerosol-instrument-overview" title="Permalink to this heading">#</a></h2>
 <table>
     <tr>
         <td>
 <section id="single-particle-soot-photometer-sp2">
-<h2>Single Particle Soot Photometer (SP2)<a class="headerlink" href="#single-particle-soot-photometer-sp2" title="Permalink to this heading">#</a></h2>
+<h3>Single Particle Soot Photometer (SP2)<a class="headerlink" href="#single-particle-soot-photometer-sp2" title="Permalink to this heading">#</a></h3>
 <p>The single-particle soot photometer (SP2) measures the soot (black carbon) mass of individual aerosol particles by laser-induced incandescence down to concentrations as low as ng/m^3. <a class="reference external" href="https://arm.gov/capabilities/instruments/sp2">Learn more</a></p>
 </section>
 <section id="aerodynamic-particle-sizer-aps">
-<h2>Aerodynamic Particle Sizer (APS)<a class="headerlink" href="#aerodynamic-particle-sizer-aps" title="Permalink to this heading">#</a></h2>
+<h3>Aerodynamic Particle Sizer (APS)<a class="headerlink" href="#aerodynamic-particle-sizer-aps" title="Permalink to this heading">#</a></h3>
 <p>The aerodynamic particle sizer (APS) is a particle size spectrometer that measures both the particle aerodynamic diameter based on particle time of flight and optical diameter based on scattered light intensity. The APS provides the number size distribution for particles with aerodynamic diameters from 0.5 to 20 micrometers and with optical diameters from 0.3 to 20 micrometers. <a class="reference external" href="https://arm.gov/capabilities/instruments/aps">Learn more</a></p>
 </section>
 <section id="aerosol-chemical-speciation-monitor-acsm">
-<h2>Aerosol Chemical Speciation Monitor (ACSM)<a class="headerlink" href="#aerosol-chemical-speciation-monitor-acsm" title="Permalink to this heading">#</a></h2>
+<h3>Aerosol Chemical Speciation Monitor (ACSM)<a class="headerlink" href="#aerosol-chemical-speciation-monitor-acsm" title="Permalink to this heading">#</a></h3>
 <p>The aerosol chemical speciation monitor is a thermal vaporization, electron impact, ionization mass spectrometer that measures bulk chemical composition of the rapidly evaporating component of sub-micron aerosol particles in real time. Standard measurements include mass concentrations of organics, sulfate, nitrate, ammonium, and chloride. <a class="reference external" href="https://arm.gov/capabilities/instruments/acsm">Learn more</a>
 </td>
 <td width=600>
@@ -755,7 +736,7 @@ document.write(`
 </tr></p>
 </table></section>
 <section id="downloading-and-qcing-the-aerosol-data">
-<h2>Downloading and QCing the Aerosol Data<a class="headerlink" href="#downloading-and-qcing-the-aerosol-data" title="Permalink to this heading">#</a></h2>
+<h3>Downloading and QCing the Aerosol Data<a class="headerlink" href="#downloading-and-qcing-the-aerosol-data" title="Permalink to this heading">#</a></h3>
 <p>Let’s start pulling these data together into the same plots so we can see what’s going on.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -826,11 +807,11 @@ document.write(`
 </div>
 </div>
 </div>
+</section>
+</section>
 <hr class="docutils" />
-</section>
-</section>
 <section id="visualizing-data">
-<h1>Visualizing Data<a class="headerlink" href="#visualizing-data" title="Permalink to this heading">#</a></h1>
+<h2>Visualizing Data<a class="headerlink" href="#visualizing-data" title="Permalink to this heading">#</a></h2>
 <p>We have all the datasets downloaded, let’s start to visualize them in different ways using ACT.
 If you ever need a place to start with how to visualize data using ACT, check out the
 <a class="reference external" href="https://arm-doe.github.io/ACT/source/auto_examples/index.html#plotting-examples">ACT Plotting Examples</a></p>
@@ -872,7 +853,7 @@ If you ever need a place to start with how to visualize data using ACT, check ou
 </div>
 </div>
 <section id="data-rose-plots">
-<h2>Data Rose Plots<a class="headerlink" href="#data-rose-plots" title="Permalink to this heading">#</a></h2>
+<h3>Data Rose Plots<a class="headerlink" href="#data-rose-plots" title="Permalink to this heading">#</a></h3>
 <p>These plots display the data on a windrose-like plot to visualize directional dependencies in the data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -906,14 +887,14 @@ If you ever need a place to start with how to visualize data using ACT, check ou
 </div>
 </section>
 <section id="checkout-the-area">
-<h2>Checkout the area<a class="headerlink" href="#checkout-the-area" title="Permalink to this heading">#</a></h2>
+<h3>Checkout the area<a class="headerlink" href="#checkout-the-area" title="Permalink to this heading">#</a></h3>
 <p>The AMF was deployed at <a class="reference external" href="https://www.google.com/maps/place/Airport+Blvd/&#64;29.6652378,-95.0466689,9165m/data=!3m1!1e3!4m7!3m6!1s0x863f6020e5e0ea21:0x792ee34f8eaac3e8!4b1!8m2!3d29.6663473!4d-95.0578571!16s%2Fg%2F1wbf_smp?entry=ttu">La Porte Municipal Airport</a>.  Check out the google map and see if this mapes sense!</p>
 </section>
 <section id="back-to-the-visualizations">
-<h2>Back to the visualizations!<a class="headerlink" href="#back-to-the-visualizations" title="Permalink to this heading">#</a></h2>
+<h3>Back to the visualizations!<a class="headerlink" href="#back-to-the-visualizations" title="Permalink to this heading">#</a></h3>
 <p>Let’s get back to checking out the other visualization features in ACT!</p>
 <section id="histograms">
-<h3>Histograms<a class="headerlink" href="#histograms" title="Permalink to this heading">#</a></h3>
+<h4>Histograms<a class="headerlink" href="#histograms" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We do the same thing as before but call the DistributionDisplay class</span>
@@ -954,7 +935,7 @@ If you ever need a place to start with how to visualize data using ACT, check ou
 </div>
 </section>
 <section id="scatter-plots-and-heatmaps">
-<h3>Scatter Plots and Heatmaps<a class="headerlink" href="#scatter-plots-and-heatmaps" title="Permalink to this heading">#</a></h3>
+<h4>Scatter Plots and Heatmaps<a class="headerlink" href="#scatter-plots-and-heatmaps" title="Permalink to this heading">#</a></h4>
 <p>Let’s plot up a comparison of the APS total concentration and the ACSM sulfates.  Feel free to change the variables from the ACSM to experiment!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1018,11 +999,11 @@ If you ever need a place to start with how to visualize data using ACT, check ou
 </section>
 </section>
 <section id="additional-features-in-act">
-<h1>Additional Features in ACT<a class="headerlink" href="#additional-features-in-act" title="Permalink to this heading">#</a></h1>
+<h2>Additional Features in ACT<a class="headerlink" href="#additional-features-in-act" title="Permalink to this heading">#</a></h2>
 <p>If there’s time to explore more features or if you want to on your own time, these are some of the many additional
 features that you might find useful in ACT</p>
 <section id="skew-t-plots">
-<h2>Skew-T Plots<a class="headerlink" href="#skew-t-plots" title="Permalink to this heading">#</a></h2>
+<h3>Skew-T Plots<a class="headerlink" href="#skew-t-plots" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s set a longer time period</span>
@@ -1047,7 +1028,7 @@ features that you might find useful in ACT</p>
 </section>
 <hr class="docutils" />
 <section id="wind-roses">
-<h2>Wind Roses<a class="headerlink" href="#wind-roses" title="Permalink to this heading">#</a></h2>
+<h3>Wind Roses<a class="headerlink" href="#wind-roses" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now we can plot up a wind rose of that entire month&#39;s worth of data</span>
@@ -1062,7 +1043,7 @@ features that you might find useful in ACT</p>
 </section>
 <hr class="docutils" />
 <section id="present-weather-codes">
-<h2>Present Weather Codes<a class="headerlink" href="#present-weather-codes" title="Permalink to this heading">#</a></h2>
+<h3>Present Weather Codes<a class="headerlink" href="#present-weather-codes" title="Permalink to this heading">#</a></h3>
 <p>See <a class="reference external" href="https://arm-doe.github.io/ACT/source/auto_examples/plotting/plot_presentweathercode.html#sphx-glr-source-auto-examples-plotting-plot-presentweathercode-py">this example</a> of how to plot up these present weather codes on your plots!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1080,7 +1061,7 @@ features that you might find useful in ACT</p>
 </section>
 <hr class="docutils" />
 <section id="accumulating-precipitation">
-<h2>Accumulating Precipitation<a class="headerlink" href="#accumulating-precipitation" title="Permalink to this heading">#</a></h2>
+<h3>Accumulating Precipitation<a class="headerlink" href="#accumulating-precipitation" title="Permalink to this heading">#</a></h3>
 <p>This example shows how to accumulate precipitation using the ACT utility and then overplot the PWD present weather codes</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1124,7 +1105,7 @@ features that you might find useful in ACT</p>
 </section>
 <hr class="docutils" />
 <section id="doppler-lidar-wind-retrievals">
-<h2>Doppler Lidar Wind Retrievals<a class="headerlink" href="#doppler-lidar-wind-retrievals" title="Permalink to this heading">#</a></h2>
+<h3>Doppler Lidar Wind Retrievals<a class="headerlink" href="#doppler-lidar-wind-retrievals" title="Permalink to this heading">#</a></h3>
 <p>This will show you how you can process the doppler lidar PPI scans to produce <strong><a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.retrievals.compute_winds_from_ppi.html#act.retrievals.compute_winds_from_ppi">wind profiles</a></strong> based on Newsom et al 2016.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1148,11 +1129,11 @@ features that you might find useful in ACT</p>
 </div>
 </div>
 </div>
+</section>
+</section>
 <hr class="docutils" />
-</section>
-</section>
 <section id="mimic-arm-data-files">
-<h1>Mimic ARM Data Files<a class="headerlink" href="#mimic-arm-data-files" title="Permalink to this heading">#</a></h1>
+<h2>Mimic ARM Data Files<a class="headerlink" href="#mimic-arm-data-files" title="Permalink to this heading">#</a></h2>
 <p>ARM’s NetCDF files are based around what we call a data object definition or DOD.  These DOD’s essentially create the structure of the file and are what you see in the NetCDF file as the header.  We can use this information to create an  xarray object, filled with missing value, that one can populated with data and then write it out to a NetCDF file that looks exactly like an ARM file.</p>
 <p>The user is able to set up the size of the datasets ahead of time by passing in the dimension sizes as shown below with <code class="docutils literal notranslate"><span class="pre">{'time':</span> <span class="pre">1440}</span></code></p>
 <p>This could greatly streamline and improve the usability of PI-submitted datasets.</p>
@@ -1175,6 +1156,7 @@ features that you might find useful in ACT</p>
 </div>
 </div>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1244,56 +1226,55 @@ features that you might find useful in ACT</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Overview</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-to-act">Intro to ACT</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-discovery-act-discovery">Data Discovery (act.discovery)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-output-act-io">Input/Output (act.io)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-act-plotting">Visualization (act.plotting)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#corrections-act-corrections">Corrections (act.corrections)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quality-control-act-qc">Quality Control (act.qc)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#retrievals-act-retrievals">Retrievals (act.retrievals)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utilities-act-utils">Utilities (act.utils)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-to-act">Intro to ACT</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-discovery-act-discovery">Data Discovery (act.discovery)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-output-act-io">Input/Output (act.io)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-act-plotting">Visualization (act.plotting)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#corrections-act-corrections">Corrections (act.corrections)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quality-control-act-qc">Quality Control (act.qc)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#retrievals-act-retrievals">Retrievals (act.retrievals)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#utilities-act-utils">Utilities (act.utils)</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-and-reading-arm-s-netcdf-data">Downloading and Reading ARM’s NetCDF Data</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#quality-controlling-data">Quality Controlling Data</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-sources-of-quality-control">Other Sources of Quality Control</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-data">Filtering data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arm-data-quality-reports-dqr">ARM Data Quality Reports (DQR)!</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aerosol-instrument-overview">Aerosol Instrument Overview</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#single-particle-soot-photometer-sp2">Single Particle Soot Photometer (SP2)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aerodynamic-particle-sizer-aps">Aerodynamic Particle Sizer (APS)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aerosol-chemical-speciation-monitor-acsm">Aerosol Chemical Speciation Monitor (ACSM)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-and-qcing-the-aerosol-data">Downloading and QCing the Aerosol Data</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-data">Visualizing Data</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-rose-plots">Data Rose Plots</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#checkout-the-area">Checkout the area</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#back-to-the-visualizations">Back to the visualizations!</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms">Histograms</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plots-and-heatmaps">Scatter Plots and Heatmaps</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-and-reading-arm-s-netcdf-data">Downloading and Reading ARM’s NetCDF Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quality-controlling-data">Quality Controlling Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-sources-of-quality-control">Other Sources of Quality Control</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-data">Filtering data</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#arm-data-quality-reports-dqr">ARM Data Quality Reports (DQR)!</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-features-in-act">Additional Features in ACT</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skew-t-plots">Skew-T Plots</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wind-roses">Wind Roses</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#present-weather-codes">Present Weather Codes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accumulating-precipitation">Accumulating Precipitation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#doppler-lidar-wind-retrievals">Doppler Lidar Wind Retrievals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aerosol-instrument-overview">Aerosol Instrument Overview</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-particle-soot-photometer-sp2">Single Particle Soot Photometer (SP2)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aerodynamic-particle-sizer-aps">Aerodynamic Particle Sizer (APS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aerosol-chemical-speciation-monitor-acsm">Aerosol Chemical Speciation Monitor (ACSM)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-and-qcing-the-aerosol-data">Downloading and QCing the Aerosol Data</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mimic-arm-data-files">Mimic ARM Data Files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-data">Visualizing Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-rose-plots">Data Rose Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checkout-the-area">Checkout the area</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#back-to-the-visualizations">Back to the visualizations!</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#histograms">Histograms</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scatter-plots-and-heatmaps">Scatter Plots and Heatmaps</a></li>
 </ul>
-
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-features-in-act">Additional Features in ACT</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skew-t-plots">Skew-T Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wind-roses">Wind Roses</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#present-weather-codes">Present Weather Codes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accumulating-precipitation">Accumulating Precipitation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#doppler-lidar-wind-retrievals">Doppler Lidar Wind Retrievals</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mimic-arm-data-files">Mimic ARM Data Files</a></li>
+</ul>
   </nav></div>
 
 </div></div>
