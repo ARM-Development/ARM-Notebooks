@@ -64,6 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'README';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Accessing the Compute Environment" href="getting-started.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -129,7 +130,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="Tutorials/Open-Science-Workshop-2022/README.html">
+<a class="navbar-brand logo" href="#">
   
   
   
@@ -148,15 +149,19 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="Tutorials/Open-Science-Workshop-2022/README.html">
-                    Overview
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    ARM-Notebooks
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">ARM/ASR PI Meeting 2023 Open Science Tutorials</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="Tutorials/arm-asr-pi-meeting-2023/README.html">ARM/ASR PI Meeting Open Science Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Accessing the Compute Environment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">ARM/ASR PI Meeting 2023</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Tutorials/arm-asr-pi-meeting-2023/README.html">Open Science Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="Tutorials/arm-asr-pi-meeting-2023/pyart_tutorial/pyart-basics.html">Py-ART Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Tutorials/arm-asr-pi-meeting-2023/pyart_tutorial/pyart-gridding.html">Py-ART Gridding</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Tutorials/arm-asr-pi-meeting-2023/ACT_tutorial/ACT_Tutorial_TRACER.html">ACT Basics</a></li>
@@ -342,7 +347,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -358,6 +365,16 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relation-to-the-arm-data-workbench">Relation to the ARM Data Workbench</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting Started</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -369,7 +386,9 @@ document.write(`
                   
   <section id="arm-notebooks">
 <h1>ARM-Notebooks<a class="headerlink" href="#arm-notebooks" title="Permalink to this heading">#</a></h1>
-<p>Repository for holding notebooks related to ARM data.
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<p>This is a repository for holding notebooks related to ARM data.
 It is currently structured around the ARM environment.</p>
 <ul class="simple">
 <li><p>Instrument stores notebooks that deal mainly with ARM instruments.</p></li>
@@ -378,6 +397,21 @@ It is currently structured around the ARM environment.</p>
 <li><p>Tutorial stores notebooks related to tutorials given as part of
 conferences, workshops, meetings, etc…</p></li>
 </ul>
+</section>
+<section id="relation-to-the-arm-data-workbench">
+<h2>Relation to the ARM Data Workbench<a class="headerlink" href="#relation-to-the-arm-data-workbench" title="Permalink to this heading">#</a></h2>
+<p>These notebooks integrate well with the ARM Data Workbench, with the primary platform being the ARM Jupyterhub (https://jupyterhub.arm.gov). We work with both ARM users and infrastructure developers to ensure that these notebooks run seamlessly on this platform. We encourage community members to use these notebooks as examples, and consider submitting their own content. We provide templates for notebooks and tutorial schedules in the <code class="docutils literal notranslate"><span class="pre">/Tutorials</span></code> directory.</p>
+</section>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading">#</a></h2>
+<p>A guide on getting started with the notebooks is provided on the <a class="reference internal" href="getting-started.html"><span class="doc std std-doc">Getting Started</span></a> page.</p>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -411,6 +445,15 @@ conferences, workshops, meetings, etc…</p></li>
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="right-next"
+       href="getting-started.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Accessing the Compute Environment</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -420,6 +463,22 @@ conferences, workshops, meetings, etc…</p></li>
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relation-to-the-arm-data-workbench">Relation to the ARM Data Workbench</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting Started</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

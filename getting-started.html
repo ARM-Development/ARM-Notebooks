@@ -7,8 +7,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index &#8212; ARM Tutorials</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Accessing the Compute Environment &#8212; ARM Tutorials</title>
   
   
   
@@ -60,9 +61,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
-    <link rel="index" title="Index" href="#" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'getting-started';</script>
+    <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Open Science Tutorials" href="Tutorials/arm-asr-pi-meeting-2023/README.html" />
+    <link rel="prev" title="ARM-Notebooks" href="README.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -154,8 +157,8 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Accessing the Compute Environment</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Accessing the Compute Environment</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">ARM/ASR PI Meeting 2023</span></p>
 <ul class="nav bd-sidenav">
@@ -266,6 +269,54 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/getting-started.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
   title="Fullscreen mode"
@@ -297,7 +348,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -308,11 +361,24 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1></h1>
+    <h1>Accessing the Compute Environment</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#register-for-access-to-the-arm-data-workbench">Register for Access to the ARM Data Workbench</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-notebooks">Running the Notebooks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-on-jupyter">Running on Jupyter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-on-your-own-machine">Running on Your Own Machine</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -322,13 +388,77 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
+  <section id="accessing-the-compute-environment">
+<h1>Accessing the Compute Environment<a class="headerlink" href="#accessing-the-compute-environment" title="Permalink to this heading">#</a></h1>
+<section id="register-for-access-to-the-arm-data-workbench">
+<h2>Register for Access to the ARM Data Workbench<a class="headerlink" href="#register-for-access-to-the-arm-data-workbench" title="Permalink to this heading">#</a></h2>
+<p>Participants who do not already have one should first register for an ARM account. When filling out the form, indicate that you are interested in using ARM’s notebook examples.</p>
+<p>You can sign up for an ARM account using <a class="reference external" href="https://adc.arm.gov/armuserreg/#/new">this link</a>.</p>
+<p>If you already have an ARM account, email clustersupport&#64;arm.gov that you need to be granted access to the workshop or course materials.</p>
+</section>
+<section id="running-the-notebooks">
+<h2>Running the Notebooks<a class="headerlink" href="#running-the-notebooks" title="Permalink to this heading">#</a></h2>
+<p>You can either run the notebook using <a class="reference external" href="https://mybinder.org/">Binder</a> or on your local machine.</p>
+<section id="running-on-jupyter">
+<h3>Running on Jupyter<a class="headerlink" href="#running-on-jupyter" title="Permalink to this heading">#</a></h3>
+<p>The simplest way to interact with a Jupyter Notebook is through the
+<a class="reference external" href="https://jupyterhub.arm.gov">ARM Jupyter</a>, which enables the execution of a
+<a class="reference external" href="https://jupyterbook.org">Jupyter Book</a> on ARM infrastructure. The details of how this works are not
+important for now. Navigate your mouse to
+the top right corner of the book chapter you are viewing and click
+on the rocket ship icon, (see figure below), and be sure to select
+“launch Jupyterhub”. After a moment you should be presented with a
+notebook that you can interact with. I.e. you’ll be able to execute
+and even change the example programs. You’ll see that the code cells
+have no output at first, until you execute them by pressing
+<kbd class="kbd docutils literal notranslate">Shift</kbd>+<kbd class="kbd docutils literal notranslate">Enter</kbd>. Complete details on how to interact with
+a live Jupyter notebook are described in <a class="reference external" href="https://foundations.projectpythia.org/foundations/getting-started-jupyter.html">Getting Started with
+Jupyter</a>.</p>
+</section>
+<section id="running-on-your-own-machine">
+<h3>Running on Your Own Machine<a class="headerlink" href="#running-on-your-own-machine" title="Permalink to this heading">#</a></h3>
+<p>If you are interested in running this material locally on your computer, you will need to follow this workflow:</p>
+<ol class="arabic">
+<li><p>Clone the <code class="docutils literal notranslate"><span class="pre">https://github.com/ARM-Development/ARM-Notebooks</span></code> repository:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ARM-Development/ARM-Notebooks
+</pre></div>
 </div>
+</li>
+<li><p>Move into the <code class="docutils literal notranslate"><span class="pre">ARM-Notebooks</span></code> directory</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>ARM-Notebooks
+</pre></div>
+</div>
+</li>
+<li><p>Create and activate your conda environment from the <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment.yml
+conda<span class="w"> </span>activate<span class="w"> </span>arm-tutorial-dev
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+</section>
+</section>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               
@@ -341,6 +471,24 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="README.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">ARM-Notebooks</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Tutorials/arm-asr-pi-meeting-2023/README.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Open Science Tutorials</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -350,6 +498,25 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#register-for-access-to-the-arm-data-workbench">Register for Access to the ARM Data Workbench</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-notebooks">Running the Notebooks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-on-jupyter">Running on Jupyter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-on-your-own-machine">Running on Your Own Machine</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
