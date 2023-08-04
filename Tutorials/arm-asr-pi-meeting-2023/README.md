@@ -3,7 +3,7 @@
 The aim of these sessions are to expose attendees to the spectrum of open science occurring in the ARM and ASR communities while breaking down information silos.
 
 ## Session 1: Introduction to Open Science in ARM 
-***Tuesday 8 August 2023 2:00 PM ET***
+***Tuesday 8 August 2023 2:00 PM ET (Glen Echo)***
 | Time                | Topic                                | Presenter        |
 | :---:               |    :----:                            |    :---:         |
 | 02:00 PM - 02:15 PM | ARM GitHub Organizations             | Adam Theisen     |
@@ -13,14 +13,14 @@ The aim of these sessions are to expose attendees to the spectrum of open scienc
 | 03:30 PM - 04:30 PM | Advanced Python - Xarray, Pandas     | Ken Kehoe        |
 
 ## Session 2: Py-ART and ACT tutorials
-***Tuesday 8 August 2023 4:15 PM ET***
+***Tuesday 8 August 2023 4:15 PM ET (Glen Echo)***
 | Time                | Topic                                | Presenter        |
 | :---:               |    :----:                            |    :---:         |
 | 04:15 PM - 05:15 PM | Py-ART Tutorial                      | Max Grover       |
 | 05:15 PM - 06:30 PM | ACT Tutorial                         | Adam Theisen     |
 
 ## Session 3: ARM/ASR Community Open-Source Tools
-***Wednesday 9 August 2023 2:00 PM ET***
+***Wednesday 9 August 2023 2:00 PM ET (Glen Echo)***
 | Time                | Topic                                | Presenter        |
 | :---:               |    :----:                            |    :---:         |
 | 02:00 PM - 02:15 PM | Enhancing Geoscientific Computational Skills with Project Pythia: A Pathway to Open Science  | Millind Sharma     |
