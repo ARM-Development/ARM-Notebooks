@@ -586,7 +586,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set your username and token here!</span>
-<span class="n">username</span> <span class="o">=</span> <span class="s1">&#39;YourUsername&#39;</span>
+<span class="n">username</span> <span class="o">=</span> <span class="s1">&#39;YourUserName&#39;</span>
 <span class="n">token</span> <span class="o">=</span> <span class="s1">&#39;YourToken&#39;</span>
 
 <span class="c1"># Set the datastream and start/enddates</span>
@@ -1024,7 +1024,7 @@ features that you might find useful in ACT</p>
 <span class="n">ds_sonde</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">armfiles</span><span class="o">.</span><span class="n">read_netcdf</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 
 <span class="c1"># Plot enhanced Skew-T plot</span>
-<span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">SkewTDisplay</span><span class="p">(</span><span class="n">ds_sonde</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">SkewTDisplay</span><span class="p">(</span><span class="n">ds_sonde</span><span class="p">)</span>
 <span class="n">display</span><span class="o">.</span><span class="n">plot_enhanced_skewt</span><span class="p">(</span><span class="n">color_field</span><span class="o">=</span><span class="s1">&#39;alt&#39;</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -1060,7 +1060,7 @@ features that you might find useful in ACT</p>
 <span class="c1"># We&#39;re going to print out the first 10 decoded values that weren&#39;t 0</span>
 <span class="c1"># This shows the utility of also being able to use the built-in xarray</span>
 <span class="c1"># features like where!</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">ds_met</span><span class="p">[</span><span class="s1">&#39;pwd_pw_code_inst_decoded&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ds_met</span><span class="o">.</span><span class="n">pwd_pw_code_inst</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">ds_met</span><span class="p">[</span><span class="s1">&#39;pwd_pw_code_inst_decoded&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ds_met</span><span class="o">.</span><span class="n">pwd_pw_code_inst</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]))</span>
 </pre></div>
 </div>
 </div>
@@ -1093,7 +1093,7 @@ features that you might find useful in ACT</p>
 <span class="c1"># and if we plot it up, we will skip 2 hours so the plot</span>
 <span class="c1"># is not busy and unreadable</span>
 <span class="n">ct</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">ds_met</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ds_met</span><span class="o">.</span><span class="n">pwd_pw_code_1hr</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds_met</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ds_met</span><span class="o">.</span><span class="n">pwd_pw_code_1hr</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">wx</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;pwd_pw_code_1hr_decoded&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 <span class="n">prev_wx</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="k">while</span> <span class="n">ct</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">wx</span><span class="p">):</span>
@@ -1117,19 +1117,29 @@ features that you might find useful in ACT</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We&#39;re going to use some test data that already exists within ACT</span>
-<span class="n">obj</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">armfiles</span><span class="o">.</span><span class="n">read_netcdf</span><span class="p">(</span><span class="n">act</span><span class="o">.</span><span class="n">tests</span><span class="o">.</span><span class="n">sample_files</span><span class="o">.</span><span class="n">EXAMPLE_DLPPI_MULTI</span><span class="p">)</span>
+<span class="c1"># Let&#39;s set a longer time period</span>
+<span class="n">startdate</span> <span class="o">=</span> <span class="s1">&#39;2022-07-16T21:00:00&#39;</span>
+<span class="n">enddate</span> <span class="o">=</span> <span class="s1">&#39;2022-07-16T22:00:00&#39;</span>
 
+<span class="c1"># SONDE</span>
+<span class="n">datastream</span> <span class="o">=</span> <span class="s1">&#39;houdlppiM1.b1&#39;</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">discovery</span><span class="o">.</span><span class="n">download_data</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">token</span><span class="p">,</span> <span class="n">datastream</span><span class="p">,</span> <span class="n">startdate</span><span class="p">,</span> <span class="n">enddate</span><span class="p">)</span>
+<span class="n">result</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">armfiles</span><span class="o">.</span><span class="n">read_netcdf</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="n">ds</span>
 <span class="c1"># Returns the wind retrieval information in a new object by default</span>
 <span class="c1"># Note that the default snr_threshold of 0.008 was too high for the first profile</span>
 <span class="c1"># Reducing it to 0.002 makes it show up but the quality of the data is likely suspect.</span>
-<span class="n">wind_obj</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">retrievals</span><span class="o">.</span><span class="n">compute_winds_from_ppi</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">snr_threshold</span><span class="o">=</span><span class="mf">0.004</span><span class="p">)</span>
+<span class="n">ds_wind</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">retrievals</span><span class="o">.</span><span class="n">compute_winds_from_ppi</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">snr_threshold</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">)</span>
 
 <span class="c1"># Plot it up</span>
-<span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">TimeSeriesDisplay</span><span class="p">(</span><span class="n">wind_obj</span><span class="p">)</span>
-<span class="n">display</span><span class="o">.</span><span class="n">plot_barbs_from_spd_dir</span><span class="p">(</span><span class="s1">&#39;wind_direction&#39;</span><span class="p">,</span> <span class="s1">&#39;wind_speed&#39;</span><span class="p">,</span> <span class="n">invert_y_axis</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">TimeSeriesDisplay</span><span class="p">(</span><span class="n">ds_wind</span><span class="p">)</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot_barbs_from_spd_dir</span><span class="p">(</span><span class="s1">&#39;wind_speed&#39;</span><span class="p">,</span> <span class="s1">&#39;wind_direction&#39;</span><span class="p">,</span> <span class="n">invert_y_axis</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="c1">#Update the x-limits to make sure both wind profiles are shown</span>
-<span class="n">display</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s1">&#39;2019-10-15T11:45&#39;</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s1">&#39;2019-10-15T12:30&#39;</span><span class="p">)])</span>
+<span class="n">display</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s1">&#39;2022-07-16T20:45:00&#39;</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s1">&#39;2022-07-16T22:15:00&#39;</span><span class="p">)])</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
