@@ -25,8 +25,9 @@ The aim of these sessions are to expose attendees to the spectrum of open scienc
 | :---:               |    :----:                            |    :---:         |
 | 02:00 PM - 02:15 PM | Enhancing Geoscientific Computational Skills with Project Pythia: A Pathway to Open Science  | Millind Sharma     |
 | 02:15 PM - 02:30 PM | Using PySP2 to process Single Particle Soot Photometer | Bobby Jackson |
-| 02:30 PM - 02:45 PM | ARM And The U-IFLs, How CROCUS Can Inform ARM Open Instrument Science | Scott Collis  |
-| 02:45 PM - 03:00 PM | ARM Climatologies: An Experiment in Open Paper Development | Adam Theisen      |
-| 03:00 PM - 03:30 PM | ARM data-oriented metrics and diagnostics package for GCMs (ARM-Diags)  | Cheng Tao |
+| 02:15 PM - 02:30 PM | Earth Model Column Collaboratory EMC^2 | Bobby Jackson |
+| 02:45 PM - 03:00 PM | ARM And The U-IFLs, How CROCUS Can Inform ARM Open Instrument Science | Scott Collis  |
+| 03:00 PM - 03:15 PM | ARM Climatologies: An Experiment in Open Paper Development | Adam Theisen      |
+| 03:15 PM - 03:30 PM | ARM data-oriented metrics and diagnostics package for GCMs (ARM-Diags)  | Cheng Tao |
 | 03:30 PM - 03:45 PM | Python library for color-vision deficient colormaps | Zach Sherman |
 | 03:45 PM - 04:00 PM | Reproducible Research with Docker - Insights from the Sage Project  | Bhupendra Raut |
