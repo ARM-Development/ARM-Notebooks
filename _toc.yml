@@ -4,6 +4,8 @@ parts:
   - caption: Getting Started
     chapters:
     - file: getting-started.md
+    - file: Templates/notebook-template
+    - file: Templates/tutorial-schedule
   - caption: ARM/ASR PI Meeting 2023
     chapters:
     - file: Tutorials/arm-asr-pi-meeting-2023/README.md
