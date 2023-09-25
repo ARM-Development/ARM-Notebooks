@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Project Pythia Notebook Template &#8212; ARM Tutorials</title>
+    <title>ARM Notebook Template &#8212; ARM Tutorials</title>
   
   
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -64,6 +65,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Templates/notebook-template';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tutorial Schedule" href="tutorial-schedule.html" />
+    <link rel="prev" title="Accessing the Compute Environment" href="../getting-started.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -74,6 +77,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -155,8 +167,10 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Accessing the Compute Environment</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">ARM Notebook Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial-schedule.html">Tutorial Schedule</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">ARM/ASR PI Meeting 2023</span></p>
 <ul class="nav bd-sidenav">
@@ -365,10 +379,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -376,7 +390,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -393,7 +407,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Project Pythia Notebook Template</h1>
+    <h1>ARM Notebook Template</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -406,7 +420,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-first-content-section">Your first content section</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#access-arm-data">Access ARM Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-the-arm-live-api-to-download-the-data-using-act">Use the ARM Live API to Download the Data, using ACT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-our-download-query">Setup our Download Query</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-content-subsection">A content subsection</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#another-content-subsection">Another content subsection</a></li>
 </ul>
@@ -446,9 +462,9 @@ document.write(`
 <div><p><code class="docutils literal notranslate"><span class="pre">![&lt;image</span> <span class="pre">title&gt;](http://link.com/to/image.png</span> <span class="pre">&quot;image</span> <span class="pre">alt</span> <span class="pre">text&quot;)</span></code></p>
 </div></blockquote>
 <p>or edit this cell to see raw HTML <code class="docutils literal notranslate"><span class="pre">img</span></code> demonstration. This is preferred if you need to shrink your embedded image. <strong>Either way be sure to include <code class="docutils literal notranslate"><span class="pre">alt</span></code> text for any embedded images to make your content more accessible.</strong></p>
-<p><a class="reference internal" href="Templates/images/ProjectPythia_Logo_Final-01-Blue.svg"><img alt="Project Pythia Logo" src="Templates/images/ProjectPythia_Logo_Final-01-Blue.svg" width="250" /></a></img></p>
-<section id="project-pythia-notebook-template">
-<h1>Project Pythia Notebook Template<a class="headerlink" href="#project-pythia-notebook-template" title="Permalink to this heading">#</a></h1>
+<p><a class="reference internal" href="../_images/arm_logo.png"><img alt="ARM Logo" src="../_images/arm_logo.png" style="width: 250px;" /></a></img></p>
+<section id="arm-notebook-template">
+<h1>ARM Notebook Template<a class="headerlink" href="#arm-notebook-template" title="Permalink to this heading">#</a></h1>
 <p>Next, title your notebook appropriately with a top-level Markdown header, <code class="docutils literal notranslate"><span class="pre">#</span></code>. Do not use this level header anywhere else in the notebook. Our book build process will use this title in the navbar, table of contents, etc. Keep it short, keep it descriptive. Follow this with a <code class="docutils literal notranslate"><span class="pre">---</span></code> cell to visually distinguish the transition to the prerequisites section.</p>
 <hr class="docutils" />
 <section id="overview">
@@ -506,23 +522,65 @@ document.write(`
 <p>Begin your body of content with another <code class="docutils literal notranslate"><span class="pre">---</span></code> divider before continuing into this section, then remove this body text and populate the following code cell with all necessary Python imports <strong>up-front</strong>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">import</span> <span class="nn">act</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="your-first-content-section">
-<h2>Your first content section<a class="headerlink" href="#your-first-content-section" title="Permalink to this heading">#</a></h2>
-<p>This is where you begin your first section of material, loosely tied to your objectives stated up front. Tie together your notebook as a narrative, with interspersed Markdown text, images, and more as necessary,</p>
+<section id="access-arm-data">
+<h2>Access ARM Data<a class="headerlink" href="#access-arm-data" title="Permalink to this heading">#</a></h2>
+<section id="use-the-arm-live-api-to-download-the-data-using-act">
+<h3>Use the ARM Live API to Download the Data, using ACT<a class="headerlink" href="#use-the-arm-live-api-to-download-the-data-using-act" title="Permalink to this heading">#</a></h3>
+<p>The Atmospheric Data Community Toolkit (ACT) has a helpful module to interface with the data server:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.discovery.download_data.html#act.discovery.download_data">Download Data API</a></p></li>
+</ul>
+</section>
+<section id="setup-our-download-query">
+<h3>Setup our Download Query<a class="headerlink" href="#setup-our-download-query" title="Permalink to this heading">#</a></h3>
+<p>Before downloading our data, we need to make sure we have an ARM Data Account, and ARM Live token. Both of these can be found using this link:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://adc.arm.gov/armlive/livedata/home">ARM Live Signup</a></p></li>
+</ul>
+<p>Once you sign up, you will see your token. Copy and replace that where we have <code class="docutils literal notranslate"><span class="pre">arm_username</span></code> and <code class="docutils literal notranslate"><span class="pre">arm_password</span></code> below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># as well as any and all of your code cells</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello world!&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arm_username</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;ARM_USERNAME&quot;</span><span class="p">)</span>
+<span class="n">arm_password</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;ARM_PASSWORD&quot;</span><span class="p">)</span>
+
+<span class="n">datastream</span> <span class="o">=</span> <span class="s2">&quot;sgpceilC1.b1&quot;</span>
+
+<span class="n">start_date</span> <span class="o">=</span> <span class="s2">&quot;2022-01-01T12:00:00&quot;</span>
+<span class="n">end_date</span> <span class="o">=</span> <span class="s2">&quot;2022-01-07T12:00:00&quot;</span>
+
+<span class="n">files</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">discovery</span><span class="o">.</span><span class="n">download_data</span><span class="p">(</span><span class="n">arm_username</span><span class="p">,</span>
+                                    <span class="n">arm_password</span><span class="p">,</span>
+                                    <span class="n">datastream</span><span class="p">,</span>
+                                    <span class="n">start_date</span><span class="p">,</span>
+                                    <span class="n">end_date</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[DOWNLOADING] sgpceilC1.b1.20220102.000011.nc
+[DOWNLOADING] sgpceilC1.b1.20220103.000009.nc
+[DOWNLOADING] sgpceilC1.b1.20220104.000008.nc
+[DOWNLOADING] sgpceilC1.b1.20220105.000006.nc
+[DOWNLOADING] sgpceilC1.b1.20220106.000003.nc
+[DOWNLOADING] sgpceilC1.b1.20220107.000000.nc
+
+If you use these data to prepare a publication, please cite:
+
+Morris, V., Zhang, D., &amp; Ermold, B. Ceilometer (CEIL). Atmospheric Radiation
+Measurement (ARM) User Facility. https://doi.org/10.5439/1181954
 </pre></div>
 </div>
 </div>
 </div>
+</section>
 <section id="a-content-subsection">
 <h3>A content subsection<a class="headerlink" href="#a-content-subsection" title="Permalink to this heading">#</a></h3>
 <p>Divide and conquer your objectives with Markdown subsections, which will populate the helpful navbar in Jupyter Lab and here on the Jupyter Book!</p>
@@ -629,16 +687,30 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
-</div></div>
-  
+    <a class="left-prev"
+       href="../getting-started.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Accessing the Compute Environment</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tutorial-schedule.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Tutorial Schedule</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
-
                 </footer>
               
             </div>
@@ -656,7 +728,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-first-content-section">Your first content section</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#access-arm-data">Access ARM Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-the-arm-live-api-to-download-the-data-using-act">Use the ARM Live API to Download the Data, using ACT</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-our-download-query">Setup our Download Query</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-content-subsection">A content subsection</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#another-content-subsection">Another content subsection</a></li>
 </ul>
@@ -727,8 +801,8 @@ By ARM Development Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>
