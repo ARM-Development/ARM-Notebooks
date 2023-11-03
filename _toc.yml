@@ -6,6 +6,11 @@ parts:
     - file: getting-started.md
     - file: Templates/notebook-template
     - file: Templates/tutorial-schedule
+  - caption: Value-added Products
+    chapters:
+    - file: VAPs/README.md
+      sections:
+        - file: VAPs/squire/intro-to-squire.ipynb
   - caption: ARM/ASR PI Meeting 2023
     chapters:
     - file: Tutorials/arm-asr-pi-meeting-2023/README.md
