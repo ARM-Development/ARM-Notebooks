@@ -8,7 +8,8 @@ The aim of these sessions are to expose attendees to the spectrum of open scienc
 | :---:               |    :----:                            |    :---:         |
 | 02:00 PM - 02:15 PM | ARM GitHub Organizations             | Adam Theisen     |
 | 02:15 PM - 02:30 PM | Python ARM Radar Toolkit             | Zach Sherman     |
-| 02:30 PM - 02:45 PM | ARM JupyterHub and Data Workbench    | Kyle Dumas       |
+| 02:30 PM - 02:45 PM | Atmospheric data Community Toolkit   | Adam Theisen     |
+| 02:45 PM - 03:15 PM | ARM JupyterHub and Data Workbench    | Kyle Dumas       |
 | 03:15 PM - 03:30 PM | Basics of Python                     | Joe O'Brien      |
 | 03:30 PM - 04:30 PM | Advanced Python - Xarray, Pandas     | Ken Kehoe        |
 
