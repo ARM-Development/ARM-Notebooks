@@ -641,7 +641,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set your username and token here!</span>
-<span class="n">username</span> <span class="o">=</span> <span class="s1">&#39;YourUsername&#39;</span>
+<span class="n">username</span> <span class="o">=</span> <span class="s1">&#39;YourUserName&#39;</span>
 <span class="n">token</span> <span class="o">=</span> <span class="s1">&#39;YourToken&#39;</span>
 
 <span class="c1"># Set the datastream and start/enddates</span>
@@ -651,7 +651,7 @@ document.write(`
 
 <span class="c1"># Use ACT to easily download the data.  Watch for the data citation!  Show some support</span>
 <span class="c1"># for ARM&#39;s instrument experts and cite their data if you use it in a publication</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">discovery</span><span class="o">.</span><span class="n">download_data</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">token</span><span class="p">,</span> <span class="n">datastream</span><span class="p">,</span> <span class="n">startdate</span><span class="p">,</span> <span class="n">enddate</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">discovery</span><span class="o">.</span><span class="n">download_arm_data</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">token</span><span class="p">,</span> <span class="n">datastream</span><span class="p">,</span> <span class="n">startdate</span><span class="p">,</span> <span class="n">enddate</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -659,7 +659,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s read in the data using ACT and check out the data</span>
-<span class="n">ds</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_netcdf</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_arm_netcdf</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 <span class="n">ds</span>
 </pre></div>
 </div>
@@ -801,7 +801,7 @@ document.write(`
 
 <span class="c1"># And then we can plot the data!  Note that we are passing a range into the</span>
 <span class="c1"># histogram function to set the min/max range of the data</span>
-<span class="n">display</span><span class="o">.</span><span class="n">plot_stacked_bar_graph</span><span class="p">(</span><span class="n">variable</span><span class="p">,</span> <span class="n">hist_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;range&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">]})</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot_stacked_bar</span><span class="p">(</span><span class="n">variable</span><span class="p">,</span> <span class="n">hist_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;range&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">]})</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -816,7 +816,7 @@ document.write(`
 
 <span class="c1"># And then we can plot the data in groups!  The main issue is that it doesn&#39;t automatically</span>
 <span class="c1"># Annotate the group on the plot.  We&#39;re also setting the titile to blank to save space</span>
-<span class="n">groupby</span><span class="o">.</span><span class="n">plot_group</span><span class="p">(</span><span class="s1">&#39;plot_stacked_bar_graph&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">field</span><span class="o">=</span><span class="n">variable</span><span class="p">,</span> <span class="n">set_title</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">hist_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;range&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">]})</span>
+<span class="n">groupby</span><span class="o">.</span><span class="n">plot_group</span><span class="p">(</span><span class="s1">&#39;plot_stacked_bar&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">field</span><span class="o">=</span><span class="n">variable</span><span class="p">,</span> <span class="n">set_title</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">hist_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;range&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">]})</span>
 
 <span class="c1"># We want these graphs to have the same axes, so we can easily run through</span>
 <span class="c1"># each plot and modify the axes.  Right now, we can just hard code these in</span>
