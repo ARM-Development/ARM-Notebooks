@@ -1,0 +1,983 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Contributor’s Guide &#8212; ARM Tutorials</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CONTRIBUTING';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ARM Notebook Template" href="Templates/notebook-template.html" />
+    <link rel="prev" title="Accessing the Compute Environment" href="getting-started.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="README.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/arm_logo.png" class="logo__image only-light" alt="ARM Tutorials - Home"/>
+    <script>document.write(`<img src="_static/arm_logo.png" class="logo__image only-dark" alt="ARM Tutorials - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="README.html">
+                    ARM-Notebooks
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Accessing the Compute Environment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">How to Contribute</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Contributor’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Templates/notebook-template.html">ARM Notebook Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Templates/tutorial-schedule.html">Tutorial Schedule</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Value-added Products</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="VAPs/README.html">Value Added Products</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="VAPs/squire/intro-to-squire.html">Surface Qualitative Precipiation Estimate (SQUIRE) Value-added Product</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">ARM/ASR PI Meeting 2023</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="Tutorials/arm-asr-pi-meeting-2023/README.html">Open Science Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Tutorials/arm-asr-pi-meeting-2023/python_basics_tutorial/python-basics.html">Python Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorials/arm-asr-pi-meeting-2023/pandas_xarray_tutorial/Pandas_Xarray_intro.html">Starting with Scientific Libraries in Python</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="Tutorials/arm-asr-pi-meeting-2023/pyart_tutorial/pyart-basics.html">Py-ART Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorials/arm-asr-pi-meeting-2023/pyart_tutorial/pyart-gridding.html">Py-ART Gridding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorials/arm-asr-pi-meeting-2023/ACT_tutorial/ACT_Tutorial_TRACER.html">ACT Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorials/arm-asr-pi-meeting-2023/PySP2_tutorial/PySP2_tutorial.html">PySP2</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="Tutorials/arm-asr-pi-meeting-2023/EMC2_tutorial/EMC2_ARM_ASR_2023_Tutorial.html">Apply EMC² to an E3SM Hindcast Output</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Open Science Workshop</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Tutorials/Open-Science-Workshop-2022/presentations/view-abstracts.html">Workshop Abstracts</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Tutorials/Open-Science-Workshop-2022/tutorials/day1-overview.html">Day 1 - Introductions!</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Tutorials/Open-Science-Workshop-2022/tutorials/jupyter-intro.html">JupyterLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorials/Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Numpy.html">Working with Numpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorials/Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Pandas.html">Working with Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorials/Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Xarray.html">Working with Xarray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorials/Open-Science-Workshop-2022/tutorials/github-intro.html">An Introduction to Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorials/Open-Science-Workshop-2022/tutorials/forking_cloning.html">Forking a Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorials/Open-Science-Workshop-2022/tutorials/branching-forking-github-ui.html">Branching and Pull Requests on the Github Website</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Tutorials/Open-Science-Workshop-2022/tutorials/day2-overview.html">Day 2 - Data + Packages</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Tutorials/Open-Science-Workshop-2022/tutorials/ARM-Data-Access.html">Accessing ARM Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorials/Open-Science-Workshop-2022/tutorials/ESMAC_diags/esmac-diags.html">ESMAC Diagnostics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorials/Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_2d_timeseries.html">ESMAC: Generate timeseries of size distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorials/Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_size_diurnalcycle.html">ESMAC: Generate diurnal cycle of size distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorials/Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_size_timeseries.html">ESMAC: Generate timeseries of size distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorials/Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_bar_composition.html">ESMAC: Generate bar plot for aerosol composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorials/Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_hist.html">ESMAC: Generate a 1-D Historgram Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorials/Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_mean_size.html">ESMAC: Generate mean size distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorials/Open-Science-Workshop-2022/tutorials/EMC2_demo_w_E3SM.html">Using EMC² to Process E3SM Output</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Tutorials/Open-Science-Workshop-2022/tutorials/day3-overview.html">Day 3 - MetPy and ACT</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Tutorials/Open-Science-Workshop-2022/tutorials/MetPy%2001%20-%20Overview.html">MetPy Tutorial - Overview</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="Tutorials/Open-Science-Workshop-2022/tutorials/MetPy%2002%20-%20Making%20a%20SkewT.html">MetPy Tutorial - Making a Skew-T!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorials/Open-Science-Workshop-2022/tutorials/act-basics.html">ACT Basics</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Tutorials/Open-Science-Workshop-2022/tutorials/day4-overview.html">Day 3 - Py-ART and Pangeo</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Tutorials/Open-Science-Workshop-2022/tutorials/pyart-basics.html">PyART Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorials/Open-Science-Workshop-2022/tutorials/pyart-gridding.html">Py-ART Gridding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorials/Open-Science-Workshop-2022/tutorials/pyart-corrections.html">Py-ART Corrections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorials/Open-Science-Workshop-2022/tutorials/xarray.html">Introduction to Xarray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tutorials/Open-Science-Workshop-2022/tutorials/xarray-computation-masking.html">Computations and Masks with Xarray</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/CONTRIBUTING.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Contributor’s Guide</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-many-ways-to-contribute">The many ways to contribute</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-a-conversation">Starting a conversation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-new-jupyter-notebook-to-arm-notebooks">Add a new Jupyter Notebook to ARM-Notebooks</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rendering-your-notebook-locally">Rendering Your Notebook Locally</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-conda-environment">Create a conda environment</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#make-sure-your-file-is-in-the-table-contents">Make sure your file is in the table contents</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-book-locally">Building the book locally</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-contributions">Advanced Contributions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ready-set-fork">Ready, set, fork!</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-with-github-and-git">Getting started with GitHub and Git</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#github-setup">GitHub Setup</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#git-setup">Git Setup</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-your-environment-to-authenticate-with-github-from-git">Configure your environment to authenticate with GitHub from Git</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-python-environment-that-will-work-with-arm-notebooks">Creating a Python environment that will work with ARM-Notebooks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#forking-a-repo">Forking a repo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-your-local-changes">Make your local changes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#submit-a-pull-request-pr">Submit a Pull Request (PR)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#committing-your-code-locally-with-git">Committing Your Code Locally with Git</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pushing-your-changes-to-your-personal-github-repository">Pushing Your Changes to Your Personal GitHub Repository</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#review-your-code">Review your Code</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#make-the-pr">Make the PR</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="contributor-s-guide">
+<h1>Contributor’s Guide<a class="headerlink" href="#contributor-s-guide" title="Permalink to this heading">#</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<p>Welcome! This is the main contributors guide for ARM-Notebooks. All
+of the content for ARM-Notebooks is hosted on GitHub in a central repository.
+From this document you can learn about the many ways that you can contribute to this community project, and where you can find additional information.</p>
+</section>
+<section id="the-many-ways-to-contribute">
+<h2>The many ways to contribute<a class="headerlink" href="#the-many-ways-to-contribute" title="Permalink to this heading">#</a></h2>
+<section id="starting-a-conversation">
+<h3>Starting a conversation<a class="headerlink" href="#starting-a-conversation" title="Permalink to this heading">#</a></h3>
+<p>One of the easiest ways to contribute is to communicate with the
+ARM Open Science community. You might, for example, suggest changes
+to content on the site, ask a clarifying question, or even respond
+to another community member’s question. There are a number of ways
+to have a dialogue with the ARM community, such as by opening a
+GitHub issue, but the easiest method is to simply create (or respond
+to) a post on our <a class="reference external" href="https://discourse.arm.gov/">discussion
+forum</a>.</p>
+</section>
+<section id="add-a-new-jupyter-notebook-to-arm-notebooks">
+<h3>Add a new Jupyter Notebook to ARM-Notebooks<a class="headerlink" href="#add-a-new-jupyter-notebook-to-arm-notebooks" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="https://arm-development.github.io/ARM-Notebooks">ARM-Notebooks</a>
+is a collection of material that the ARM Open Science team believes is essential
+knowledge for the ARM Community to access and analyze datasets in an open manner. Adding new, or changing
+existing ARM-Notebooks content requires contributors to be familiar
+with a few technologies and workflows, described in Advanced
+Contributions below.</p>
+<p>If you’d like to contribute a Jupyter Notebook to these materials, please reference our <a class="reference internal" href="Templates/notebook-template.html"><span class="doc std std-doc">template</span></a> viewable on the next page. This template is available to you in <code class="docutils literal notranslate"><span class="pre">Templates/notebook-template.ipynb</span></code> if you’ve cloned the <a class="reference external" href="https://github.com/ARM-Development/ARM-Notebooks">source repository</a>, or available as a download <a class="reference external" href="https://github.com/ARM-Development/ARM-Notebooks/raw/main/Templates/notebook-template.ipynb">directly from GitHub</a>.</p>
+<section id="rendering-your-notebook-locally">
+<h4>Rendering Your Notebook Locally<a class="headerlink" href="#rendering-your-notebook-locally" title="Permalink to this heading">#</a></h4>
+<section id="create-a-conda-environment">
+<h5>Create a conda environment<a class="headerlink" href="#create-a-conda-environment" title="Permalink to this heading">#</a></h5>
+<p>The first time you check out this repository, run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>env<span class="w"> </span>update<span class="w"> </span>-f<span class="w"> </span>environment.yml
+</pre></div>
+</div>
+<p>This will create or update the dev environment (<code class="docutils literal notranslate"><span class="pre">arm-tutorial-dev</span></code>).</p>
+</section>
+<section id="make-sure-your-file-is-in-the-table-contents">
+<h5>Make sure your file is in the table contents<a class="headerlink" href="#make-sure-your-file-is-in-the-table-contents" title="Permalink to this heading">#</a></h5>
+<p>In order for your new notebook to appear in the book, you will need to make sure it is listed in the table of contents file. This file is labeled “<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>”.</p>
+<p>For example, if we had a new value added product (VAP) notebook, titled <code class="docutils literal notranslate"><span class="pre">new-vap.ipynb</span></code>, in the <code class="docutils literal notranslate"><span class="pre">VAPs/</span></code> directory, we would add a line to the <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> file with this path, tagged as <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">THIS</span> <span class="pre">IS</span> <span class="pre">OUR</span> <span class="pre">NEW</span> <span class="pre">FILE</span></code>.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jb-book</span>
+<span class="nt">root</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">README.md</span>
+<span class="nt">parts</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">caption</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Getting Started</span>
+<span class="w">    </span><span class="nt">chapters</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">getting-started.md</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Templates/notebook-template</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Templates/tutorial-schedule</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">caption</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Value-added Products</span>
+<span class="w">    </span><span class="nt">chapters</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">VAPs/README.md</span>
+<span class="w">      </span><span class="nt">sections</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">VAPs/squire/intro-to-squire.ipynb</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">VAPs/new-vap/new-vap.ipynb</span><span class="w"> </span><span class="c1"># THIS IS OUR NEW FILE</span>
+</pre></div>
+</div>
+</section>
+<section id="building-the-book-locally">
+<h5>Building the book locally<a class="headerlink" href="#building-the-book-locally" title="Permalink to this heading">#</a></h5>
+<p>To build the book locally, run the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>activate<span class="w"> </span>arm-tutorial-dev
+jupyter-book<span class="w"> </span>build<span class="w"> </span>.
+</pre></div>
+</div>
+<p>Finally, you can view the book by opening the file <code class="docutils literal notranslate"><span class="pre">_build/html/index.html</span></code> with your favorite web browser. On most platforms you can simply run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>open<span class="w"> </span>_build/html/index.html
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="advanced-contributions">
+<h3>Advanced Contributions<a class="headerlink" href="#advanced-contributions" title="Permalink to this heading">#</a></h3>
+<p>Some contributions, such as adding a new Jupyter Notebook, or making
+changes to an existing one, require operating directly on the GitHub
+repository that maintains the desired source material. In the
+parlance of GitHub, contributors are required to “fork a repo”, and
+“submit a pull request”. This process, though widely used by open
+development projects, is unfortunately complex and somewhat varied
+from one project to another. Below, we describe in great detail the
+process of setting up GitHub/Git, installing and configuring conda,
+and submitting a PR.</p>
+</section>
+</section>
+<section id="ready-set-fork">
+<h2>Ready, set, fork!<a class="headerlink" href="#ready-set-fork" title="Permalink to this heading">#</a></h2>
+<p>As noted above contributing directly to a GitHub repository that
+is not owned by you is a somewhat complicated process that involves
+a number of technologies. In the paragraphs below we describe the
+process of “forking” an external repository, making changes, and
+submitting your changes back to the owners of the external repository.
+But first we discuss how to configure your Python environment with the
+conda (anaconda) package manager, and how to configure Git and GitHub. These
+are one-time steps that you should not need to perform again.</p>
+<p>It’s a long journey, but the steps we describe below are common to many, many
+open source projects hosted on GitHub.</p>
+<section id="getting-started-with-github-and-git">
+<h3>Getting started with GitHub and Git<a class="headerlink" href="#getting-started-with-github-and-git" title="Permalink to this heading">#</a></h3>
+<p>Contributing to the ARM-Notebooks repo requires using GitHub, as
+already mentioned, and also Git. The latter, Git, is an open source,
+command line tool for collaborative software version control, while
+GitHub is an online, web-accessible service that greatly simplifies
+using the powerful, yet often complex, Git.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>GitHub operates entirely within a web browser. You do not
+need to install anything, but you will need to set up a free GitHub
+account. Git is a command line tool that is most likely already
+installed on your machine, and will need to be run from a “terminal” window, AKA
+a “shell”.</p>
+</div>
+<p>Using, and even just configuring, Git and GitHub are often the most
+daunting aspects of contributing to a GitHub hosted project. Here
+are the basic steps for Git/GitHub configuration, all of which must
+be performed before the next subsection, forking a repo.</p>
+<section id="github-setup">
+<h4>GitHub Setup<a class="headerlink" href="#github-setup" title="Permalink to this heading">#</a></h4>
+<p>Create a free GitHub account <a class="reference external" href="https://github.com/">here</a>. Note
+GitHub offers free personal use and paid enterprise accounts. The
+free account is all that is needed.</p>
+</section>
+<section id="git-setup">
+<h4>Git Setup<a class="headerlink" href="#git-setup" title="Permalink to this heading">#</a></h4>
+<p>If not already installed on your machine, download and install the
+<a class="reference external" href="https://git-scm.com/downloads">latest version of Git</a> . Set up
+Git with a user name and your email using the steps below. Note,
+it is advisable that you use the same user name/email as you did
+when setting up your GitHub account, though technically this may
+not be necessary. Once git is installed you will need to open a
+terminal/shell and type the following commands to configure git:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git config --global user.name &quot;Your name here&quot;
+$ git config --global user.email &quot;your_email@example.com&quot;
+</pre></div>
+</div>
+<p>Don’t type the $. This simply indicates the command line prompt.</p>
+</section>
+<section id="configure-your-environment-to-authenticate-with-github-from-git">
+<h4>Configure your environment to authenticate with GitHub from Git<a class="headerlink" href="#configure-your-environment-to-authenticate-with-github-from-git" title="Permalink to this heading">#</a></h4>
+<p>This is a complicated process and there are two authentication
+protocols supported: HTTP or SSH. Either will work fine, but we
+find HTTP to be the easiest to set up. Both processes are described
+in detail on the GitHub site <a class="reference external" href="https://docs.github.com/en/get-started/quickstart/set-up-git#authenticating-with-github-from-git">here</a>.</p>
+<p>For further reading see the <a class="reference external" href="https://docs.github.com/en/github/getting-started-with-github">GitHub Getting Started
+Guide</a>.</p>
+</section>
+</section>
+<section id="creating-a-python-environment-that-will-work-with-arm-notebooks">
+<h3>Creating a Python environment that will work with ARM-Notebooks<a class="headerlink" href="#creating-a-python-environment-that-will-work-with-arm-notebooks" title="Permalink to this heading">#</a></h3>
+<p>Before starting any development, you’ll need to create an isolated
+Python environment that will work for ARM-Notebooks. When we use the term
+“Python environment” here we are referring to the Python programming
+language plus the myriad packages that go along with it. Because
+there are so many Python packages available, maintaining interoperability
+between them is a huge challenge. To overcome some of these
+difficulties the use of Anaconda or miniconda is required to manage
+your Python ecosystem. These package managers allow you to create
+a separate, custom Python environment for each specific Python set
+of tools. Yes, this unfortunately results in multiple copies of
+Python on your system, but it greatly reduces breaking toolchains
+whenever a change is made to your Python environment (and is more
+reliable than any other solution we’ve encountered). Also, the use
+of Anaconda/Miniconda is standard practice for working with Python
+in general, not simply for using ARM-Notebooks.</p>
+<p>The steps:</p>
+<ol class="arabic simple">
+<li><p>Install either Anaconda or miniconda</p></li>
+<li><p>Make sure your conda is up to date by running this command from the terminal:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="n">conda</span>
+</pre></div>
+</div>
+<p>At this point you have a current version of conda available on your
+desktop or laptop. Before using your conda environment to work on
+ARM-Notebooks content, you’ll need to perform an addtional one-time setup
+that is specific to each ARM-Notebooks repo. After the one-time configuration is
+complete you will need to “activate” a repo-specific environment whenever
+you wish to use it.</p>
+<p>More information on installing and using conda may be found
+<a class="reference external" href="https://foundations.projectARM-Notebooks.org/foundations/conda.html">here</a>.</p>
+</section>
+<section id="forking-a-repo">
+<h3>Forking a repo<a class="headerlink" href="#forking-a-repo" title="Permalink to this heading">#</a></h3>
+<p>With Git, GitHub, and conda properly installed and configured, we are ready to
+“fork” a repository so
+that you can safely make changes to the repository contents without
+changing the ARM-Notebooks repos until you are ready. Forking a repository
+as described below creates a clone of the ARM-Notebooks repo under your
+own account on GitHub. Any changes you make to your repository will
+only be seen by you until you are ready to share them with others,
+and hopefully “merge” your changes into one of the official ARM-Notebooks
+repositories.</p>
+<p>Note that the ARM-Notebooks maintainers employ a version of the “Forking Workflow”
+to support contributions from the outside world. This workflow is
+summarized below, and described in detail
+<a class="reference external" href="https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow">here</a>.</p>
+<p>The steps:</p>
+<ol class="arabic simple">
+<li><p>Navigate your web browser to the ARM-Notebooks repository. For example, <a class="reference external" href="https://github.com/ARM-Development/ARM-Notebooks">here</a>.</p></li>
+<li><p>Click on the “Fork” icon (upper right). This will create a copy of the ARM-Notebooks repository
+on the GitHub server under <strong>your</strong> account name. You may be prompted
+to sign in. If so, use the GitHub (not Git) account name and password
+that you created when you created your GitHub account above.</p></li>
+<li><p>After successfully forking a ARM-Notebooks repo you should have a copy
+of that repository on the GitHub server under your account name.
+To verify this you can navigate to the GitHub <a class="reference external" href="https://github.com/">home page</a>, sign in if you are not
+already, and click on “your repositories” under the pull down menu
+in the top right corner of the page. You should see the ARM-Notebooks
+repository you just cloned listed. Click on it. This is a remote
+clone of the ARM-Notebooks repo. Changes you make to your copy will not
+impact the contents of the ARM-Notebooks repo. The next step is to make a
+local copy (clone) of the just-cloned GitHub repository on your
+laptop or workstation.</p></li>
+</ol>
+<p>That’s right. After this final step you will now have <strong>two</strong> copies
+of the repo, one local and one remote. From a terminal window type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/YOUR_USER_NAME/ARM-Notebooks.git
+$ cd ARM-Notebooks
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">YOUR_USER_NAME</span></code> is your GitHub user name.</p>
+<p>The git command above does two things, and it is important to
+understand them. Firstly, it creates a local repository inside of
+the hidden directory <code class="docutils literal notranslate"><span class="pre">ARM-Notebooks/.git</span></code>, that is populated with
+the contents of the repository you are cloning. You should never
+need to operate directly on the contents of the .git directory.
+Secondly, it creates a copy of the repo’s assets (e.g. Python files,
+documentation, etc.) in the local directory <code class="docutils literal notranslate"><span class="pre">ARM-Notebooks</span></code>. The files in this latter directory are the ones that you will edit.</p>
+<p>Remember: you now essentially have two clones of the <code class="docutils literal notranslate"><span class="pre">ARM-Notebooks</span></code> repository, one
+on the GitHub server under your account, and one on your local
+workstation or laptop.</p>
+<p>Next, connect your local copy of the repository to the “upstream” (remote) ARM-Notebooks repository:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git remote add upstream https://github.com/ARM-Development/ARM-Notebooks.git
+</pre></div>
+</div>
+<p>Finally, create a new branch in your local repository:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout -b YOUR_BRANCH_NAME
+</pre></div>
+</div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">YOUR_BRANCH_NAME</span></code> is the name that you want to give your local
+branch. What name should you choose? If the work that you are doing
+is associated with a GitHub issue you should follow the convention:</p>
+<p><em>issue_XXX</em></p>
+<p>Where <em>XXX</em> is the GitHub issue number. If it is not associated with a ARM-Notebooks GitHub issue, pick something short and meaningful, e.g. “documentation_cleanup”.</p>
+<p>You can now make changes to your local copy of the ARM-Notebooks repo
+without having those changes affect either the remote ARM-Notebooks GitHub
+repo, your remote, personal GitHub repo, or your local repo in .git,
+until you are ready to merge your local changes upstream, first to
+your .git local repo, then to your remote GitHub repo, and then
+ultimately to the remote ARM-Notebooks GitHub repo. Simple, right? More
+on this later.</p>
+<p>For further information see the <a class="reference external" href="https://docs.github.com/en/github/getting-started-with-github/fork-a-repo">GitHub docs on forking a repo</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>At this point you should have a local copy of the repository
+in your current working directory. You can safely make changes to
+any of the contents. Once you are ready to contribute your changes
+back to the ARM-Notebooks repository you will need to submit a Pull Request
+(PR), described later.</p>
+</div>
+</section>
+<section id="make-your-local-changes">
+<h3>Make your local changes<a class="headerlink" href="#make-your-local-changes" title="Permalink to this heading">#</a></h3>
+<p>At this point you should be able to make your desired changes to
+the local copies of your files. <strong>Always consult the repo-specific contributor’s
+guide for information specific to the repo you are working on.</strong></p>
+</section>
+<section id="submit-a-pull-request-pr">
+<h3>Submit a Pull Request (PR)<a class="headerlink" href="#submit-a-pull-request-pr" title="Permalink to this heading">#</a></h3>
+<p>Once you have completed making changes to your local copy of a
+ARM-Notebooks repository and are ready to have your changes merged with a
+ARM-Notebooks repository on GitHub, you need to essentially perform the
+reverse process used to acquire a copy of the ARM-Notebooks repo, and
+submit a PR asking the ARM-Notebooks maintainers to consider your merge
+request. The merge will occur between your personal GitHub repository
+and the ARM-Notebooks GitHub repository, so you first need to merge any
+changes you’ve made in your local copy into your local .git repo.
+Next, you need to merge these local changes with your personal
+remote repo on GitHub. Finally, you need to submit a request to
+merge your personal GitHub repo with the ARM-Notebooks GitHub repo.</p>
+<p>Git has lots and lots of commands, each with lots and lots of
+options. Here we only cover the very basics. Detailed information
+about Git can be found <a class="reference external" href="https://git-scm.com/">here</a>, but your best
+friend for figuring out to do things with Git may be Google, and
+in particular <a class="reference external" href="https://stackoverflow.com/">StackOverflow</a>.</p>
+<section id="committing-your-code-locally-with-git">
+<h4>Committing Your Code Locally with Git<a class="headerlink" href="#committing-your-code-locally-with-git" title="Permalink to this heading">#</a></h4>
+<p>Changes you’ve made to your local copy of a repository must be
+“committed” (merged) to your local repository (the .git subdirectory)
+using Git. You can see any uncommitted changes you’ve made to your
+local copy of the repository by running the following command from
+anywhere (any directory) within the directory where you ran git
+checkout:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git status
+</pre></div>
+</div>
+<p>If you have added any new files you will need to explicitly add
+them to the local repo with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git add PATH_TO_NEW_FILE
+</pre></div>
+</div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">PATH_TO_NEW_FILE</span></code> is the path name of the newly created file.</p>
+<p>To commit changed files, including new files just added with the above command, run the following command from the root of your local copy:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git commit PATH_TO_NEW_FILE
+</pre></div>
+</div>
+<p>Which will prompt you for a log message. Please provide something informative. If you make lots of changes, it is best to make multiple commits, broken up into related chunks. E.g. “fixed x”, “added documentation”, “added testing”.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When executing <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> after <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">PATH_TO_NEW_FILE</span></code>,
+specifying the path to the new file isn’t stricly necessary. However,
+in other instances the file path argument is required. We include it
+here to keep things simple.</p>
+</div>
+</section>
+<section id="pushing-your-changes-to-your-personal-github-repository">
+<h4>Pushing Your Changes to Your Personal GitHub Repository<a class="headerlink" href="#pushing-your-changes-to-your-personal-github-repository" title="Permalink to this heading">#</a></h4>
+<p>Once all of your changes have been committed to your local .git
+repository you are ready to “push” (merge) them with your personal
+GitHub repository. To push your .git repository run the following
+command from anywhere within your local copy of the repo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git push origin FEATURE_NAME
+</pre></div>
+</div>
+<p>Where <code class="docutils literal notranslate"><span class="pre">FEATURE_NAME</span></code> is the name you gave your branch when you checked
+it out before starting to make your changes. Typically, if you are
+submitting a PR for a change that addresses an open ARM-Notebooks issue,
+the name should be <em>issue_XXX</em> where <em>XXX</em> is the issue number.</p>
+<p>After successfully running this command your changes will now be
+on GitHub under your personal account, but they are not yet part
+of the ARM-Notebooks repo. For that to happen one more step is required:
+you must <strong>Make the PR</strong>.</p>
+<p>But first:</p>
+</section>
+<section id="review-your-code">
+<h4>Review your Code<a class="headerlink" href="#review-your-code" title="Permalink to this heading">#</a></h4>
+<p>Before you make the actual PR, it is a good idea to review the
+changes that you’ve made and to have followed all guidelines in
+this document, and any repo-specific guidelines.</p>
+<p>To review your changes against the official ARM-Notebooks repository do the following:</p>
+<ol class="arabic simple">
+<li><p>Navigate your web browser to your GitHub repository. E.g.
+https://github.com/YOUR_USER_NAME/ARM-Notebooks</p></li>
+<li><p>Click on <code class="docutils literal notranslate"><span class="pre">Compare</span></code></p></li>
+<li><p>Check the <code class="docutils literal notranslate"><span class="pre">head</span> <span class="pre">repository</span></code> and <code class="docutils literal notranslate"><span class="pre">compare</span></code> branches are set correctly.
+These should be <code class="docutils literal notranslate"><span class="pre">YOUR_NAME/ARM-Notebooks_REPO_NAME</span></code>, and <code class="docutils literal notranslate"><span class="pre">BRANCH_NAME</span></code>,
+respectively, where <code class="docutils literal notranslate"><span class="pre">BRANCH_NAME</span></code> is the name you gave your branch
+when you pushed your changes to your remote repository on GitHub.</p></li>
+</ol>
+<p>Select the “base repository” and “base”. For “base repository” this
+should be the ARM-Notebooks repository, for example <code class="docutils literal notranslate"><span class="pre">ARM-Development/ARM-Notebooks</span></code>.
+For “base” this should be the branch on the ARM-Notebooks repository that
+you wish to compare against (and subsequently merge with).</p>
+<p>At this point you should be able to review changes between your
+repositories and the GitHub repository.</p>
+</section>
+<section id="make-the-pr">
+<h4>Make the PR<a class="headerlink" href="#make-the-pr" title="Permalink to this heading">#</a></h4>
+<p>At long last you are ready to make the actual PR, requesting the
+ARM-Notebooks community to review your code, make possible suggestions for
+changes, and ultimately merge your repo with ARM-Notebooks. To submit a
+pull request:</p>
+<p>Navigate your web browser to your GitHub repository. E.g. https://github.com/YOUR_USER_NAME/ARM-Notebooks</p>
+<p>Click on the “Pull Request” button</p>
+<p>Write a description of your changes in the “Preview Discussion” tab. Give an overview of what this PR does, and be sure to indicate any ARM-Notebooks issues that this PR addresses by number.</p>
+<p>Click “Send Pull Request”</p>
+<p>This request then goes to the repository maintainers, and they will
+review the code. If you need to make more changes, you can make
+them in your branch, add them to a new commit, push them to GitHub,
+and the pull request will be automatically updated. Pushing them
+to GitHub again is done with the command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git push origin FEATURE_NAME
+</pre></div>
+</div>
+<p>Congratulations!!! You’ve submitted a PR!</p>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="getting-started.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Accessing the Compute Environment</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Templates/notebook-template.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">ARM Notebook Template</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-many-ways-to-contribute">The many ways to contribute</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-a-conversation">Starting a conversation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-a-new-jupyter-notebook-to-arm-notebooks">Add a new Jupyter Notebook to ARM-Notebooks</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rendering-your-notebook-locally">Rendering Your Notebook Locally</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-conda-environment">Create a conda environment</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#make-sure-your-file-is-in-the-table-contents">Make sure your file is in the table contents</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-book-locally">Building the book locally</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-contributions">Advanced Contributions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ready-set-fork">Ready, set, fork!</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started-with-github-and-git">Getting started with GitHub and Git</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#github-setup">GitHub Setup</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#git-setup">Git Setup</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#configure-your-environment-to-authenticate-with-github-from-git">Configure your environment to authenticate with GitHub from Git</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-python-environment-that-will-work-with-arm-notebooks">Creating a Python environment that will work with ARM-Notebooks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#forking-a-repo">Forking a repo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-your-local-changes">Make your local changes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#submit-a-pull-request-pr">Submit a Pull Request (PR)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#committing-your-code-locally-with-git">Committing Your Code Locally with Git</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pushing-your-changes-to-your-personal-github-repository">Pushing Your Changes to Your Personal GitHub Repository</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#review-your-code">Review your Code</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#make-the-pr">Make the PR</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ARM Development Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
