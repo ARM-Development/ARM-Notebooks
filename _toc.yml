@@ -4,6 +4,9 @@ parts:
   - caption: Getting Started
     chapters:
     - file: getting-started.md
+  - caption: How to Contribute
+    chapters:
+    - file: CONTRIBUTING.md
     - file: Templates/notebook-template
     - file: Templates/tutorial-schedule
   - caption: Value-added Products
