@@ -13,3 +13,4 @@ repository:
 launch_buttons:
   jupyterhub_url: "https://jupyterhub.arm.gov"
   notebook_interface: "jupyterlab"
+exclude_patterns: ["VAPs/quicklook/*"]  # exclude ipynb files to build

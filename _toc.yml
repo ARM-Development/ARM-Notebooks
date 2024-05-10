@@ -14,6 +14,7 @@ parts:
     - file: VAPs/README.md
       sections:
         - file: VAPs/squire/intro-to-squire.ipynb
+        - file: VAPs/vap_notebook_list.md
   - caption: ARM/ASR PI Meeting 2023
     chapters:
     - file: Tutorials/arm-asr-pi-meeting-2023/README.md
