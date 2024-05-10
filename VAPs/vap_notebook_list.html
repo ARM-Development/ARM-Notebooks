@@ -1,0 +1,1141 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>ARM VAPs Jupyter Notebooks &#8212; ARM Tutorials</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'VAPs/vap_notebook_list';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Open Science Tutorials" href="../Tutorials/arm-asr-pi-meeting-2023/README.html" />
+    <link rel="prev" title="Surface Qualitative Precipiation Estimate (SQUIRE) Value-added Product" href="squire/intro-to-squire.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/arm_logo.png" class="logo__image only-light" alt="ARM Tutorials - Home"/>
+    <script>document.write(`<img src="../_static/arm_logo.png" class="logo__image only-dark" alt="ARM Tutorials - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    ARM-Notebooks
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Accessing the Compute Environment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">How to Contribute</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributor’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Templates/notebook-template.html">ARM Notebook Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Templates/tutorial-schedule.html">Tutorial Schedule</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Value-added Products</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">Value Added Products</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="squire/intro-to-squire.html">Surface Qualitative Precipiation Estimate (SQUIRE) Value-added Product</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">ARM VAPs Jupyter Notebooks</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">ARM/ASR PI Meeting 2023</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Tutorials/arm-asr-pi-meeting-2023/README.html">Open Science Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/arm-asr-pi-meeting-2023/python_basics_tutorial/python-basics.html">Python Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/arm-asr-pi-meeting-2023/pandas_xarray_tutorial/Pandas_Xarray_intro.html">Starting with Scientific Libraries in Python</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/arm-asr-pi-meeting-2023/pyart_tutorial/pyart-basics.html">Py-ART Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/arm-asr-pi-meeting-2023/pyart_tutorial/pyart-gridding.html">Py-ART Gridding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/arm-asr-pi-meeting-2023/ACT_tutorial/ACT_Tutorial_TRACER.html">ACT Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/arm-asr-pi-meeting-2023/PySP2_tutorial/PySP2_tutorial.html">PySP2</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/arm-asr-pi-meeting-2023/EMC2_tutorial/EMC2_ARM_ASR_2023_Tutorial.html">Apply EMC² to an E3SM Hindcast Output</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Open Science Workshop</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Tutorials/Open-Science-Workshop-2022/presentations/view-abstracts.html">Workshop Abstracts</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Tutorials/Open-Science-Workshop-2022/tutorials/day1-overview.html">Day 1 - Introductions!</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/Open-Science-Workshop-2022/tutorials/jupyter-intro.html">JupyterLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Numpy.html">Working with Numpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Pandas.html">Working with Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Xarray.html">Working with Xarray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/Open-Science-Workshop-2022/tutorials/github-intro.html">An Introduction to Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/Open-Science-Workshop-2022/tutorials/forking_cloning.html">Forking a Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/Open-Science-Workshop-2022/tutorials/branching-forking-github-ui.html">Branching and Pull Requests on the Github Website</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Tutorials/Open-Science-Workshop-2022/tutorials/day2-overview.html">Day 2 - Data + Packages</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/Open-Science-Workshop-2022/tutorials/ARM-Data-Access.html">Accessing ARM Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/Open-Science-Workshop-2022/tutorials/ESMAC_diags/esmac-diags.html">ESMAC Diagnostics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_2d_timeseries.html">ESMAC: Generate timeseries of size distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_size_diurnalcycle.html">ESMAC: Generate diurnal cycle of size distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_size_timeseries.html">ESMAC: Generate timeseries of size distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_bar_composition.html">ESMAC: Generate bar plot for aerosol composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_hist.html">ESMAC: Generate a 1-D Historgram Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_mean_size.html">ESMAC: Generate mean size distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/Open-Science-Workshop-2022/tutorials/EMC2_demo_w_E3SM.html">Using EMC² to Process E3SM Output</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Tutorials/Open-Science-Workshop-2022/tutorials/day3-overview.html">Day 3 - MetPy and ACT</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/Open-Science-Workshop-2022/tutorials/MetPy%2001%20-%20Overview.html">MetPy Tutorial - Overview</a></li>
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/Open-Science-Workshop-2022/tutorials/MetPy%2002%20-%20Making%20a%20SkewT.html">MetPy Tutorial - Making a Skew-T!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/Open-Science-Workshop-2022/tutorials/act-basics.html">ACT Basics</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Tutorials/Open-Science-Workshop-2022/tutorials/day4-overview.html">Day 3 - Py-ART and Pangeo</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/Open-Science-Workshop-2022/tutorials/pyart-basics.html">PyART Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/Open-Science-Workshop-2022/tutorials/pyart-gridding.html">Py-ART Gridding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/Open-Science-Workshop-2022/tutorials/pyart-corrections.html">Py-ART Corrections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/Open-Science-Workshop-2022/tutorials/xarray.html">Introduction to Xarray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorials/Open-Science-Workshop-2022/tutorials/xarray-computation-masking.html">Computations and Masks with Xarray</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/VAPs/vap_notebook_list.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>ARM VAPs Jupyter Notebooks</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="arm-vaps-jupyter-notebooks">
+<h1>ARM VAPs Jupyter Notebooks<a class="headerlink" href="#arm-vaps-jupyter-notebooks" title="Permalink to this heading">#</a></h1>
+<p>List of available ARM VAPs Notebooks.</p>
+<p>You must have access to the <a class="reference external" href="https://jupyterhub.arm.gov/">ARM JupyterHub Server</a> to open these notebooks.</p>
+<details>
+  <summary>2DS-AIR</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/2DS-AIR/2DS-AIR_tutorial.ipynb&amp;branch=main">2DS-AIR tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/2DS-AIR/aaf2dsh.c1.ipynb&amp;branch=main">aaf2dsh.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/2DS-AIR/aaf2dsv.c1.ipynb&amp;branch=main">aaf2dsv.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>ACSMCDCE</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/ACSMCDCE/ACSMCDCE_tutorial.ipynb&amp;branch=main">ACSMCDCE tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/ACSMCDCE/acsmcdce.c1.ipynb&amp;branch=main">acsmcdce.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/ACSMCDCE/acsmcdce.c2.ipynb&amp;branch=main">acsmcdce.c2</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/ACSMCDCE/acsmtofcdce.c1.ipynb&amp;branch=main">acsmtofcdce.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>AERINF</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AERINF/AERINF_tutorial.ipynb&amp;branch=main">AERINF tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AERINF/aerich1nf1turn.c1.ipynb&amp;branch=main">aerich1nf1turn.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AERINF/aerich2nf1turn.c1.ipynb&amp;branch=main">aerich2nf1turn.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>AERIOE</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AERIOE/AERIOE_tutorial.ipynb&amp;branch=main">AERIOE tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AERIOE/aerioe1turn.c1.ipynb&amp;branch=main">aerioe1turn.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>AERIPROF</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AERIPROF/AERIPROF_tutorial.ipynb&amp;branch=main">AERIPROF tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AERIPROF/aeri01prof3feltz.c1.ipynb&amp;branch=main">aeri01prof3feltz.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AERIPROF/aeriprof3feltz.c1.ipynb&amp;branch=main">aeriprof3feltz.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AERIPROF/qmeaeriprof.c1.ipynb&amp;branch=main">qmeaeriprof.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>AEROSOLBE</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AEROSOLBE/AEROSOLBE_tutorial.ipynb&amp;branch=main">AEROSOLBE tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AEROSOLBE/aerosolbe1turn.c1.ipynb&amp;branch=main">aerosolbe1turn.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>AIP</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AIP/AIP_tutorial.ipynb&amp;branch=main">AIP tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AIP/aip1ogren.c1.ipynb&amp;branch=main">aip1ogren.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AIP/aipavg1ogren.c1.ipynb&amp;branch=main">aipavg1ogren.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AIP/aipfitrh1ogren.c1.ipynb&amp;branch=main">aipfitrh1ogren.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>AOD</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AOD/AOD_tutorial.ipynb&amp;branch=main">AOD tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AOD/sasheniraod.c1.ipynb&amp;branch=main">sasheniraod.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AOD/sashevisaod.c1.ipynb&amp;branch=main">sashevisaod.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>AOD-MFRSR</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AOD-MFRSR/AOD-MFRSR_tutorial.ipynb&amp;branch=main">AOD-MFRSR tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AOD-MFRSR/mfrsr7nchaod1mich.c1.ipynb&amp;branch=main">mfrsr7nchaod1mich.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AOD-MFRSR/mfrsr7nchcal.c1.ipynb&amp;branch=main">mfrsr7nchcal.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AOD-MFRSR/mfrsraod1mich.c1.ipynb&amp;branch=main">mfrsraod1mich.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AOD-MFRSR/mfrsrcal.c1.ipynb&amp;branch=main">mfrsrcal.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>AOD-NIMFR</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AOD-NIMFR/AOD-NIMFR_tutorial.ipynb&amp;branch=main">AOD-NIMFR tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AOD-NIMFR/nimfraod1mich.c1.ipynb&amp;branch=main">nimfraod1mich.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>AOP</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AOP/AOP_tutorial.ipynb&amp;branch=main">AOP tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AOP/aopclap1flynn1m.c1.ipynb&amp;branch=main">aopclap1flynn1m.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AOP/aoppsap1flynn1h.c1.ipynb&amp;branch=main">aoppsap1flynn1h.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AOP/aoppsap1flynn1m.c1.ipynb&amp;branch=main">aoppsap1flynn1m.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>AOSCCNAVG</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AOSCCNAVG/AOSCCNAVG_tutorial.ipynb&amp;branch=main">AOSCCNAVG tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AOSCCNAVG/aosccnavg.c1.ipynb&amp;branch=main">aosccnavg.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AOSCCNAVG/aosccnavg.c2.ipynb&amp;branch=main">aosccnavg.c2</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>AOSSP2BC</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AOSSP2BC/AOSSP2BC_tutorial.ipynb&amp;branch=main">AOSSP2BC tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AOSSP2BC/aossp2rbc1m.c1.ipynb&amp;branch=main">aossp2rbc1m.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>ARMBE</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/ARMBE/ARMBE_tutorial.ipynb&amp;branch=main">ARMBE tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/ARMBE/armbeatm.c1.ipynb&amp;branch=main">armbeatm.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/ARMBE/armbecldrad.c1.ipynb&amp;branch=main">armbecldrad.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>ARSCL</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/ARSCL/ARSCL_tutorial.ipynb&amp;branch=main">ARSCL tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/ARSCL/arscl1cloth.c1.ipynb&amp;branch=main">arscl1cloth.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/ARSCL/arsclbnd1cloth.c1.ipynb&amp;branch=main">arsclbnd1cloth.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>ASDBE-AIR</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/ASDBE-AIR/ASDBE-AIR_tutorial.ipynb&amp;branch=main">ASDBE-AIR tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/ASDBE-AIR/aafmergedaerosolsd.c1.ipynb&amp;branch=main">aafmergedaerosolsd.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>BAEBBR</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/BAEBBR/BAEBBR_tutorial.ipynb&amp;branch=main">BAEBBR tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/BAEBBR/30baebbr.c1.ipynb&amp;branch=main">30baebbr.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>BBHRP</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/BBHRP/BBHRP_tutorial.ipynb&amp;branch=main">BBHRP tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/BBHRP/1bbhrpripbe1mcfarlane.c1.ipynb&amp;branch=main">1bbhrpripbe1mcfarlane.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/BBHRP/30bbhrpripbe1mcfarlane.c1.ipynb&amp;branch=main">30bbhrpripbe1mcfarlane.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/BBHRP/bbhrpavg1mlawer.c1.ipynb&amp;branch=main">bbhrpavg1mlawer.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>BEFLUX</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/BEFLUX/BEFLUX_tutorial.ipynb&amp;branch=main">BEFLUX tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/BEFLUX/beflux1long.c1.ipynb&amp;branch=main">beflux1long.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/BEFLUX/qcflux1long.c1.ipynb&amp;branch=main">qcflux1long.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>CCNKAPPA</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/CCNKAPPA/CCNKAPPA_tutorial.ipynb&amp;branch=main">CCNKAPPA tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/CCNKAPPA/aosccnsmpskappa.c1.ipynb&amp;branch=main">aosccnsmpskappa.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>CCNPROF</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/CCNPROF/CCNPROF_tutorial.ipynb&amp;branch=main">CCNPROF tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/CCNPROF/rlccnprof1ghan.c1.ipynb&amp;branch=main">rlccnprof1ghan.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>CLAP</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/CLAP/CLAP_tutorial.ipynb&amp;branch=main">CLAP tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/CLAP/aosclap3w.c1.ipynb&amp;branch=main">aosclap3w.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>CLDTYPE</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/CLDTYPE/CLDTYPE_tutorial.ipynb&amp;branch=main">CLDTYPE tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/CLDTYPE/cldtype.c1.ipynb&amp;branch=main">cldtype.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>CMAC2</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/CMAC2/CMAC2_tutorial.ipynb&amp;branch=main">CMAC2 tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/CMAC2/cmac2.c1.ipynb&amp;branch=main">cmac2.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>CO-AIR</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/CO-AIR/CO-AIR_tutorial.ipynb&amp;branch=main">CO-AIR tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/CO-AIR/aafco.c1.ipynb&amp;branch=main">aafco.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>COGS</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/COGS/COGS_tutorial.ipynb&amp;branch=main">COGS tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/COGS/cogs.c1.ipynb&amp;branch=main">cogs.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>DIFFCOR</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/DIFFCOR/DIFFCOR_tutorial.ipynb&amp;branch=main">DIFFCOR tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/DIFFCOR/brs1dutt.c1.ipynb&amp;branch=main">brs1dutt.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/DIFFCOR/siros1dutt.c1.ipynb&amp;branch=main">siros1dutt.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/DIFFCOR/sirs1dutt.c1.ipynb&amp;branch=main">sirs1dutt.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>DLPROF-WIND</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/DLPROF-WIND/DLPROF-WIND_tutorial.ipynb&amp;branch=main">DLPROF-WIND tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/DLPROF-WIND/dlprofwind4news.c1.ipynb&amp;branch=main">dlprofwind4news.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>DLPROF-WSTATS</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/DLPROF-WSTATS/DLPROF-WSTATS_tutorial.ipynb&amp;branch=main">DLPROF-WSTATS tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/DLPROF-WSTATS/dlprofwstats4news.c1.ipynb&amp;branch=main">dlprofwstats4news.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>FCDP-AIR</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/FCDP-AIR/FCDP-AIR_tutorial.ipynb&amp;branch=main">FCDP-AIR tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/FCDP-AIR/aaffcdp.c1.ipynb&amp;branch=main">aaffcdp.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>GVR</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/GVR/GVR_tutorial.ipynb&amp;branch=main">GVR tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/GVR/gvr.c1.ipynb&amp;branch=main">gvr.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>HVPS-AIR</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/HVPS-AIR/HVPS-AIR_tutorial.ipynb&amp;branch=main">HVPS-AIR tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/HVPS-AIR/aafhvps.c1.ipynb&amp;branch=main">aafhvps.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>INLETCVI-AIR</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/INLETCVI-AIR/INLETCVI-AIR_tutorial.ipynb&amp;branch=main">INLETCVI-AIR tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/INLETCVI-AIR/aafinletcvi.c1.ipynb&amp;branch=main">aafinletcvi.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>INTERPSONDE</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/INTERPSONDE/INTERPSONDE_tutorial.ipynb&amp;branch=main">INTERPSONDE tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/INTERPSONDE/interpolatedsonde.c1.ipynb&amp;branch=main">interpolatedsonde.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>KAZRARSCL</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/KAZRARSCL/KAZRARSCL_tutorial.ipynb&amp;branch=main">KAZRARSCL tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/KAZRARSCL/arsclkazr1kollias.c1.ipynb&amp;branch=main">arsclkazr1kollias.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/KAZRARSCL/arsclkazrbnd1kollias.c1.ipynb&amp;branch=main">arsclkazrbnd1kollias.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>KAZRARSCLCLOUDSAT</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/KAZRARSCLCLOUDSAT/KAZRARSCLCLOUDSAT_tutorial.ipynb&amp;branch=main">KAZRARSCLCLOUDSAT tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/KAZRARSCLCLOUDSAT/arsclkazrcloudsat.c1.ipynb&amp;branch=main">arsclkazrcloudsat.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>KAZRCFRCOR</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/KAZRCFRCOR/KAZRCFRCOR_tutorial.ipynb&amp;branch=main">KAZRCFRCOR tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/KAZRCFRCOR/kazrcfrcorge.c1.ipynb&amp;branch=main">kazrcfrcorge.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/KAZRCFRCOR/kazrcfrcormd.c1.ipynb&amp;branch=main">kazrcfrcormd.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>KAZRCOR</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/KAZRCOR/KAZRCOR_tutorial.ipynb&amp;branch=main">KAZRCOR tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/KAZRCOR/kazrcorge.c1.ipynb&amp;branch=main">kazrcorge.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/KAZRCOR/kazrcorhi.c1.ipynb&amp;branch=main">kazrcorhi.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/KAZRCOR/kazrcormd.c1.ipynb&amp;branch=main">kazrcormd.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>LCLHEIGHT</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/LCLHEIGHT/LCLHEIGHT_tutorial.ipynb&amp;branch=main">LCLHEIGHT tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/LCLHEIGHT/lcl.c1.ipynb&amp;branch=main">lcl.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>LDQUANTS</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/LDQUANTS/LDQUANTS_tutorial.ipynb&amp;branch=main">LDQUANTS tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/LDQUANTS/ldquants.c1.ipynb&amp;branch=main">ldquants.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>LSSONDE</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/LSSONDE/LSSONDE_tutorial.ipynb&amp;branch=main">LSSONDE tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/LSSONDE/lssonde.c1.ipynb&amp;branch=main">lssonde.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>MASCPARTICLES</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MASCPARTICLES/MASCPARTICLES_tutorial.ipynb&amp;branch=main">MASCPARTICLES tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MASCPARTICLES/mascparticles.c1.ipynb&amp;branch=main">mascparticles.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MASCPARTICLES/mascparticlesavg.c1.ipynb&amp;branch=main">mascparticlesavg.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>MERGED-COMMON</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MERGED-COMMON/MERGED-COMMON_tutorial.ipynb&amp;branch=main">MERGED-COMMON tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MERGED-COMMON/aafmergedcldsd.c1.ipynb&amp;branch=main">aafmergedcldsd.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>MERGEDSMPSAPS</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MERGEDSMPSAPS/MERGEDSMPSAPS_tutorial.ipynb&amp;branch=main">MERGEDSMPSAPS tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MERGEDSMPSAPS/mergedsmpsaps.c1.ipynb&amp;branch=main">mergedsmpsaps.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>MERGESONDE</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MERGESONDE/MERGESONDE_tutorial.ipynb&amp;branch=main">MERGESONDE tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MERGESONDE/mergesonde1mace.c1.ipynb&amp;branch=main">mergesonde1mace.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MERGESONDE/mergesonde2mace.c1.ipynb&amp;branch=main">mergesonde2mace.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>MFRSRCLDOD</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MFRSRCLDOD/MFRSRCLDOD_tutorial.ipynb&amp;branch=main">MFRSRCLDOD tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MFRSRCLDOD/mfrsrcldod1min.c1.ipynb&amp;branch=main">mfrsrcldod1min.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>MICROBASE</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MICROBASE/MICROBASE_tutorial.ipynb&amp;branch=main">MICROBASE tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MICROBASE/microbasepi.c1.ipynb&amp;branch=main">microbasepi.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MICROBASE/microbasepi2.c1.ipynb&amp;branch=main">microbasepi2.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MICROBASE/microbasepiavg.c1.ipynb&amp;branch=main">microbasepiavg.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>MPLAVG</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MPLAVG/MPLAVG_tutorial.ipynb&amp;branch=main">MPLAVG tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MPLAVG/mplpolavg.c1.ipynb&amp;branch=main">mplpolavg.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>MPLCMASK</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MPLCMASK/MPLCMASK_tutorial.ipynb&amp;branch=main">MPLCMASK tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MPLCMASK/30smplcmask1zwang.c1.ipynb&amp;branch=main">30smplcmask1zwang.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>MPLCMASKML</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MPLCMASKML/MPLCMASKML_tutorial.ipynb&amp;branch=main">MPLCMASKML tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MPLCMASKML/mplcmaskml.c1.ipynb&amp;branch=main">mplcmaskml.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>MPLNOR</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MPLNOR/MPLNOR_tutorial.ipynb&amp;branch=main">MPLNOR tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MPLNOR/mplnor1camp.c1.ipynb&amp;branch=main">mplnor1camp.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>MWRRET</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MWRRET/MWRRET_tutorial.ipynb&amp;branch=main">MWRRET tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MWRRET/mwrret1liljclou.c1.ipynb&amp;branch=main">mwrret1liljclou.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MWRRET/mwrret1liljclou.c2.ipynb&amp;branch=main">mwrret1liljclou.c2</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>MWRRETV2</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MWRRETV2/MWRRETV2_tutorial.ipynb&amp;branch=main">MWRRETV2 tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MWRRETV2/mwrret2turn.c1.ipynb&amp;branch=main">mwrret2turn.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>NAVMET-AIR</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/NAVMET-AIR/NAVMET-AIR_tutorial.ipynb&amp;branch=main">NAVMET-AIR tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/NAVMET-AIR/aafnaviwg.c1.ipynb&amp;branch=main">aafnaviwg.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>NDROP</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/NDROP/NDROP_tutorial.ipynb&amp;branch=main">NDROP tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/NDROP/ndropmfrsr.c1.ipynb&amp;branch=main">ndropmfrsr.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>NEPHELOMETER</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/NEPHELOMETER/NEPHELOMETER_tutorial.ipynb&amp;branch=main">NEPHELOMETER tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/NEPHELOMETER/aosnephdry.c1.ipynb&amp;branch=main">aosnephdry.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/NEPHELOMETER/aosnephwet.c1.ipynb&amp;branch=main">aosnephwet.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>OKMSOIL</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/OKMSOIL/OKMSOIL_tutorial.ipynb&amp;branch=main">OKMSOIL tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/OKMSOIL/okmsoil.c1.ipynb&amp;branch=main">okmsoil.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>OZONE-AIR</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/OZONE-AIR/OZONE-AIR_tutorial.ipynb&amp;branch=main">OZONE-AIR tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/OZONE-AIR/aafo3.c1.ipynb&amp;branch=main">aafo3.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>PBLHT</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/PBLHT/PBLHT_tutorial.ipynb&amp;branch=main">PBLHT tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/PBLHT/pblhtsonde1mcfarl.c1.ipynb&amp;branch=main">pblhtsonde1mcfarl.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/PBLHT/pblhtsondeyr1mcfarl.c1.ipynb&amp;branch=main">pblhtsondeyr1mcfarl.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>PCCP</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/PCCP/PCCP_tutorial.ipynb&amp;branch=main">PCCP tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/PCCP/pccp.c1.ipynb&amp;branch=main">pccp.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>PSAP</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/PSAP/PSAP_tutorial.ipynb&amp;branch=main">PSAP tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/PSAP/aospsap3w.c1.ipynb&amp;branch=main">aospsap3w.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>QCRAD</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/QCRAD/QCRAD_tutorial.ipynb&amp;branch=main">QCRAD tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/QCRAD/qcrad1long.c1.ipynb&amp;branch=main">qcrad1long.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/QCRAD/qcrad1long.c2.ipynb&amp;branch=main">qcrad1long.c2</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/QCRAD/qcradbeflux1long.c1.ipynb&amp;branch=main">qcradbeflux1long.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/QCRAD/qcradbeflux1long.c2.ipynb&amp;branch=main">qcradbeflux1long.c2</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/QCRAD/qcradbrs1long.c1.ipynb&amp;branch=main">qcradbrs1long.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/QCRAD/qcradbrs1long.c2.ipynb&amp;branch=main">qcradbrs1long.c2</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>RADFLUXANAL</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/RADFLUXANAL/RADFLUXANAL_tutorial.ipynb&amp;branch=main">RADFLUXANAL tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/RADFLUXANAL/radflux1long.c1.ipynb&amp;branch=main">radflux1long.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/RADFLUXANAL/radflux1long.c2.ipynb&amp;branch=main">radflux1long.c2</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/RADFLUXANAL/radfluxbrs1long.c2.ipynb&amp;branch=main">radfluxbrs1long.c2</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>RIPBE</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/RIPBE/RIPBE_tutorial.ipynb&amp;branch=main">RIPBE tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/RIPBE/30ripbe1mcfarlane.c1.ipynb&amp;branch=main">30ripbe1mcfarlane.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/RIPBE/ripbe1mcfarlane.c1.ipynb&amp;branch=main">ripbe1mcfarlane.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>RLPROF</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/RLPROF/RLPROF_tutorial.ipynb&amp;branch=main">RLPROF tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/RLPROF/10rlprofbe1news.c1.ipynb&amp;branch=main">10rlprofbe1news.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>SACRADV3D3C</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/SACRADV3D3C/SACRADV3D3C_tutorial.ipynb&amp;branch=main">SACRADV3D3C tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/SACRADV3D3C/kasacradv3d3c.c1.ipynb&amp;branch=main">kasacradv3d3c.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>SACRADVVAD</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/SACRADVVAD/SACRADVVAD_tutorial.ipynb&amp;branch=main">SACRADVVAD tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/SACRADVVAD/kasacradvvad.c1.ipynb&amp;branch=main">kasacradvvad.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>SFCCLDGRID</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/SFCCLDGRID/SFCCLDGRID_tutorial.ipynb&amp;branch=main">SFCCLDGRID tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/SFCCLDGRID/15swfcldgrid1long.c1.ipynb&amp;branch=main">15swfcldgrid1long.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/SFCCLDGRID/sfccldgrid2longcaracena.c1.ipynb&amp;branch=main">sfccldgrid2longcaracena.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/SFCCLDGRID/sfccldgrid2longstation.c1.ipynb&amp;branch=main">sfccldgrid2longstation.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>SHALLOWCUMULUS</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/SHALLOWCUMULUS/SHALLOWCUMULUS_tutorial.ipynb&amp;branch=main">SHALLOWCUMULUS tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/SHALLOWCUMULUS/shallowcumulus.c1.ipynb&amp;branch=main">shallowcumulus.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/SHALLOWCUMULUS/shcusummary.c1.ipynb&amp;branch=main">shcusummary.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>SO2-AIR</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/SO2-AIR/SO2-AIR_tutorial.ipynb&amp;branch=main">SO2-AIR tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/SO2-AIR/aafso2.c1.ipynb&amp;branch=main">aafso2.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>SONDEADJUST</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/SONDEADJUST/SONDEADJUST_tutorial.ipynb&amp;branch=main">SONDEADJUST tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/SONDEADJUST/sondeadjust.c1.ipynb&amp;branch=main">sondeadjust.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>SONDEPARAM</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/SONDEPARAM/SONDEPARAM_tutorial.ipynb&amp;branch=main">SONDEPARAM tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/SONDEPARAM/sondeparam.c1.ipynb&amp;branch=main">sondeparam.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>SP2-AIR</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/SP2-AIR/SP2-AIR_tutorial.ipynb&amp;branch=main">SP2-AIR tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/SP2-AIR/aafsp2rbc10s.c1.ipynb&amp;branch=main">aafsp2rbc10s.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>SPHOTCOD</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/SPHOTCOD/SPHOTCOD_tutorial.ipynb&amp;branch=main">SPHOTCOD tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/SPHOTCOD/sphotcod2chiu.c1.ipynb&amp;branch=main">sphotcod2chiu.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>SURFSPECALB</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/SURFSPECALB/SURFSPECALB_tutorial.ipynb&amp;branch=main">SURFSPECALB tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/SURFSPECALB/surfspecalb1mlawer.c1.ipynb&amp;branch=main">surfspecalb1mlawer.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/SURFSPECALB/surfspecalb7nch1mlawer.c1.ipynb&amp;branch=main">surfspecalb7nch1mlawer.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>TBSMERGED</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/TBSMERGED/TBSMERGED_tutorial.ipynb&amp;branch=main">TBSMERGED tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/TBSMERGED/tbsmerged.c1.ipynb&amp;branch=main">tbsmerged.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/TBSMERGED/tbsmergedincloud.c1.ipynb&amp;branch=main">tbsmergedincloud.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>TDMA</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/TDMA/TDMA_tutorial.ipynb&amp;branch=main">TDMA tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/TDMA/tdmaapssize.c1.ipynb&amp;branch=main">tdmaapssize.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>TWRMR</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/TWRMR/TWRMR_tutorial.ipynb&amp;branch=main">TWRMR tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/TWRMR/1twrmr.c1.ipynb&amp;branch=main">1twrmr.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/TWRMR/30twrmr.c1.ipynb&amp;branch=main">30twrmr.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>VARANAL</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/VARANAL/VARANAL_tutorial.ipynb&amp;branch=main">VARANAL tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/VARANAL/180varanaecmwf.c1.ipynb&amp;branch=main">180varanaecmwf.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/VARANAL/180varanamerra001.c1.ipynb&amp;branch=main">180varanamerra001.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>VARANAL3D</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/VARANAL3D/VARANAL3D_tutorial.ipynb&amp;branch=main">VARANAL3D tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/VARANAL3D/180varanal3dera5.c1.ipynb&amp;branch=main">180varanal3dera5.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/VARANAL3D/180varanal3dncep.c1.ipynb&amp;branch=main">180varanal3dncep.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>VDISQUANTS</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/VDISQUANTS/VDISQUANTS_tutorial.ipynb&amp;branch=main">VDISQUANTS tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/VDISQUANTS/vdisquants.c1.ipynb&amp;branch=main">vdisquants.c1</a></p></li>
+</ul>
+</details>
+<details>
+  <summary>WACRARSCL</summary>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/WACRARSCL/WACRARSCL_tutorial.ipynb&amp;branch=main">WACRARSCL tutorial</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/WACRARSCL/arsclwacr1kollias.c1.ipynb&amp;branch=main">arsclwacr1kollias.c1</a></p></li>
+<li><p><a class="reference external" href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&amp;urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/WACRARSCL/arsclwacrbnd1kollias.c1.ipynb&amp;branch=main">arsclwacrbnd1kollias.c1</a></p></li>
+</ul>
+</details>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./VAPs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="squire/intro-to-squire.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Surface Qualitative Precipiation Estimate (SQUIRE) Value-added Product</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../Tutorials/arm-asr-pi-meeting-2023/README.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Open Science Tutorials</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ARM Development Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
