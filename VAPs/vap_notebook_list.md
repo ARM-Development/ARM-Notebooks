@@ -140,6 +140,19 @@ You must have access to the [ARM JupyterHub Server](https://jupyterhub.arm.gov/)
 
 
 <details>
+  <summary>AODBE</summary>
+  
+* [AODBE tutorial](https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AODBE/AODBE_tutorial.ipynb&branch=main)
+
+* [aodbe2ch.c1](https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AODBE/aodbe2ch.c1.ipynb&branch=main)
+
+* [aodbe5ch.c1](https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AODBE/aodbe5ch.c1.ipynb&branch=main)
+
+
+</details>
+
+
+<details>
   <summary>AOP</summary>
   
 * [AOP tutorial](https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/AOP/AOP_tutorial.ipynb&branch=main)
@@ -341,6 +354,30 @@ You must have access to the [ARM JupyterHub Server](https://jupyterhub.arm.gov/)
 * [siros1dutt.c1](https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/DIFFCOR/siros1dutt.c1.ipynb&branch=main)
 
 * [sirs1dutt.c1](https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/DIFFCOR/sirs1dutt.c1.ipynb&branch=main)
+
+
+</details>
+
+
+<details>
+  <summary>DLMC</summary>
+  
+* [DLMC tutorial](https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/DLMC/DLMC_tutorial.ipynb&branch=main)
+
+* [dlmcfpt.c1](https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/DLMC/dlmcfpt.c1.ipynb&branch=main)
+
+* [dlmcusr.c1](https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/DLMC/dlmcusr.c1.ipynb&branch=main)
+
+
+</details>
+
+
+<details>
+  <summary>DLMCPROF-WIND</summary>
+  
+* [DLMCPROF-WIND tutorial](https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/DLMCPROF-WIND/DLMCPROF-WIND_tutorial.ipynb&branch=main)
+
+* [dlmcprofwindnews.c1](https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/DLMCPROF-WIND/dlmcprofwindnews.c1.ipynb&branch=main)
 
 
 </details>
@@ -568,6 +605,19 @@ You must have access to the [ARM JupyterHub Server](https://jupyterhub.arm.gov/)
 
 
 <details>
+  <summary>MFRSRLANG</summary>
+  
+* [MFRSRLANG tutorial](https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MFRSRLANG/MFRSRLANG_tutorial.ipynb&branch=main)
+
+* [mfrsr7nchlangley.c1](https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MFRSRLANG/mfrsr7nchlangley.c1.ipynb&branch=main)
+
+* [mfrsr7nchlangplot.c1](https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MFRSRLANG/mfrsr7nchlangplot.c1.ipynb&branch=main)
+
+
+</details>
+
+
+<details>
   <summary>MICROBASE</summary>
   
 * [MICROBASE tutorial](https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MICROBASE/MICROBASE_tutorial.ipynb&branch=main)
@@ -577,6 +627,17 @@ You must have access to the [ARM JupyterHub Server](https://jupyterhub.arm.gov/)
 * [microbasepi2.c1](https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MICROBASE/microbasepi2.c1.ipynb&branch=main)
 
 * [microbasepiavg.c1](https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MICROBASE/microbasepiavg.c1.ipynb&branch=main)
+
+
+</details>
+
+
+<details>
+  <summary>MICROBASEKAPLUS</summary>
+  
+* [MICROBASEKAPLUS tutorial](https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MICROBASEKAPLUS/MICROBASEKAPLUS_tutorial.ipynb&branch=main)
+
+* [microbase.c1](https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/MICROBASEKAPLUS/microbase.c1.ipynb&branch=main)
 
 
 </details>
@@ -680,6 +741,19 @@ You must have access to the [ARM JupyterHub Server](https://jupyterhub.arm.gov/)
 * [aosnephdry.c1](https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/NEPHELOMETER/aosnephdry.c1.ipynb&branch=main)
 
 * [aosnephwet.c1](https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/NEPHELOMETER/aosnephwet.c1.ipynb&branch=main)
+
+
+</details>
+
+
+<details>
+  <summary>NIMFR</summary>
+  
+* [NIMFR tutorial](https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/NIMFR/NIMFR_tutorial.ipynb&branch=main)
+
+* [nimfr7nchlangley.c1](https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/NIMFR/nimfr7nchlangley.c1.ipynb&branch=main)
+
+* [nimfr7nchlangplot.c1](https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/VAPs/quicklook/NIMFR/nimfr7nchlangplot.c1.ipynb&branch=main)
 
 
 </details>
