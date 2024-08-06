@@ -62,7 +62,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Tutorials/UPR-ACT-2023/6-ACT-TRACER-Dust';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Tutorials/ACT-Python-Tutorial/6-ACT-TRACER-Dust';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -306,7 +306,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/Tutorials/UPR-ACT-2023/6-ACT-TRACER-Dust.ipynb&branch=main" target="_blank"
+      <li><a href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/Tutorials/ACT-Python-Tutorial/6-ACT-TRACER-Dust.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onJupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -337,7 +337,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/Tutorials/UPR-ACT-2023/6-ACT-TRACER-Dust.ipynb" target="_blank"
+      <li><a href="../../_sources/Tutorials/ACT-Python-Tutorial/6-ACT-TRACER-Dust.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -434,8 +434,12 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Overview</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#micropulse-lidar-mpl-data">Micropulse Lidar (MPL) Data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#micropulse-lidar-mpl-data">Micropulse Lidar (MPL) Data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polarized-lidar">Polarized Lidar</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aerosol-particle-size-data">Aerosol Particle Size Data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#doppler-lidar">Doppler Lidar</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-it-all-together">Putting it All Together</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-this-out">Check this out</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-more-data">Try more data!</a></li>
@@ -447,6 +451,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#excercises">Excercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series-of-ratios-of-fine-particles-vs-coarse-particles-using-smps-and-aps-data">Time series of ratios of fine particles vs. coarse particles using SMPS and APS data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compare-chemical-composition-between-events">Compare Chemical Composition Between Events</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chemical-composition-distribution">Chemical Composition Distribution</a></li>
 </ul>
 </li>
 </ul>
@@ -497,7 +502,7 @@ document.write(`
 <section id="prerequisites">
 <h1>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h1>
 <p>This notebook will rely heavily on Python and the <a class="reference external" href="https://github.com/ARM-DOE/ACT">Atmospheric data Community Toolkit (ACT)</a>.  Don’t worry if you don’t have experience with either, this notebook will walk you though what you need to know.</p>
-<p>You will also need an account and token to download data using the ARM Live webservice.  Navigate to the <a class="reference external" href="https://adc.arm.gov/armlive/">webserive information page</a> and log in to get your token.  Your account username will be your ARM username.</p>
+<p>You will also need an account and token to download data using the ARM Live webservice.  Navigate to the <a class="reference external" href="https://adc.arm.gov/armlive/">webservice information page</a> and log in to get your token.  Your account username will be your ARM username.</p>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Concepts</p></th>
@@ -546,8 +551,8 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set your username and token here!</span>
-<span class="n">username</span> <span class="o">=</span> <span class="s1">&#39;YourUserName&#39;</span>
-<span class="n">token</span> <span class="o">=</span> <span class="s1">&#39;YourToken&#39;</span>
+<span class="n">username</span> <span class="o">=</span> <span class="s1">&#39;YourUsername&#39;</span>
+<span class="n">token</span> <span class="o">=</span> <span class="s1">&#39;YouToken&#39;</span>
 
 <span class="c1"># Set the datastream and start/enddates</span>
 <span class="n">datastream</span> <span class="o">=</span> <span class="s1">&#39;houmplpolfsM1.b1&#39;</span>
@@ -588,7 +593,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># It&#39;s a lot of data, so it will take some time!</span>
 <span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">TimeSeriesDisplay</span><span class="p">(</span><span class="n">ds_mpl</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;signal_return_co_pol&#39;</span><span class="p">,</span> <span class="n">cb_friendly</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">20</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;signal_return_co_pol&#39;</span><span class="p">,</span> <span class="n">cvd_friendly</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">20</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 
 <span class="c1"># This instrument collects data over 30 km so let&#39;s constrain</span>
 <span class="c1"># this to just the lower 5 km</span>
@@ -598,12 +603,15 @@ document.write(`
 </div>
 </div>
 </div>
+<section id="polarized-lidar">
+<h2>Polarized Lidar<a class="headerlink" href="#polarized-lidar" title="Permalink to this heading">#</a></h2>
+<p>The micropulse lidar is a polarized lidar which means that it can be used to inform us about the shape of the particles that the light is interacting with.  This website from the <a class="reference external" href="https://www.tropos.de/en/research/projects-infrastructures-technology/technology-at-tropos/remote-sensing/polarization-lidar">Leibniz Institute for Troposheric Research</a> has a nice explanation of polarized lidar.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s look at the cross polarization to get some more information</span>
 <span class="c1"># It&#39;s a lot of data, so it will take some time!</span>
 <span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">TimeSeriesDisplay</span><span class="p">(</span><span class="n">ds_mpl</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
-<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;signal_return_cross_pol&#39;</span><span class="p">,</span> <span class="n">cb_friendly</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">20</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;signal_return_cross_pol&#39;</span><span class="p">,</span> <span class="n">cvd_friendly</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">20</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 
 <span class="c1"># This instrument collects data over 30 km so let&#39;s constrain</span>
 <span class="c1"># this to just the lower 5 km</span>
@@ -614,10 +622,11 @@ document.write(`
 </div>
 </div>
 </section>
+</section>
 <section id="aerosol-particle-size-data">
 <h1>Aerosol Particle Size Data<a class="headerlink" href="#aerosol-particle-size-data" title="Permalink to this heading">#</a></h1>
 <p>Dust particles are generally under 10 µm or 10,000 nm and ARM has a variety of instruments that measure across different ranges. The chart below shows the ranges for each instrument and where we can expect to see the dust particles.</p>
-<a class="reference internal image-reference" href="../../_images/aerosol_sizing1.png"><img alt="../../_images/aerosol_sizing1.png" src="../../_images/aerosol_sizing1.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../_images/aerosol_sizing.png"><img alt="../../_images/aerosol_sizing.png" src="../../_images/aerosol_sizing.png" style="width: 600px;" /></a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download the data as before</span>
@@ -637,8 +646,99 @@ document.write(`
 <span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">TimeSeriesDisplay</span><span class="p">(</span><span class="n">ds_aps</span><span class="p">,</span> <span class="n">subplot_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,),</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
 <span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;total_N_conc&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,))</span>
 <span class="n">display</span><span class="o">.</span><span class="n">day_night_background</span><span class="p">(</span><span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,))</span>
-<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;dN_dlogDp&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,),</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;dN_dlogDp&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,),</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">cvd_friendly</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="doppler-lidar">
+<h1>Doppler Lidar<a class="headerlink" href="#doppler-lidar" title="Permalink to this heading">#</a></h1>
+<p>Next we can check the signal to noise ration of the particles observed by the doppler lidar.</p>
+<p>We can used both the fixed pointing mode (FPT) and plan position indicator (PPI) mode datasets to plot signal to noise ration
+with an overlay of wind barbs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download the data as before</span>
+<span class="c1"># Read an ARM TRACER Doppler lidar FPT dataset</span>
+<span class="n">datastream</span> <span class="o">=</span> <span class="s1">&#39;houdlfptM1.b1&#39;</span>
+<span class="n">startdate</span> <span class="o">=</span> <span class="s1">&#39;2022-07-16T08:00:00&#39;</span>
+<span class="n">enddate</span> <span class="o">=</span> <span class="s1">&#39;2022-07-16T23:50:00&#39;</span>
+<span class="n">result_dl_fpt</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">discovery</span><span class="o">.</span><span class="n">download_arm_data</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">token</span><span class="p">,</span> <span class="n">datastream</span><span class="p">,</span> <span class="n">startdate</span><span class="p">,</span> <span class="n">enddate</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lets read all the files into one timeseries dataset.</span>
+<span class="n">ds_dlfpt</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_arm_netcdf</span><span class="p">(</span><span class="n">result_dl_fpt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Change intensity to signal to noise ratio</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">ds_dlfpt</span><span class="p">[</span><span class="s1">&#39;intensity&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span>
+<span class="n">ds_dlfpt</span><span class="p">[</span><span class="s1">&#39;intensity&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">ds_dlfpt</span><span class="p">[</span><span class="s1">&#39;intensity&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;units&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;1 - LOG10 &#39;</span> <span class="o">+</span> <span class="n">ds_dlfpt</span><span class="p">[</span><span class="s1">&#39;intensity&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;long_name&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Next, let&#39;s read in the ARM TRACER Doppler lidar PPI dataset</span>
+<span class="n">datastream</span> <span class="o">=</span> <span class="s1">&#39;houdlppiM1.b1&#39;</span>
+<span class="n">startdate</span> <span class="o">=</span> <span class="s1">&#39;2022-07-16T08:00:00&#39;</span>
+<span class="n">enddate</span> <span class="o">=</span> <span class="s1">&#39;2022-07-16T23:50:00&#39;</span>
+<span class="n">result_dl_ppi</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">discovery</span><span class="o">.</span><span class="n">download_arm_data</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">token</span><span class="p">,</span> <span class="n">datastream</span><span class="p">,</span> <span class="n">startdate</span><span class="p">,</span> <span class="n">enddate</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Instead of reading in all files to a dataset, lets calculate the winds for each file and</span>
+<span class="c1"># merge them into one dataset to use for plotting the wind barbs.</span>
+<span class="n">multi_ds</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">result_dl_ppi</span><span class="p">):</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">arm</span><span class="o">.</span><span class="n">read_arm_netcdf</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+    <span class="c1"># Calculate the winds for each houdlppi dataset.</span>
+    <span class="n">wind_ds</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">retrievals</span><span class="o">.</span><span class="n">compute_winds_from_ppi</span><span class="p">(</span>
+        <span class="n">ds</span><span class="p">,</span> <span class="n">remove_all_missing</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">snr_threshold</span><span class="o">=</span><span class="mf">0.008</span>
+    <span class="p">)</span>
+    <span class="n">multi_ds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">wind_ds</span><span class="p">)</span>
+
+<span class="n">wind_ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">multi_ds</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now let&#39;s create a display object containing both the houdlfpt and calculated winds dataset</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">TimeSeriesDisplay</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;HOU DLPPI Computed Winds Over DL FPT Backscatter&quot;</span><span class="p">:</span> <span class="n">wind_ds</span><span class="p">,</span>
+        <span class="s2">&quot;houdlfptM1.b1&quot;</span><span class="p">:</span> <span class="n">ds_dlfpt</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+<span class="p">)</span>
+
+<span class="c1"># Plot the wind barbs overlayed on the signal to noise ratio</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="s1">&#39;intensity&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;houdlfptM1.b1&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;NWSRef&#39;</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mf">0.0</span>
+<span class="p">)</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot_barbs_from_spd_dir</span><span class="p">(</span>
+    <span class="s1">&#39;wind_speed&#39;</span><span class="p">,</span> <span class="s1">&#39;wind_direction&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;HOU DLPPI Computed Winds Over DL FPT Backscatter&#39;</span><span class="p">,</span> <span class="n">invert_y_axis</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">barbcolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="c1"># Update the y-limits to show plotted winds</span>
+<span class="n">display</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="n">ds_dlfpt</span><span class="o">.</span><span class="n">range</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="mi">2500</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -684,7 +784,7 @@ document.write(`
 <span class="n">result</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">discovery</span><span class="o">.</span><span class="n">download_arm_data</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">token</span><span class="p">,</span> <span class="n">datastream</span><span class="p">,</span> <span class="n">startdate</span><span class="p">,</span> <span class="n">enddate</span><span class="p">)</span>
 <span class="n">ds_sp2</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">arm</span><span class="o">.</span><span class="n">read_arm_netcdf</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
-<span class="c1"># AOSMET</span>
+<span class="c1"># MET</span>
 <span class="n">datastream</span> <span class="o">=</span> <span class="s1">&#39;houmetM1.b1&#39;</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">discovery</span><span class="o">.</span><span class="n">download_arm_data</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">token</span><span class="p">,</span> <span class="n">datastream</span><span class="p">,</span> <span class="n">startdate</span><span class="p">,</span> <span class="n">enddate</span><span class="p">)</span>
 <span class="n">ds_met</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">arm</span><span class="o">.</span><span class="n">read_arm_netcdf</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
@@ -740,7 +840,7 @@ document.write(`
 
 <span class="c1"># MPL Plot</span>
 <span class="c1"># Variable names of interest linear_depol_ratio, linear_depol_snr, backscatter_snr</span>
-<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;linear_depol_ratio&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;mpl&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,),</span> <span class="n">cb_friendly</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;linear_depol_ratio&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;mpl&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,),</span> <span class="n">cvd_friendly</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">display</span><span class="o">.</span><span class="n">set_yrng</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,))</span>
 
 <span class="c1"># APS Plot</span>
@@ -835,7 +935,7 @@ document.write(`
 <span class="c1"># may be showing up in the profile</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">ds_mpl</span><span class="p">[</span><span class="s1">&#39;linear_depol_ratio&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
 
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds_mpl</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -919,7 +1019,8 @@ document.write(`
 </section>
 <section id="compare-chemical-composition-between-events">
 <h3>Compare Chemical Composition Between Events<a class="headerlink" href="#compare-chemical-composition-between-events" title="Permalink to this heading">#</a></h3>
-<p>Make a chart of aerosol composition on July 12, 13, and compare it to that from 17-18.  This will require subsetting the ds_acsm data and plotting it using Matplotlib</p>
+<p>Create a pie chart of aerosol composition on July 12, 13, and compare it to that from 17-18.  This will require subsetting the ds_acsm data.</p>
+<p>Studies have shown that Dust events can contribute to sulfate formation through the interaction of mineral dust particles with sulfur dioxide (SO2) and other atmospheric gases.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First subset the data for both sets</span>
@@ -927,24 +1028,79 @@ document.write(`
 <span class="n">ds_acsm_17</span> <span class="o">=</span> <span class="n">ds_acsm</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="s1">&#39;2022-07-17&#39;</span><span class="p">,</span> <span class="s1">&#39;2022-07-18&#39;</span><span class="p">))</span>
 
 <span class="c1"># Run through and get data</span>
-<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;total_organics&#39;</span><span class="p">,</span> <span class="s1">&#39;sulfate&#39;</span><span class="p">,</span> <span class="s1">&#39;nitrate&#39;</span><span class="p">,</span> <span class="s1">&#39;ammonium&#39;</span><span class="p">,</span> <span class="s1">&#39;chloride&#39;</span><span class="p">]</span>
-<span class="n">data12</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">data17</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">labels</span><span class="p">:</span>
-    <span class="n">data12</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">ds_acsm_12</span><span class="p">[</span><span class="n">label</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()))</span>
-    <span class="n">data17</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">ds_acsm_17</span><span class="p">[</span><span class="n">label</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()))</span>
-    
-<span class="c1"># Pie charts use values that add up to 100% so we have to adjust the data</span>
-<span class="c1">#data12 = data12 / np.sum(data12)</span>
-<span class="c1">#data17 = data17 / np.sum(data17)</span>
+<span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;total_organics&#39;</span><span class="p">,</span> <span class="s1">&#39;sulfate&#39;</span><span class="p">,</span> <span class="s1">&#39;nitrate&#39;</span><span class="p">,</span> <span class="s1">&#39;ammonium&#39;</span><span class="p">,</span> <span class="s1">&#39;chloride&#39;</span><span class="p">]</span>
 
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)),</span> <span class="n">data12</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;July 12-13&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)),</span> <span class="n">labels</span><span class="p">)</span>
+<span class="c1"># We also want to provide some keyword arguments to avoid invalid data such</span>
+<span class="c1"># as negative values.</span>
+<span class="n">threshold</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">fill_value</span> <span class="o">=</span> <span class="mf">0.0</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)),</span> <span class="n">data17</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;July 17-18&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)),</span> <span class="n">labels</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="c1"># Create a DistributionDisplay object to compare fields</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">DistributionDisplay</span><span class="p">({</span><span class="s1">&#39;acsm_12&#39;</span><span class="p">:</span> <span class="n">ds_acsm_12</span><span class="p">,</span> <span class="s1">&#39;acsm_17&#39;</span><span class="p">:</span> <span class="n">ds_acsm_17</span><span class="p">},</span> 
+                                           <span class="n">subplot_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">14</span><span class="p">))</span>
+
+<span class="c1"># We can set one of the slices to explode and give it a nice shadow.</span>
+<span class="n">explode</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">shadow</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1"># Create a pie chart using the fields list. The percentages of the</span>
+<span class="c1"># fields will be calculated using act.utils.calculate_percentages.</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot_pie_chart</span><span class="p">(</span>
+    <span class="n">fields</span><span class="p">,</span>
+    <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;acsm_12&#39;</span><span class="p">,</span>
+    <span class="n">threshold</span><span class="o">=</span><span class="n">threshold</span><span class="p">,</span>
+    <span class="n">fill_value</span><span class="o">=</span><span class="n">fill_value</span><span class="p">,</span>
+    <span class="n">explode</span><span class="o">=</span><span class="n">explode</span><span class="p">,</span>
+    <span class="n">shadow</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot_pie_chart</span><span class="p">(</span>
+    <span class="n">fields</span><span class="p">,</span>
+    <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;acsm_17&#39;</span><span class="p">,</span>
+    <span class="n">threshold</span><span class="o">=</span><span class="n">threshold</span><span class="p">,</span>
+    <span class="n">fill_value</span><span class="o">=</span><span class="n">fill_value</span><span class="p">,</span>
+    <span class="n">explode</span><span class="o">=</span><span class="n">explode</span><span class="p">,</span>
+    <span class="n">shadow</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="chemical-composition-distribution">
+<h3>Chemical Composition Distribution<a class="headerlink" href="#chemical-composition-distribution" title="Permalink to this heading">#</a></h3>
+<p>The PI charts can provide some information on the distribution but we can get more information by looking at the distribution using violin plots.  Does the dust event still show high sulfates in this view?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a DistributionDisplay object to compare fields</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">DistributionDisplay</span><span class="p">({</span><span class="s1">&#39;acsm_12&#39;</span><span class="p">:</span> <span class="n">ds_acsm_12</span><span class="p">,</span> <span class="s1">&#39;acsm_17&#39;</span><span class="p">:</span> <span class="n">ds_acsm_17</span><span class="p">},</span>
+                                           <span class="n">subplot_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="c1"># Compare the distributions of each composition type</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot_violin</span><span class="p">(</span><span class="s1">&#39;total_organics&#39;</span><span class="p">,</span> <span class="n">positions</span><span class="o">=</span><span class="p">[</span><span class="mf">1.0</span><span class="p">],</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;acsm_12&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot_violin</span><span class="p">(</span><span class="s1">&#39;sulfate&#39;</span><span class="p">,</span> <span class="n">positions</span><span class="o">=</span><span class="p">[</span><span class="mf">2.0</span><span class="p">],</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;acsm_12&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot_violin</span><span class="p">(</span><span class="s1">&#39;ammonium&#39;</span><span class="p">,</span> <span class="n">positions</span><span class="o">=</span><span class="p">[</span><span class="mf">3.0</span><span class="p">],</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;acsm_12&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot_violin</span><span class="p">(</span><span class="s1">&#39;nitrate&#39;</span><span class="p">,</span> <span class="n">positions</span><span class="o">=</span><span class="p">[</span><span class="mf">4.0</span><span class="p">],</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;acsm_12&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot_violin</span><span class="p">(</span><span class="s1">&#39;chloride&#39;</span><span class="p">,</span> <span class="n">positions</span><span class="o">=</span><span class="p">[</span><span class="mf">5.0</span><span class="p">],</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;acsm_12&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="n">display</span><span class="o">.</span><span class="n">plot_violin</span><span class="p">(</span><span class="s1">&#39;total_organics&#39;</span><span class="p">,</span> <span class="n">positions</span><span class="o">=</span><span class="p">[</span><span class="mf">1.0</span><span class="p">],</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;acsm_17&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot_violin</span><span class="p">(</span><span class="s1">&#39;sulfate&#39;</span><span class="p">,</span> <span class="n">positions</span><span class="o">=</span><span class="p">[</span><span class="mf">2.0</span><span class="p">],</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;acsm_17&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot_violin</span><span class="p">(</span><span class="s1">&#39;ammonium&#39;</span><span class="p">,</span> <span class="n">positions</span><span class="o">=</span><span class="p">[</span><span class="mf">3.0</span><span class="p">],</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;acsm_17&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot_violin</span><span class="p">(</span><span class="s1">&#39;nitrate&#39;</span><span class="p">,</span> <span class="n">positions</span><span class="o">=</span><span class="p">[</span><span class="mf">4.0</span><span class="p">],</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;acsm_17&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot_violin</span><span class="p">(</span><span class="s1">&#39;chloride&#39;</span><span class="p">,</span> <span class="n">positions</span><span class="o">=</span><span class="p">[</span><span class="mf">5.0</span><span class="p">],</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;acsm_17&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="c1"># Update the tick information</span>
+<span class="n">ticks</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;Total Organics&#39;</span><span class="p">,</span> <span class="s1">&#39;Sulfate&#39;</span><span class="p">,</span> <span class="s1">&#39;Ammonium&#39;</span><span class="p">,</span> <span class="s1">&#39;Nitrate&#39;</span><span class="p">,</span> <span class="s1">&#39;Chloride&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">]</span>
+<span class="n">display</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">])</span>
+<span class="n">display</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">])</span>
+<span class="n">display</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">ticks</span><span class="p">)</span>
+<span class="n">display</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">ticks</span><span class="p">)</span>
+<span class="n">display</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">])</span>
+<span class="n">display</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">])</span>
+
+
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -999,7 +1155,7 @@ User Facility. https://doi.org/10.5439/1508389</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./Tutorials/UPR-ACT-2023"
+            path: "./Tutorials/ACT-Python-Tutorial"
         },
         predefinedOutput: true
     }
@@ -1034,8 +1190,12 @@ User Facility. https://doi.org/10.5439/1508389</p>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Overview</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#micropulse-lidar-mpl-data">Micropulse Lidar (MPL) Data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#micropulse-lidar-mpl-data">Micropulse Lidar (MPL) Data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polarized-lidar">Polarized Lidar</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aerosol-particle-size-data">Aerosol Particle Size Data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#doppler-lidar">Doppler Lidar</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#putting-it-all-together">Putting it All Together</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-this-out">Check this out</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#try-more-data">Try more data!</a></li>
@@ -1047,6 +1207,7 @@ User Facility. https://doi.org/10.5439/1508389</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#excercises">Excercises</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series-of-ratios-of-fine-particles-vs-coarse-particles-using-smps-and-aps-data">Time series of ratios of fine particles vs. coarse particles using SMPS and APS data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compare-chemical-composition-between-events">Compare Chemical Composition Between Events</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chemical-composition-distribution">Chemical Composition Distribution</a></li>
 </ul>
 </li>
 </ul>
