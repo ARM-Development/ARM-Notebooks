@@ -512,7 +512,7 @@ document.write(`
 <h2>Set Up<a class="headerlink" href="#set-up" title="Permalink to this heading">#</a></h2>
 <p>To start, we will sign into ARM’s <a class="reference external" href="https://jupyterhub.svcs.arm.gov/">JupyterHub</a> which contains environments for working with ARM data such as an environment built for ACT.</p>
 <p>After providing your credentials, ARM JupyterHub will have a prompt to allocate resources, and select explore ARM data. This then will load a JupyterHub instance on ARM computing systems.</p>
-<p><img alt="ARM Resources" src="../../_images/arm_resources.png" /></p>
+<p><img alt="ARM Resources" src="../../_images/arm_resources1.png" /></p>
 <section id="terminals-and-cloning-the-arm-notebooks-repository">
 <h3>Terminals and Cloning the ARM Notebooks Repository<a class="headerlink" href="#terminals-and-cloning-the-arm-notebooks-repository" title="Permalink to this heading">#</a></h3>
 <p>Let’s select the Running Tabs and Kernels Tab in the Left Sidebar and see how it changes when we’ve used the Launcher.</p>
@@ -527,7 +527,7 @@ document.write(`
 </pre></div>
 </div>
 <p>Hit refresh in the File Browser again to see that the directory is gone.</p>
-<p><img alt="Terminal" src="../../_images/terminal1.png" /></p>
+<p><img alt="Terminal" src="../../_images/terminal2.png" /></p>
 <p>Next we will want to download or git clone the ARM-Notebooks repository found here:</p>
 <p>https://github.com/ARM-Development/ARM-Notebooks</p>
 <p>To clone this repository so it is in your instance, run:</p>
@@ -535,7 +535,7 @@ document.write(`
 </pre></div>
 </div>
 <p>Once the notebooks have been download, you should now see a ARM-Notebooks directory in your instance.</p>
-<p><img alt="Git Clone" src="../../_images/git_clone_notebooks.png" /></p>
+<p><img alt="Git Clone" src="../../_images/git_clone_notebooks1.png" /></p>
 <p>The tutorials that we will be covering today will be found in ARM-Notebooks/Tutorials/UPR-ACT-2023/
 However there are more tutorials from pass workshops in this repository for learning Python, Py-ART and more!</p>
 <p>Back with the Running Terminals and Kernels Tab open, click the “X” in your workspace to close the Terminal window. Notice that the Terminal is still running in the background!  Click on the terminal in the Running Terminals and Kernels Tab to reopen it (and hit enter or return to get your prompt back). To truly close it, execute in the Terminal window:</p>
@@ -562,7 +562,7 @@ However there are more tutorials from pass workshops in this repository for lear
 <li><p>On the left is a <strong>Collapsible Sidebar</strong> (currently contains the File Browser, but you can also select the Running Tabs and Kernels, the Table of Contents, and an Extensions Manager).</p></li>
 <li><p>Below everything is the <strong>Information Bar</strong> which is context sensitive. We will touch on this more.</p></li>
 </ul>
-<p><img alt="Interface" src="../../_images/interface_labeled1.png" /></p>
+<p><img alt="Interface" src="../../_images/interface_labeled2.png" /></p>
 <p>We will now take a closer look at certain aspects and features of the JupyterLab Interface.</p>
 <section id="left-sidebar">
 <h3>Left Sidebar<a class="headerlink" href="#left-sidebar" title="Permalink to this heading">#</a></h3>
@@ -574,11 +574,11 @@ However there are more tutorials from pass workshops in this repository for lear
 <li><p>And the “refresh” button refreshes the File Browser.</p></li>
 </ul>
 <p>Below the File Browser Tab is the <strong>Running Tabs and Kernels Tab</strong>. Currently this tab doesn’t have much in it. We will revisit this when we have running kernels. Remember that Kernels are background processes, so closing a tab (Terminal or Notebook) doesn’t shut down the kernel. You have to do that manually.</p>
-<a class="reference internal image-reference" href="../../_images/running-tabs-kernels1.png"><img alt="../../_images/running-tabs-kernels1.png" src="../../_images/running-tabs-kernels1.png" style="width: 200px;" /></a>
+<a class="reference internal image-reference" href="../../_images/running-tabs-kernels2.png"><img alt="../../_images/running-tabs-kernels2.png" src="../../_images/running-tabs-kernels2.png" style="width: 200px;" /></a>
 <p>The <strong>Table of Contents Tab</strong> is auto-populated based on the headings and subheadings used in the Markdown cells of your notebook. It allows you to quickly jump between sections of the document.</p>
-<a class="reference internal image-reference" href="../../_images/table-contents1.png"><img alt="../../_images/table-contents1.png" src="../../_images/table-contents1.png" style="width: 200px;" /></a>
+<a class="reference internal image-reference" href="../../_images/table-contents2.png"><img alt="../../_images/table-contents2.png" src="../../_images/table-contents2.png" style="width: 200px;" /></a>
 <p>Last is the <strong>Extensions Manager Tab</strong> where you can customize or enhance any part of JupyterLab. These customizations could pertain to themes or keyboard shortcuts, for example. We will not be covering JupyterLab extensions, but you can read more about them <a class="reference external" href="https://jupyterlab.readthedocs.io/en/stable/user/extensions.html">here</a>.</p>
-<a class="reference internal image-reference" href="../../_images/extensions1.png"><img alt="../../_images/extensions1.png" src="../../_images/extensions1.png" style="width: 200px;" /></a>
+<a class="reference internal image-reference" href="../../_images/extensions2.png"><img alt="../../_images/extensions2.png" src="../../_images/extensions2.png" style="width: 200px;" /></a>
 </section>
 <section id="consoles">
 <h3>Consoles<a class="headerlink" href="#consoles" title="Permalink to this heading">#</a></h3>
@@ -597,7 +597,7 @@ However there are more tutorials from pass workshops in this repository for lear
 </pre></div>
 </div>
 <p>The first line of this code designates a string <code class="docutils literal notranslate"><span class="pre">s</span></code> with the value “Hello, World!”, the second line uses f-formatting to print the string, and the final line just calls up <code class="docutils literal notranslate"><span class="pre">s</span></code>. The last line in the cell will always be returned (its value displayed) regardless of whether you called <code class="docutils literal notranslate"><span class="pre">print</span></code>. Type <kbd>Shift</kbd>+<kbd>Enter</kbd> to execute the cell. Again the output is labeled (this time with a 2), and we see the input code, the printed standard-out statement, and the return statement. The “return value” and the values “printed to screen” are different!</p>
-<p><img alt="Console" src="../../_images/console1.png" /></p>
+<p><img alt="Console" src="../../_images/console2.png" /></p>
 <p>Close the window and shut down the Console in the Running Kernels tab. We’re back to the Launcher again.</p>
 </section>
 <section id="text-editor">
@@ -613,7 +613,7 @@ Select the File Browser tab to see the new file <code class="docutils literal no
 <p>Go to the File Browser tab and right-click the new text file we create and “Rename” it to <code class="docutils literal notranslate"><span class="pre">hello.py</span></code>. Once the extension changes to <code class="docutils literal notranslate"><span class="pre">.py</span></code>, Jupyter recognizes that this is a Python file, and the text editor syntax highlights the code.</p>
 <p>Now, click the “+” button in the File Browser to create a new Launcher. In the Launcher tab, click on the “Terminal” button, again to create a terminal. Now you have 2 tabs open: a text editor tab and a terminal tab. Drag the Terminal tab to the right side of the main work area to view both windows simultaneously. Click the File Browser tab to collapse the left sidebar and get more real estate! Alternatively you could stack the windows one on top of the other.</p>
 <p>Run <code class="docutils literal notranslate"><span class="pre">ls</span></code> in the Terminal window to see the text file we just created. Execute <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">hello.py</span></code> in the Terminal window. See the output in the Terminal window.</p>
-<p><img alt="Text Editor" src="../../_images/txt-editor1.png" /></p>
+<p><img alt="Text Editor" src="../../_images/txt-editor2.png" /></p>
 <p>Now, let’s close the Terminal tab and shut down the Terminal in the Running Kernels tab (or execute “exit” in the Terminal itself). You should just have the Text editor window open, now we’re ready to look at Jupyter Notebooks.</p>
 </section>
 </section>
@@ -626,7 +626,7 @@ Select the File Browser tab to see the new file <code class="docutils literal no
 <p>Below the toolbar is the Notebook itself.  And you should see an empty cell at the top of the Notebook. This looks similar to in the Console!</p>
 <p>The cell can be in 1 of 2 modes:  command mode or edit mode.
 If your cell is grayed out and you can’t see a blinking cursor in the cell, then the cell is in command mode. We’ll talk about command mode more later. Click inside the box, and the cell will turn white with a blinking cursor inside it, then the cell is now in edit mode. The mode is also listed on the info bar at the bottom of the page. The cell is selected if the blue bar is on the left side of the cell.</p>
-<p><img alt="Notebook Interface" src="../../_images/notebook-interface_labeled1.png" /></p>
+<p><img alt="Notebook Interface" src="../../_images/notebook-interface_labeled2.png" /></p>
 <p>You may move the Notebook over so we can see your text file at the same time to compare, resizing the Notebook window as needed.</p>
 <section id="code-cells">
 <h3>Code Cells<a class="headerlink" href="#code-cells" title="Permalink to this heading">#</a></h3>
@@ -672,7 +672,7 @@ Enter the following in the next cell:
 <li><p>And in the top right corner of the Notebook, the status icon is a filled-in circle, indicating that the kernel is running</p></li>
 </ul>
 <p>After 10 seconds, the cell completes running and the label is updated to <code class="docutils literal notranslate"><span class="pre">[3]</span></code> and the status icon returns to the “empty circle” state. If you rerun the cell, the label will update to <code class="docutils literal notranslate"><span class="pre">[4]</span></code>.</p>
-<p><img alt="Code Cells" src="../../_images/codecells1.png" /></p>
+<p><img alt="Code Cells" src="../../_images/codecells2.png" /></p>
 </section>
 <section id="markdown-cells">
 <h3>Markdown Cells<a class="headerlink" href="#markdown-cells" title="Permalink to this heading">#</a></h3>
@@ -692,7 +692,7 @@ Click on the cell and enter edit mode, we can now type in some markdown text lik
 </pre></div>
 </div>
 <p>and <kbd>Shift</kbd>+<kbd>Enter</kbd> to render the markdown to HTML.</p>
-<a class="reference internal image-reference" href="../../_images/markdown1.png"><img alt="../../_images/markdown1.png" src="../../_images/markdown1.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../_images/markdown2.png"><img alt="../../_images/markdown2.png" src="../../_images/markdown2.png" style="width: 600px;" /></a>
 <p>Again, in the next cell, change this cell to “Markdown”. To demonstrate displaying equations, enter:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>## Some math
 
@@ -704,12 +704,12 @@ $$
 </pre></div>
 </div>
 <p>When you are done, type <kbd>Shift</kbd>+<kbd>Enter</kbd> to render the markdown document.</p>
-<a class="reference internal image-reference" href="../../_images/markdown_eq1.png"><img alt="../../_images/markdown_eq1.png" src="../../_images/markdown_eq1.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../_images/markdown_eq2.png"><img alt="../../_images/markdown_eq2.png" src="../../_images/markdown_eq2.png" style="width: 600px;" /></a>
 <p>You can also do inline equations with a single “$” for example</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>This is an equation: $i^4$.
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../../_images/markdown_eq_inline1.png"><img alt="../../_images/markdown_eq_inline1.png" src="../../_images/markdown_eq_inline1.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../_images/markdown_eq_inline2.png"><img alt="../../_images/markdown_eq_inline2.png" src="../../_images/markdown_eq_inline2.png" style="width: 600px;" /></a>
 <p><strong>Note:</strong> that the “markdown” source code is rendered into much prettier text, which we can take advantage of for narrating our work in the Notebook!</p>
 </section>
 <section id="raw-cells">
@@ -721,7 +721,7 @@ $$
 </div>
 <p>When you <kbd>Shift</kbd>+<kbd>Enter</kbd> the text isn’t rendered.</p>
 <p>This is a way of entering text/source that you do not want the Notebook to do anything with (i.e., no rendering).</p>
-<p><img alt="Raw" src="../../_images/raw1.png" /></p>
+<p><img alt="Raw" src="../../_images/raw2.png" /></p>
 </section>
 <section id="command-mode-shortcuts">
 <h3>Command Mode Shortcuts<a class="headerlink" href="#command-mode-shortcuts" title="Permalink to this heading">#</a></h3>
@@ -749,7 +749,7 @@ $$
         If the cell you to refer to does not have a return value, this will raise an error.
 </div>
 <p>You can equivalently use the variables <code class="docutils literal notranslate"><span class="pre">Out[2]</span></code> or <code class="docutils literal notranslate"><span class="pre">In[2]</span></code> to retrieve the output and input (as a string).</p>
-<a class="reference internal image-reference" href="../../_images/special_vars1.png"><img alt="../../_images/special_vars1.png" src="../../_images/special_vars1.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../_images/special_vars2.png"><img alt="../../_images/special_vars2.png" src="../../_images/special_vars2.png" style="width: 600px;" /></a>
 </section>
 <section id="shell-commands">
 <h3>Shell Commands<a class="headerlink" href="#shell-commands" title="Permalink to this heading">#</a></h3>
@@ -788,7 +788,7 @@ $$
 </pre></div>
 </div>
 <p>and <kbd>Shift</kbd>+<kbd>Enter</kbd> to run it.  This will time the entire cell.</p>
-<a class="reference internal image-reference" href="../../_images/magics1.png"><img alt="../../_images/magics1.png" src="../../_images/magics1.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../_images/magics2.png"><img alt="../../_images/magics2.png" src="../../_images/magics2.png" style="width: 600px;" /></a>
 </section>
 </section>
 <section id="shutting-down">

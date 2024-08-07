@@ -474,21 +474,21 @@ document.write(`
 <p>A good rule of thumb is to make sure that you <strong>never</strong> add a feature/change on your <code class="docutils literal notranslate"><span class="pre">main</span></code> branch. Another rule to keep in mind is that you <strong>always</strong> want to keep your fork of the repository up to date with the <em><strong>upstream</strong></em> repository (in this case, this is <a class="reference external" href="https://github.com/ARM-Development/Aerosol-Mentors-Processing-Routines">Aerosol Mentors Processing Routines</a>).</p>
 <p>For example, if you had a different project (for example <code class="docutils literal notranslate"><span class="pre">CO</span></code>) you wanted to make changes to, you would not want to include those changes from <code class="docutils literal notranslate"><span class="pre">CCN</span></code> as well!</p>
 <p>Fortunately, Github makes this easy! From <strong><em>your fork of the repository</em></strong>, you will see a “Fetch upstream” dropdown!</p>
-<img alt="Fetch Upstream" src="../../_images/fetch-upstream-github1.png" />
+<img alt="Fetch Upstream" src="../../_images/fetch-upstream-github2.png" />
 <p>It is important to do this <strong>early and often</strong> and be sure that when you make changes, you follow the process of:</p>
 </section>
 <section id="creating-your-branch">
 <h3>Creating your Branch<a class="headerlink" href="#creating-your-branch" title="Permalink to this heading">#</a></h3>
 <p>Now that our main branch is in-sync, the first step to contributing is to create a <strong>branch</strong> of your repository!</p>
 <p>On the left side of the screen, you will see a box that says “<code class="docutils literal notranslate"><span class="pre">main</span></code>”, indicating you are on the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch. You will need to click on <code class="docutils literal notranslate"><span class="pre">main</span></code>, as shown below:</p>
-<img alt="Fetch Upstream" src="../../_images/locate-github-branches-web1.png" />
+<img alt="Fetch Upstream" src="../../_images/locate-github-branches-web2.png" />
 <p>Once you click on <code class="docutils literal notranslate"><span class="pre">main</span></code>, a new window will pop up with the title “Switch branches/tags”</p>
 <p>At this point, go ahead and type in the name of your new branch! In this example, we are adding new Python code related to CO processing, so we title our new branch <code class="docutils literal notranslate"><span class="pre">co-python-code</span></code>!</p>
 <p>You will also see a button toward the bottom of the window “<strong>Create branch: co-python-code</strong> from main”</p>
-<img alt="Fetch Upstream" src="../../_images/create-new-branch-github-ui1.png" />
+<img alt="Fetch Upstream" src="../../_images/create-new-branch-github-ui2.png" />
 <p>If we click on “<strong>Create branch: co-python-code</strong> from main”, we create that new branch!</p>
 <p>You’ll notice that instead of <code class="docutils literal notranslate"><span class="pre">main</span></code> in the top left-hand corner of the screen, we see our new branch name <code class="docutils literal notranslate"><span class="pre">co-python-code</span></code></p>
-<img alt="Fetch Upstream" src="../../_images/on-new-branch-github-ui1.png" />
+<img alt="Fetch Upstream" src="../../_images/on-new-branch-github-ui2.png" />
 <p>We have successfully created a new branch! 🎉</p>
 </section>
 </section>
@@ -499,23 +499,23 @@ document.write(`
 <h3>Move into the <code class="docutils literal notranslate"><span class="pre">CO/Python</span></code> directory<a class="headerlink" href="#move-into-the-co-python-directory" title="Permalink to this heading">#</a></h3>
 <p>Let’s migrate into into the CO directory, which can be accessed by clicking through the web interface.</p>
 <p>First, we click on the <code class="docutils literal notranslate"><span class="pre">CO</span></code> folder.</p>
-<img alt="Fetch Upstream" src="../../_images/move-to-co-directory1.png" />
+<img alt="Fetch Upstream" src="../../_images/move-to-co-directory2.png" />
 <p>You’ll see there are now three folders/directories in here! We are interested in adding Python code, so we select Python by clicking on it.</p>
-<img alt="Fetch Upstream" src="../../_images/move-to-python-directory1.png" />
+<img alt="Fetch Upstream" src="../../_images/move-to-python-directory2.png" />
 <p>The only file currently in <code class="docutils literal notranslate"><span class="pre">CO/Python</span></code> is a <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file… we would like to change that!</p>
 </section>
 <section id="adding-a-new-python-file">
 <h3>Adding a new Python file<a class="headerlink" href="#adding-a-new-python-file" title="Permalink to this heading">#</a></h3>
 <p>We would like to add a <code class="docutils literal notranslate"><span class="pre">.py</span></code> file to this directory, which can do by selecting add file.</p>
-<img alt="Fetch Upstream" src="../../_images/move-to-python-directory1.png" />
+<img alt="Fetch Upstream" src="../../_images/move-to-python-directory2.png" />
 <p>You could also add files from your computer using the “Upload files” option.</p>
 <p>We will add a file using the “Create new file” option, which results in the following text editory interface.</p>
 <p>We need to add the name of the file, which in this case is <code class="docutils literal notranslate"><span class="pre">myprocessing.py</span></code></p>
 <p>We also add some Python code, which is a <code class="docutils literal notranslate"><span class="pre">print()</span></code> statement</p>
-<img alt="Fetch Upstream" src="../../_images/add-analysis-script1.png" />
+<img alt="Fetch Upstream" src="../../_images/add-analysis-script2.png" />
 <p>Once we have our changes ready, scroll to the bottom screen where you can add a title to your changes, along with any additional information.</p>
 <p>In our example, we add a title of “Add processing script”</p>
-<img alt="Fetch Upstream" src="../../_images/commit-python-script-github-ui1.png" />
+<img alt="Fetch Upstream" src="../../_images/commit-python-script-github-ui2.png" />
 <p>Now, click the green button that says “Commit new file” which will commit these changes to your branch (<code class="docutils literal notranslate"><span class="pre">co-python-code</span></code>)!</p>
 <p>Once we do that, we are ready to submit our Pull Request.</p>
 </section>
@@ -523,12 +523,12 @@ document.write(`
 <section id="submitting-a-pull-request-using-the-github-web-interface">
 <h2>Submitting a Pull Request Using the Github Web Interface<a class="headerlink" href="#submitting-a-pull-request-using-the-github-web-interface" title="Permalink to this heading">#</a></h2>
 <p>When you move back to your fork of the repository, which is the page that should show up after clicking that “Commit new file” button in the previous step, you should see the following screen with a yellow box stating “<strong>co-python-code</strong> had recent pushes less than a minute ago” and a green button stating “Compare &amp; pull request”!</p>
-<img alt="Fetch Upstream" src="../../_images/view-compare-pull-request-github-ui1.png" />
+<img alt="Fetch Upstream" src="../../_images/view-compare-pull-request-github-ui2.png" />
 <p>If we click on “Compare &amp; pull request”, we can prepare to submit our pull request, requesting that <strong>our new features</strong> be merged with the <strong>upstream ARM-Development</strong> copy of the repository (making these changes useful to the wider community)!</p>
 <p>We can add a title to this pull request, as shown below:</p>
-<img alt="Fetch Upstream" src="../../_images/open-pull-request-github-ui1.png" />
+<img alt="Fetch Upstream" src="../../_images/open-pull-request-github-ui2.png" />
 <p>Once we are ready to submit these changes, we click on the green button stating “Create Pull Request”, which will result in the following:</p>
-<img alt="Fetch Upstream" src="../../_images/submit-pull-request-github-ui1.png" />
+<img alt="Fetch Upstream" src="../../_images/submit-pull-request-github-ui2.png" />
 <p>Our changes have been suggested, and the various code-checkers are running. At this point, the code will be reviewed, you will receive feedback, and once it is approved, it will be merged!</p>
 <p>You have now successfully created your first branch, and submitted your first pull request! If you have more questions about the terminology, I encourage you to read through the <span class="xref myst">Branches and PRs</span> content, in addition to the Github content on <a class="reference external" href="https://foundations.projectpythia.org/foundations/getting-started-github.html">Project Pythia</a>.</p>
 </section>

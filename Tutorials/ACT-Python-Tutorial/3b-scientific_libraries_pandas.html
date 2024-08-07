@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>An Introduction to Github &#8212; ARM Tutorials</title>
+    <title>Working with Pandas &#8212; ARM Tutorials</title>
   
   
   
@@ -62,7 +62,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Tutorials/UPR-ACT-2023/optional_github_intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Tutorials/ACT-Python-Tutorial/3b-scientific_libraries_pandas';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -298,6 +298,37 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/Tutorials/ACT-Python-Tutorial/3b-scientific_libraries_pandas.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-download-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
     <i class="fas fa-download"></i>
@@ -306,7 +337,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/Tutorials/UPR-ACT-2023/optional_github_intro.md" target="_blank"
+      <li><a href="../../_sources/Tutorials/ACT-Python-Tutorial/3b-scientific_libraries_pandas.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -316,7 +347,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -390,7 +421,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>An Introduction to Github</h1>
+    <h1>Working with Pandas</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -400,20 +431,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-github">What is GitHub?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#no-experience-necessary">No experience necessary!</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#free-and-open-source-software-foss">Free- and open-source software (FOSS)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-control-systems-vcs">Version control systems (VCS)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#foss-and-vcs-on-the-internet">FOSS and VCS on the Internet</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#foss-vcs-web-github">FOSS + VCS + Web = GitHub</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#register-for-a-free-github-account">Register for a free GitHub account</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-s-next">What’s Next?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-pandas-dataframe">Create Pandas DataFrame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-in-some-data">Read in some data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#warning-off-on-a-tangent">Warning, off on a tangent</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
             </nav>
         </div>
@@ -425,141 +447,251 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <a class="reference internal image-reference" href="../../_images/GitHub-logo2.png"><img alt="Github Logo" src="../../_images/GitHub-logo2.png" style="width: 600px;" /></a>
-<section id="an-introduction-to-github">
-<h1>An Introduction to Github<a class="headerlink" href="#an-introduction-to-github" title="Permalink to this heading">#</a></h1>
+  <section id="working-with-pandas">
+<h1>Working with Pandas<a class="headerlink" href="#working-with-pandas" title="Permalink to this heading">#</a></h1>
+<p>From the <a class="reference external" href="https://pandas.pydata.org/docs/getting_started/overview.html">Pandas Documentation</a></p>
+<blockquote>
+<div><p>pandas is a Python package providing fast, flexible, and expressive data structures designed to make working with “relational” or “labeled” data both easy and intuitive. It aims to be the fundamental high-level building block for doing practical, real-world data analysis in Python. Additionally, it has the broader goal of becoming the most powerful and flexible open source data analysis/manipulation tool available in any language. It is already well on its way toward this goal.</p>
+</div></blockquote>
+<p>Pandas is an extension of the Numpy data model to structure and organize data into DataFrames. A DataFrame resembles a spreadsheet in looks, but is much more powerful.</p>
+<p>Additional Tutorials</p>
 <ul class="simple">
-<li><p>02-28-2022 (Windows Users)</p></li>
-<li><p>03-01-2022 (Mac/Linux Users)</p></li>
+<li><p><a class="reference external" href="https://foundations.projectpythia.org/core/pandas.html">ProjectPythia Pandas Tutorial</a></p></li>
 </ul>
-<section id="overview">
-<h2>Overview:<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>What is GitHub?</p></li>
-<li><p>No experience necessary!</p></li>
-<li><p>Free- and open-source software (FOSS)</p></li>
-<li><p>Version control systems (VCS)</p></li>
-<li><p>GitHub = FOSS + VCS + Web</p></li>
-<li><p>Register for a free GitHub account</p></li>
-</ol>
-</section>
-<section id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
-<p>If on a <strong>Windows</strong> Machine, make sure to install <a class="reference external" href="https://gitforwindows.org/">Git for Windows</a></p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/git-for-windows/git/releases/tag/v2.35.1.windows.2">Download Page</a></p>
-<ul>
-<li><p>Choose the appropriate download based on your operating system</p>
-<ul>
-<li><p><a class="reference external" href="https://github.com/git-for-windows/git/releases/download/v2.35.1.windows.2/Git-2.35.1.2-32-bit.exe">32 Bit</a></p></li>
-<li><p><a class="reference external" href="https://github.com/git-for-windows/git/releases/download/v2.35.1.windows.2/Git-2.35.1.2-64-bit.exe">64 Bit</a></p></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</section>
-<hr class="docutils" />
-<section id="what-is-github">
-<h2>What is GitHub?<a class="headerlink" href="#what-is-github" title="Permalink to this heading">#</a></h2>
-<p><a class="reference external" href="https://github.com">GitHub</a> is a web-based platform for the dissemination of free- and open-source software.</p>
-<p>If you are reading this lesson, you are already using GitHub, as that is where Project Pythia hosts its content!</p>
-<p>GitHub provides the following:</p>
-<ol class="arabic simple">
-<li><p><em>Version control</em> for free- and open-source software and other digital assets</p></li>
-<li><p>Project <em>discussion forums</em></p></li>
-<li><p><em>DevOps</em> to facilitate building and testing software</p></li>
-<li><p><em>Bug</em> reporting, patching, and tracking</p></li>
-<li><p><em>Documentation</em> hosting</p></li>
-<li><p>An environment that fosters <em>collaboration</em></p></li>
-</ol>
-<p>Although GitHub can host any digital asset, the most common use case for GitHub is for individuals or organizations to house <em>repositories</em> of <em>free-</em> and <em>open-source software</em>:</p>
-</section>
-<section id="no-experience-necessary">
-<h2>No experience necessary!<a class="headerlink" href="#no-experience-necessary" title="Permalink to this heading">#</a></h2>
-<p>You do not need to be an experienced software developer or be proficient in version control to make use of GitHub! Perhaps, though, you have used a particular package (e.g., Xarray or Matplotlib) and have had questions about its usage, noticed a bug, or had an idea for a new feature for the package! You can participate in a project’s development via GitHub the same way you might have interacted with its developers via email in the past.</p>
-</section>
-<section id="free-and-open-source-software-foss">
-<h2>Free- and open-source software (FOSS)<a class="headerlink" href="#free-and-open-source-software-foss" title="Permalink to this heading">#</a></h2>
-<p>Much of what we term the <em>scientific Python software ecosystem</em> consists of <em>free- and open-source software</em>. Often abbreviated as <strong>FOSS</strong>, this means:</p>
-<ol class="arabic simple">
-<li><p>The software is free-of-charge, and</p></li>
-<li><p>The various files which contain the <em>software code</em> are publicly available.</p></li>
-</ol>
-<div class="info admonition">
-<p class="admonition-title">Did you know?</p>
-<p>The <a class="reference external" href="https://python.org">Python language</a> itself is an example of <em>FOSS</em>!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>  <span class="c1"># Convention suggest to import as pd</span>
+
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
 </div>
-<p>FOSS is nothing new. For example, the <a class="reference external" href="https://kernel.org">Linux kernel source code</a> has been available to download for many years.</p>
-<div class="tip admonition">
-<p class="admonition-title">Free $\neq$ open source!</p>
-<p>Just because a software package may be free does not mean that its source code is open! For example, although Nvidia makes its video drivers available for free download, the source code for those drivers is proprietary.</p>
 </div>
-<p>Arguably, the greatest advantage of open-source software is that it enables <em>collaborative sharing</em>, and thus community feedback.</p>
-<p>Types of community input may include the following:</p>
-<ol class="arabic simple">
-<li><p><em>Issues</em>: usage questions, bug reports, feature requests</p></li>
-<li><p><em>Pull requests</em>: a user can ask that that their changes/additions be incorporated into the project</p></li>
-<li><p><em>Discussions</em>: a community forum on the open source project</p></li>
-</ol>
-</section>
-<section id="version-control-systems-vcs">
-<h2>Version control systems (VCS)<a class="headerlink" href="#version-control-systems-vcs" title="Permalink to this heading">#</a></h2>
-<p>We will discuss version control in more detail later in this series, but the need to track and manage changes to a project, especially one that involves software, has long been known. Over the years, FOSS developers have used VCS such as <em>cvs</em>, <em>svn</em>, and most recently, <em>git</em>. All of these systems are <em>command-line tools</em>.</p>
-</section>
-<section id="foss-and-vcs-on-the-internet">
-<h2>FOSS and VCS on the Internet<a class="headerlink" href="#foss-and-vcs-on-the-internet" title="Permalink to this heading">#</a></h2>
-<p>A successful FOSS project needs to be accessible via the web. As mentioned before, the Linux kernel and the Python language have long been available using first-generation remote access protocols such as FTP and HTTP, and SSH. Later, VCS tools such as cvs and svn established their own TCP protocols for remote access. With the advent of <em>git</em>, web-based services that supported HTTP(S) and SSH sprung up. Each of these VCS leverages the concept of a particular FOSS project as a <i>code repository</i>.</p>
-<div class="info admonition">
-<p class="admonition-title">Did you know?</p>
-<p>Linus Torvalds, the original developer (and still the lead maintainer) of <strong>Linux</strong>, is also the original developer of <a class="reference external" href="https://git-scm.com">Git</a>!</p>
 </div>
-<div class="tip admonition">
-<p class="admonition-title">Stay tuned!</p>
-<p>We will discuss version control and the use of <strong>Git</strong> via the command line later in this session!</p>
+<section id="create-pandas-dataframe">
+<h2>Create Pandas DataFrame<a class="headerlink" href="#create-pandas-dataframe" title="Permalink to this heading">#</a></h2>
+<p>Create some data in a python dictionary</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;apples&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+        <span class="s1">&#39;oranges&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">]}</span>
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use the dictionary to populate the new pandas data frame. Python and Jupyter play very well with Pandas and when requested to print the DataFrame or Series knows how to print in a visually appealing way. Notice the columns have names taken from the Dictionary keys we used to populate the DataFrame. Each row has an index set to an incremented integer by default.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">purchases</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">purchases</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pandas DataFrame consisting of Series</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">purchases</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pandas Series</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">purchases</span><span class="o">.</span><span class="n">apples</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A DataFrame has a concept of “index” to label the rows of the DataFrame and column names to label the Columns. We created column names from the Dictionary keys used to initially create the DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">purchases</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;June&#39;</span><span class="p">,</span> <span class="s1">&#39;Robert&#39;</span><span class="p">,</span> <span class="s1">&#39;Lily&#39;</span><span class="p">,</span> <span class="s1">&#39;David&#39;</span><span class="p">])</span>
+<span class="n">purchases</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Printing the column shows additional informatin including the index and data type.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">purchases</span><span class="o">.</span><span class="n">apples</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Extracting a row uses the .loc() method on the DataFrame. .loc() standar for location and searches the index for a match.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">purchases</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;June&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Can also extract using index location .iloc() method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">purchases</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
 </div>
 </section>
-<section id="foss-vcs-web-github">
-<h2>FOSS + VCS + Web = GitHub<a class="headerlink" href="#foss-vcs-web-github" title="Permalink to this heading">#</a></h2>
-<p>Perhaps the most popular web-based platform that uses Git for FOSS VCS is <a class="reference external" href="https://github.com">GitHub</a>. GitHub hosts all of the Python software packages that Project Pythia covers as code repositories (we’ll use the term <i>Git repo</i>, or more generally just <i>repo</i> henceforth to represent a GitHub code repository).</p>
-<p>For example, here is a screenshot from <a class="reference external" href="https://github.com/ARM-Development/Aerosol-Mentors-Processing-Routines">ARM-Development’s Aerosol-Mentors-Processing-Routines Repo</a> Git repo:</p>
-<img alt="ARM GitHub" src="../../_images/aerosol-mentors-repo-screenshot2.png" />
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The above screenshot is from <i>one moment in time</i>. When you visit the Aerosol-Mentors-Processing-Routines link above, it will no doubt look different!</p>
+<section id="read-in-some-data">
+<h2>Read in some data<a class="headerlink" href="#read-in-some-data" title="Permalink to this heading">#</a></h2>
+<p>Using the path to a specific file we read the data into a Pandas Data Frame. This is something you will use very often if you have data in ASCII column files. Get to know this method well. The method has keywords to help describe how to read the column data including the delimter, number of header rows, and which column is the time stamp. If it can parse the time stamp it will convert to Pandas native time type.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;MET&#39;</span><span class="p">,</span> <span class="s1">&#39;sgpmetE13.00.20230707.205900.raw.MET_Table1.20230707200000.dat&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>How many data samples do we have? Can use the Python len() function. Notice it returns the number of rows only.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Similar to Numpy, can use the .shape and .size methods on the DataFrame to return metadata about size of the DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Print the first five rows</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can get the names of the columns with .columns method</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pandas has a few methods used to inspect the data in the Dataset or Series and present the typical statistical values. Because Pandas plays so well with Jupyter the output is very easy to visualize.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Calculate the correlation coefficients of the DataSet on each Series</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Calculate the covariance coefficients of the DataSet on each Series</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">cov</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What type is the time column data?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;TIMESTAMP&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;PTemp&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Get the pressure Series from the DataFrame and sum it up to one value or calcualte the mean.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Pressure_kPa&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Pressure_kPa&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Get the pressure Series from the DataFrame and use a special method to summarize the values in the Series using what Pandas things is most helpful.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;RH_Avg&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Extract the RH series from the DataFrame. This is a copy of the Series in the DataFrame so changing the values will not change the values in the DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rh</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;RH_Avg&#39;</span><span class="p">]</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">rh</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="warning-off-on-a-tangent">
+<h3>Warning, off on a tangent<a class="headerlink" href="#warning-off-on-a-tangent" title="Permalink to this heading">#</a></h3>
+<p>Pandas has two ways of extracting a Series from a DataFrame: <em>copy</em> and <em>view</em>. A copy is separate from the DataFrame and changes to the copied Series will not affect the DataFrame. Changes to a view will impact the DataFrame. In pandas, whether you get a view or a copy depends on the structure of the DataFrame and, if you are trying to modify a slice, the nature of the modification. Pandas will often warn when using a view vs. a copy, but that may not alwasy be the case. There is discussion to resovle this issue but the fix is not going to happen soon. The best solution is to use .copy() when you want a copy to be explicit.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rh</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;RH_Avg&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">rh</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Calculate a rolling mean over the Series using 10 points. Notice the first 8 values are NaN. There is a default number of values to use to calculate a value. Else it is set to NaN.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rh_rolling_mean</span> <span class="o">=</span> <span class="n">rh</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">rh_rolling_mean</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>By specifically stating the minimum number of points to use when calculating the mean we force it to not fill in so many NaNs. There is at least one value to use in the rollig window so not NaNs. What happens when you change min_periods to a larger number?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rh_rolling_mean</span> <span class="o">=</span> <span class="n">rh</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">min_periods</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">rh_rolling_mean</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Set a range of values in our extracted data to NaN to represent missing data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rh</span><span class="p">[</span><span class="mi">20</span><span class="p">:</span><span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">rh</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Calculate a rolling max on the entire DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rh_rolling_mean</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;RH_Avg&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">min_periods</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">rh_rolling_mean</span>
+</pre></div>
+</div>
+</div>
 </div>
 </section>
-<section id="register-for-a-free-github-account">
-<h2>Register for a free GitHub account<a class="headerlink" href="#register-for-a-free-github-account" title="Permalink to this heading">#</a></h2>
-<p>While one can freely browse GitHub repositories such as Aerosol-Mentors-Processing-Routines anonymously, it’s necessary to log into a unique (and free) user account in order to take advantage of GitHub’s full capabilities, such as:</p>
-<ol class="arabic simple">
-<li><p>Opening issues and pull requests</p></li>
-<li><p>Participate in discussions</p></li>
-<li><p>Host your own repository</p></li>
-</ol>
-<p>Your next step (if you haven’t already) should be to register for your free GitHub account. As with many online services, you will choose a user id, password, and specify an email address to use with your account.</p>
-<p>To do so, simply point your browser to the <a class="reference external" href="https://github.com/join">GitHub sign-up page</a>:</p>
-<img alt="GitHub Signup" src="../../_images/GitHubJoin2.png" />
-<p>While GitHub offers paid options, a free account is typically all that is needed!</p>
-</section>
-<hr class="docutils" />
-<section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>GitHub serves as a web-based platform for digital assets, particularly FOSS.</p></li>
-<li><p>GitHub uses Git as its version control system.</p></li>
-<li><p>You can set up a free user account on GitHub.</p></li>
-</ul>
-<section id="what-s-next">
-<h3>What’s Next?<a class="headerlink" href="#what-s-next" title="Permalink to this heading">#</a></h3>
-<p>In the next lesson, we will explore <strong>Forking and Cloning</strong> a Github Repository</p>
-</section>
-</section>
-<section id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/GitHub">GitHub (Wikipedia)</a></p></li>
-</ol>
 </section>
 </section>
 
@@ -576,7 +708,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./Tutorials/UPR-ACT-2023"
+            path: "./Tutorials/ACT-Python-Tutorial"
         },
         predefinedOutput: true
     }
@@ -608,20 +740,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-github">What is GitHub?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#no-experience-necessary">No experience necessary!</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#free-and-open-source-software-foss">Free- and open-source software (FOSS)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#version-control-systems-vcs">Version control systems (VCS)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#foss-and-vcs-on-the-internet">FOSS and VCS on the Internet</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#foss-vcs-web-github">FOSS + VCS + Web = GitHub</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#register-for-a-free-github-account">Register for a free GitHub account</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-s-next">What’s Next?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-pandas-dataframe">Create Pandas DataFrame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-in-some-data">Read in some data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#warning-off-on-a-tangent">Warning, off on a tangent</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
   </nav></div>
 

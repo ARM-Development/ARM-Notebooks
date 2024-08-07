@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>JupyterLab &#8212; ARM Tutorials</title>
+    <title>ARM JupyterHub and JupyterLab &#8212; ARM Tutorials</title>
   
   
   
@@ -19,54 +19,52 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/clipboard.min.js"></script>
-    <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Tutorials/Open-Science-Workshop-2022/tutorials/jupyter-intro';</script>
-    <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Working with Numpy" href="Scientific_Libraries_Numpy.html" />
-    <link rel="prev" title="Day 1 - Introductions!" href="day1-overview.html" />
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Tutorials/ACT-Python-Tutorial/2-jupyter_intro';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -103,7 +101,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="search-button__overlay"></div>
     <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
-      action="../../../search.html"
+      action="../../search.html"
       method="get">
   <i class="fa-solid fa-magnifying-glass"></i>
   <input type="search"
@@ -142,7 +140,7 @@ const thebe_selector_output = ".output, .cell_output"
 
   
 
-<a class="navbar-brand logo" href="../../../README.html">
+<a class="navbar-brand logo" href="../../README.html">
   
   
   
@@ -153,8 +151,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../../_static/arm_logo.png" class="logo__image only-light" alt="ARM Tutorials - Home"/>
-    <script>document.write(`<img src="../../../_static/arm_logo.png" class="logo__image only-dark" alt="ARM Tutorials - Home"/>`);</script>
+    <img src="../../_static/arm_logo.png" class="logo__image only-light" alt="ARM Tutorials - Home"/>
+    <script>document.write(`<img src="../../_static/arm_logo.png" class="logo__image only-dark" alt="ARM Tutorials - Home"/>`);</script>
   
   
 </a></div>
@@ -163,42 +161,42 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="../../../README.html">
+                <a class="reference internal" href="../../README.html">
                     ARM-Notebooks
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../../getting-started.html">Accessing the Compute Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started.html">Accessing the Compute Environment</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">How to Contribute</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../../CONTRIBUTING.html">Contributor’s Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../Templates/notebook-template.html">ARM Notebook Template</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../Templates/tutorial-schedule.html">Tutorial Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributor’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Templates/notebook-template.html">ARM Notebook Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Templates/tutorial-schedule.html">Tutorial Schedule</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Value-added Products</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../VAPs/README.html">Value Added Products</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../VAPs/squire/intro-to-squire.html">Surface Qualitative Precipiation Estimate (SQUIRE) Value-added Product</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../VAPs/vap_notebook_list.html">ARM VAPs Jupyter Notebooks</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../VAPs/README.html">Value Added Products</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../VAPs/squire/intro-to-squire.html">Surface Qualitative Precipiation Estimate (SQUIRE) Value-added Product</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../VAPs/vap_notebook_list.html">ARM VAPs Jupyter Notebooks</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">ARM/ASR PI Meeting 2023</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../arm-asr-pi-meeting-2023/README.html">Open Science Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../arm-asr-pi-meeting-2023/python_basics_tutorial/python-basics.html">Python Basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../arm-asr-pi-meeting-2023/pandas_xarray_tutorial/Pandas_Xarray_intro.html">Starting with Scientific Libraries in Python</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../arm-asr-pi-meeting-2023/README.html">Open Science Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../arm-asr-pi-meeting-2023/python_basics_tutorial/python-basics.html">Python Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arm-asr-pi-meeting-2023/pandas_xarray_tutorial/Pandas_Xarray_intro.html">Starting with Scientific Libraries in Python</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../../arm-asr-pi-meeting-2023/pyart_tutorial/pyart-basics.html">Py-ART Basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../arm-asr-pi-meeting-2023/pyart_tutorial/pyart-gridding.html">Py-ART Gridding</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../arm-asr-pi-meeting-2023/ACT_tutorial/ACT_Tutorial_TRACER.html">ACT Basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../arm-asr-pi-meeting-2023/PySP2_tutorial/PySP2_tutorial.html">PySP2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arm-asr-pi-meeting-2023/pyart_tutorial/pyart-basics.html">Py-ART Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arm-asr-pi-meeting-2023/pyart_tutorial/pyart-gridding.html">Py-ART Gridding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arm-asr-pi-meeting-2023/ACT_tutorial/ACT_Tutorial_TRACER.html">ACT Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arm-asr-pi-meeting-2023/PySP2_tutorial/PySP2_tutorial.html">PySP2</a></li>
 
 
-<li class="toctree-l2"><a class="reference internal" href="../../arm-asr-pi-meeting-2023/EMC2_tutorial/EMC2_ARM_ASR_2023_Tutorial.html">Apply EMC² to an E3SM Hindcast Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../arm-asr-pi-meeting-2023/EMC2_tutorial/EMC2_ARM_ASR_2023_Tutorial.html">Apply EMC² to an E3SM Hindcast Output</a></li>
 
 
 
@@ -211,47 +209,47 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Open Science Workshop</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../presentations/view-abstracts.html">Workshop Abstracts</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="day1-overview.html">Day 1 - Introductions!</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">JupyterLab</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Scientific_Libraries_Numpy.html">Working with Numpy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Scientific_Libraries_Pandas.html">Working with Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Scientific_Libraries_Xarray.html">Working with Xarray</a></li>
-<li class="toctree-l2"><a class="reference internal" href="github-intro.html">An Introduction to Github</a></li>
-<li class="toctree-l2"><a class="reference internal" href="forking_cloning.html">Forking a Repository</a></li>
-<li class="toctree-l2"><a class="reference internal" href="branching-forking-github-ui.html">Branching and Pull Requests on the Github Website</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Open-Science-Workshop-2022/presentations/view-abstracts.html">Workshop Abstracts</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/day1-overview.html">Day 1 - Introductions!</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/jupyter-intro.html">JupyterLab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Numpy.html">Working with Numpy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Pandas.html">Working with Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Xarray.html">Working with Xarray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/github-intro.html">An Introduction to Github</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/forking_cloning.html">Forking a Repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/branching-forking-github-ui.html">Branching and Pull Requests on the Github Website</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="day2-overview.html">Day 2 - Data + Packages</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="ARM-Data-Access.html">Accessing ARM Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ESMAC_diags/esmac-diags.html">ESMAC Diagnostics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_2d_timeseries.html">ESMAC: Generate timeseries of size distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_size_diurnalcycle.html">ESMAC: Generate diurnal cycle of size distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_size_timeseries.html">ESMAC: Generate timeseries of size distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_bar_composition.html">ESMAC: Generate bar plot for aerosol composition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_hist.html">ESMAC: Generate a 1-D Historgram Plot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_mean_size.html">ESMAC: Generate mean size distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="EMC2_demo_w_E3SM.html">Using EMC² to Process E3SM Output</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/day2-overview.html">Day 2 - Data + Packages</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/ARM-Data-Access.html">Accessing ARM Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/ESMAC_diags/esmac-diags.html">ESMAC Diagnostics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_2d_timeseries.html">ESMAC: Generate timeseries of size distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_size_diurnalcycle.html">ESMAC: Generate diurnal cycle of size distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_size_timeseries.html">ESMAC: Generate timeseries of size distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_bar_composition.html">ESMAC: Generate bar plot for aerosol composition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_hist.html">ESMAC: Generate a 1-D Historgram Plot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_mean_size.html">ESMAC: Generate mean size distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/EMC2_demo_w_E3SM.html">Using EMC² to Process E3SM Output</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="day3-overview.html">Day 3 - MetPy and ACT</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="MetPy%2001%20-%20Overview.html">MetPy Tutorial - Overview</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/day3-overview.html">Day 3 - MetPy and ACT</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/MetPy%2001%20-%20Overview.html">MetPy Tutorial - Overview</a></li>
 
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="MetPy%2002%20-%20Making%20a%20SkewT.html">MetPy Tutorial - Making a Skew-T!</a></li>
-<li class="toctree-l2"><a class="reference internal" href="act-basics.html">ACT Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/MetPy%2002%20-%20Making%20a%20SkewT.html">MetPy Tutorial - Making a Skew-T!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/act-basics.html">ACT Basics</a></li>
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="day4-overview.html">Day 3 - Py-ART and Pangeo</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="pyart-basics.html">PyART Basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyart-gridding.html">Py-ART Gridding</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pyart-corrections.html">Py-ART Corrections</a></li>
-<li class="toctree-l2"><a class="reference internal" href="xarray.html">Introduction to Xarray</a></li>
-<li class="toctree-l2"><a class="reference internal" href="xarray-computation-masking.html">Computations and Masks with Xarray</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/day4-overview.html">Day 3 - Py-ART and Pangeo</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/pyart-basics.html">PyART Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/pyart-gridding.html">Py-ART Gridding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/pyart-corrections.html">Py-ART Corrections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/xarray.html">Introduction to Xarray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Open-Science-Workshop-2022/tutorials/xarray-computation-masking.html">Computations and Masks with Xarray</a></li>
 </ul>
 </li>
 </ul>
@@ -308,7 +306,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/Tutorials/Open-Science-Workshop-2022/tutorials/jupyter-intro.ipynb&branch=main" target="_blank"
+      <li><a href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/Tutorials/ACT-Python-Tutorial/2-jupyter_intro.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onJupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -317,7 +315,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <span class="btn__icon-container">
   
-    <img src="../../../_static/images/logo_jupyterhub.svg">
+    <img src="../../_static/images/logo_jupyterhub.svg">
   </span>
 <span class="btn__text-container">JupyterHub</span>
 </a>
@@ -339,7 +337,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../../_sources/Tutorials/Open-Science-Workshop-2022/tutorials/jupyter-intro.ipynb" target="_blank"
+      <li><a href="../../_sources/Tutorials/ACT-Python-Tutorial/2-jupyter_intro.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -423,7 +421,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>JupyterLab</h1>
+    <h1>ARM JupyterHub and JupyterLab</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -435,10 +433,12 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up">Set Up</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up">Set Up</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#terminals-and-cloning-the-arm-notebooks-repository">Terminals and Cloning the ARM Notebooks Repository</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-jupyterlab-interface">The JupyterLab Interface</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#left-sidebar">Left Sidebar</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#terminals">Terminals</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consoles">Consoles</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text-editor">Text Editor</a></li>
 </ul>
@@ -471,12 +471,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="jupyterlab">
-<h1>JupyterLab<a class="headerlink" href="#jupyterlab" title="Permalink to this heading">#</a></h1>
+  <section id="arm-jupyterhub-and-jupyterlab">
+<h1>ARM JupyterHub and JupyterLab<a class="headerlink" href="#arm-jupyterhub-and-jupyterlab" title="Permalink to this heading">#</a></h1>
 <hr class="docutils" />
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
-<p>JupyterLab is a popular web application on which users can create and write their Jupyter Notebooks, as well as explore data, install software, etc. This section will introduce the JupyterLab interface and cover details of JupyterLab Notebooks.</p>
+<p>JupyterLab is a popular web application on which users can create and write their Jupyter Notebooks, as well as explore data, install software, etc. This section will introduce the JupyterLab interface and the ARM <a class="reference external" href="https://jupyterhub.svcs.arm.gov/">JupyterHub</a> system and cover details of JupyterLab Notebooks and running these notebooks on ARM’s system.</p>
 <ol class="arabic simple">
 <li><p>Set Up</p></li>
 <li><p>The JupyterLab Interface</p></li>
@@ -510,10 +510,45 @@ document.write(`
 <hr class="docutils" />
 <section id="set-up">
 <h2>Set Up<a class="headerlink" href="#set-up" title="Permalink to this heading">#</a></h2>
-<p>To launch the JupyterLab interface in your browser follow the instructions in <a class="reference external" href="https://foundations.projectpythia.org/foundations/jupyter.html">Installing and Running Python: Python in Jupyter</a>.</p>
-<p>If, instead, you want to follow along using a provided remote JupyterLab instance, launch this notebook via <a class="reference external" href="https://mybinder.org/">Binder</a> using the launch icon at the top of this page,</p>
-<p><img alt="Binder Launch" src="../../../_images/binder-highlight.png" /></p>
-<p>and follow along from there! If launching Binder, take note of the <code class="docutils literal notranslate"><span class="pre">Launcher</span></code> tab in the upper-left (see interface below.) Click there to find yourself in the same interface moving forward, and feel free to refer back to this tab to follow along.</p>
+<p>To start, we will sign into ARM’s <a class="reference external" href="https://jupyterhub.svcs.arm.gov/">JupyterHub</a> which contains environments for working with ARM data such as an environment built for ACT.</p>
+<p>After providing your credentials, ARM JupyterHub will have a prompt to allocate resources, and select explore ARM data. This then will load a JupyterHub instance on ARM computing systems.</p>
+<p><img alt="ARM Resources" src="../../_images/arm_resources.png" /></p>
+<section id="terminals-and-cloning-the-arm-notebooks-repository">
+<h3>Terminals and Cloning the ARM Notebooks Repository<a class="headerlink" href="#terminals-and-cloning-the-arm-notebooks-repository" title="Permalink to this heading">#</a></h3>
+<p>Let’s select the Running Tabs and Kernels Tab in the Left Sidebar and see how it changes when we’ve used the Launcher.</p>
+<p>Open a Terminal in the Launcher. It should look very similar to the desktop terminal that you initially launched JupyterLab from, but is running from within JupyterLab, within your existing Conda environment, and within the directory you launched JupyterLab from (the same root folder shown in the File Browser Tab). Notice that there is now a Terminal listed in the Running Terminals Tab.</p>
+<p>In the terminal you can use your usual terminal commands. For example, in the terminal window, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir test
+</pre></div>
+</div>
+<p>Select the File Browser Tab, refresh it, and see that your new folder is there.</p>
+<p>In the Terminal Window run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rmdir test
+</pre></div>
+</div>
+<p>Hit refresh in the File Browser again to see that the directory is gone.</p>
+<p><img alt="Terminal" src="../../_images/terminal.png" /></p>
+<p>Next we will want to download or git clone the ARM-Notebooks repository found here:</p>
+<p>https://github.com/ARM-Development/ARM-Notebooks</p>
+<p>To clone this repository so it is in your instance, run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/ARM-Development/ARM-Notebooks
+</pre></div>
+</div>
+<p>Once the notebooks have been download, you should now see a ARM-Notebooks directory in your instance.</p>
+<p><img alt="Git Clone" src="../../_images/git_clone_notebooks.png" /></p>
+<p>The tutorials that we will be covering today will be found in ARM-Notebooks/Tutorials/UPR-ACT-2023/
+However there are more tutorials from pass workshops in this repository for learning Python, Py-ART and more!</p>
+<p>Back with the Running Terminals and Kernels Tab open, click the “X” in your workspace to close the Terminal window. Notice that the Terminal is still running in the background!  Click on the terminal in the Running Terminals and Kernels Tab to reopen it (and hit enter or return to get your prompt back). To truly close it, execute in the Terminal window:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ exit
+</pre></div>
+</div>
+<p>OR click the “X” shut down button in the Running Terminals tab.</p>
+<p>Doing so will return you to the Launcher.</p>
+<div class="admonition alert alert-info">
+    <p class="admonition-title" style="font-weight:bold">Info</p>
+        The terminal is running on the local host when JupyterLab is launched locally, and remote host when invoked through Jupyter Hub.
+</div>
+</section>
 </section>
 <section id="the-jupyterlab-interface">
 <h2>The JupyterLab Interface<a class="headerlink" href="#the-jupyterlab-interface" title="Permalink to this heading">#</a></h2>
@@ -527,7 +562,7 @@ document.write(`
 <li><p>On the left is a <strong>Collapsible Sidebar</strong> (currently contains the File Browser, but you can also select the Running Tabs and Kernels, the Table of Contents, and an Extensions Manager).</p></li>
 <li><p>Below everything is the <strong>Information Bar</strong> which is context sensitive. We will touch on this more.</p></li>
 </ul>
-<p><img alt="Interface" src="../../../_images/interface_labeled1.png" /></p>
+<p><img alt="Interface" src="../../_images/interface_labeled.png" /></p>
 <p>We will now take a closer look at certain aspects and features of the JupyterLab Interface.</p>
 <section id="left-sidebar">
 <h3>Left Sidebar<a class="headerlink" href="#left-sidebar" title="Permalink to this heading">#</a></h3>
@@ -539,37 +574,12 @@ document.write(`
 <li><p>And the “refresh” button refreshes the File Browser.</p></li>
 </ul>
 <p>Below the File Browser Tab is the <strong>Running Tabs and Kernels Tab</strong>. Currently this tab doesn’t have much in it. We will revisit this when we have running kernels. Remember that Kernels are background processes, so closing a tab (Terminal or Notebook) doesn’t shut down the kernel. You have to do that manually.</p>
-<a class="reference internal image-reference" href="../../../_images/running-tabs-kernels1.png"><img alt="../../../_images/running-tabs-kernels1.png" src="../../../_images/running-tabs-kernels1.png" style="width: 200px;" /></a>
+<a class="reference internal image-reference" href="../../_images/running-tabs-kernels.png"><img alt="../../_images/running-tabs-kernels.png" src="../../_images/running-tabs-kernels.png" style="width: 200px;" /></a>
 <p>The <strong>Table of Contents Tab</strong> is auto-populated based on the headings and subheadings used in the Markdown cells of your notebook. It allows you to quickly jump between sections of the document.</p>
-<a class="reference internal image-reference" href="../../../_images/table-contents1.png"><img alt="../../../_images/table-contents1.png" src="../../../_images/table-contents1.png" style="width: 200px;" /></a>
+<a class="reference internal image-reference" href="../../_images/table-contents.png"><img alt="../../_images/table-contents.png" src="../../_images/table-contents.png" style="width: 200px;" /></a>
 <p>Last is the <strong>Extensions Manager Tab</strong> where you can customize or enhance any part of JupyterLab. These customizations could pertain to themes or keyboard shortcuts, for example. We will not be covering JupyterLab extensions, but you can read more about them <a class="reference external" href="https://jupyterlab.readthedocs.io/en/stable/user/extensions.html">here</a>.</p>
-<a class="reference internal image-reference" href="../../../_images/extensions1.png"><img alt="../../../_images/extensions1.png" src="../../../_images/extensions1.png" style="width: 200px;" /></a>
+<a class="reference internal image-reference" href="../../_images/extensions.png"><img alt="../../_images/extensions.png" src="../../_images/extensions.png" style="width: 200px;" /></a>
 </section>
-<section id="terminals">
-<h3>Terminals<a class="headerlink" href="#terminals" title="Permalink to this heading">#</a></h3>
-<p>Let’s select the Running Tabs and Kernels Tab in the Left Sidebar and see how it changes when we’ve used the Launcher.</p>
-<p>Open a Terminal in the Launcher. It should look very similar to the desktop terminal that you initially launched JupyterLab from, but is running from within JupyterLab, within your existing Conda environment, and within the directory you launched JupyterLab from (the same root folder shown in the File Browser Tab). Notice that there is now a Terminal listed in the Running Terminals Tab.</p>
-<p>In the terminal you can use your usual terminal commands. For example, in the terminal window, run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir test
-</pre></div>
-</div>
-<p>Select the File Browser Tab, refresh it, and see that your new folder is there.</p>
-<p>In the Terminal Window run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rmdir test
-</pre></div>
-</div>
-<p>Hit refresh in the File Browser again to see that the directory is gone.</p>
-<p><img alt="Terminal" src="../../../_images/terminal1.png" /></p>
-<p>Back with the Running Terminals and Kernels Tab open, click the “X” in your workspace to close the Terminal window. Notice that the Terminal is still running in the background!  Click on the terminal in the Running Terminals and Kernels Tab to reopen it (and hit enter or return to get your prompt back). To truly close it, execute in the Terminal window:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ exit
-</pre></div>
-</div>
-<p>OR click the “X” shut down button in the Running Terminals tab.</p>
-<p>Doing so will return you to the Launcher.</p>
-<div class="admonition alert alert-info">
-    <p class="admonition-title" style="font-weight:bold">Info</p>
-        The terminal is running on the local host when JupyterLab is launched locally, and remote host when invoked through Jupyter Hub.
-</div></section>
 <section id="consoles">
 <h3>Consoles<a class="headerlink" href="#consoles" title="Permalink to this heading">#</a></h3>
 <p>Back in the Launcher, click the “Python 3” Console button. There is only one console option right now, but you could install more kernels into your Conda environment.</p>
@@ -587,7 +597,7 @@ document.write(`
 </pre></div>
 </div>
 <p>The first line of this code designates a string <code class="docutils literal notranslate"><span class="pre">s</span></code> with the value “Hello, World!”, the second line uses f-formatting to print the string, and the final line just calls up <code class="docutils literal notranslate"><span class="pre">s</span></code>. The last line in the cell will always be returned (its value displayed) regardless of whether you called <code class="docutils literal notranslate"><span class="pre">print</span></code>. Type <kbd>Shift</kbd>+<kbd>Enter</kbd> to execute the cell. Again the output is labeled (this time with a 2), and we see the input code, the printed standard-out statement, and the return statement. The “return value” and the values “printed to screen” are different!</p>
-<p><img alt="Console" src="../../../_images/console1.png" /></p>
+<p><img alt="Console" src="../../_images/console.png" /></p>
 <p>Close the window and shut down the Console in the Running Kernels tab. We’re back to the Launcher again.</p>
 </section>
 <section id="text-editor">
@@ -603,7 +613,7 @@ Select the File Browser tab to see the new file <code class="docutils literal no
 <p>Go to the File Browser tab and right-click the new text file we create and “Rename” it to <code class="docutils literal notranslate"><span class="pre">hello.py</span></code>. Once the extension changes to <code class="docutils literal notranslate"><span class="pre">.py</span></code>, Jupyter recognizes that this is a Python file, and the text editor syntax highlights the code.</p>
 <p>Now, click the “+” button in the File Browser to create a new Launcher. In the Launcher tab, click on the “Terminal” button, again to create a terminal. Now you have 2 tabs open: a text editor tab and a terminal tab. Drag the Terminal tab to the right side of the main work area to view both windows simultaneously. Click the File Browser tab to collapse the left sidebar and get more real estate! Alternatively you could stack the windows one on top of the other.</p>
 <p>Run <code class="docutils literal notranslate"><span class="pre">ls</span></code> in the Terminal window to see the text file we just created. Execute <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">hello.py</span></code> in the Terminal window. See the output in the Terminal window.</p>
-<p><img alt="Text Editor" src="../../../_images/txt-editor1.png" /></p>
+<p><img alt="Text Editor" src="../../_images/txt-editor.png" /></p>
 <p>Now, let’s close the Terminal tab and shut down the Terminal in the Running Kernels tab (or execute “exit” in the Terminal itself). You should just have the Text editor window open, now we’re ready to look at Jupyter Notebooks.</p>
 </section>
 </section>
@@ -616,7 +626,7 @@ Select the File Browser tab to see the new file <code class="docutils literal no
 <p>Below the toolbar is the Notebook itself.  And you should see an empty cell at the top of the Notebook. This looks similar to in the Console!</p>
 <p>The cell can be in 1 of 2 modes:  command mode or edit mode.
 If your cell is grayed out and you can’t see a blinking cursor in the cell, then the cell is in command mode. We’ll talk about command mode more later. Click inside the box, and the cell will turn white with a blinking cursor inside it, then the cell is now in edit mode. The mode is also listed on the info bar at the bottom of the page. The cell is selected if the blue bar is on the left side of the cell.</p>
-<p><img alt="Notebook Interface" src="../../../_images/notebook-interface_labeled1.png" /></p>
+<p><img alt="Notebook Interface" src="../../_images/notebook-interface_labeled.png" /></p>
 <p>You may move the Notebook over so we can see your text file at the same time to compare, resizing the Notebook window as needed.</p>
 <section id="code-cells">
 <h3>Code Cells<a class="headerlink" href="#code-cells" title="Permalink to this heading">#</a></h3>
@@ -662,7 +672,7 @@ Enter the following in the next cell:
 <li><p>And in the top right corner of the Notebook, the status icon is a filled-in circle, indicating that the kernel is running</p></li>
 </ul>
 <p>After 10 seconds, the cell completes running and the label is updated to <code class="docutils literal notranslate"><span class="pre">[3]</span></code> and the status icon returns to the “empty circle” state. If you rerun the cell, the label will update to <code class="docutils literal notranslate"><span class="pre">[4]</span></code>.</p>
-<p><img alt="Code Cells" src="../../../_images/codecells1.png" /></p>
+<p><img alt="Code Cells" src="../../_images/codecells.png" /></p>
 </section>
 <section id="markdown-cells">
 <h3>Markdown Cells<a class="headerlink" href="#markdown-cells" title="Permalink to this heading">#</a></h3>
@@ -682,7 +692,7 @@ Click on the cell and enter edit mode, we can now type in some markdown text lik
 </pre></div>
 </div>
 <p>and <kbd>Shift</kbd>+<kbd>Enter</kbd> to render the markdown to HTML.</p>
-<a class="reference internal image-reference" href="../../../_images/markdown1.png"><img alt="../../../_images/markdown1.png" src="../../../_images/markdown1.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../_images/markdown.png"><img alt="../../_images/markdown.png" src="../../_images/markdown.png" style="width: 600px;" /></a>
 <p>Again, in the next cell, change this cell to “Markdown”. To demonstrate displaying equations, enter:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>## Some math
 
@@ -694,12 +704,12 @@ $$
 </pre></div>
 </div>
 <p>When you are done, type <kbd>Shift</kbd>+<kbd>Enter</kbd> to render the markdown document.</p>
-<a class="reference internal image-reference" href="../../../_images/markdown_eq1.png"><img alt="../../../_images/markdown_eq1.png" src="../../../_images/markdown_eq1.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../_images/markdown_eq.png"><img alt="../../_images/markdown_eq.png" src="../../_images/markdown_eq.png" style="width: 600px;" /></a>
 <p>You can also do inline equations with a single “$” for example</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>This is an equation: $i^4$.
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="../../../_images/markdown_eq_inline1.png"><img alt="../../../_images/markdown_eq_inline1.png" src="../../../_images/markdown_eq_inline1.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../_images/markdown_eq_inline.png"><img alt="../../_images/markdown_eq_inline.png" src="../../_images/markdown_eq_inline.png" style="width: 600px;" /></a>
 <p><strong>Note:</strong> that the “markdown” source code is rendered into much prettier text, which we can take advantage of for narrating our work in the Notebook!</p>
 </section>
 <section id="raw-cells">
@@ -711,7 +721,7 @@ $$
 </div>
 <p>When you <kbd>Shift</kbd>+<kbd>Enter</kbd> the text isn’t rendered.</p>
 <p>This is a way of entering text/source that you do not want the Notebook to do anything with (i.e., no rendering).</p>
-<p><img alt="Raw" src="../../../_images/raw1.png" /></p>
+<p><img alt="Raw" src="../../_images/raw.png" /></p>
 </section>
 <section id="command-mode-shortcuts">
 <h3>Command Mode Shortcuts<a class="headerlink" href="#command-mode-shortcuts" title="Permalink to this heading">#</a></h3>
@@ -739,7 +749,7 @@ $$
         If the cell you to refer to does not have a return value, this will raise an error.
 </div>
 <p>You can equivalently use the variables <code class="docutils literal notranslate"><span class="pre">Out[2]</span></code> or <code class="docutils literal notranslate"><span class="pre">In[2]</span></code> to retrieve the output and input (as a string).</p>
-<a class="reference internal image-reference" href="../../../_images/special_vars1.png"><img alt="../../../_images/special_vars1.png" src="../../../_images/special_vars1.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../_images/special_vars.png"><img alt="../../_images/special_vars.png" src="../../_images/special_vars.png" style="width: 600px;" /></a>
 </section>
 <section id="shell-commands">
 <h3>Shell Commands<a class="headerlink" href="#shell-commands" title="Permalink to this heading">#</a></h3>
@@ -778,7 +788,7 @@ $$
 </pre></div>
 </div>
 <p>and <kbd>Shift</kbd>+<kbd>Enter</kbd> to run it.  This will time the entire cell.</p>
-<a class="reference internal image-reference" href="../../../_images/magics1.png"><img alt="../../../_images/magics1.png" src="../../../_images/magics1.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../_images/magics.png"><img alt="../../_images/magics.png" src="../../_images/magics.png" style="width: 600px;" /></a>
 </section>
 </section>
 <section id="shutting-down">
@@ -821,7 +831,7 @@ $$
         },
         kernelOptions: {
             name: "python3",
-            path: "./Tutorials/Open-Science-Workshop-2022/tutorials"
+            path: "./Tutorials/ACT-Python-Tutorial"
         },
         predefinedOutput: true
     }
@@ -838,24 +848,6 @@ $$
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="day1-overview.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Day 1 - Introductions!</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="Scientific_Libraries_Numpy.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Working with Numpy</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -873,10 +865,12 @@ $$
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up">Set Up</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up">Set Up</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#terminals-and-cloning-the-arm-notebooks-repository">Terminals and Cloning the ARM Notebooks Repository</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-jupyterlab-interface">The JupyterLab Interface</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#left-sidebar">Left Sidebar</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#terminals">Terminals</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consoles">Consoles</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text-editor">Text Editor</a></li>
 </ul>
@@ -946,8 +940,8 @@ By ARM Development Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
