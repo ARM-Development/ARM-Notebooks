@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Python Basics &#8212; ARM Tutorials</title>
+    <title>Working with Pandas &#8212; ARM Tutorials</title>
   
   
   
@@ -62,7 +62,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Tutorials/ACT-Python-Tutorial/3-Python-Basics';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Tutorials/ACT-Python-Tutorial/2b-scientific_libraries_pandas';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -306,7 +306,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/Tutorials/ACT-Python-Tutorial/3-Python-Basics.ipynb&branch=main" target="_blank"
+      <li><a href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/Tutorials/ACT-Python-Tutorial/2b-scientific_libraries_pandas.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onJupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -337,7 +337,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/Tutorials/ACT-Python-Tutorial/3-Python-Basics.ipynb" target="_blank"
+      <li><a href="../../_sources/Tutorials/ACT-Python-Tutorial/2b-scientific_libraries_pandas.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -421,7 +421,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Python Basics</h1>
+    <h1>Working with Pandas</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -431,28 +431,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#please-run-these-examples-demonstrated-today-yourself">Please run these examples demonstrated today yourself!</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-off-hello-world">Starting off - Hello World!</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loops">Loops</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#things-to-note">Things to Note:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-pandas-dataframe">Create Pandas DataFrame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-in-some-data">Read in some data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#warning-off-on-a-tangent">Warning, off on a tangent</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#program-control-conditional-statements">Program Control - Conditional Statements</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Things to Note:</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-python-data-types">Basic Python Data Types</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#floating-point-numbers-float">Floating Point Numbers <code class="docutils literal notranslate"><span class="pre">float</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Things to Note:</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#character-strings-str">Character strings <code class="docutils literal notranslate"><span class="pre">str</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lists">Lists</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-now">What Now?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib-scientific-data-visualization">Matplotlib - Scientific Data Visualization</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources-and-references">Resources and References</a></li>
 </ul>
             </nav>
         </div>
@@ -464,278 +447,251 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="python-basics">
-<h1>Python Basics<a class="headerlink" href="#python-basics" title="Permalink to this heading">#</a></h1>
-<p>Here are some quick examples to refresh your understanding of Python code.</p>
-<p>This is <strong>not</strong> meant to be a comprehensive tutorial.</p>
-<p>We encourage you to explore <a class="reference external" href="https://foundations.projectpythia.org/landing-page.html">ProjectPythia</a> for additional Python resources and tutorials.</p>
-<section id="please-run-these-examples-demonstrated-today-yourself">
-<h2>Please run these examples demonstrated today yourself!<a class="headerlink" href="#please-run-these-examples-demonstrated-today-yourself" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Press <kbd>Shift</kbd>+<kbd>Enter</kbd> to execute each code cell!</p></li>
-<li><p>Feel free to make changes and explore!</p></li>
-</ul>
-</section>
-<section id="starting-off-hello-world">
-<h2>Starting off - Hello World!<a class="headerlink" href="#starting-off-hello-world" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello Students!&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="loops">
-<h2>Loops<a class="headerlink" href="#loops" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">for</span></code> loops are a staple of scientifc programming.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="things-to-note">
-<h3>Things to Note:<a class="headerlink" href="#things-to-note" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Python defaults to counting starting from 0 rather than 1.</p></li>
-<li><p>Function calls (such as <code class="docutils literal notranslate"><span class="pre">range</span></code>) always use parentheses.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">for</span></code> loops require colons as punctuation to start.</p></li>
-<li><p>Code blocks are indicated through indentations.</p>
-<ul>
-<li><p><strong>NOTE</strong> indentations need to be similar for each block of code.</p></li>
-</ul>
-</li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;start of loop&#39;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;in loop&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;outside of loop&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="program-control-conditional-statements">
-<h2>Program Control - Conditional Statements<a class="headerlink" href="#program-control-conditional-statements" title="Permalink to this heading">#</a></h2>
-<p>For logical decisions, Python has an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span> 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;i is greater than 2!&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;i is less than 2!&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>QUESTION</strong> Why is <code class="docutils literal notranslate"><span class="pre">i</span></code> greater than 2? What value is <code class="docutils literal notranslate"><span class="pre">i</span></code>? If you do not know, how could you determine the value?</p>
-<p>Python also defines <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> logical conditions</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">8</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Python also includes compound statements <code class="docutils literal notranslate"><span class="pre">and</span></code> and <code class="docutils literal notranslate"><span class="pre">or</span></code></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">8</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;this is iteration number </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">9</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;this condition is never met&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="id1">
-<h3>Things to Note:<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">if</span></code> statements can also use less than or equal to notation <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code></p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">and</span></code> statement uses formatted output</p></li>
-</ul>
-</section>
-</section>
-<section id="basic-python-data-types">
-<h2>Basic Python Data Types<a class="headerlink" href="#basic-python-data-types" title="Permalink to this heading">#</a></h2>
-<p>A key strength of Python are the flexible data types, the core of which are noted below</p>
-<p><strong>QUESTION</strong> What data type is <code class="docutils literal notranslate"><span class="pre">i</span></code>?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="floating-point-numbers-float">
-<h3>Floating Point Numbers <code class="docutils literal notranslate"><span class="pre">float</span></code><a class="headerlink" href="#floating-point-numbers-float" title="Permalink to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">10.58</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mf">1e-9</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="id2">
-<h4>Things to Note:<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">print</span></code> statements can take multiple inputs</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">float</span></code> numbers are include scientific notation</p></li>
-</ul>
-</section>
-</section>
-<section id="character-strings-str">
-<h3>Character strings <code class="docutils literal notranslate"><span class="pre">str</span></code><a class="headerlink" href="#character-strings-str" title="Permalink to this heading">#</a></h3>
-<p>As we have been doing, you can use either single quotes <code class="docutils literal notranslate"><span class="pre">''</span></code> or double quotes <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> to denote strings</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;Argonne National Laboratory&#39;</span>
-<span class="n">d</span> <span class="o">=</span> <span class="s2">&quot;Atmospheric Sciences&quot;</span> 
-<span class="n">e</span> <span class="o">=</span> <span class="s2">&quot;cloudy, hot, humid&quot;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">d</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="lists">
-<h3>Lists<a class="headerlink" href="#lists" title="Permalink to this heading">#</a></h3>
-<ul class="simple">
-<li><p>A ordered container of objects denoted by <strong>square brackets</strong></p></li>
-<li><p>Note that objects can be any data type</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">mylist</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Things to Note:</p>
-<ul class="simple">
-<li><p>you can also iterate through lists</p></li>
-<li><p>lists do not need to contain the same type of data!</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">newlist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mf">20.5</span><span class="p">,</span> <span class="mf">1e9</span><span class="p">,</span> <span class="s1">&#39;Python&#39;</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">var</span> <span class="ow">in</span> <span class="n">newlist</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">var</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">var</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-<ul class="simple">
-<li><p>Since Lists are <strong>ordered</strong> we can access items by index</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">newlist</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="what-now">
-<h2>What Now?<a class="headerlink" href="#what-now" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Now that the Python basics have been reintroduced, let’s take a look a specific libraries that are useful in scientific applications</p></li>
-</ul>
-</section>
-<section id="matplotlib-scientific-data-visualization">
-<h2>Matplotlib - Scientific Data Visualization<a class="headerlink" href="#matplotlib-scientific-data-visualization" title="Permalink to this heading">#</a></h2>
-<p>From the <a class="reference external" href="https://matplotlib.org/stable/index.html">Matplotlib Documentation</a>:</p>
+  <section id="working-with-pandas">
+<h1>Working with Pandas<a class="headerlink" href="#working-with-pandas" title="Permalink to this heading">#</a></h1>
+<p>From the <a class="reference external" href="https://pandas.pydata.org/docs/getting_started/overview.html">Pandas Documentation</a></p>
 <blockquote>
-<div><p>Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python. Matplotlib makes easy things easy and hard things possible.</p>
+<div><p>pandas is a Python package providing fast, flexible, and expressive data structures designed to make working with “relational” or “labeled” data both easy and intuitive. It aims to be the fundamental high-level building block for doing practical, real-world data analysis in Python. Additionally, it has the broader goal of becoming the most powerful and flexible open source data analysis/manipulation tool available in any language. It is already well on its way toward this goal.</p>
 </div></blockquote>
-<blockquote>
-<div><ul class="simple">
-<li><p>Create publication quality plots.</p></li>
-<li><p>Make interactive figures that can zoom, pan, update.</p></li>
-<li><p>Cus tomize visual style and layout.</p></li>
-<li><p>Export to many file formats.</p></li>
-<li><p>Embed in JupyterLab and Graphical User Interfaces.</p></li>
-<li><p>Use a rich array of third-party packages built on Matplotlib.</p></li>
-</ul>
-</div></blockquote>
-<p>Additional Tutorials:</p>
+<p>Pandas is an extension of the Numpy data model to structure and organize data into DataFrames. A DataFrame resembles a spreadsheet in looks, but is much more powerful.</p>
+<p>Additional Tutorials</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://foundations.projectpythia.org/core/matplotlib.html">ProjectPythia Matplotlib</a></p></li>
+<li><p><a class="reference external" href="https://foundations.projectpythia.org/core/pandas.html">ProjectPythia Pandas Tutorial</a></p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data we wish to display</span>
-<span class="n">varA</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="n">varB</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="n">varC</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>  <span class="c1"># Convention suggest to import as pd</span>
+
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
 </div>
 </div>
+<section id="create-pandas-dataframe">
+<h2>Create Pandas DataFrame<a class="headerlink" href="#create-pandas-dataframe" title="Permalink to this heading">#</a></h2>
+<p>Create some data in a python dictionary</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># Convention is to import and rename. Best to stick with convention</span>
-
-<span class="c1"># Create a Figure</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-
-<span class="c1"># Add an axis to display data in</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-
-<span class="c1"># Plot the first set of data</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">varA</span><span class="p">,</span> <span class="n">varB</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;y = x&#39;</span><span class="p">)</span> <span class="c1"># include a label!</span>
-<span class="c1"># Plot the second set of data</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">varA</span><span class="p">,</span> <span class="n">varC</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;y = x$^2$&#39;</span><span class="p">)</span>
-<span class="c1"># Label your axes</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y Values [#]&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;X Values [#]&#39;</span><span class="p">)</span>
-<span class="c1"># Add a title</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;First Matplotlib Plot&#39;</span><span class="p">)</span>
-<span class="c1"># Add a legend</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
-<span class="c1"># Display!</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;apples&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+        <span class="s1">&#39;oranges&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">]}</span>
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Use the dictionary to populate the new pandas data frame. Python and Jupyter play very well with Pandas and when requested to print the DataFrame or Series knows how to print in a visually appealing way. Notice the columns have names taken from the Dictionary keys we used to populate the DataFrame. Each row has an index set to an incremented integer by default.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">purchases</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">purchases</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pandas DataFrame consisting of Series</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">purchases</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pandas Series</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">purchases</span><span class="o">.</span><span class="n">apples</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A DataFrame has a concept of “index” to label the rows of the DataFrame and column names to label the Columns. We created column names from the Dictionary keys used to initially create the DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">purchases</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;June&#39;</span><span class="p">,</span> <span class="s1">&#39;Robert&#39;</span><span class="p">,</span> <span class="s1">&#39;Lily&#39;</span><span class="p">,</span> <span class="s1">&#39;David&#39;</span><span class="p">])</span>
+<span class="n">purchases</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Printing the column shows additional informatin including the index and data type.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">purchases</span><span class="o">.</span><span class="n">apples</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Extracting a row uses the .loc() method on the DataFrame. .loc() standar for location and searches the index for a match.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">purchases</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;June&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Can also extract using index location .iloc() method.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">purchases</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="resources-and-references">
-<h2>Resources and References<a class="headerlink" href="#resources-and-references" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://docs.python.org/3/tutorial/index.html">Official Python tutorial (Python Docs)</a></p></li>
-<li><p><a class="reference external" href="https://foundations.projectpythia.org/landing-page.html">ProjectPythia</a></p></li>
-</ul>
+<section id="read-in-some-data">
+<h2>Read in some data<a class="headerlink" href="#read-in-some-data" title="Permalink to this heading">#</a></h2>
+<p>Using the path to a specific file we read the data into a Pandas Data Frame. This is something you will use very often if you have data in ASCII column files. Get to know this method well. The method has keywords to help describe how to read the column data including the delimter, number of header rows, and which column is the time stamp. If it can parse the time stamp it will convert to Pandas native time type.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;MET&#39;</span><span class="p">,</span> <span class="s1">&#39;sgpmetE13.00.20230707.205900.raw.MET_Table1.20230707200000.dat&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>How many data samples do we have? Can use the Python len() function. Notice it returns the number of rows only.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Similar to Numpy, can use the .shape and .size methods on the DataFrame to return metadata about size of the DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Print the first five rows</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can get the names of the columns with .columns method</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pandas has a few methods used to inspect the data in the Dataset or Series and present the typical statistical values. Because Pandas plays so well with Jupyter the output is very easy to visualize.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Calculate the correlation coefficients of the DataSet on each Series</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Calculate the covariance coefficients of the DataSet on each Series</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">cov</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What type is the time column data?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;TIMESTAMP&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;PTemp&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Get the pressure Series from the DataFrame and sum it up to one value or calcualte the mean.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Pressure_kPa&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Pressure_kPa&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Get the pressure Series from the DataFrame and use a special method to summarize the values in the Series using what Pandas things is most helpful.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;RH_Avg&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Extract the RH series from the DataFrame. This is a copy of the Series in the DataFrame so changing the values will not change the values in the DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rh</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;RH_Avg&#39;</span><span class="p">]</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">rh</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="warning-off-on-a-tangent">
+<h3>Warning, off on a tangent<a class="headerlink" href="#warning-off-on-a-tangent" title="Permalink to this heading">#</a></h3>
+<p>Pandas has two ways of extracting a Series from a DataFrame: <em>copy</em> and <em>view</em>. A copy is separate from the DataFrame and changes to the copied Series will not affect the DataFrame. Changes to a view will impact the DataFrame. In pandas, whether you get a view or a copy depends on the structure of the DataFrame and, if you are trying to modify a slice, the nature of the modification. Pandas will often warn when using a view vs. a copy, but that may not alwasy be the case. There is discussion to resovle this issue but the fix is not going to happen soon. The best solution is to use .copy() when you want a copy to be explicit.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rh</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;RH_Avg&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">rh</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Calculate a rolling mean over the Series using 10 points. Notice the first 8 values are NaN. There is a default number of values to use to calculate a value. Else it is set to NaN.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rh_rolling_mean</span> <span class="o">=</span> <span class="n">rh</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">rh_rolling_mean</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>By specifically stating the minimum number of points to use when calculating the mean we force it to not fill in so many NaNs. There is at least one value to use in the rollig window so not NaNs. What happens when you change min_periods to a larger number?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rh_rolling_mean</span> <span class="o">=</span> <span class="n">rh</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">min_periods</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">rh_rolling_mean</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Set a range of values in our extracted data to NaN to represent missing data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rh</span><span class="p">[</span><span class="mi">20</span><span class="p">:</span><span class="mi">30</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">rh</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Calculate a rolling max on the entire DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rh_rolling_mean</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;RH_Avg&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">min_periods</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">rh_rolling_mean</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -784,28 +740,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#please-run-these-examples-demonstrated-today-yourself">Please run these examples demonstrated today yourself!</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-off-hello-world">Starting off - Hello World!</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loops">Loops</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#things-to-note">Things to Note:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-pandas-dataframe">Create Pandas DataFrame</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#read-in-some-data">Read in some data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#warning-off-on-a-tangent">Warning, off on a tangent</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#program-control-conditional-statements">Program Control - Conditional Statements</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Things to Note:</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-python-data-types">Basic Python Data Types</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#floating-point-numbers-float">Floating Point Numbers <code class="docutils literal notranslate"><span class="pre">float</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Things to Note:</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#character-strings-str">Character strings <code class="docutils literal notranslate"><span class="pre">str</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lists">Lists</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-now">What Now?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib-scientific-data-visualization">Matplotlib - Scientific Data Visualization</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resources-and-references">Resources and References</a></li>
 </ul>
   </nav></div>
 
