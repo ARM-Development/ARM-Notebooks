@@ -1,10 +1,9 @@
 # Background
 These tutorials cover ARM's JupyterHub resources, basic python, and the [Atmospheric data Community Toolkit (ACT)](https://github.com/ARM-DOE/ACT). These tutorials are meant to be generic enough to be able to be utilized for many different events as an introduction to ACT. 
 
-# Tutorials
-## Atmospheric data Community Toolkit
 The ACT tutorials were focused around exploring aerosol and lidar data from a dust event during TRacking Aerosol Convection interations ExpeRiment (TRACER) that occurred from July 16-19, 2022.
 
+# Tutorials
 ### JupyterHub and Jupyter Notebooks
 [1-jupter_intro.ipynb](https://github.com/ARM-Development/ARM-Notebooks/blob/main/Tutorials/ACT-Python-Tutorial/1-jupyter_intro.ipynb) is a notebook to get started with ARM's JupyterHub resources and navigate what JupyterHub notebooks are and some useful shortcuts.
 
