@@ -9,6 +9,17 @@ parts:
     - file: CONTRIBUTING.md
     - file: Templates/notebook-template
     - file: Templates/tutorial-schedule
+  - caption: Intro Tutorials
+    chapters:
+    - file: Tutorials/ACT-Python-Tutorial/README.md
+      sections:
+      - file: Tutorials/ACT-Python-Tutorial/1-jupyter_intro.ipynb
+      - file: Tutorials/ACT-Python-Tutorial/2-Python-Basics.ipynb
+      - file: Tutorials/ACT-Python-Tutorial/2a-scientific_libraries_numpy.ipynb
+      - file: Tutorials/ACT-Python-Tutorial/2a-scientific_libraries_pandas.ipynb
+      - file: Tutorials/ACT-Python-Tutorial/2a-scientific_libraries_xarray.ipynb
+      - file: Tutorials/ACT-Python-Tutorial/3-ACT-Basics.ipynb
+      - file: Tutorials/ACT-Python-Tutorial/3a-ACT-TRACER-Dust.ipynb
   - caption: Value-added Products
     chapters:
     - file: VAPs/README.md
