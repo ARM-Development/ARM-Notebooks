@@ -1,3 +1,4 @@
 jupyter-book
 jupyterlab
 ghp-import
+myst-parser
