@@ -15,6 +15,7 @@ dependencies:
   - cartopy
   - emc2
   - cmweather
+  - myst-parser
   - pip
   - pip:
       - jupyter-book
