@@ -16,9 +16,9 @@ The ACT tutorials were focused around exploring aerosol and lidar data from a du
 ### Atmospheric data Community Toolkit (ACT) Tutorials
 - [3-ACT-Basics-2023.ipynb](https://github.com/ARM-Development/ARM-Notebooks/blob/main/Tutorials/ACT-Python-Tutorial/3-ACT-Basics.ipynb) is a base tutorial using data from the TRACER Particle Soot Absorption Photometer (PSAP) to explore some of the base functionality of ACT including visualizations and working with quality control information.
 
-- [3a-ACT-TRACER-Dust.ipyn](https://github.com/ARM-Development/ARM-Notebooks/blob/main/Tutorials/ACT-Python-Tutorial/3a-ACT-TRACER-Dust.ipynb) is a notebook to bring a variety of datasets together for visualization and performing some of the more complex operations in ACT to produce a figure like the below.
+- [3a-ACT-TRACER-Dust.ipynb](https://github.com/ARM-Development/ARM-Notebooks/blob/main/Tutorials/ACT-Python-Tutorial/3a-ACT-TRACER-Dust.ipynb) is a notebook to bring a variety of datasets together for visualization and performing some of the more complex operations in ACT to produce a figure like the below.
 
-![Output from the advanced ACT tutorial](https://github.com/ARM-Development/ARM-Notebooks/blob/main/Tutorials/ACT-Python-Tutorial/images/output.png)
+![Output from the advanced ACT tutorial](https://github.com/ARM-Development/ARM-Notebooks/blob/main/Tutorials/ACT-Python-Tutorial/images/micropulse_lidar.png "Micropulse Lidar")
 Figure 1. From the top, micropulse lidar linear depolarization ratio, aerodynamic particle sizer concentration, scanning mobility particle sizer concentration, aerosol chemical speciation monitor chemical compositions, single particle soot photometer black carbon concentration, PSAP aerosol absorption coefficient in the blue channel, and the surface meteorology station wind direction.
 
 ### Additional Tutorials
