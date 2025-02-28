@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>ACT Basics &#8212; ARM Tutorials</title>
   
@@ -15,53 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/clipboard.min.js"></script>
-    <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Tutorials/Open-Science-Workshop-2022/tutorials/act-basics';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -76,28 +71,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -119,12 +109,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -140,6 +138,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
 
+  
+    
   
 
 <a class="navbar-brand logo" href="../../../README.html">
@@ -158,7 +158,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -185,15 +196,15 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Value-added Products</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../VAPs/README.html">Value Added Products</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../VAPs/README.html">Value Added Products</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../VAPs/squire/intro-to-squire.html">Surface Qualitative Precipiation Estimate (SQUIRE) Value-added Product</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../VAPs/vap_notebook_list.html">ARM VAPs Jupyter Notebooks</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">ARM/ASR PI Meeting 2023</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../arm-asr-pi-meeting-2023/README.html">Open Science Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../arm-asr-pi-meeting-2023/README.html">Open Science Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../arm-asr-pi-meeting-2023/python_basics_tutorial/python-basics.html">Python Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../arm-asr-pi-meeting-2023/pandas_xarray_tutorial/Pandas_Xarray_intro.html">Starting with Scientific Libraries in Python</a></li>
 
@@ -213,12 +224,12 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Open Science Workshop</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../presentations/view-abstracts.html">Workshop Abstracts</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="day1-overview.html">Day 1 - Introductions!</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="day1-overview.html">Day 1 - Introductions!</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="jupyter-intro.html">JupyterLab</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Scientific_Libraries_Numpy.html">Working with Numpy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Scientific_Libraries_Pandas.html">Working with Pandas</a></li>
@@ -227,8 +238,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="forking_cloning.html">Forking a Repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="branching-forking-github-ui.html">Branching and Pull Requests on the Github Website</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="day2-overview.html">Day 2 - Data + Packages</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="day2-overview.html">Day 2 - Data + Packages</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="ARM-Data-Access.html">Accessing ARM Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ESMAC_diags/esmac-diags.html">ESMAC Diagnostics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_2d_timeseries.html">ESMAC: Generate timeseries of size distribution</a></li>
@@ -239,8 +250,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_mean_size.html">ESMAC: Generate mean size distribution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EMC2_demo_w_E3SM.html">Using EMC² to Process E3SM Output</a></li>
 </ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="day3-overview.html">Day 3 - MetPy and ACT</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="day3-overview.html">Day 3 - MetPy and ACT</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="MetPy%2001%20-%20Overview.html">MetPy Tutorial - Overview</a></li>
 
 
@@ -250,15 +261,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">ACT Basics</a></li>
 
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="day4-overview.html">Day 3 - Py-ART and Pangeo</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="day4-overview.html">Day 3 - Py-ART and Pangeo</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="pyart-basics.html">PyART Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pyart-gridding.html">Py-ART Gridding</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pyart-corrections.html">Py-ART Corrections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xarray.html">Introduction to Xarray</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xarray-computation-masking.html">Computations and Masks with Xarray</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
@@ -274,7 +285,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -283,14 +294,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -315,14 +326,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/Tutorials/Open-Science-Workshop-2022/tutorials/act-basics.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onJupyterHub"
+   title="Launch on JupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../../_static/images/logo_jupyterhub.svg">
+    <img alt="JupyterHub logo" src="../../../_static/images/logo_jupyterhub.svg">
   </span>
 <span class="btn__text-container">JupyterHub</span>
 </a>
@@ -399,10 +410,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -410,14 +421,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -474,20 +485,20 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <p><a class="reference internal" href="../../../_images/arm_logo1.png"><img alt="ARM Logo" src="../../../_images/arm_logo1.png" style="width: 500px;" /></a></img></p>
 <section id="act-basics">
-<h1>ACT Basics<a class="headerlink" href="#act-basics" title="Permalink to this heading">#</a></h1>
+<h1>ACT Basics<a class="headerlink" href="#act-basics" title="Link to this heading">#</a></h1>
 <hr class="docutils" />
 <section id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
 <p>Welcome to the ARM/ASR Open Science Workshop Tutorial on the <strong>Atmospheric data Community Toolkit (ACT)</strong>
 In this tutorial, you will learn some of the basic features of ACT with a focus on how you can use it to better utilize ARM’s data quality information.  This will include using ARM’s embedded quality control information that’s included in many ARM NetCDF files and Data Quality Reports (DQR) which can be accessed through a webservice.</p>
 <p>ACT is built around the xarray data object, which you can learn about more in the xarray tutorial on Friday at 3 pm Eastern or through information from <strong><a class="reference external" href="https://foundations.projectpythia.org/core/xarray.html">Project Pythia</a></strong>.</p>
 </section>
 <section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h2>
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
 <p>If you don’t have ACT already installed, it can be installed using pip or conda using the commands below.  Additional information on installation can be found in the <strong><a class="reference external" href="https://arm-doe.github.io/ACT/userguide/index.html">ACT User Guide</a></strong>.</p>
 <p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">act-atmos</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">act-atmos</span></code></p>
@@ -497,12 +508,12 @@ In this tutorial, you will learn some of the basic features of ACT with a focus 
 <p>After that, in the JupyterHub, select ‘Kernel’ from the menu and ‘Restart’</p>
 </section>
 <section id="imports">
-<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this heading">#</a></h2>
+<h2>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h2>
 <p>First we are going to start by importing all the necessary python libraries that we need which is just act and matplotlib.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">act</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">act</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
@@ -517,7 +528,7 @@ In this tutorial, you will learn some of the basic features of ACT with a focus 
 </div>
 </section>
 <section id="download-arm-data">
-<h2>Download ARM Data<a class="headerlink" href="#download-arm-data" title="Permalink to this heading">#</a></h2>
+<h2>Download ARM Data<a class="headerlink" href="#download-arm-data" title="Link to this heading">#</a></h2>
 <p>Next we are going to download the data we are going to use for this session using the <strong><a class="reference external" href="https://adc.arm.gov/armlive/">ARM Live Data webservice</a></strong>.</p>
 <p>Since you have an ARM user account, you should be able to utilize this webservice as well.  All you need to do is login to get your token.  In case you are not able to get that information, we have a username and token set up just for training sessions.</p>
 <div class="cell docutils container">
@@ -535,7 +546,7 @@ In this tutorial, you will learn some of the basic features of ACT with a focus 
 </div>
 </section>
 <section id="reading-in-a-netcdf-file">
-<h2>Reading in a NetCDF File<a class="headerlink" href="#reading-in-a-netcdf-file" title="Permalink to this heading">#</a></h2>
+<h2>Reading in a NetCDF File<a class="headerlink" href="#reading-in-a-netcdf-file" title="Link to this heading">#</a></h2>
 <p>Congratulations, you just downloaded a file from just the command line!  Next up is to read the file into an xarray object using the ACT reader.  We then can use Jupyter to print out an interactive listing of everything in the object.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -547,7 +558,7 @@ In this tutorial, you will learn some of the basic features of ACT with a focus 
 </div>
 </section>
 <section id="clean-up-the-object-to-cf-standards">
-<h2>Clean up the object to CF Standards<a class="headerlink" href="#clean-up-the-object-to-cf-standards" title="Permalink to this heading">#</a></h2>
+<h2>Clean up the object to CF Standards<a class="headerlink" href="#clean-up-the-object-to-cf-standards" title="Link to this heading">#</a></h2>
 <p>In order to utilize all the ACT QC modules, we need to clean up the object to follow <strong><a class="reference external" href="https://cfconventions.org/">Climate and Forecast (CF) standards</a></strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -558,7 +569,7 @@ In this tutorial, you will learn some of the basic features of ACT with a focus 
 </div>
 </div>
 <section id="first-visualization">
-<h3>First Visualization<a class="headerlink" href="#first-visualization" title="Permalink to this heading">#</a></h3>
+<h3>First Visualization<a class="headerlink" href="#first-visualization" title="Link to this heading">#</a></h3>
 <p>Let’s plot up some data to see what we’re working with.  For this example, we’ll use diffuse_hemisp_narrowband_filter4</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -584,7 +595,7 @@ In this tutorial, you will learn some of the basic features of ACT with a focus 
 </section>
 </section>
 <section id="filter-data">
-<h2>Filter Data<a class="headerlink" href="#filter-data" title="Permalink to this heading">#</a></h2>
+<h2>Filter Data<a class="headerlink" href="#filter-data" title="Link to this heading">#</a></h2>
 <p>Let’s try and filter some of those outliers out based on the embedded QC in the files.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -611,7 +622,7 @@ In this tutorial, you will learn some of the basic features of ACT with a focus 
 </div>
 </section>
 <section id="query-the-dqr-webservice">
-<h2>Query the DQR Webservice<a class="headerlink" href="#query-the-dqr-webservice" title="Permalink to this heading">#</a></h2>
+<h2>Query the DQR Webservice<a class="headerlink" href="#query-the-dqr-webservice" title="Link to this heading">#</a></h2>
 <p>Since the embedded QC is not removing all the outliers, let’s check to see if there are any Data Quality Reports (DQR) using ARMs DQR Webservice.  The great thing is, that ACT has codes for working with this webservice.</p>
 <p>In this example, we can see that there’s a DQRfor a shadowband misalignment and we can find out more information by looking at the actual <strong><a class="reference external" href="https://adc.arm.gov/ArchiveServices/DQRService?dqrid=D210405.5">DQR</a></strong>.</p>
 <div class="cell docutils container">
@@ -639,7 +650,7 @@ In this tutorial, you will learn some of the basic features of ACT with a focus 
 </div>
 </section>
 <section id="add-qc-tests">
-<h2>Add QC Tests<a class="headerlink" href="#add-qc-tests" title="Permalink to this heading">#</a></h2>
+<h2>Add QC Tests<a class="headerlink" href="#add-qc-tests" title="Link to this heading">#</a></h2>
 <p>ACT has a number of additional <strong><a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.qc.QCTests.html#act.qc.QCTests">QC tests</a></strong> that could be applied to the data.  For this next example, let’s apply a new maximum test and bring that upper limit down a bit.  We are also going to filter the data based on this new test and plot up the results.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -669,7 +680,7 @@ In this tutorial, you will learn some of the basic features of ACT with a focus 
 </div>
 </section>
 <section id="instrument-specific-qc-tests">
-<h2>Instrument Specific QC Tests<a class="headerlink" href="#instrument-specific-qc-tests" title="Permalink to this heading">#</a></h2>
+<h2>Instrument Specific QC Tests<a class="headerlink" href="#instrument-specific-qc-tests" title="Link to this heading">#</a></h2>
 <p>ACT has a growing library of instrument specific tests such as the <strong><a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.qc.fft_shading_test.html#act.qc.fft_shading_test">fast-fourier transform test</a></strong> to detect shading which was adapted from Alexandrov et al 2007.  The adaption is that it is applied in a moving window style approach.  <strong>Note - Check out the webpage as an example of how we are including references to papers behind the codes</strong></p>
 <p>Let’s apply it and see how it compares with the DQR!</p>
 <div class="cell docutils container">
@@ -696,27 +707,27 @@ In this tutorial, you will learn some of the basic features of ACT with a focus 
 </div>
 </section>
 <section id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h2>
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
 <p>In this tutorial, we have shown you how to download data from ARM’s Data Live web service, visualize the data and QC information, query the DQR webservice, filter data based on the QC, and add new QC tests to the dataset.  After all this work, you can easily save the xarray object to a NetCDF file using <code class="docutils literal notranslate"><span class="pre">obj.to_netcdf('filename.nc')</span></code> and all that data will be saved and usable in Python and ACT.</p>
 <p>Please checkout the <strong><a class="reference external" href="https://github.com/ARM-DOE/ACT">ACT Github repository</a></strong> for the latest and greatest information, including our documentation which has <strong><a class="reference external" href="https://arm-doe.github.io/ACT/source/auto_examples/index.html">examples</a></strong> that can be downloading in python or Jupyter Notebook formats.</p>
 </section>
 </section>
 <section id="second-act">
-<h1>Second ACT!<a class="headerlink" href="#second-act" title="Permalink to this heading">#</a></h1>
+<h1>Second ACT!<a class="headerlink" href="#second-act" title="Link to this heading">#</a></h1>
 <p>But wait, there’s more to ACT that we can explore together or that you can do on your own!  These examples are going to be more condensed than the above but should still provide you the insight you need to run and do your own things!</p>
 <p>We are going to need some additional libraries to help out though!</p>
 <section id="id1">
-<h2>Imports<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2>Imports<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="wind-roses">
-<h2>Wind Roses<a class="headerlink" href="#wind-roses" title="Permalink to this heading">#</a></h2>
+<h2>Wind Roses<a class="headerlink" href="#wind-roses" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s download a month of surface meteorological data from the SGP central facility!</span>
@@ -736,7 +747,7 @@ In this tutorial, you will learn some of the basic features of ACT with a focus 
 </div>
 </section>
 <section id="present-weather-detector-codes">
-<h2>Present Weather Detector Codes<a class="headerlink" href="#present-weather-detector-codes" title="Permalink to this heading">#</a></h2>
+<h2>Present Weather Detector Codes<a class="headerlink" href="#present-weather-detector-codes" title="Link to this heading">#</a></h2>
 <p>With the MET system at the main site, there’s also a present weather detector (PWD) deployed.  This PWD reports the present weather in WMO codes but can be easily decoded using a <strong><a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.utils.decode_present_weather.html?highlight=present%20weather#act.utils.decode_present_weather">utility in ACT</a></strong>.  With this information, you can make fancy plots like the <strong><a class="reference external" href="https://plot.dmf.arm.gov/PLOTS/sgp/sgpmet/20210522/sgpmetE13.b1.pwd_weather.20210522.png">DQ Office plots for the PWD</a></strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -756,7 +767,7 @@ In this tutorial, you will learn some of the basic features of ACT with a focus 
 </div>
 </section>
 <section id="doppler-lidar-wind-retrievals">
-<h2>Doppler Lidar Wind Retrievals<a class="headerlink" href="#doppler-lidar-wind-retrievals" title="Permalink to this heading">#</a></h2>
+<h2>Doppler Lidar Wind Retrievals<a class="headerlink" href="#doppler-lidar-wind-retrievals" title="Link to this heading">#</a></h2>
 <p>This will show you how you can process the doppler lidar PPI scans to produce <strong><a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.retrievals.compute_winds_from_ppi.html#act.retrievals.compute_winds_from_ppi">wind profiles</a></strong> based on Newsom et al 2016.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -782,12 +793,12 @@ In this tutorial, you will learn some of the basic features of ACT with a focus 
 </div>
 </section>
 <section id="radiosonde-plotting-and-more">
-<h2>Radiosonde Plotting and More!<a class="headerlink" href="#radiosonde-plotting-and-more" title="Permalink to this heading">#</a></h2>
+<h2>Radiosonde Plotting and More!<a class="headerlink" href="#radiosonde-plotting-and-more" title="Link to this heading">#</a></h2>
 <p>This will take you through how to plot up a Skew-T plot along with a geographic plot of the radiosonde track on a map.  Additionally, will run this through a retrieval to calculate the PBL height using the <strong><a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.retrievals.calculate_pbl_liu_liang.html?highlight=pbl#act.retrievals.calculate_pbl_liu_liang">Liu Liang method</a></strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import MetPy if possible</span>
-<span class="kn">import</span> <span class="nn">metpy</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">metpy</span>
 
 <span class="c1"># Read in sample radiosonde data and plot up a Skew-T</span>
 <span class="n">obj</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">arm</span><span class="o">.</span><span class="n">read_arm_netcdf</span><span class="p">(</span><span class="n">act</span><span class="o">.</span><span class="n">tests</span><span class="o">.</span><span class="n">EXAMPLE_SONDE1</span><span class="p">)</span>
@@ -822,7 +833,7 @@ In this tutorial, you will learn some of the basic features of ACT with a focus 
 </div>
 </section>
 <section id="mimic-arm-data-files">
-<h2>Mimic ARM Data Files<a class="headerlink" href="#mimic-arm-data-files" title="Permalink to this heading">#</a></h2>
+<h2>Mimic ARM Data Files<a class="headerlink" href="#mimic-arm-data-files" title="Link to this heading">#</a></h2>
 <p>ARM’s NetCDF files are based around what we call a data object definition or DOD.  These DOD’s essentially create the structure of the file and are what you see in the NetCDF file as the header.  We can use this information to create an  xarray object, filled with missing value, that one can populated with data and then write it out to a NetCDF file that looks exactly like an ARM file.</p>
 <p>The user is able to set up the size of the datasets ahead of time by passing in the dimension sizes as shown below with <code class="docutils literal notranslate"><span class="pre">{'time':</span> <span class="pre">1440}</span></code></p>
 <p>This could greatly streamline and improve the usability of PI-submitted datasets.</p>
@@ -868,7 +879,7 @@ In this tutorial, you will learn some of the basic features of ACT with a focus 
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -897,6 +908,7 @@ In this tutorial, you will learn some of the basic features of ACT with a focus 
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -955,7 +967,7 @@ By ARM Development Team
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -979,8 +991,8 @@ By ARM Development Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

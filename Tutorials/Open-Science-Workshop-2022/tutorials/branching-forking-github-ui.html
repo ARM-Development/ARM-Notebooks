@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Branching and Pull Requests on the Github Website &#8212; ARM Tutorials</title>
   
@@ -15,53 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/clipboard.min.js"></script>
-    <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Tutorials/Open-Science-Workshop-2022/tutorials/branching-forking-github-ui';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -76,28 +71,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -119,12 +109,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -140,6 +138,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
 
+  
+    
   
 
 <a class="navbar-brand logo" href="../../../README.html">
@@ -158,7 +158,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -185,15 +196,15 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Value-added Products</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../VAPs/README.html">Value Added Products</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../VAPs/README.html">Value Added Products</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../VAPs/squire/intro-to-squire.html">Surface Qualitative Precipiation Estimate (SQUIRE) Value-added Product</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../VAPs/vap_notebook_list.html">ARM VAPs Jupyter Notebooks</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">ARM/ASR PI Meeting 2023</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../arm-asr-pi-meeting-2023/README.html">Open Science Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../arm-asr-pi-meeting-2023/README.html">Open Science Tutorials</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../arm-asr-pi-meeting-2023/python_basics_tutorial/python-basics.html">Python Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../arm-asr-pi-meeting-2023/pandas_xarray_tutorial/Pandas_Xarray_intro.html">Starting with Scientific Libraries in Python</a></li>
 
@@ -213,12 +224,12 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Open Science Workshop</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../presentations/view-abstracts.html">Workshop Abstracts</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="day1-overview.html">Day 1 - Introductions!</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="day1-overview.html">Day 1 - Introductions!</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="jupyter-intro.html">JupyterLab</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Scientific_Libraries_Numpy.html">Working with Numpy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Scientific_Libraries_Pandas.html">Working with Pandas</a></li>
@@ -227,8 +238,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="forking_cloning.html">Forking a Repository</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Branching and Pull Requests on the Github Website</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="day2-overview.html">Day 2 - Data + Packages</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="day2-overview.html">Day 2 - Data + Packages</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="ARM-Data-Access.html">Accessing ARM Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ESMAC_diags/esmac-diags.html">ESMAC Diagnostics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_2d_timeseries.html">ESMAC: Generate timeseries of size distribution</a></li>
@@ -239,8 +250,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_mean_size.html">ESMAC: Generate mean size distribution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="EMC2_demo_w_E3SM.html">Using EMC² to Process E3SM Output</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="day3-overview.html">Day 3 - MetPy and ACT</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="day3-overview.html">Day 3 - MetPy and ACT</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="MetPy%2001%20-%20Overview.html">MetPy Tutorial - Overview</a></li>
 
 
@@ -250,15 +261,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="act-basics.html">ACT Basics</a></li>
 
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="day4-overview.html">Day 3 - Py-ART and Pangeo</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="day4-overview.html">Day 3 - Py-ART and Pangeo</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="pyart-basics.html">PyART Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pyart-gridding.html">Py-ART Gridding</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pyart-corrections.html">Py-ART Corrections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xarray.html">Introduction to Xarray</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xarray-computation-masking.html">Computations and Masks with Xarray</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
@@ -274,7 +285,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -283,14 +294,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -368,10 +379,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -379,14 +390,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -433,12 +444,12 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section id="branching-and-pull-requests-on-the-github-website">
-<h1>Branching and Pull Requests on the Github Website<a class="headerlink" href="#branching-and-pull-requests-on-the-github-website" title="Permalink to this heading">#</a></h1>
+<h1>Branching and Pull Requests on the Github Website<a class="headerlink" href="#branching-and-pull-requests-on-the-github-website" title="Link to this heading">#</a></h1>
 <section id="overview">
-<h2>Overview:<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<h2>Overview:<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Creating a Branch Using the Github Web Interface</p></li>
 <li><p>Making Changes to Our Branch</p></li>
@@ -446,8 +457,8 @@ document.write(`
 </ol>
 </section>
 <section id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
-<table class="table">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Concepts</p></th>
 <th class="head"><p>Importance</p></th>
@@ -455,7 +466,7 @@ document.write(`
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><span class="xref myst">Intro to Github</span></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#introduction"><span class="xref myst">Intro to Github</span></a></p></td>
 <td><p>Necessary</p></td>
 <td><p>Need an account</p></td>
 </tr>
@@ -463,21 +474,22 @@ document.write(`
 <td><p>Necessary</p></td>
 <td><p>Need forked repo</p></td>
 </tr>
-<tr class="row-even"><td><p><span class="xref myst">Branches and PRs</span></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#branching_pull_request"><span class="xref myst">Branches and PRs</span></a></p></td>
 <td><p>Helpful</p></td>
 <td><p>Terminology helpful</p></td>
 </tr>
 </tbody>
 </table>
+</div>
 <ul class="simple">
 <li><p><strong>Time to learn</strong>: 15 minutes</p></li>
 </ul>
 </section>
 <hr class="docutils" />
 <section id="creating-a-branch-using-the-github-web-interface">
-<h2>Creating a Branch Using the Github Web Interface<a class="headerlink" href="#creating-a-branch-using-the-github-web-interface" title="Permalink to this heading">#</a></h2>
+<h2>Creating a Branch Using the Github Web Interface<a class="headerlink" href="#creating-a-branch-using-the-github-web-interface" title="Link to this heading">#</a></h2>
 <section id="make-sure-your-main-branch-is-up-to-date">
-<h3>Make sure your <code class="docutils literal notranslate"><span class="pre">main</span></code> branch is up to date<a class="headerlink" href="#make-sure-your-main-branch-is-up-to-date" title="Permalink to this heading">#</a></h3>
+<h3>Make sure your <code class="docutils literal notranslate"><span class="pre">main</span></code> branch is up to date<a class="headerlink" href="#make-sure-your-main-branch-is-up-to-date" title="Link to this heading">#</a></h3>
 <p>A good rule of thumb is to make sure that you <strong>never</strong> add a feature/change on your <code class="docutils literal notranslate"><span class="pre">main</span></code> branch. Another rule to keep in mind is that you <strong>always</strong> want to keep your fork of the repository up to date with the <em><strong>upstream</strong></em> repository (in this case, this is <a class="reference external" href="https://github.com/ARM-Development/Aerosol-Mentors-Processing-Routines">Aerosol Mentors Processing Routines</a>).</p>
 <p>For example, if you had a different project (for example <code class="docutils literal notranslate"><span class="pre">CO</span></code>) you wanted to make changes to, you would not want to include those changes from <code class="docutils literal notranslate"><span class="pre">CCN</span></code> as well!</p>
 <p>Fortunately, Github makes this easy! From <strong><em>your fork of the repository</em></strong>, you will see a “Fetch upstream” dropdown!</p>
@@ -485,7 +497,7 @@ document.write(`
 <p>It is important to do this <strong>early and often</strong> and be sure that when you make changes, you follow the process of:</p>
 </section>
 <section id="creating-your-branch">
-<h3>Creating your Branch<a class="headerlink" href="#creating-your-branch" title="Permalink to this heading">#</a></h3>
+<h3>Creating your Branch<a class="headerlink" href="#creating-your-branch" title="Link to this heading">#</a></h3>
 <p>Now that our main branch is in-sync, the first step to contributing is to create a <strong>branch</strong> of your repository!</p>
 <p>On the left side of the screen, you will see a box that says “<code class="docutils literal notranslate"><span class="pre">main</span></code>”, indicating you are on the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch. You will need to click on <code class="docutils literal notranslate"><span class="pre">main</span></code>, as shown below:</p>
 <img alt="Fetch Upstream" src="../../../_images/locate-github-branches-web1.png" />
@@ -500,10 +512,10 @@ document.write(`
 </section>
 </section>
 <section id="making-changes-to-our-branch">
-<h2>Making Changes to Our Branch<a class="headerlink" href="#making-changes-to-our-branch" title="Permalink to this heading">#</a></h2>
+<h2>Making Changes to Our Branch<a class="headerlink" href="#making-changes-to-our-branch" title="Link to this heading">#</a></h2>
 <p>Now that we have a new branch, we can make changes!</p>
 <section id="move-into-the-co-python-directory">
-<h3>Move into the <code class="docutils literal notranslate"><span class="pre">CO/Python</span></code> directory<a class="headerlink" href="#move-into-the-co-python-directory" title="Permalink to this heading">#</a></h3>
+<h3>Move into the <code class="docutils literal notranslate"><span class="pre">CO/Python</span></code> directory<a class="headerlink" href="#move-into-the-co-python-directory" title="Link to this heading">#</a></h3>
 <p>Let’s migrate into into the CO directory, which can be accessed by clicking through the web interface.</p>
 <p>First, we click on the <code class="docutils literal notranslate"><span class="pre">CO</span></code> folder.</p>
 <img alt="Fetch Upstream" src="../../../_images/move-to-co-directory1.png" />
@@ -512,7 +524,7 @@ document.write(`
 <p>The only file currently in <code class="docutils literal notranslate"><span class="pre">CO/Python</span></code> is a <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file… we would like to change that!</p>
 </section>
 <section id="adding-a-new-python-file">
-<h3>Adding a new Python file<a class="headerlink" href="#adding-a-new-python-file" title="Permalink to this heading">#</a></h3>
+<h3>Adding a new Python file<a class="headerlink" href="#adding-a-new-python-file" title="Link to this heading">#</a></h3>
 <p>We would like to add a <code class="docutils literal notranslate"><span class="pre">.py</span></code> file to this directory, which can do by selecting add file.</p>
 <img alt="Fetch Upstream" src="../../../_images/move-to-python-directory1.png" />
 <p>You could also add files from your computer using the “Upload files” option.</p>
@@ -528,7 +540,7 @@ document.write(`
 </section>
 </section>
 <section id="submitting-a-pull-request-using-the-github-web-interface">
-<h2>Submitting a Pull Request Using the Github Web Interface<a class="headerlink" href="#submitting-a-pull-request-using-the-github-web-interface" title="Permalink to this heading">#</a></h2>
+<h2>Submitting a Pull Request Using the Github Web Interface<a class="headerlink" href="#submitting-a-pull-request-using-the-github-web-interface" title="Link to this heading">#</a></h2>
 <p>When you move back to your fork of the repository, which is the page that should show up after clicking that “Commit new file” button in the previous step, you should see the following screen with a yellow box stating “<strong>co-python-code</strong> had recent pushes less than a minute ago” and a green button stating “Compare &amp; pull request”!</p>
 <img alt="Fetch Upstream" src="../../../_images/view-compare-pull-request-github-ui1.png" />
 <p>If we click on “Compare &amp; pull request”, we can prepare to submit our pull request, requesting that <strong>our new features</strong> be merged with the <strong>upstream ARM-Development</strong> copy of the repository (making these changes useful to the wider community)!</p>
@@ -537,18 +549,18 @@ document.write(`
 <p>Once we are ready to submit these changes, we click on the green button stating “Create Pull Request”, which will result in the following:</p>
 <img alt="Fetch Upstream" src="../../../_images/submit-pull-request-github-ui1.png" />
 <p>Our changes have been suggested, and the various code-checkers are running. At this point, the code will be reviewed, you will receive feedback, and once it is approved, it will be merged!</p>
-<p>You have now successfully created your first branch, and submitted your first pull request! If you have more questions about the terminology, I encourage you to read through the <span class="xref myst">Branches and PRs</span> content, in addition to the Github content on <a class="reference external" href="https://foundations.projectpythia.org/foundations/getting-started-github.html">Project Pythia</a>.</p>
+<p>You have now successfully created your first branch, and submitted your first pull request! If you have more questions about the terminology, I encourage you to read through the <a class="reference internal" href="#branching_pull_request"><span class="xref myst">Branches and PRs</span></a> content, in addition to the Github content on <a class="reference external" href="https://foundations.projectpythia.org/foundations/getting-started-github.html">Project Pythia</a>.</p>
 </section>
 <hr class="docutils" />
 <section id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>It is important to keep your fork in-sync with the upstream repository!</p></li>
 <li><p>A Pull Request (PR) is a formal mechanism for requesting that changes that you have made to one repository are integrated (merged) into another repository.</p></li>
 <li><p>You can create a branch, make changes, then submit a PR with those changes.</p></li>
 </ul>
 <section id="what-s-next">
-<h3>What’s Next?<a class="headerlink" href="#what-s-next" title="Permalink to this heading">#</a></h3>
+<h3>What’s Next?<a class="headerlink" href="#what-s-next" title="Link to this heading">#</a></h3>
 <p>Submitting your code to the <a class="reference external" href="https://github.com/ARM-Development/Aerosol-Mentors-Processing-Routines">Aerosol-Mentors-Processing-Routines
 Repository</a>!</p>
 </section>
@@ -582,7 +594,7 @@ Repository</a>!</p>
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -611,6 +623,7 @@ Repository</a>!</p>
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -659,7 +672,7 @@ By ARM Development Team
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -683,8 +696,8 @@ By ARM Development Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

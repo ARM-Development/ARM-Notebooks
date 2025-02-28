@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>ACT Basics &#8212; ARM Tutorials</title>
   
@@ -15,53 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/clipboard.min.js"></script>
-    <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Tutorials/arm-asr-pi-meeting-2023/ACT_tutorial/ACT_Tutorial_TRACER';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -76,28 +71,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -119,12 +109,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -140,6 +138,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
 
+  
+    
   
 
 <a class="navbar-brand logo" href="../../../README.html">
@@ -158,7 +158,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -185,15 +196,15 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Value-added Products</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../VAPs/README.html">Value Added Products</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../VAPs/README.html">Value Added Products</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../VAPs/squire/intro-to-squire.html">Surface Qualitative Precipiation Estimate (SQUIRE) Value-added Product</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../VAPs/vap_notebook_list.html">ARM VAPs Jupyter Notebooks</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">ARM/ASR PI Meeting 2023</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../README.html">Open Science Tutorials</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../README.html">Open Science Tutorials</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../python_basics_tutorial/python-basics.html">Python Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../pandas_xarray_tutorial/Pandas_Xarray_intro.html">Starting with Scientific Libraries in Python</a></li>
 
@@ -213,12 +224,12 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Open Science Workshop</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../Open-Science-Workshop-2022/presentations/view-abstracts.html">Workshop Abstracts</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../Open-Science-Workshop-2022/tutorials/day1-overview.html">Day 1 - Introductions!</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Open-Science-Workshop-2022/tutorials/day1-overview.html">Day 1 - Introductions!</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../Open-Science-Workshop-2022/tutorials/jupyter-intro.html">JupyterLab</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Numpy.html">Working with Numpy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../Open-Science-Workshop-2022/tutorials/Scientific_Libraries_Pandas.html">Working with Pandas</a></li>
@@ -227,8 +238,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../Open-Science-Workshop-2022/tutorials/forking_cloning.html">Forking a Repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../Open-Science-Workshop-2022/tutorials/branching-forking-github-ui.html">Branching and Pull Requests on the Github Website</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../Open-Science-Workshop-2022/tutorials/day2-overview.html">Day 2 - Data + Packages</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Open-Science-Workshop-2022/tutorials/day2-overview.html">Day 2 - Data + Packages</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../Open-Science-Workshop-2022/tutorials/ARM-Data-Access.html">Accessing ARM Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../Open-Science-Workshop-2022/tutorials/ESMAC_diags/esmac-diags.html">ESMAC Diagnostics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_contour_2d_timeseries.html">ESMAC: Generate timeseries of size distribution</a></li>
@@ -239,8 +250,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../Open-Science-Workshop-2022/tutorials/ESMAC_diags/ESMAC_Diags_testcase/notebooks/example_plot_mean_size.html">ESMAC: Generate mean size distribution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../Open-Science-Workshop-2022/tutorials/EMC2_demo_w_E3SM.html">Using EMC² to Process E3SM Output</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../Open-Science-Workshop-2022/tutorials/day3-overview.html">Day 3 - MetPy and ACT</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Open-Science-Workshop-2022/tutorials/day3-overview.html">Day 3 - MetPy and ACT</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../Open-Science-Workshop-2022/tutorials/MetPy%2001%20-%20Overview.html">MetPy Tutorial - Overview</a></li>
 
 
@@ -250,15 +261,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../Open-Science-Workshop-2022/tutorials/act-basics.html">ACT Basics</a></li>
 
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../Open-Science-Workshop-2022/tutorials/day4-overview.html">Day 3 - Py-ART and Pangeo</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Open-Science-Workshop-2022/tutorials/day4-overview.html">Day 3 - Py-ART and Pangeo</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../Open-Science-Workshop-2022/tutorials/pyart-basics.html">PyART Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../Open-Science-Workshop-2022/tutorials/pyart-gridding.html">Py-ART Gridding</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../Open-Science-Workshop-2022/tutorials/pyart-corrections.html">Py-ART Corrections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../Open-Science-Workshop-2022/tutorials/xarray.html">Introduction to Xarray</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../Open-Science-Workshop-2022/tutorials/xarray-computation-masking.html">Computations and Masks with Xarray</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
@@ -274,7 +285,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -283,14 +294,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -315,14 +326,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/../user-data-home/ARM-Notebooks/Tutorials/arm-asr-pi-meeting-2023/ACT_tutorial/ACT_Tutorial_TRACER.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onJupyterHub"
+   title="Launch on JupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../../_static/images/logo_jupyterhub.svg">
+    <img alt="JupyterHub logo" src="../../../_static/images/logo_jupyterhub.svg">
   </span>
 <span class="btn__text-container">JupyterHub</span>
 </a>
@@ -399,10 +410,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -410,14 +421,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -495,13 +506,14 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <a class="reference internal image-reference" href="https://raw.githubusercontent.com/ProjectPythiaCookbooks/radar-cookbook/main/thumbnail.png"><img alt="https://raw.githubusercontent.com/ProjectPythiaCookbooks/radar-cookbook/main/thumbnail.png" src="https://raw.githubusercontent.com/ProjectPythiaCookbooks/radar-cookbook/main/thumbnail.png" style="width: 500px;" /></a>
+  <a class="reference internal image-reference" href="https://raw.githubusercontent.com/ProjectPythiaCookbooks/radar-cookbook/main/thumbnail.png"><img alt="https://raw.githubusercontent.com/ProjectPythiaCookbooks/radar-cookbook/main/thumbnail.png" src="https://raw.githubusercontent.com/ProjectPythiaCookbooks/radar-cookbook/main/thumbnail.png" style="width: 500px;" />
+</a>
 <section id="act-basics">
-<h1>ACT Basics<a class="headerlink" href="#act-basics" title="Permalink to this heading">#</a></h1>
+<h1>ACT Basics<a class="headerlink" href="#act-basics" title="Link to this heading">#</a></h1>
 <section id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
 <p>The ARM TRACER campaign collected a lot of very interesting data in Houston, TX from October 1, 2021 to September 30, 2022.  One event that stands out is a dust event that occurred from July 16 to July 19, 2022.  This notebook will give an introduction to basic features in ACT, using some relevant datastreams from this event</p>
 <ol class="arabic simple">
 <li><p>Intro to ACT</p></li>
@@ -513,10 +525,10 @@ document.write(`
 </ol>
 </section>
 <section id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
 <p>This notebook will rely heavily on Python and the <a class="reference external" href="https://github.com/ARM-DOE/ACT">Atmospheric data Community Toolkit (ACT)</a>.  Don’t worry if you don’t have experience with either, this notebook will walk you though what you need to know.</p>
 <p>You will also need an account and token to download data using the ARM Live webservice.  Navigate to the <a class="reference external" href="https://adc.arm.gov/armlive/">webservice information page</a> and log in to get your token.  Your account username will be your ARM username.</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Concepts</p></th>
 <th class="head"><p>Importance</p></th>
@@ -530,6 +542,7 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 <ul class="simple">
 <li><p><strong>Time to learn</strong>: 60 Minutes</p></li>
 <li><p><strong>System requirements</strong>:</p>
@@ -545,21 +558,21 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="intro-to-act">
-<h2>Intro to ACT<a class="headerlink" href="#intro-to-act" title="Permalink to this heading">#</a></h2>
+<h2>Intro to ACT<a class="headerlink" href="#intro-to-act" title="Link to this heading">#</a></h2>
 <p>The <a class="reference external" href="https://github.com/ARM-DOE/ACT">Atmospheric data Community Toolkit (ACT)</a> is an open-source Python toolkit for exploring and analyzing atmospheric time-series datasets.  Examples can be found in the <a class="reference external" href="https://arm-doe.github.io/ACT/source/auto_examples/index.html">ACT Example Gallery</a>.  The toolkit has modules for many different parts of the scientific process, including:</p>
 <table style='font-size:100%'>
     <tr>
         <td>
 <section id="data-discovery-act-discovery">
-<h3>Data Discovery (act.discovery)<a class="headerlink" href="#data-discovery-act-discovery" title="Permalink to this heading">#</a></h3>
+<h3>Data Discovery (act.discovery)<a class="headerlink" href="#data-discovery-act-discovery" title="Link to this heading">#</a></h3>
 <p>The <a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.discovery.html">discovery</a> module houses functions to download or access data from different groups.  Currently it includes function to get data for ARM, NOAA, EPA, NEON, and more!</p>
 </section>
 <section id="input-output-act-io">
-<h3>Input/Output (act.io)<a class="headerlink" href="#input-output-act-io" title="Permalink to this heading">#</a></h3>
+<h3>Input/Output (act.io)<a class="headerlink" href="#input-output-act-io" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.io.html">io</a> contains functions for reading and writing data from various sources and formats.</p>
 </section>
 <section id="visualization-act-plotting">
-<h3>Visualization (act.plotting)<a class="headerlink" href="#visualization-act-plotting" title="Permalink to this heading">#</a></h3>
+<h3>Visualization (act.plotting)<a class="headerlink" href="#visualization-act-plotting" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.plotting.html">plotting</a> contains various routines, built on matplotlib, to help visualize and explore data.  These include</p>
 <ol class="arabic simple">
 <li><p>Time-series plots</p></li>
@@ -571,19 +584,19 @@ document.write(`
 </ol>
 </section>
 <section id="corrections-act-corrections">
-<h3>Corrections (act.corrections)<a class="headerlink" href="#corrections-act-corrections" title="Permalink to this heading">#</a></h3>
+<h3>Corrections (act.corrections)<a class="headerlink" href="#corrections-act-corrections" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.corrections.html">corrections</a> apply different corrections to data based on need.  A majority of the existing corrections are for lidar data.</p>
 </section>
 <section id="quality-control-act-qc">
-<h3>Quality Control (act.qc)<a class="headerlink" href="#quality-control-act-qc" title="Permalink to this heading">#</a></h3>
+<h3>Quality Control (act.qc)<a class="headerlink" href="#quality-control-act-qc" title="Link to this heading">#</a></h3>
 <p>The <a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.qc.html">qc</a> module has a lot of functions for working with quality control information, apply new tests, or filtering data based on existing tests.  We will explore some of that functionality in this notebook.</p>
 </section>
 <section id="retrievals-act-retrievals">
-<h3>Retrievals (act.retrievals)<a class="headerlink" href="#retrievals-act-retrievals" title="Permalink to this heading">#</a></h3>
+<h3>Retrievals (act.retrievals)<a class="headerlink" href="#retrievals-act-retrievals" title="Link to this heading">#</a></h3>
 <p>There are many cases in which some additional calculations are necessary to get more value from the instrument data.  The <a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.retrievals.html">retrievals</a> module houses some functions for performing these advanced calculations.</p>
 </section>
 <section id="utilities-act-utils">
-<h3>Utilities (act.utils)<a class="headerlink" href="#utilities-act-utils" title="Permalink to this heading">#</a></h3>
+<h3>Utilities (act.utils)<a class="headerlink" href="#utilities-act-utils" title="Link to this heading">#</a></h3>
 <p>The <a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.utils.html">utils</a> module has a lot of general utilities to help with the data.  Some of these include adding in a solar variable to indicate day/night (useful in filtering data), unit conversions, decoding WMO weather codes, performing weighted averaging, etc…
 </td>
 <td>
@@ -599,21 +612,21 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="imports">
-<h2>Imports<a class="headerlink" href="#imports" title="Permalink to this heading">#</a></h2>
+<h2>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h2>
 <p>Let’s get started with some data!  But first, we need to import some libraries.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">act</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">act</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="downloading-and-reading-arm-s-netcdf-data">
-<h2>Downloading and Reading ARM’s NetCDF Data<a class="headerlink" href="#downloading-and-reading-arm-s-netcdf-data" title="Permalink to this heading">#</a></h2>
+<h2>Downloading and Reading ARM’s NetCDF Data<a class="headerlink" href="#downloading-and-reading-arm-s-netcdf-data" title="Link to this heading">#</a></h2>
 <p>ARM’s standard file format is NetCDF (network Common Data Form) which makes it very easy to work with in Python!  ARM data are available through a data portal called <a class="reference external" href="https://adc.arm.gov/discovery/#/">Data Discovery</a> or through a webservice.  If you didn’t get your username and token earlier, please go back and see the Prerequisites!</p>
 <p>Let’s download some of the MPL data first but let’s just start with one day.</p>
 <div class="cell docutils container">
@@ -654,11 +667,11 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="quality-controlling-data">
-<h2>Quality Controlling Data<a class="headerlink" href="#quality-controlling-data" title="Permalink to this heading">#</a></h2>
+<h2>Quality Controlling Data<a class="headerlink" href="#quality-controlling-data" title="Link to this heading">#</a></h2>
 <p>ARM has multiple methods that it uses to communicate data quality information out to the users.  One of these methods is through “embedded QC” variables.  These are variables within the file that have information on automated tests that have been applied.  Many times, they include Min, Max, and Delta tests but as is the case with the AOS instruments, there can be more complicated tests that are applied.</p>
 <p>The results from all these different tests are stored in a single variable using bit-packed QC.  We won’t get into the full details here, but it’s a way to communicate the results of multiple tests in a single integer value by utilizing binary and bits!  You can learn more about bit-packed QC <a class="reference external" href="https://code.arm.gov/docs/QC-flag-examples/-/wikis/home">here</a> but ACT also has many of the tools for working with ARM QC.</p>
 <section id="other-sources-of-quality-control">
-<h3>Other Sources of Quality Control<a class="headerlink" href="#other-sources-of-quality-control" title="Permalink to this heading">#</a></h3>
+<h3>Other Sources of Quality Control<a class="headerlink" href="#other-sources-of-quality-control" title="Link to this heading">#</a></h3>
 <p>ARM also communicates problems with the data quality through Data Quality Reports (DQR).  These reports are normally submitted by the instrument mentor when there’s been a problem with the instrument.  The categories include:</p>
 <ul class="simple">
 <li><p><strong>Data Quality Report Categories</strong></p>
@@ -700,7 +713,7 @@ document.write(`
 </div>
 </section>
 <section id="filtering-data">
-<h3>Filtering data<a class="headerlink" href="#filtering-data" title="Permalink to this heading">#</a></h3>
+<h3>Filtering data<a class="headerlink" href="#filtering-data" title="Link to this heading">#</a></h3>
 <p>It’s easy to filter out data failing tests with ACT.  This will show you how to filter data by test or by assessment.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -734,7 +747,7 @@ document.write(`
 </div>
 </div>
 <section id="arm-data-quality-reports-dqr">
-<h4>ARM Data Quality Reports (DQR)!<a class="headerlink" href="#arm-data-quality-reports-dqr" title="Permalink to this heading">#</a></h4>
+<h4>ARM Data Quality Reports (DQR)!<a class="headerlink" href="#arm-data-quality-reports-dqr" title="Link to this heading">#</a></h4>
 <p>ARM’s DQRs can be easily pulled in and added to the QC variables using ACT.  We can do that with the below one line command.  However, for this case, there won’t be any DQRs on the data but let’s visualize it just in case!  Check out the <a class="reference external" href="https://arm-doe.github.io/ACT/source/auto_examples/index.html#quality-control-examples">ACT QC Examples</a> for more use cases!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -751,20 +764,20 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="aerosol-instrument-overview">
-<h2>Aerosol Instrument Overview<a class="headerlink" href="#aerosol-instrument-overview" title="Permalink to this heading">#</a></h2>
+<h2>Aerosol Instrument Overview<a class="headerlink" href="#aerosol-instrument-overview" title="Link to this heading">#</a></h2>
 <table>
     <tr>
         <td>
 <section id="single-particle-soot-photometer-sp2">
-<h3>Single Particle Soot Photometer (SP2)<a class="headerlink" href="#single-particle-soot-photometer-sp2" title="Permalink to this heading">#</a></h3>
+<h3>Single Particle Soot Photometer (SP2)<a class="headerlink" href="#single-particle-soot-photometer-sp2" title="Link to this heading">#</a></h3>
 <p>The single-particle soot photometer (SP2) measures the soot (black carbon) mass of individual aerosol particles by laser-induced incandescence down to concentrations as low as ng/m^3. <a class="reference external" href="https://arm.gov/capabilities/instruments/sp2">Learn more</a></p>
 </section>
 <section id="aerodynamic-particle-sizer-aps">
-<h3>Aerodynamic Particle Sizer (APS)<a class="headerlink" href="#aerodynamic-particle-sizer-aps" title="Permalink to this heading">#</a></h3>
+<h3>Aerodynamic Particle Sizer (APS)<a class="headerlink" href="#aerodynamic-particle-sizer-aps" title="Link to this heading">#</a></h3>
 <p>The aerodynamic particle sizer (APS) is a particle size spectrometer that measures both the particle aerodynamic diameter based on particle time of flight and optical diameter based on scattered light intensity. The APS provides the number size distribution for particles with aerodynamic diameters from 0.5 to 20 micrometers and with optical diameters from 0.3 to 20 micrometers. <a class="reference external" href="https://arm.gov/capabilities/instruments/aps">Learn more</a></p>
 </section>
 <section id="aerosol-chemical-speciation-monitor-acsm">
-<h3>Aerosol Chemical Speciation Monitor (ACSM)<a class="headerlink" href="#aerosol-chemical-speciation-monitor-acsm" title="Permalink to this heading">#</a></h3>
+<h3>Aerosol Chemical Speciation Monitor (ACSM)<a class="headerlink" href="#aerosol-chemical-speciation-monitor-acsm" title="Link to this heading">#</a></h3>
 <p>The aerosol chemical speciation monitor is a thermal vaporization, electron impact, ionization mass spectrometer that measures bulk chemical composition of the rapidly evaporating component of sub-micron aerosol particles in real time. Standard measurements include mass concentrations of organics, sulfate, nitrate, ammonium, and chloride. <a class="reference external" href="https://arm.gov/capabilities/instruments/acsm">Learn more</a>
 </td>
 <td width=600>
@@ -776,7 +789,7 @@ document.write(`
 </tr></p>
 </table></section>
 <section id="downloading-and-qcing-the-aerosol-data">
-<h3>Downloading and QCing the Aerosol Data<a class="headerlink" href="#downloading-and-qcing-the-aerosol-data" title="Permalink to this heading">#</a></h3>
+<h3>Downloading and QCing the Aerosol Data<a class="headerlink" href="#downloading-and-qcing-the-aerosol-data" title="Link to this heading">#</a></h3>
 <p>Let’s start pulling these data together into the same plots so we can see what’s going on.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -851,7 +864,7 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="visualizing-data">
-<h2>Visualizing Data<a class="headerlink" href="#visualizing-data" title="Permalink to this heading">#</a></h2>
+<h2>Visualizing Data<a class="headerlink" href="#visualizing-data" title="Link to this heading">#</a></h2>
 <p>We have all the datasets downloaded, let’s start to visualize them in different ways using ACT.
 If you ever need a place to start with how to visualize data using ACT, check out the
 <a class="reference external" href="https://arm-doe.github.io/ACT/source/auto_examples/index.html#plotting-examples">ACT Plotting Examples</a></p>
@@ -893,7 +906,7 @@ If you ever need a place to start with how to visualize data using ACT, check ou
 </div>
 </div>
 <section id="data-rose-plots">
-<h3>Data Rose Plots<a class="headerlink" href="#data-rose-plots" title="Permalink to this heading">#</a></h3>
+<h3>Data Rose Plots<a class="headerlink" href="#data-rose-plots" title="Link to this heading">#</a></h3>
 <p>These plots display the data on a windrose-like plot to visualize directional dependencies in the data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -927,14 +940,14 @@ If you ever need a place to start with how to visualize data using ACT, check ou
 </div>
 </section>
 <section id="checkout-the-area">
-<h3>Checkout the area<a class="headerlink" href="#checkout-the-area" title="Permalink to this heading">#</a></h3>
+<h3>Checkout the area<a class="headerlink" href="#checkout-the-area" title="Link to this heading">#</a></h3>
 <p>The AMF was deployed at <a class="reference external" href="https://www.google.com/maps/place/Airport+Blvd/&#64;29.6652378,-95.0466689,9165m/data=!3m1!1e3!4m7!3m6!1s0x863f6020e5e0ea21:0x792ee34f8eaac3e8!4b1!8m2!3d29.6663473!4d-95.0578571!16s%2Fg%2F1wbf_smp?entry=ttu">La Porte Municipal Airport</a>.  Check out the google map and see if this mapes sense!</p>
 </section>
 <section id="back-to-the-visualizations">
-<h3>Back to the visualizations!<a class="headerlink" href="#back-to-the-visualizations" title="Permalink to this heading">#</a></h3>
+<h3>Back to the visualizations!<a class="headerlink" href="#back-to-the-visualizations" title="Link to this heading">#</a></h3>
 <p>Let’s get back to checking out the other visualization features in ACT!</p>
 <section id="histograms">
-<h4>Histograms<a class="headerlink" href="#histograms" title="Permalink to this heading">#</a></h4>
+<h4>Histograms<a class="headerlink" href="#histograms" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We do the same thing as before but call the DistributionDisplay class</span>
@@ -975,7 +988,7 @@ If you ever need a place to start with how to visualize data using ACT, check ou
 </div>
 </section>
 <section id="scatter-plots-and-heatmaps">
-<h4>Scatter Plots and Heatmaps<a class="headerlink" href="#scatter-plots-and-heatmaps" title="Permalink to this heading">#</a></h4>
+<h4>Scatter Plots and Heatmaps<a class="headerlink" href="#scatter-plots-and-heatmaps" title="Link to this heading">#</a></h4>
 <p>Let’s plot up a comparison of the APS total concentration and the ACSM sulfates.  Feel free to change the variables from the ACSM to experiment!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1039,11 +1052,11 @@ If you ever need a place to start with how to visualize data using ACT, check ou
 </section>
 </section>
 <section id="additional-features-in-act">
-<h2>Additional Features in ACT<a class="headerlink" href="#additional-features-in-act" title="Permalink to this heading">#</a></h2>
+<h2>Additional Features in ACT<a class="headerlink" href="#additional-features-in-act" title="Link to this heading">#</a></h2>
 <p>If there’s time to explore more features or if you want to on your own time, these are some of the many additional
 features that you might find useful in ACT</p>
 <section id="skew-t-plots">
-<h3>Skew-T Plots<a class="headerlink" href="#skew-t-plots" title="Permalink to this heading">#</a></h3>
+<h3>Skew-T Plots<a class="headerlink" href="#skew-t-plots" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s set a longer time period</span>
@@ -1068,7 +1081,7 @@ features that you might find useful in ACT</p>
 </section>
 <hr class="docutils" />
 <section id="wind-roses">
-<h3>Wind Roses<a class="headerlink" href="#wind-roses" title="Permalink to this heading">#</a></h3>
+<h3>Wind Roses<a class="headerlink" href="#wind-roses" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now we can plot up a wind rose of that entire month&#39;s worth of data</span>
@@ -1083,7 +1096,7 @@ features that you might find useful in ACT</p>
 </section>
 <hr class="docutils" />
 <section id="present-weather-codes">
-<h3>Present Weather Codes<a class="headerlink" href="#present-weather-codes" title="Permalink to this heading">#</a></h3>
+<h3>Present Weather Codes<a class="headerlink" href="#present-weather-codes" title="Link to this heading">#</a></h3>
 <p>See <a class="reference external" href="https://arm-doe.github.io/ACT/source/auto_examples/plotting/plot_presentweathercode.html#sphx-glr-source-auto-examples-plotting-plot-presentweathercode-py">this example</a> of how to plot up these present weather codes on your plots!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1101,7 +1114,7 @@ features that you might find useful in ACT</p>
 </section>
 <hr class="docutils" />
 <section id="accumulating-precipitation">
-<h3>Accumulating Precipitation<a class="headerlink" href="#accumulating-precipitation" title="Permalink to this heading">#</a></h3>
+<h3>Accumulating Precipitation<a class="headerlink" href="#accumulating-precipitation" title="Link to this heading">#</a></h3>
 <p>This example shows how to accumulate precipitation using the ACT utility and then overplot the PWD present weather codes</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1145,7 +1158,7 @@ features that you might find useful in ACT</p>
 </section>
 <hr class="docutils" />
 <section id="doppler-lidar-wind-retrievals">
-<h3>Doppler Lidar Wind Retrievals<a class="headerlink" href="#doppler-lidar-wind-retrievals" title="Permalink to this heading">#</a></h3>
+<h3>Doppler Lidar Wind Retrievals<a class="headerlink" href="#doppler-lidar-wind-retrievals" title="Link to this heading">#</a></h3>
 <p>This will show you how you can process the doppler lidar PPI scans to produce <strong><a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.retrievals.compute_winds_from_ppi.html#act.retrievals.compute_winds_from_ppi">wind profiles</a></strong> based on Newsom et al 2016.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1183,7 +1196,7 @@ features that you might find useful in ACT</p>
 </section>
 <hr class="docutils" />
 <section id="mimic-arm-data-files">
-<h2>Mimic ARM Data Files<a class="headerlink" href="#mimic-arm-data-files" title="Permalink to this heading">#</a></h2>
+<h2>Mimic ARM Data Files<a class="headerlink" href="#mimic-arm-data-files" title="Link to this heading">#</a></h2>
 <p>ARM’s NetCDF files are based around what we call a data object definition or DOD.  These DOD’s essentially create the structure of the file and are what you see in the NetCDF file as the header.  We can use this information to create an  xarray object, filled with missing value, that one can populated with data and then write it out to a NetCDF file that looks exactly like an ARM file.</p>
 <p>The user is able to set up the size of the datasets ahead of time by passing in the dimension sizes as shown below with <code class="docutils literal notranslate"><span class="pre">{'time':</span> <span class="pre">1440}</span></code></p>
 <p>This could greatly streamline and improve the usability of PI-submitted datasets.</p>
@@ -1236,7 +1249,7 @@ features that you might find useful in ACT</p>
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -1265,6 +1278,7 @@ features that you might find useful in ACT</p>
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1344,7 +1358,7 @@ By ARM Development Team
 
   <p class="copyright">
     
-      © Copyright 2022.
+      © Copyright 2023.
       <br/>
     
   </p>
@@ -1368,8 +1382,8 @@ By ARM Development Team
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
