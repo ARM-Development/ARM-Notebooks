@@ -13,6 +13,6 @@ Here, we share resources from ARM Summer School events!
 - [Project Cookbooks](https://arm-development.github.io/cape-k-student-workshop-2025/projects)
 
 ## 2025 BNF Summer School
-- [Main Landing Page]()
+- [Main Landing Page](https://arm-development.github.io/arm-summer-school-2025/)
 - [Github Repository](https://github.com/ARM-Development/arm-summer-school-2025)
-- [Project Cookbooks]()
+- [Project Cookbooks](https://arm-development.github.io/arm-summer-school-2025/projects)
