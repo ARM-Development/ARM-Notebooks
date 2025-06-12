@@ -1,0 +1,1271 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>ARM Open-Science Basics with CRG &#8212; ARM Tutorials</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Tutorials/General_Tutorials/ARM-Open-Science_Basics_ACT_PyART-CRG';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../README.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/arm_logo.png" class="logo__image only-light" alt="ARM Tutorials - Home"/>
+    <script>document.write(`<img src="../../_static/arm_logo.png" class="logo__image only-dark" alt="ARM Tutorials - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../README.html">
+                    ARM-Notebooks
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started.html">Accessing the Compute Environment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">How to Contribute</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributor’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Templates/notebook-template.html">ARM Notebook Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Templates/tutorial-schedule.html">Tutorial Schedule</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Intro Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ACT-Python-Tutorial/1-jupyter_intro.html">ARM JupyterHub and JupyterLab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ACT-Python-Tutorial/2-Python-Basics.html">Python Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ACT-Python-Tutorial/2a-scientific_libraries_numpy.html">Working with Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ACT-Python-Tutorial/2b-scientific_libraries_pandas.html">Working with Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ACT-Python-Tutorial/2c-scientific_libraries_xarray.html">Working with Xarray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ACT-Python-Tutorial/3-ACT-Basics.html">ACT Basics with TRACER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ACT-Python-Tutorial/3-ACT-Basics-BNF.html">ACT Basics with BNF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ACT-Python-Tutorial/3a-ACT-TRACER-Dust.html">ACT TRACER Dust Exploration</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Value-added Products</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../VAPs/README.html">Value Added Products</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../VAPs/squire/intro-to-squire.html">Surface Qualitative Precipiation Estimate (SQUIRE) Value-added Product</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../VAPs/vap_notebook_list.html">ARM VAPs Jupyter Notebooks</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Summer School Events</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Summer-Schools/README.html">Summer School Resources</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/~/ARM-Notebooks/Tutorials/General_Tutorials/ARM-Open-Science_Basics_ACT_PyART-CRG.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on JupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="JupyterHub logo" src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/Tutorials/General_Tutorials/ARM-Open-Science_Basics_ACT_PyART-CRG.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>ARM Open-Science Basics with CRG</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arm-computational-resources">ARM Computational Resources</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arm-data-workbench">ARM Data Workbench</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arm-jupyterhub">ARM JupyterHub</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cumulus-cluster">Cumulus Cluster</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arm-github-organizations">ARM GitHub Organizations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arm-doe">ARM-DOE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arm-synergy">ARM-Synergy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arm-development">ARM-Development</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arm-s-open-source-software">ARM’s Open-Source Software</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-to-act">Intro to ACT</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-discovery-act-discovery">Data Discovery (act.discovery)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#input-output-act-io">Input/Output (act.io)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-act-plotting">Visualization (act.plotting)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#corrections-act-corrections">Corrections (act.corrections)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#quality-control-act-qc">Quality Control (act.qc)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#retrievals-act-retrievals">Retrievals (act.retrievals)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utilities-act-utils">Utilities (act.utils)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-for-the-future">Preparing for the Future</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-to-py-art">Intro to Py-ART</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-and-reading-arm-s-netcdf-data">Downloading and Reading ARM’s NetCDF Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note-did-you-notice-the-citation-and-doi">Note: Did you notice the citation and DOI?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quality-controlling-data">Quality Controlling Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-sources-of-quality-control">Other Sources of Quality Control</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-data">Visualizing Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-panel-plot">Multi-Panel Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribution-display">Distribution Display</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combined-pops-and-met-scatter-plots">Combined POPS and MET Scatter Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wind-and-data-rose-plots">Wind and Data Rose Plots</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#py-art-and-kazr-data">Py-ART and KAZR Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-plot-up-the-data-using-py-art">Let’s plot up the data using Py-ART</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-used-in-this-notebook">Data Used in this Notebook</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="arm-open-science-basics-with-crg">
+<h1>ARM Open-Science Basics with CRG<a class="headerlink" href="#arm-open-science-basics-with-crg" title="Link to this heading">#</a></h1>
+<table>
+    <tr>
+        <td>
+            <img src="https://www.arm.gov/wp-content/uploads/54251180546_1125c8161e_c-768x577.jpg" style="height: 300px;" alt="CRG Campaign"></img>
+        </td>
+        <td>
+            <h1>Atmospheric Radiation Measurement user facility (ARM)</h1>
+            <h1>Coast-Urban-Rural Atmospheric Gradient Experiment(CRG)</h1>
+            Notebook covering the basics of ARM open-science resources (hardware and software) with a focus on CRG data </br>
+            Corresponding Author: Adam Theisen (atheisen@anl.gov)
+        </td>
+    </tr>
+</table><section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>The first ARM Mobile Facility (AMF1) is deployed to 3 sites around the Baltimore, MD region beginning December 1, 2024.  As the name implies, the 3 sites cover coastal (supplemental site S3), urban (main site M1), and rural (supplemental site S2).  The rural site (S2) also houses the aerosol oberving system.  This tutorial will help users with the basics of ACT using the CRG data from multiple sites and look at some specialized visualizations.</p>
+<ol class="arabic simple">
+<li><p>Intro to ACT</p></li>
+<li><p>Instrument Overview</p></li>
+<li><p>Downloading and Reading in Data</p></li>
+<li><p>Quality Controlling Data</p></li>
+<li><p>Visualizing Data</p></li>
+</ol>
+</section>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
+<p>This notebook will rely heavily on Python, <a class="reference external" href="https://github.com/ARM-DOE/ACT">Atmospheric data Community Toolkit (ACT)</a>, and the <a class="reference external" href="https://github.com/ARM-DOE/pyart">Python-ARM Radar Toolkit</a>.  Don’t worry if you don’t have experience with either, this notebook will walk you though what you need to know.</p>
+<p>You will also need an account and token to download data using the ARM Live webservice.  Navigate to the <a class="reference external" href="https://adc.arm.gov/armlive/">webservice information page</a> and log in to get your token.  Your account username will be your ARM username.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Concepts</p></th>
+<th class="head"><p>Importance</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ARM-DOE/ACT">ACT</a></p></td>
+<td><p>Helpful</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/ARM-DOE/pyart">Py-ART</a></p></td>
+<td><p>Helpful</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p><strong>Time to learn</strong>: 15 Minutes</p></li>
+<li><p><strong>System requirements</strong>:</p>
+<ul>
+<li><p>Python 3.11 or latest</p></li>
+<li><p>ACT v2.0.0 or latest</p></li>
+<li><p>Py-ART 2.02 (Bug fixes submitted as PR)</p></li>
+<li><p>numpy</p></li>
+<li><p>xarray</p></li>
+<li><p>matplotlib</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="arm-computational-resources">
+<h2>ARM Computational Resources<a class="headerlink" href="#arm-computational-resources" title="Link to this heading">#</a></h2>
+<p>The ARM Data Center (ADC) provides a variety of tools and resources for working with ARM data.  These include</p>
+<section id="arm-data-workbench">
+<h3>ARM Data Workbench<a class="headerlink" href="#arm-data-workbench" title="Link to this heading">#</a></h3>
+<p>The <a class="reference external" href="https://workbench.arm.gov/">ARM data workbench</a> provides users with an ecosystem for interacting with ARM data including data discovery, staging, visualization, and publishing.</p>
+</section>
+<section id="arm-jupyterhub">
+<h3>ARM JupyterHub<a class="headerlink" href="#arm-jupyterhub" title="Link to this heading">#</a></h3>
+<p>ARM hosts a <a class="reference external" href="https://jupyterhub.arm.gov/">JupyterHub</a> instance to provide scalable computing infrastructure to support analysis through Jupyter Notebook-based computational environments.</p>
+</section>
+<section id="cumulus-cluster">
+<h3>Cumulus Cluster<a class="headerlink" href="#cumulus-cluster" title="Link to this heading">#</a></h3>
+<p>ARM’s Cumulus cluster provides over 16,000 cores and is available to users with an active ARM account and an <a class="reference external" href="https://www.arm.gov/capabilities/computing-resources/hpc-request">approved request</a> to use it.  This involes submitting a proposal to ARM.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="arm-github-organizations">
+<h2>ARM GitHub Organizations<a class="headerlink" href="#arm-github-organizations" title="Link to this heading">#</a></h2>
+<section id="arm-doe">
+<h3>ARM-DOE<a class="headerlink" href="#arm-doe" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://github.com/ARM-DOE">ARM-DOE</a> houses ARM-supported software and community code for public use.  Code repositories are expected to be actively maintained and available to the scientific community.</p>
+</section>
+<section id="arm-synergy">
+<h3>ARM-Synergy<a class="headerlink" href="#arm-synergy" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://github.com/ARM-Synergy">ARM-Synergy</a> is where ARM and ASR principle investigators can host open-source software and community code.  Requests can be submitted through the Contact Us or Help links on <a class="reference external" href="https://arm.gov/">ARM’s website</a>.</p>
+</section>
+<section id="arm-development">
+<h3>ARM-Development<a class="headerlink" href="#arm-development" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://github.com/ARM-Development">ARM-Development</a> contains ARM infrastructure open-source software and community code that is in a state of development below public promotion and is used to test new ideas.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="arm-s-open-source-software">
+<h2>ARM’s Open-Source Software<a class="headerlink" href="#arm-s-open-source-software" title="Link to this heading">#</a></h2>
+<section id="intro-to-act">
+<h3>Intro to ACT<a class="headerlink" href="#intro-to-act" title="Link to this heading">#</a></h3>
+<p>The <a class="reference external" href="https://github.com/ARM-DOE/ACT">Atmospheric data Community Toolkit (ACT)</a> is an open-source Python toolkit for exploring and analyzing atmospheric time-series datasets.  Examples can be found in the <a class="reference external" href="https://arm-doe.github.io/ACT/source/auto_examples/index.html">ACT Example Gallery</a>.  The toolkit has modules for many different parts of the scientific process, including:</p>
+<table>
+    <tr>
+        <td>
+<section id="data-discovery-act-discovery">
+<h4>Data Discovery (act.discovery)<a class="headerlink" href="#data-discovery-act-discovery" title="Link to this heading">#</a></h4>
+<p>The <a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.discovery.html">discovery</a> module houses functions to download or access data from different groups.  Currently it includes function to get data for ARM, NOAA, EPA, NEON, and more!</p>
+</section>
+<section id="input-output-act-io">
+<h4>Input/Output (act.io)<a class="headerlink" href="#input-output-act-io" title="Link to this heading">#</a></h4>
+<p><a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.io.html">io</a> contains functions for reading and writing data from various sources and formats.</p>
+</section>
+<section id="visualization-act-plotting">
+<h4>Visualization (act.plotting)<a class="headerlink" href="#visualization-act-plotting" title="Link to this heading">#</a></h4>
+<p><a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.plotting.html">plotting</a> contains various routines, built on matplotlib, to help visualize and explore data.  These include</p>
+<ol class="arabic simple">
+<li><p>Time-series plots</p></li>
+<li><p>Distribution plots like histograms and heatmaps</p></li>
+<li><p>Geographic plots for moving systems like radiosondes or aircraft</p></li>
+<li><p>Skew-T plots for radiosonde data, built off MetPy</p></li>
+<li><p>Wind rose plots for wind and data roses</p></li>
+<li><p>Cross-section plots for working with 3-dimensional data</p></li>
+</ol>
+</section>
+<section id="corrections-act-corrections">
+<h4>Corrections (act.corrections)<a class="headerlink" href="#corrections-act-corrections" title="Link to this heading">#</a></h4>
+<p><a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.corrections.html">corrections</a> apply different corrections to data based on need.  A majority of the existing corrections are for lidar data.</p>
+</section>
+<section id="quality-control-act-qc">
+<h4>Quality Control (act.qc)<a class="headerlink" href="#quality-control-act-qc" title="Link to this heading">#</a></h4>
+<p>The <a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.qc.html">qc</a> module has a lot of functions for working with quality control information, apply new tests, or filtering data based on existing tests.  We will explore some of that functionality in this notebook.</p>
+</section>
+<section id="retrievals-act-retrievals">
+<h4>Retrievals (act.retrievals)<a class="headerlink" href="#retrievals-act-retrievals" title="Link to this heading">#</a></h4>
+<p>There are many cases in which some additional calculations are necessary to get more value from the instrument data.  The <a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.retrievals.html">retrievals</a> module houses some functions for performing these advanced calculations.</p>
+</section>
+<section id="utilities-act-utils">
+<h4>Utilities (act.utils)<a class="headerlink" href="#utilities-act-utils" title="Link to this heading">#</a></h4>
+<p>The <a class="reference external" href="https://arm-doe.github.io/ACT/API/generated/act.utils.html">utils</a> module has a lot of general utilities to help with the data.  Some of these include adding in a solar variable to indicate day/night (useful in filtering data), unit conversions, decoding WMO weather codes, performing weighted averaging, etc…
+</td>
+<td>
+<center>
+<img alt="NEON-ARM" src="https://arm-doe.github.io/ACT/_images/sphx_glr_plot_neon_001.png" /></img>
+<figcaption>ARM and NEON data from Utquivaik, AK</figcaption>
+<img alt="SONDE" src="https://arm-doe.github.io/ACT/_images/sphx_glr_plot_enhanced_skewt_001.png" /></img>
+<figcaption>Enhanced Skew-T plot from ARM’s Southern Great Plains Site (SGP)</figcaption>
+</center>
+</td>
+</tr></p>
+</table></section>
+<hr class="docutils" />
+<section id="preparing-for-the-future">
+<h4>Preparing for the Future<a class="headerlink" href="#preparing-for-the-future" title="Link to this heading">#</a></h4>
+<p>Please take the survey to help us develop the third roadmap for ACT which helps to prioritize features and activities in ACT.</p>
+<p><img alt="BNF Campaign" src="Tutorials/General_Tutorials/images/act_roadmap_3_survey.png" /></img></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="intro-to-py-art">
+<h3>Intro to Py-ART<a class="headerlink" href="#intro-to-py-art" title="Link to this heading">#</a></h3>
+<table>
+    <tr>
+        <td style="width:66%; font-size:16px">
+The <a href="https://github.com/ARM-DOE/pyart">Python ARM Radar Toolkit</a>, Py-ART, is an open source Python module containing a growing collection of weather radar algorithms and utilities build on top of the Scientific Python stack and distributed under the 3-Clause BSD license.  There are a variety of functions for working with scanning and vertically pointing radar as well such as <a href="https://arm-doe.github.io/pyart/examples/correct/plot_cloud_mask.html#sphx-glr-examples-correct-plot-cloud-mask-py">cloud masks</a>.  Py-ART is used in the creation of many of ARM's scanning precipitation radar value added products.
+        </td>
+        <td>
+            <img src="https://arm-doe.github.io/pyart/_images/sphx_glr_plot_cloud_mask_002.png" alt="Py-ART Cloud Mask" width="300"></img>
+            <figcaption>Plot of KAZR reflectivity after applying a cloud mask.</figcaption>
+        </td>
+    </tr>
+</table></section>
+</section>
+<hr class="docutils" />
+<section id="imports">
+<h2>Imports<a class="headerlink" href="#imports" title="Link to this heading">#</a></h2>
+<p>Let’s get started with some data!  But first, we need to import some libraries.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">act</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.colors</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">colors</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/envs/act_env/lib/python3.12/site-packages/pyproj/network.py:59: UserWarning: pyproj unable to set PROJ database path.
+  _set_context_ca_bundle_path(ca_bundle_path)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="downloading-and-reading-arm-s-netcdf-data">
+<h2>Downloading and Reading ARM’s NetCDF Data<a class="headerlink" href="#downloading-and-reading-arm-s-netcdf-data" title="Link to this heading">#</a></h2>
+<p>ARM’s standard file format is NetCDF (network Common Data Form) which makes it very easy to work with in Python!  ARM data are available through a data portal called <a class="reference external" href="https://adc.arm.gov/discovery/#/">Data Discovery</a> or through a webservice.  If you didn’t get your username and token earlier, please go back and see the Prerequisites!</p>
+<p>Let’s download some of the MET data first!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set your username and token here!</span>
+<span class="n">username</span> <span class="o">=</span> <span class="s1">&#39;yourUserName&#39;</span>
+<span class="n">token</span> <span class="o">=</span> <span class="s1">&#39;yourToken&#39;</span>
+
+<span class="c1"># Set the datastream and start/enddates</span>
+<span class="n">datastream</span> <span class="o">=</span> <span class="s1">&#39;crgmetM1.b1&#39;</span>
+<span class="n">startdate</span> <span class="o">=</span> <span class="s1">&#39;2024-12-01&#39;</span>
+<span class="n">enddate</span> <span class="o">=</span> <span class="s1">&#39;2024-12-11T23:59:59&#39;</span>
+
+<span class="c1"># Use ACT to easily download the data.  Watch for the data citation!  Show some support</span>
+<span class="c1"># for ARM&#39;s instrument experts and cite their data if you use it in a publication</span>
+<span class="n">result_met</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">discovery</span><span class="o">.</span><span class="n">download_arm_data</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">token</span><span class="p">,</span> <span class="n">datastream</span><span class="p">,</span> <span class="n">startdate</span><span class="p">,</span> <span class="n">enddate</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[DOWNLOADING] crgmetM1.b1.20241207.000000.cdf
+[DOWNLOADING] crgmetM1.b1.20241201.000000.cdf
+[DOWNLOADING] crgmetM1.b1.20241202.000000.cdf
+[DOWNLOADING] crgmetM1.b1.20241204.000000.cdf
+[DOWNLOADING] crgmetM1.b1.20241203.000000.cdf
+[DOWNLOADING] crgmetM1.b1.20241209.000000.cdf
+[DOWNLOADING] crgmetM1.b1.20241211.000000.cdf
+[DOWNLOADING] crgmetM1.b1.20241210.000000.cdf
+[DOWNLOADING] crgmetM1.b1.20241208.000000.cdf
+[DOWNLOADING] crgmetM1.b1.20241205.000000.cdf
+[DOWNLOADING] crgmetM1.b1.20241206.000000.cdf
+
+If you use these data to prepare a publication, please cite:
+
+Kyrouac, J., Shi, Y., &amp; Tuftedal, M. Surface Meteorological Instrumentation
+(MET), 2024-12-01 to 2024-12-11, ARM Mobile Facility (CRG), Baltimore, MD; AMF1
+(main site for CoURAGE) (M1). Atmospheric Radiation Measurement (ARM) User
+Facility. https://doi.org/10.5439/1786358
+</pre></div>
+</div>
+</div>
+</div>
+<section id="note-did-you-notice-the-citation-and-doi">
+<h3>Note: Did you notice the citation and DOI?<a class="headerlink" href="#note-did-you-notice-the-citation-and-doi" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s read in the data using ACT and check out the data</span>
+<span class="n">ds_met</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_arm_netcdf</span><span class="p">(</span><span class="n">result_met</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="quality-controlling-data">
+<h2>Quality Controlling Data<a class="headerlink" href="#quality-controlling-data" title="Link to this heading">#</a></h2>
+<p>ARM has multiple methods that it uses to communicate data quality information out to the users.  One of these methods is through “embedded QC” variables.  These are variables within the file that have information on automated tests that have been applied.  Many times, they include Min, Max, and Delta tests but as is the case with the AOS instruments, there can be more complicated tests that are applied.</p>
+<p>The results from all these different tests are stored in a single variable using bit-packed QC.  We won’t get into the full details here, but it’s a way to communicate the results of multiple tests in a single integer value by utilizing binary and bits!  You can learn more about bit-packed QC <a class="reference external" href="https://code.arm.gov/docs/QC-flag-examples/-/wikis/home">here</a> but ACT also has many of the tools for working with ARM QC.</p>
+<section id="other-sources-of-quality-control">
+<h3>Other Sources of Quality Control<a class="headerlink" href="#other-sources-of-quality-control" title="Link to this heading">#</a></h3>
+<p>ARM also communicates problems with the data quality through Data Quality Reports (DQR).  These reports are normally submitted by the instrument mentor when there’s been a problem with the instrument.  The categories include:</p>
+<ul class="simple">
+<li><p><strong>Data Quality Report Categories</strong></p>
+<ul>
+<li><p>Missing: Data are not available or set to -9999</p></li>
+<li><p>Suspect: The data are not fully incorrect but there are problems that increases the uncertainty of the values. Data should be used with caution.</p></li>
+<li><p>Bad: The data are incorrect and should not be used.</p></li>
+<li><p>Note: Data notes are a way to communicate information that would be useful to the end user but does not rise to the level of suspect or bad data</p></li>
+</ul>
+</li>
+</ul>
+<p>Additionally, data quality information can be found in the Instrument Handbooks, which are included on most instrument pages.  Here is an <a class="reference external" href="https://www.arm.gov/publications/tech_reports/handbooks/met_handbook.pdf">example</a> of the MET handbook.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We can see that there&#39;s some missing data in the plot above so let&#39;s take a look at the embedded QC!</span>
+<span class="c1"># First, for many of the ACT QC features, we need to get the dataset more to CF standard and that</span>
+<span class="c1"># involves cleaning up some of the attributes and ways that ARM has historically handled QC</span>
+<span class="n">ds_met</span><span class="o">.</span><span class="n">clean</span><span class="o">.</span><span class="n">cleanup</span><span class="p">()</span>
+
+<span class="c1"># Query the ARM DQR Webservice</span>
+<span class="n">variable</span> <span class="o">=</span> <span class="s1">&#39;tbrg_precip_total&#39;</span>
+<span class="n">ds_met</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">qc</span><span class="o">.</span><span class="n">add_dqr_to_qc</span><span class="p">(</span><span class="n">ds_met</span><span class="p">,</span> <span class="n">variable</span><span class="o">=</span><span class="n">variable</span><span class="p">)</span>
+
+<span class="c1"># Next, let&#39;s take a look at visualizing the quality control information</span>
+<span class="c1"># Create a plotting display object with 2 plots</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">TimeSeriesDisplay</span><span class="p">(</span><span class="n">ds_met</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">subplot_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,))</span>
+
+<span class="c1"># Plot up the variable in the first plot</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">variable</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,))</span>
+
+<span class="c1"># Plot up a day/night background</span>
+<span class="n">display</span><span class="o">.</span><span class="n">day_night_background</span><span class="p">(</span><span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,))</span>
+
+<span class="c1"># Plot up the QC variable in the second plot</span>
+<span class="n">display</span><span class="o">.</span><span class="n">qc_flag_block_plot</span><span class="p">(</span><span class="n">variable</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/7ff100cf79819b03a207ae87dc30314d2db22141eb74b9d52a17811f48ff8cb3.png" src="../../_images/7ff100cf79819b03a207ae87dc30314d2db22141eb74b9d52a17811f48ff8cb3.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now let&#39;s work to clean up the data from any incorrect data</span>
+<span class="n">ds_met</span><span class="o">.</span><span class="n">qcfilter</span><span class="o">.</span><span class="n">datafilter</span><span class="p">(</span><span class="n">rm_assessments</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Incorrect&#39;</span><span class="p">,</span> <span class="s1">&#39;Suspect&#39;</span><span class="p">])</span>
+
+<span class="c1"># Let&#39;s print out the history.  ACT is working on ways to track what has all been</span>
+<span class="c1"># done to the data while using it in the history attribute</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ds_met</span><span class="p">[</span><span class="n">variable</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;history&#39;</span><span class="p">])</span>
+
+
+<span class="c1"># Next, let&#39;s take a look at visualizing the quality control information</span>
+<span class="c1"># Create a plotting display object with 2 plots</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">TimeSeriesDisplay</span><span class="p">(</span><span class="n">ds_met</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">subplot_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,))</span>
+
+<span class="c1"># Plot up the variable in the first plot</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">variable</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,))</span>
+
+<span class="c1"># Plot up a day/night background</span>
+<span class="n">display</span><span class="o">.</span><span class="n">day_night_background</span><span class="p">(</span><span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,))</span>
+
+<span class="c1"># Plot up the QC variable in the second plot</span>
+<span class="n">display</span><span class="o">.</span><span class="n">qc_flag_block_plot</span><span class="p">(</span><span class="n">variable</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>act.qc.datafilter: Value is equal to missing_value.
+ act.qc.datafilter: Value is less than fail_min.
+ act.qc.datafilter: Value is greater than fail_max.
+ act.qc.datafilter: D250512.9 : The tipping mechanism was not working properly causing missed or underreported precipitation from the tipping bucket rain gauge on the days indicated. Rain gauge was replaced.
+</pre></div>
+</div>
+<img alt="../../_images/94ed4d2d1f4b3c2d01e5418155aefca21a8217cd932af75113dd50dde7475f90.png" src="../../_images/94ed4d2d1f4b3c2d01e5418155aefca21a8217cd932af75113dd50dde7475f90.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="visualizing-data">
+<h2>Visualizing Data<a class="headerlink" href="#visualizing-data" title="Link to this heading">#</a></h2>
+<p>We’ve already worked with visualizing the data in basic ways but what other options are there in ACT?  This section will show you how to create a variety of different plots.  More plotting examples can be found in <a class="reference external" href="https://arm-doe.github.io/ACT/source/auto_examples/index.html#plotting-examples">ACT’s Documentation</a>.</p>
+<section id="multi-panel-plot">
+<h3>Multi-Panel Plot<a class="headerlink" href="#multi-panel-plot" title="Link to this heading">#</a></h3>
+<p>This example shows how to plot the MET and POPS together on a multi-panel plot.  First we need to download the POPS data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the datastream, download, and read in!</span>
+<span class="n">datastream</span> <span class="o">=</span> <span class="s1">&#39;crgpops1mM1.b1&#39;</span>
+<span class="n">result_pops</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">discovery</span><span class="o">.</span><span class="n">download_arm_data</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">token</span><span class="p">,</span> <span class="n">datastream</span><span class="p">,</span> <span class="n">startdate</span><span class="p">,</span> <span class="n">enddate</span><span class="p">)</span>
+<span class="n">ds_pops</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_arm_netcdf</span><span class="p">(</span><span class="n">result_pops</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[DOWNLOADING] crgpops1mM1.b1.20241206.000030.nc
+[DOWNLOADING] crgpops1mM1.b1.20241208.000030.nc
+[DOWNLOADING] crgpops1mM1.b1.20241207.000030.nc
+[DOWNLOADING] crgpops1mM1.b1.20241209.000030.nc
+[DOWNLOADING] crgpops1mM1.b1.20241203.000030.nc
+[DOWNLOADING] crgpops1mM1.b1.20241204.000030.nc
+[DOWNLOADING] crgpops1mM1.b1.20241210.000030.nc
+[DOWNLOADING] crgpops1mM1.b1.20241202.000030.nc
+[DOWNLOADING] crgpops1mM1.b1.20241211.000030.nc
+[DOWNLOADING] crgpops1mM1.b1.20241201.000030.nc
+[DOWNLOADING] crgpops1mM1.b1.20241205.000030.nc
+
+If you use these data to prepare a publication, please cite:
+
+Petters, S., &amp; Petters, M. portable or printed optical particle spectrometer
+(POPS1M), 2024-12-01 to 2024-12-11, ARM Mobile Facility (CRG), Baltimore, MD;
+AMF1 (main site for CoURAGE) (M1). Atmospheric Radiation Measurement (ARM) User
+Facility.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># And plot again!</span>
+<span class="c1"># Create a plotting display object with 2 plots</span>
+<span class="c1"># Note we have to create a dictionary of datasets to pass in</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">TimeSeriesDisplay</span><span class="p">({</span><span class="s1">&#39;POPS&#39;</span><span class="p">:</span> <span class="n">ds_pops</span><span class="p">,</span> <span class="s1">&#39;MET&#39;</span><span class="p">:</span> <span class="n">ds_met</span><span class="p">},</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">subplot_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,))</span>
+
+<span class="c1"># Let&#39;s add in titles and more to the POPS plot</span>
+<span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Portable Optical Particle Spectrometer Particle Size Distribution&#39;</span>
+<span class="n">cbar_title</span> <span class="o">=</span> <span class="s1">&#39;dN/dlogD$_p$ (1/cm$^</span><span class="si">{3}</span><span class="s1">$)&#39;</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;dN_dlogDp&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;POPS&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,),</span> <span class="n">cvd_friendly</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+             <span class="n">norm</span><span class="o">=</span><span class="n">colors</span><span class="o">.</span><span class="n">LogNorm</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="mf">100.</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">10000.</span><span class="p">),</span> <span class="n">set_title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span> <span class="n">cbar_label</span><span class="o">=</span><span class="n">cbar_title</span><span class="p">,</span>
+             <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Pariticle Diameter (nm)&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="o">.</span><span class="n">set_yrng</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mi">5000</span><span class="p">],</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,))</span>
+
+<span class="c1"># Let&#39;s accumulate the precipitation using ACT to make this easier to read</span>
+<span class="n">ds_met</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data_utils</span><span class="o">.</span><span class="n">accumulate_precip</span><span class="p">(</span><span class="n">ds_met</span><span class="p">,</span> <span class="s1">&#39;tbrg_precip_total&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot up the MET btemperature and precipitation</span>
+<span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;MET Temperature and Cumulative Precipitation&#39;</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;temp_mean&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;MET&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,),</span> <span class="n">set_title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">display</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds_met</span><span class="o">.</span><span class="n">time</span><span class="p">,</span> <span class="n">ds_met</span><span class="o">.</span><span class="n">tbrg_precip_total_accumulated</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Precipitation (mm)&#39;</span><span class="p">)</span>
+
+<span class="c1"># Plot up a day/night background</span>
+<span class="n">display</span><span class="o">.</span><span class="n">day_night_background</span><span class="p">(</span><span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;MET&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/75dd1b80fbab31af34616749a8871ed48091606cd88b84f8095725990864c152.png" src="../../_images/75dd1b80fbab31af34616749a8871ed48091606cd88b84f8095725990864c152.png" />
+</div>
+</div>
+</section>
+<section id="distribution-display">
+<h3>Distribution Display<a class="headerlink" href="#distribution-display" title="Link to this heading">#</a></h3>
+<p>For the example, we will go over some functions within ACT’s distribution display. Functions such as, the stacked bar plot, scatter and groupby.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First, let&#39;s plot up a histogram of the data</span>
+<span class="c1"># All the ACT plotting is very similar to what we</span>
+<span class="c1"># did earlier, first we create a display object</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">DistributionDisplay</span><span class="p">(</span><span class="n">ds_met</span><span class="p">)</span>
+
+<span class="c1"># And then we can plot the data!  Note that we are passing a range into the</span>
+<span class="c1"># histogram function to set the min/max range of the data</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot_stacked_bar</span><span class="p">(</span><span class="s1">&#39;temp_mean&#39;</span><span class="p">,</span> <span class="n">hist_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;range&#39;</span><span class="p">:</span> <span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">]})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/a8aa82729e4e6cb64f1f3c2bc823589abf7e7a61d2b62b5f461d93c02173617a.png" src="../../_images/a8aa82729e4e6cb64f1f3c2bc823589abf7e7a61d2b62b5f461d93c02173617a.png" />
+</div>
+</div>
+</section>
+<section id="combined-pops-and-met-scatter-plots">
+<h3>Combined POPS and MET Scatter Plots<a class="headerlink" href="#combined-pops-and-met-scatter-plots" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First we need to combine data and to do that, we need to get it on the same time grid</span>
+<span class="n">ds_combined</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">merge</span><span class="p">([</span><span class="n">ds_met</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s1">&#39;1min&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">nearest</span><span class="p">(),</span> <span class="n">ds_pops</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s1">&#39;1min&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">nearest</span><span class="p">()],</span> <span class="n">compat</span><span class="o">=</span><span class="s1">&#39;override&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># Next up, let&#39;s do some scatter plots to compare some variables</span>
+<span class="c1"># Scatter plots are also found in the DistributionDisplay module</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">DistributionDisplay</span><span class="p">(</span><span class="n">ds_combined</span><span class="p">)</span>
+
+<span class="c1"># And then we can plot the data!</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot_scatter</span><span class="p">(</span><span class="s1">&#39;rh_mean&#39;</span><span class="p">,</span> <span class="s1">&#39;total_N_conc&#39;</span><span class="p">,</span> <span class="n">m_field</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/4a7ef45d6a19fd3424ecc0262205f058cc84ca08dcfc7d9b3e77e4f84d692106.png" src="../../_images/4a7ef45d6a19fd3424ecc0262205f058cc84ca08dcfc7d9b3e77e4f84d692106.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sometimes these scatter plots hide the number of points there actually</span>
+<span class="c1"># are in some areas so let&#39;s try a heatmap as well</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">DistributionDisplay</span><span class="p">(</span><span class="n">ds_combined</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">subplot_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="c1"># And then we can plot the data!</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot_scatter</span><span class="p">(</span><span class="s1">&#39;rh_mean&#39;</span><span class="p">,</span> <span class="s1">&#39;total_N_conc&#39;</span><span class="p">,</span> <span class="n">m_field</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="c1"># This can be used to adjust the axes limits</span>
+<span class="c1"># display.set_xrng([0, 20], subplot_index=(0, 0))</span>
+
+<span class="c1"># we can also pass in an array of values for the bins using np.arange(start, stop, step)</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot_heatmap</span><span class="p">(</span><span class="s1">&#39;rh_mean&#39;</span><span class="p">,</span> <span class="s1">&#39;total_N_conc&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">x_bins</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">y_bins</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/d0f164f84b46ef8a2ddc4029e6eb403c315fd705a97182fc8cc78bad24ddbb52.png" src="../../_images/d0f164f84b46ef8a2ddc4029e6eb403c315fd705a97182fc8cc78bad24ddbb52.png" />
+</div>
+</div>
+</section>
+<section id="wind-and-data-rose-plots">
+<h3>Wind and Data Rose Plots<a class="headerlink" href="#wind-and-data-rose-plots" title="Link to this heading">#</a></h3>
+<p>If your data may be wind speed or direction dependent, these plots can help inform where the influences may be coming from.  For this example, let’s see if the total number concentration from the POPS is dependent on wind direction.  For reference, here’s a link to a <a class="reference external" href="https://www.google.com/maps/place/39%C2%B019'02.5%22N+76%C2%B035'12.3%22W/&#64;39.317367,-76.58674,884m/data=!3m2!1e3!4b1!4m4!3m3!8m2!3d39.317367!4d-76.58674?entry=ttu&amp;amp;g_ep=EgoyMDI1MDYwOS4xIKXMDSoASAFQAw%3D%3D">google map of the site</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot out the data rose using the WindRose display object</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">WindRoseDisplay</span><span class="p">(</span><span class="n">ds_combined</span><span class="p">)</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;wdir_vec_mean&#39;</span><span class="p">,</span> <span class="s1">&#39;wspd_vec_mean&#39;</span><span class="p">,</span> <span class="n">num_dirs</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">spd_bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/44d10e6c5cd60a85cad933c5c0bfa5b4a5932d50cb0ae6a5ea396c27d2208fd9.png" src="../../_images/44d10e6c5cd60a85cad933c5c0bfa5b4a5932d50cb0ae6a5ea396c27d2208fd9.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot out the data rose using the WindRose display object</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">WindRoseDisplay</span><span class="p">(</span><span class="n">ds_combined</span><span class="p">)</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot_data</span><span class="p">(</span><span class="s1">&#39;wdir_vec_mean&#39;</span><span class="p">,</span> <span class="s1">&#39;wspd_vec_mean&#39;</span><span class="p">,</span> <span class="s1">&#39;total_N_conc&#39;</span><span class="p">,</span> <span class="n">num_dirs</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">plot_type</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">,</span> <span class="n">line_plot_calc</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/atheisen/Code/ACT/act/plotting/windrosedisplay.py:358: RuntimeWarning: Mean of empty slice
+  arr.append(np.nanmean(data[idx]))
+</pre></div>
+</div>
+<img alt="../../_images/569ab4f2462ff9779872be023a69be78768bd4ed1414f81ec954fcf963501092.png" src="../../_images/569ab4f2462ff9779872be023a69be78768bd4ed1414f81ec954fcf963501092.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot out the data rose using the WindRose display object</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">WindRoseDisplay</span><span class="p">(</span><span class="n">ds_combined</span><span class="p">)</span>
+
+<span class="c1"># Let&#39;s try a different type of data rose type that is using contours amd the polar y axis is wind speed</span>
+<span class="c1"># depending on wind direction and speed</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot_data</span><span class="p">(</span><span class="s1">&#39;wdir_vec_mean&#39;</span><span class="p">,</span> <span class="s1">&#39;wspd_vec_mean&#39;</span><span class="p">,</span> <span class="s1">&#39;total_N_conc&#39;</span><span class="p">,</span> <span class="n">num_dirs</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">plot_type</span><span class="o">=</span><span class="s1">&#39;contour&#39;</span><span class="p">,</span> <span class="n">contour_type</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/atheisen/Code/ACT/act/plotting/windrosedisplay.py:429: RuntimeWarning: Mean of empty slice
+  mean_data[i, j] = np.nanmean(data[idx])
+</pre></div>
+</div>
+<img alt="../../_images/f7f201016b095282409a3061403b74ea0895ef5c77db19aaeb97afb20c2674fa.png" src="../../_images/f7f201016b095282409a3061403b74ea0895ef5c77db19aaeb97afb20c2674fa.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="py-art-and-kazr-data">
+<h2>Py-ART and KAZR Data<a class="headerlink" href="#py-art-and-kazr-data" title="Link to this heading">#</a></h2>
+<p>In this section, we’ll take a look at how to calculate a cloud mask with KAZR data using Py-ART.  If you don’t already have the imports and tokens for downloading data set from the above ACT section, please go back to the first 2 cells of code and run them.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyart</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>## You are using the Python ARM Radar Toolkit (Py-ART), an open source
+## library for working with weather radar data. Py-ART is partly
+## supported by the U.S. Department of Energy as part of the Atmospheric
+## Radiation Measurement (ARM) Climate Research Facility, an Office of
+## Science user facility.
+##
+## If you use this software to prepare a publication, please cite:
+##
+##     JJ Helmus and SM Collis, JORS 2016, doi: 10.5334/jors.119
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the datastream and start/enddates</span>
+<span class="c1"># Set the datastream, download, and read in!</span>
+<span class="n">datastream</span> <span class="o">=</span> <span class="s1">&#39;crgkazrcfrgeM1.a1&#39;</span>
+<span class="n">startdate</span> <span class="o">=</span> <span class="s1">&#39;2024-12-11T22:00:00&#39;</span>
+<span class="n">enddate</span> <span class="o">=</span> <span class="s1">&#39;2024-12-11T23:59:59&#39;</span>
+
+<span class="n">result_kazr</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">discovery</span><span class="o">.</span><span class="n">download_arm_data</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">token</span><span class="p">,</span> <span class="n">datastream</span><span class="p">,</span> <span class="n">startdate</span><span class="p">,</span> <span class="n">enddate</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[DOWNLOADING] crgkazrcfrgeM1.a1.20241211.230022.nc
+[DOWNLOADING] crgkazrcfrgeM1.a1.20241211.220022.nc
+
+If you use these data to prepare a publication, please cite:
+
+Lindenmaier, I., Matthews, A., Wendler, T., Melo  de Castro, V., Deng, M.,
+Rocque, M., &amp; Feng, Y.-C. Ka ARM Zenith Radar (KAZRCFRGE), 2024-12-11 to
+2024-12-11, ARM Mobile Facility (CRG), Baltimore, MD; AMF1 (main site for
+CoURAGE) (M1). Atmospheric Radiation Measurement (ARM) User Facility.
+https://doi.org/10.5439/1498936
+</pre></div>
+</div>
+</div>
+</div>
+<section id="let-s-plot-up-the-data-using-py-art">
+<h3>Let’s plot up the data using Py-ART<a class="headerlink" href="#let-s-plot-up-the-data-using-py-art" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radar</span> <span class="o">=</span> <span class="n">pyart</span><span class="o">.</span><span class="n">aux_io</span><span class="o">.</span><span class="n">read_kazr</span><span class="p">(</span><span class="n">result_kazr</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># First lets correct the data by calculating the mask.</span>
+<span class="n">cloud_mask_radar</span> <span class="o">=</span> <span class="n">pyart</span><span class="o">.</span><span class="n">correct</span><span class="o">.</span><span class="n">calc_cloud_mask</span><span class="p">(</span><span class="n">radar</span><span class="p">,</span> <span class="s2">&quot;reflectivity&quot;</span><span class="p">,</span> <span class="s2">&quot;range&quot;</span><span class="p">)</span>
+
+<span class="c1"># Next we&#39;ll create a copy of the reflectivity field so we are not</span>
+<span class="c1"># overwriting the original data.</span>
+<span class="n">cloud_mask_radar</span><span class="o">.</span><span class="n">add_field_like</span><span class="p">(</span>
+    <span class="s2">&quot;reflectivity&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;reflectivity_cloud_mask&quot;</span><span class="p">,</span>
+    <span class="n">cloud_mask_radar</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="s2">&quot;reflectivity&quot;</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span>
+<span class="p">)</span>
+
+<span class="n">cloud_mask_radar</span><span class="o">.</span><span class="n">add_field_like</span><span class="p">(</span>
+    <span class="s2">&quot;reflectivity_crosspolar_v&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;reflectivity_cross_cloud_mask&quot;</span><span class="p">,</span>
+    <span class="n">cloud_mask_radar</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="s2">&quot;reflectivity_crosspolar_v&quot;</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span>
+<span class="p">)</span>
+
+<span class="c1"># Now let&#39;s apply the mask to the copied reflectivity data.</span>
+<span class="n">cloud_mask_radar</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="s2">&quot;reflectivity_cloud_mask&quot;</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">][</span>
+    <span class="n">cloud_mask_radar</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="s2">&quot;cloud_mask_2&quot;</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+<span class="n">cloud_mask_radar</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="s2">&quot;reflectivity_cross_cloud_mask&quot;</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">][</span>
+    <span class="n">cloud_mask_radar</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="s2">&quot;cloud_mask_2&quot;</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+<span class="c1"># And now we can plot the masked reflectivity field.</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">pyart</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">RadarDisplay</span><span class="p">(</span><span class="n">cloud_mask_radar</span><span class="p">)</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;reflectivity_cloud_mask&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">30</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">display</span><span class="o">.</span><span class="n">set_limits</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">55</span><span class="p">))</span>
+
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s2">&quot;reflectivity_cross_cloud_mask&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">30</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">display</span><span class="o">.</span><span class="n">set_limits</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">55</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/142002796f6e376b05ffdfa643649296e40accf7081f1200ed681e0d989960ce.png" src="../../_images/142002796f6e376b05ffdfa643649296e40accf7081f1200ed681e0d989960ce.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now let&#39;s calculate the mean profiles of the masked reflectivity and compare the co and cross-pol data</span>
+<span class="c1"># Note, this can easily be done with the other modes of the KAZR by downloading the MD KAZR data</span>
+<span class="n">avg_prof</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">cloud_mask_radar</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="s1">&#39;reflectivity_cloud_mask&#39;</span><span class="p">][</span><span class="s1">&#39;data&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">avg_cross_prof</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">cloud_mask_radar</span><span class="o">.</span><span class="n">fields</span><span class="p">[</span><span class="s1">&#39;reflectivity_cross_cloud_mask&#39;</span><span class="p">][</span><span class="s1">&#39;data&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">cloud_mask_radar</span><span class="o">.</span><span class="n">range</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
+
+<span class="c1"># Plot it out using regular Matplotlib commands</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">avg_prof</span><span class="p">,</span> <span class="n">rng</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">avg_cross_prof</span><span class="p">,</span> <span class="n">rng</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Range (m)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Reflectivity (dBZ)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10000</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 10000.0)
+</pre></div>
+</div>
+<img alt="../../_images/50f98185068e247233747c1484242961af477ba2216bb13b408ea6c5f6ca5576.png" src="../../_images/50f98185068e247233747c1484242961af477ba2216bb13b408ea6c5f6ca5576.png" />
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="data-used-in-this-notebook">
+<h3>Data Used in this Notebook<a class="headerlink" href="#data-used-in-this-notebook" title="Link to this heading">#</a></h3>
+<p>Petters, S., &amp; Petters, M. portable or printed optical particle spectrometer (POPS1M), 2024-12-01 to 2024-12-11, ARM Mobile Facility (CRG), Baltimore, MD; AMF1 (main site for CoURAGE) (M1). Atmospheric Radiation Measurement (ARM) User Facility.</p>
+<p>Kyrouac, J., Shi, Y., &amp; Tuftedal, M. Surface Meteorological Instrumentation (MET), 2024-12-01 to 2024-12-11, ARM Mobile Facility (CRG), Baltimore, MD; AMF1 (main site for CoURAGE) (M1). Atmospheric Radiation Measurement (ARM) User Facility. https://doi.org/10.5439/1786358</p>
+<p>Lindenmaier, I., Matthews, A., Wendler, T., Melo  de Castro, V., Deng, M., Rocque, M., &amp; Feng, Y.-C. Ka ARM Zenith Radar (KAZRCFRGE), 2024-12-11 to 2024-12-11, ARM Mobile Facility (CRG), Baltimore, MD; AMF1 (main site for CoURAGE) (M1). Atmospheric Radiation Measurement (ARM) User Facility. https://doi.org/10.5439/1498936</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Tutorials/General_Tutorials"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arm-computational-resources">ARM Computational Resources</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arm-data-workbench">ARM Data Workbench</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arm-jupyterhub">ARM JupyterHub</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cumulus-cluster">Cumulus Cluster</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arm-github-organizations">ARM GitHub Organizations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arm-doe">ARM-DOE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arm-synergy">ARM-Synergy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arm-development">ARM-Development</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arm-s-open-source-software">ARM’s Open-Source Software</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-to-act">Intro to ACT</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-discovery-act-discovery">Data Discovery (act.discovery)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#input-output-act-io">Input/Output (act.io)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-act-plotting">Visualization (act.plotting)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#corrections-act-corrections">Corrections (act.corrections)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#quality-control-act-qc">Quality Control (act.qc)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#retrievals-act-retrievals">Retrievals (act.retrievals)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#utilities-act-utils">Utilities (act.utils)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-for-the-future">Preparing for the Future</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-to-py-art">Intro to Py-ART</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imports">Imports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-and-reading-arm-s-netcdf-data">Downloading and Reading ARM’s NetCDF Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note-did-you-notice-the-citation-and-doi">Note: Did you notice the citation and DOI?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quality-controlling-data">Quality Controlling Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-sources-of-quality-control">Other Sources of Quality Control</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-data">Visualizing Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-panel-plot">Multi-Panel Plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribution-display">Distribution Display</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#combined-pops-and-met-scatter-plots">Combined POPS and MET Scatter Plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wind-and-data-rose-plots">Wind and Data Rose Plots</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#py-art-and-kazr-data">Py-ART and KAZR Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#let-s-plot-up-the-data-using-py-art">Let’s plot up the data using Py-ART</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-used-in-this-notebook">Data Used in this Notebook</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ARM Development Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
