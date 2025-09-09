@@ -1,0 +1,10 @@
+# This is a basic example of a filter-file.yaml
+
+# Provide a list of patterns to exclude.  
+exclude:
+  - '*'   # Exclude all files
+
+# Provide a list of patterns that are exceptions to the 
+# above exclude rules.  
+except:
+  - '*20241224*.nc'  # Except, include all files that end with .txt
