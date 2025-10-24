@@ -1,0 +1,1220 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>TRACER ARMBE-Like Product Using ACT &#8212; ARM Tutorials</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Tutorials/General_Tutorials/ARMBE_with_ACT_Example';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../README.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/arm_logo.png" class="logo__image only-light" alt="ARM Tutorials - Home"/>
+    <script>document.write(`<img src="../../_static/arm_logo.png" class="logo__image only-dark" alt="ARM Tutorials - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../README.html">
+                    ARM-Notebooks
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started.html">Accessing the Compute Environment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">How to Contribute</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../CONTRIBUTING.html">Contributor’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Templates/notebook-template.html">ARM Notebook Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Templates/tutorial-schedule.html">Tutorial Schedule</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Intro Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../ACT-Python-Tutorial/1-jupyter_intro.html">ARM JupyterHub and JupyterLab</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ACT-Python-Tutorial/2-Python-Basics.html">Python Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ACT-Python-Tutorial/2a-scientific_libraries_numpy.html">Working with Numpy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ACT-Python-Tutorial/2b-scientific_libraries_pandas.html">Working with Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ACT-Python-Tutorial/2c-scientific_libraries_xarray.html">Working with Xarray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ACT-Python-Tutorial/3-ACT-Basics.html">ACT Basics with TRACER</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ACT-Python-Tutorial/3-ACT-Basics-BNF.html">ACT Basics with BNF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ACT-Python-Tutorial/3a-ACT-TRACER-Dust.html">ACT TRACER Dust Exploration</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Value-added Products</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../VAPs/README.html">Value Added Products</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../VAPs/squire/intro-to-squire.html">Surface Qualitative Precipiation Estimate (SQUIRE) Value-added Product</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../VAPs/vap_notebook_list.html">ARM VAPs Jupyter Notebooks</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Summer School Events</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Summer-Schools/README.html">Summer School Resources</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://jupyterhub.arm.gov/hub/user-redirect/git-pull?repo=https%3A//github.com/ARM-Development/ARM-Notebooks&urlpath=lab/tree/ARM-Notebooks/~/ARM-Notebooks/Tutorials/General_Tutorials/ARMBE_with_ACT_Example.ipynb&branch=main" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on JupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="JupyterHub logo" src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/Tutorials/General_Tutorials/ARMBE_with_ACT_Example.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>TRACER ARMBE-Like Product Using ACT</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-libraries">Import Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-the-initial-date-ranges-and-information">Set up the initial date ranges and information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-xarray-dataset-that-mimics-an-arm-dod">Create a Xarray Dataset that Mimics an ARM DOD</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata-and-arm-standards">Metadata and ARM Standards</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#met-data">MET Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ecor">ECOR</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#armbe-data-to-compare">ARMBE Data to Compare</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">Discussion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#radiosonde-data">Radiosonde Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-citation">Data Citation</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="tracer-armbe-like-product-using-act">
+<h1>TRACER ARMBE-Like Product Using ACT<a class="headerlink" href="#tracer-armbe-like-product-using-act" title="Link to this heading">#</a></h1>
+<table>
+    <tr>
+        <td style="width: 200px; font-size: 16px;">
+                This notebook will walk a user through the creation of a data product that mimics the ARMBEATM product using the latest data and applying the most up to date quality control on the inputs.  This was produced for the TRACER (HOU) campaign but can easily be updated to other sites.
+<p></br></br></p>
+<p>More information on the ARMBEATM product can be found <a class="reference external" href="https://armgov.svcs.arm.gov/data/science-data-products/vaps/armbe">here</a>.
+</td>
+<td>
+<img alt="TRACER SONDE" src="../../_images/armbe_comparison_temp_profile.png" /></img>
+</td>
+</tr></p>
+</table><section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
+<p>This notebook will rely heavily on Python and the <a class="reference external" href="https://github.com/ARM-DOE/ACT">Atmospheric data Community Toolkit (ACT)</a>.  Don’t worry if you don’t have experience with either, this notebook will walk you though what you need to know.</p>
+<p>You will also need an account and token to download data using the ARM Live webservice.  Navigate to the <a class="reference external" href="https://adc.arm.gov/armlive/">webservice information page</a> and log in to get your token.  Your account username will be your ARM username.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Concepts</p></th>
+<th class="head"><p>Importance</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/ARM-DOE/ACT">ACT</a></p></td>
+<td><p>Helpful</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p><strong>Time to learn</strong>: 30 Minutes</p></li>
+<li><p><strong>System requirements</strong>:</p>
+<ul>
+<li><p>Python 3.11 or latest</p></li>
+<li><p>ACT v2.2.0 or latest</p></li>
+<li><p>numpy</p></li>
+<li><p>xarray</p></li>
+<li><p>matplotlib</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="import-libraries">
+<h2>Import Libraries<a class="headerlink" href="#import-libraries" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">act</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">glob</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dt</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/envs/act_env/lib/python3.12/site-packages/pyproj/network.py:59: UserWarning: pyproj unable to set PROJ database path.
+  _set_context_ca_bundle_path(ca_bundle_path)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="set-up-the-initial-date-ranges-and-information">
+<h2>Set up the initial date ranges and information<a class="headerlink" href="#set-up-the-initial-date-ranges-and-information" title="Link to this heading">#</a></h2>
+<p>This information will be used to configure the data downloads and more</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_date</span> <span class="o">=</span> <span class="s1">&#39;2022-01-01 00:30:00&#39;</span>
+<span class="n">end_date</span> <span class="o">=</span> <span class="s1">&#39;2022-01-31 23:30:00&#39;</span>
+<span class="n">site</span> <span class="o">=</span> <span class="s1">&#39;hou&#39;</span>
+<span class="n">fac</span> <span class="o">=</span> <span class="s1">&#39;M1&#39;</span>
+<span class="n">averaging</span> <span class="o">=</span> <span class="s1">&#39;1h&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="create-a-xarray-dataset-that-mimics-an-arm-dod">
+<h2>Create a Xarray Dataset that Mimics an ARM DOD<a class="headerlink" href="#create-a-xarray-dataset-that-mimics-an-arm-dod" title="Link to this heading">#</a></h2>
+<p>This sets up the xarray dataset to mimic the ARM Data Object Design (DOD).  This just means that the xarray object will have all the variables and attributes defined in the header of the normal ARM NetCDF files.</p>
+<p>This assumes that the data are hourly data, but this, along with the pressure and height variables can be adjusted.  Note, that if you change the time interval, you will have to update that below as well, including the time_bounds calculations.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pressure</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">1001</span><span class="p">,</span> <span class="mi">25</span><span class="p">))</span>
+<span class="n">height</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">23011</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
+<span class="n">time_range</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="n">start_date</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="n">end_date</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="n">averaging</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">arm</span><span class="o">.</span><span class="n">create_ds_from_arm_dod</span><span class="p">(</span><span class="s1">&#39;armbeatm.c1&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">time_range</span><span class="p">),</span> <span class="s1">&#39;bound&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;pressure&#39;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">pressure</span><span class="p">),</span> <span class="s1">&#39;height&#39;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">height</span><span class="p">)},</span> 
+                                       <span class="n">scalar_fill_dim</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/atheisen/Code/ACT/act/io/arm.py:466: UserWarning: Version:  not available or not specified. Using Version: 2.0
+  warnings.warn(
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="metadata-and-arm-standards">
+<h2>Metadata and ARM Standards<a class="headerlink" href="#metadata-and-arm-standards" title="Link to this heading">#</a></h2>
+<p>If you just want the latest and greatest data with QC applied and don’t care about producing a file to ARM standards, you can skip on to the MET section.  This is to make sure that time variables (time_offset, base_time), bounds (height, pressure, time), location, and some more are set appropriately to mimic standard ARM files.</p>
+<p>Note, in the interest of time, some global attributes are not set but could easily be.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fill DS variables</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">assign_coords</span><span class="p">({</span><span class="s1">&#39;height&#39;</span><span class="p">:</span> <span class="n">height</span><span class="p">,</span> <span class="s1">&#39;pressure&#39;</span><span class="p">:</span> <span class="n">pressure</span><span class="p">,</span> <span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="n">time_range</span><span class="p">})</span>
+
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;height_2m&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;height_2m&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;height_2m&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;height_10m&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;height_10m&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;height_10m&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Height Bounds Variable</span>
+<span class="n">hb</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;height_bounds&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">h_diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">height</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">height</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">height</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])))</span>
+<span class="n">hb_up</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">h</span> <span class="o">+</span> <span class="n">h_diff</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="mf">2.</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">h</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">height</span><span class="p">)]</span>
+<span class="n">hb_lo</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">h</span> <span class="o">-</span> <span class="n">h_diff</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="mf">2.</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">h</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">height</span><span class="p">)]</span>
+
+<span class="n">hb</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">hb_lo</span>
+<span class="n">hb</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">hb_up</span>
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;height_bounds&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">hb</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pressure Bounds</span>
+<span class="n">pb</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;pressure_bounds&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="n">p_diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">pressure</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">pressure</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">pressure</span><span class="p">[</span><span class="mi">2</span><span class="p">])))</span>
+<span class="n">p_up</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">p</span> <span class="o">+</span> <span class="n">p_diff</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="mf">2.</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">pressure</span><span class="p">)]</span>
+<span class="n">p_lo</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">p</span> <span class="o">-</span> <span class="n">p_diff</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> <span class="mf">2.</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">pressure</span><span class="p">)]</span>
+
+<span class="n">pb</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">p_lo</span>
+<span class="n">pb</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">p_up</span>
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;pressure_bounds&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">pb</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Time Variables</span>
+<span class="n">base_time</span> <span class="o">=</span> <span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;datetime64[D]&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s1">&#39;1970-01-01T00:00:00&#39;</span><span class="p">))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">timedelta64</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">)</span>
+<span class="c1">#ds[&#39;base_time&#39;] = ds[&#39;base_time&#39;].isel(time=0)</span>
+<span class="c1">#ds[&#39;base_time&#39;].values = float(base_time)</span>
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;base_time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">),</span> <span class="n">base_time</span><span class="p">)</span>
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;time_offset&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="p">[(</span><span class="n">t</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s1">&#39;1970-01-01T00:00:00&#39;</span><span class="p">))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">timedelta64</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="n">base_time</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This assumes that it&#39;s an hourly data product.  This would need to be adjusted based on the above.</span>
+<span class="n">time_bounds</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;time_bounds&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">time_bounds</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">[(</span><span class="n">t</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s1">&#39;1970-01-01T00:00:00&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">timedelta64</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">timedelta64</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="n">base_time</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">]</span>
+<span class="n">time_bounds</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[(</span><span class="n">t</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s1">&#39;1970-01-01T00:00:00&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">timedelta64</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">timedelta64</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;s&#39;</span><span class="p">)</span> <span class="o">-</span> <span class="n">base_time</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">]</span>
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;time_bounds&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">time_bounds</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">arm_site_location_search</span><span class="p">(</span><span class="n">site_code</span><span class="o">=</span><span class="n">site</span><span class="p">,</span> <span class="n">facility_code</span><span class="o">=</span><span class="n">fac</span><span class="p">)</span>
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">site</span><span class="p">,</span> <span class="n">fac</span><span class="p">])][</span><span class="s1">&#39;latitude&#39;</span><span class="p">]</span>
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">site</span><span class="p">,</span> <span class="n">fac</span><span class="p">])][</span><span class="s1">&#39;longitude&#39;</span><span class="p">]</span>
+
+<span class="c1"># Note, currently the ARM API for metadata does not provide  the altitude and this would have to be set manually.</span>
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;alt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;alt&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;alt&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="met-data">
+<h2>MET Data<a class="headerlink" href="#met-data" title="Link to this heading">#</a></h2>
+<p>This section walks you through downloading ARM MET data, applying QC, and then adding it to the original dataset using the variable names defined in the DOD.  Note that there may be some differences from the original ARMBE product.</p>
+<p>NOTE: Your username is your ARM Username.  Your token can be found <a class="reference external" href="https://adc.arm.gov/armlive/">on the ARM Live page after logging in</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get MET File(s)</span>
+<span class="c1"># Set your username and token here!</span>
+<span class="n">username</span> <span class="o">=</span> <span class="s1">&#39;YourUsername&#39;</span>
+<span class="n">token</span> <span class="o">=</span> <span class="s1">&#39;YourToken&#39;</span>
+<span class="n">datastream</span> <span class="o">=</span> <span class="n">site</span> <span class="o">+</span> <span class="s1">&#39;met&#39;</span> <span class="o">+</span> <span class="n">fac</span> <span class="o">+</span> <span class="s1">&#39;.b1&#39;</span>
+
+<span class="c1"># Use ACT to easily download the data.  Watch for the data citation!  Show some support</span>
+<span class="c1"># for ARM&#39;s instrument experts and cite their data if you use it in a publication</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">discovery</span><span class="o">.</span><span class="n">download_arm_data</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">token</span><span class="p">,</span> <span class="n">datastream</span><span class="p">,</span> <span class="n">start_date</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">end_date</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">result</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="n">ds_met</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_arm_netcdf</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[DOWNLOADING] houmetM1.b1.20220101.000000.cdf
+[DOWNLOADING] houmetM1.b1.20220102.000000.cdf
+[DOWNLOADING] houmetM1.b1.20220103.000000.cdf
+[DOWNLOADING] houmetM1.b1.20220104.000000.cdf
+[DOWNLOADING] houmetM1.b1.20220105.000000.cdf
+[DOWNLOADING] houmetM1.b1.20220106.000000.cdf
+[DOWNLOADING] houmetM1.b1.20220107.000000.cdf
+[DOWNLOADING] houmetM1.b1.20220108.000000.cdf
+[DOWNLOADING] houmetM1.b1.20220109.000000.cdf
+[DOWNLOADING] houmetM1.b1.20220110.000000.cdf
+[DOWNLOADING] houmetM1.b1.20220111.000000.cdf
+[DOWNLOADING] houmetM1.b1.20220112.000000.cdf
+[DOWNLOADING] houmetM1.b1.20220113.000000.cdf
+[DOWNLOADING] houmetM1.b1.20220114.000000.cdf
+[DOWNLOADING] houmetM1.b1.20220115.000000.cdf
+[DOWNLOADING] houmetM1.b1.20220116.000000.cdf
+[DOWNLOADING] houmetM1.b1.20220117.000000.cdf
+[DOWNLOADING] houmetM1.b1.20220118.000000.cdf
+[DOWNLOADING] houmetM1.b1.20220119.000000.cdf
+[DOWNLOADING] houmetM1.b1.20220120.000000.cdf
+[DOWNLOADING] houmetM1.b1.20220121.000000.cdf
+[DOWNLOADING] houmetM1.b1.20220122.000000.cdf
+[DOWNLOADING] houmetM1.b1.20220123.000000.cdf
+[DOWNLOADING] houmetM1.b1.20220124.000000.cdf
+[DOWNLOADING] houmetM1.b1.20220125.000000.cdf
+[DOWNLOADING] houmetM1.b1.20220126.000000.cdf
+[DOWNLOADING] houmetM1.b1.20220127.000000.cdf
+[DOWNLOADING] houmetM1.b1.20220128.000000.cdf
+[DOWNLOADING] houmetM1.b1.20220129.000000.cdf
+[DOWNLOADING] houmetM1.b1.20220130.000000.cdf
+[DOWNLOADING] houmetM1.b1.20220131.000000.cdf
+
+If you use these data to prepare a publication, please cite:
+
+Kyrouac, J., Shi, Y., &amp; Tuftedal, M. Surface Meteorological Instrumentation
+(MET), 2022-01-01 to 2022-01-31, ARM Mobile Facility (HOU), Houston, TX; AMF1
+(main site for TRACER)  (M1). Atmospheric Radiation Measurement (ARM) User
+Facility. https://doi.org/10.5439/1786358
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/atheisen/Code/ACT/act/io/arm.py:155: FutureWarning: In a future version of xarray the default value for data_vars will change from data_vars=&#39;all&#39; to data_vars=None. This is likely to lead to different results when multiple datasets have matching variables with overlapping values. To opt in to new defaults and get rid of these warnings now use `set_options(use_new_combine_kwarg_defaults=True) or set data_vars explicitly.
+  ds = xr.open_mfdataset(filenames, **kwargs)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filter MET data based on DQRs and Embedded QC, removing suspect and incorrect data</span>
+<span class="n">ds_met</span><span class="o">.</span><span class="n">clean</span><span class="o">.</span><span class="n">cleanup</span><span class="p">(</span><span class="n">normalize_assessment</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ds_met</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">qc</span><span class="o">.</span><span class="n">add_dqr_to_qc</span><span class="p">(</span><span class="n">ds_met</span><span class="p">)</span>
+<span class="n">ds_met</span><span class="o">.</span><span class="n">qcfilter</span><span class="o">.</span><span class="n">datafilter</span><span class="p">(</span><span class="n">rm_assessments</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Incorrect&#39;</span><span class="p">,</span> <span class="s1">&#39;Suspect&#39;</span><span class="p">],</span> <span class="n">del_qc_var</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This will resample the data to hourly averages for most data and an hourly sum for the precipitation variable</span>
+<span class="n">precip_var</span> <span class="o">=</span> <span class="s1">&#39;tbrg_precip_total_corr&#39;</span>
+<span class="n">ds_met_precip</span> <span class="o">=</span> <span class="n">ds_met</span><span class="p">[</span><span class="n">precip_var</span><span class="p">]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">averaging</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">ds_met_avg</span> <span class="o">=</span> <span class="n">ds_met</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">averaging</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="c1"># The time is then adjusted by 30 minutes so that the timestamp is in the middle of the average period.</span>
+<span class="n">ds_met_avg</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">datetime_utils</span><span class="o">.</span><span class="n">adjust_timestamp</span><span class="p">(</span><span class="n">ds_met_avg</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">30</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+<span class="n">ds_met_precip</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">datetime_utils</span><span class="o">.</span><span class="n">adjust_timestamp</span><span class="p">(</span><span class="n">ds_met_precip</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">30</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sets up a mapping of MET variables to ARMBEATM variables</span>
+<span class="n">met_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;rh_mean&#39;</span><span class="p">:</span> <span class="s1">&#39;relative_humidity_sfc&#39;</span><span class="p">,</span> <span class="s1">&#39;atmos_pressure&#39;</span><span class="p">:</span> <span class="s1">&#39;pressure_sfc&#39;</span><span class="p">,</span> <span class="s1">&#39;tbrg_precip_total_corr&#39;</span><span class="p">:</span> <span class="s1">&#39;precip_rate_sfc&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;temp_mean&#39;</span><span class="p">:</span> <span class="s1">&#39;temperature_sfc&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run through the variables, ensuring the data is converted to the expected ARMBEATM units as appropriate</span>
+<span class="c1"># We then merge the data into the original dataset to ensure the times line up as appropriate</span>
+<span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">met_dict</span><span class="p">:</span>
+    <span class="c1"># If you want to further QC the MET data and throw out means when data less than a certain percent are present</span>
+    <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ds_met</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">averaging</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">values</span> <span class="o">&lt;=</span> <span class="mf">30.</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">ds_met_avg</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    
+    <span class="k">if</span> <span class="n">d</span> <span class="o">!=</span> <span class="s1">&#39;time&#39;</span><span class="p">:</span>
+        <span class="n">ds_met_avg</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">change_units</span><span class="p">(</span><span class="n">variables</span><span class="o">=</span><span class="n">d</span><span class="p">,</span> <span class="n">desired_unit</span><span class="o">=</span><span class="n">ds</span><span class="p">[</span><span class="n">met_dict</span><span class="p">[</span><span class="n">d</span><span class="p">]]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;units&#39;</span><span class="p">])</span>
+    <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="n">precip_var</span><span class="p">:</span>
+        <span class="n">ds</span><span class="p">[</span><span class="n">met_dict</span><span class="p">[</span><span class="n">d</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">ds_met_precip</span><span class="o">.</span><span class="n">values</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">da</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">merge</span><span class="p">([</span><span class="n">ds</span><span class="p">[</span><span class="n">met_dict</span><span class="p">[</span><span class="n">d</span><span class="p">]],</span> <span class="n">ds_met_avg</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">met_dict</span><span class="p">[</span><span class="n">d</span><span class="p">])],</span> <span class="n">join</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">compat</span><span class="o">=</span><span class="s1">&#39;no_conflicts&#39;</span><span class="p">)</span>
+        <span class="n">ds</span><span class="p">[</span><span class="n">met_dict</span><span class="p">[</span><span class="n">d</span><span class="p">]]</span> <span class="o">=</span> <span class="n">da</span><span class="p">[</span><span class="n">met_dict</span><span class="p">[</span><span class="n">d</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert the wind speed and direction to U and V components and add back into the original dataset</span>
+<span class="c1"># Need to convert to u/v first before averaging</span>
+
+<span class="n">wind_speed</span> <span class="o">=</span> <span class="n">ds_met</span><span class="p">[</span><span class="s1">&#39;wspd_vec_mean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">wind_direction</span> <span class="o">=</span> <span class="n">ds_met</span><span class="p">[</span><span class="s1">&#39;wdir_vec_mean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="n">wind_direction_rad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">wind_direction</span><span class="p">)</span>
+
+<span class="n">u</span> <span class="o">=</span> <span class="o">-</span><span class="n">wind_speed</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">wind_direction_rad</span><span class="p">)</span>
+<span class="n">v</span> <span class="o">=</span> <span class="o">-</span><span class="n">wind_speed</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">wind_direction_rad</span><span class="p">)</span>
+
+<span class="c1"># Filter data if less than 30 samples</span>
+<span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ds_met</span><span class="p">[</span><span class="s1">&#39;wspd_vec_mean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">averaging</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">values</span> <span class="o">&lt;=</span> <span class="mf">30.</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">u</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    <span class="n">v</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+<span class="n">da_u</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">u</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="n">ds_met</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">},</span> <span class="n">dims</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">averaging</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">da_v</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">v</span><span class="p">,</span> <span class="n">coords</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="n">ds_met</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">},</span> <span class="n">dims</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">averaging</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;u_wind_sfc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">da_u</span><span class="o">.</span><span class="n">values</span>
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;v_wind_sfc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">da_v</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ecor">
+<h2>ECOR<a class="headerlink" href="#ecor" title="Link to this heading">#</a></h2>
+<p>This next section is similar to the MET but pulls the latest data from the QCECOR VAP.  Note, if the ECORSF b1-level data are available, the corrections are applied and that datastream can be used in place of QCECOR.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datastream</span> <span class="o">=</span> <span class="n">site</span> <span class="o">+</span> <span class="s1">&#39;30qcecor&#39;</span> <span class="o">+</span> <span class="n">fac</span> <span class="o">+</span> <span class="s1">&#39;.c1&#39;</span>
+
+<span class="c1"># Use ACT to easily download the data.  Watch for the data citation!  Show some support</span>
+<span class="c1"># for ARM&#39;s instrument experts and cite their data if you use it in a publication</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">discovery</span><span class="o">.</span><span class="n">download_arm_data</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">token</span><span class="p">,</span> <span class="n">datastream</span><span class="p">,</span> <span class="n">start_date</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">end_date</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;T23:59:59&#39;</span><span class="p">)</span>
+<span class="n">result</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="n">ds_ecor</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_arm_netcdf</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[DOWNLOADING] hou30qcecorM1.c1.20220101.000000.nc
+[DOWNLOADING] hou30qcecorM1.c1.20220102.000000.nc
+[DOWNLOADING] hou30qcecorM1.c1.20220103.000000.nc
+[DOWNLOADING] hou30qcecorM1.c1.20220104.000000.nc
+[DOWNLOADING] hou30qcecorM1.c1.20220105.000000.nc
+[DOWNLOADING] hou30qcecorM1.c1.20220106.000000.nc
+[DOWNLOADING] hou30qcecorM1.c1.20220107.000000.nc
+[DOWNLOADING] hou30qcecorM1.c1.20220108.000000.nc
+[DOWNLOADING] hou30qcecorM1.c1.20220109.000000.nc
+[DOWNLOADING] hou30qcecorM1.c1.20220110.000000.nc
+[DOWNLOADING] hou30qcecorM1.c1.20220111.000000.nc
+[DOWNLOADING] hou30qcecorM1.c1.20220112.000000.nc
+[DOWNLOADING] hou30qcecorM1.c1.20220113.000000.nc
+[DOWNLOADING] hou30qcecorM1.c1.20220114.000000.nc
+[DOWNLOADING] hou30qcecorM1.c1.20220115.000000.nc
+[DOWNLOADING] hou30qcecorM1.c1.20220116.000000.nc
+[DOWNLOADING] hou30qcecorM1.c1.20220117.000000.nc
+[DOWNLOADING] hou30qcecorM1.c1.20220118.000000.nc
+[DOWNLOADING] hou30qcecorM1.c1.20220119.000000.nc
+[DOWNLOADING] hou30qcecorM1.c1.20220120.000000.nc
+[DOWNLOADING] hou30qcecorM1.c1.20220121.000000.nc
+[DOWNLOADING] hou30qcecorM1.c1.20220122.000000.nc
+[DOWNLOADING] hou30qcecorM1.c1.20220123.000000.nc
+[DOWNLOADING] hou30qcecorM1.c1.20220124.000000.nc
+[DOWNLOADING] hou30qcecorM1.c1.20220125.000000.nc
+[DOWNLOADING] hou30qcecorM1.c1.20220126.000000.nc
+[DOWNLOADING] hou30qcecorM1.c1.20220127.000000.nc
+[DOWNLOADING] hou30qcecorM1.c1.20220128.000000.nc
+[DOWNLOADING] hou30qcecorM1.c1.20220129.000000.nc
+[DOWNLOADING] hou30qcecorM1.c1.20220130.000000.nc
+[DOWNLOADING] hou30qcecorM1.c1.20220131.000000.nc
+
+If you use these data to prepare a publication, please cite:
+
+Gaustad, K. Quality Controlled Eddy Correlation Flux Measurement (30QCECOR),
+2022-01-01 to 2022-01-31, ARM Mobile Facility (HOU), Houston, TX; AMF1 (main
+site for TRACER)  (M1). Atmospheric Radiation Measurement (ARM) User Facility.
+https://doi.org/10.5439/1097546
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/atheisen/Code/ACT/act/io/arm.py:155: FutureWarning: In a future version of xarray the default value for data_vars will change from data_vars=&#39;all&#39; to data_vars=None. This is likely to lead to different results when multiple datasets have matching variables with overlapping values. To opt in to new defaults and get rid of these warnings now use `set_options(use_new_combine_kwarg_defaults=True) or set data_vars explicitly.
+  ds = xr.open_mfdataset(filenames, **kwargs)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Apply the latest QC information and remove any incorrect and suspect data</span>
+<span class="n">ds_ecor</span><span class="o">.</span><span class="n">clean</span><span class="o">.</span><span class="n">cleanup</span><span class="p">(</span><span class="n">normalize_assessment</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ds_ecor</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">qc</span><span class="o">.</span><span class="n">add_dqr_to_qc</span><span class="p">(</span><span class="n">ds_ecor</span><span class="p">)</span>
+<span class="n">ds_ecor</span><span class="o">.</span><span class="n">qcfilter</span><span class="o">.</span><span class="n">datafilter</span><span class="p">(</span><span class="n">rm_assessments</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Incorrect&#39;</span><span class="p">,</span> <span class="s1">&#39;Suspect&#39;</span><span class="p">],</span> <span class="n">del_qc_var</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a mapping of variables to original dataset</span>
+<span class="n">ecor_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;corrected_sensible_heat_flux&#39;</span><span class="p">:</span> <span class="s1">&#39;sensible_heat_flux_qcecor&#39;</span><span class="p">,</span> <span class="s1">&#39;corrected_latent_heat_flux&#39;</span><span class="p">:</span> <span class="s1">&#39;latent_heat_flux_qcecor&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_ecor_avg</span> <span class="o">=</span> <span class="n">ds_ecor</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">averaging</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="c1"># The time is then adjusted by 30 minutes so that the timestamp is in the middle of the average period.</span>
+<span class="n">ds_ecor_avg</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">datetime_utils</span><span class="o">.</span><span class="n">adjust_timestamp</span><span class="p">(</span><span class="n">ds_ecor_avg</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">30</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Populate the ECOR data in the original variable, using the nearest sample to the times</span>
+<span class="c1"># Note this is different from the MET, since the ECOR only produces data every 30 minutes</span>
+<span class="c1"># and is already a 30-minute average.  It did not seem necessary to average the data further</span>
+<span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">ecor_dict</span><span class="p">:</span>
+    <span class="n">ds</span><span class="p">[</span><span class="n">ecor_dict</span><span class="p">[</span><span class="n">d</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">ds_ecor_avg</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="armbe-data-to-compare">
+<h2>ARMBE Data to Compare<a class="headerlink" href="#armbe-data-to-compare" title="Link to this heading">#</a></h2>
+<p>Let’s download the original ARMBEATM data to compare to ensure we’re producing what’s expected</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datastream</span> <span class="o">=</span> <span class="n">site</span> <span class="o">+</span> <span class="s1">&#39;armbeatm&#39;</span> <span class="o">+</span> <span class="n">fac</span> <span class="o">+</span> <span class="s1">&#39;.c1&#39;</span>
+
+<span class="c1"># Use ACT to easily download the data.  Watch for the data citation!  Show some support</span>
+<span class="c1"># for ARM&#39;s instrument experts and cite their data if you use it in a publication</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">discovery</span><span class="o">.</span><span class="n">download_arm_data</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">token</span><span class="p">,</span> <span class="n">datastream</span><span class="p">,</span> <span class="n">start_date</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">end_date</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;T23:59:59&#39;</span><span class="p">)</span>
+<span class="n">result</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="n">ds_armbe</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_arm_netcdf</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[DOWNLOADING] houarmbeatmM1.c1.20220101.003000.nc
+
+If you use these data to prepare a publication, please cite:
+
+Chen, X., &amp; Xie, S. ARM Best Estimate Data Products (ARMBEATM), 2022-01-01 to
+2022-01-31, ARM Mobile Facility (HOU), Houston, TX; AMF1 (main site for TRACER)
+(M1). Atmospheric Radiation Measurement (ARM) User Facility.
+https://doi.org/10.5439/1333748
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Same as before, if there are DQRs, this will apply it and filter out the data</span>
+<span class="n">ds_armbe</span><span class="o">.</span><span class="n">clean</span><span class="o">.</span><span class="n">cleanup</span><span class="p">(</span><span class="n">normalize_assessment</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ds_armbe</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">qc</span><span class="o">.</span><span class="n">add_dqr_to_qc</span><span class="p">(</span><span class="n">ds_armbe</span><span class="p">)</span>
+<span class="n">ds_armbe</span><span class="o">.</span><span class="n">qcfilter</span><span class="o">.</span><span class="n">datafilter</span><span class="p">(</span><span class="n">rm_assessments</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Incorrect&#39;</span><span class="p">,</span> <span class="s1">&#39;Suspect&#39;</span><span class="p">],</span> <span class="n">del_qc_var</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ARMBE files are yearly and this will filter out the data not in the date range of interest</span>
+<span class="n">ds_armbe</span> <span class="o">=</span> <span class="n">ds_armbe</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now let&#39;s plot the data!!!</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">TimeSeriesDisplay</span><span class="p">({</span><span class="s1">&#39;ACT&#39;</span><span class="p">:</span> <span class="n">ds</span><span class="p">,</span> <span class="s1">&#39;ARMBE&#39;</span><span class="p">:</span> <span class="n">ds_armbe</span><span class="p">},</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">),</span> <span class="n">subplot_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,))</span>
+
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;temperature_sfc&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;ACT&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;ACT&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;temperature_sfc&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;ARMBE&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;ARMBE&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,))</span>
+
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;precip_rate_sfc&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;ACT&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;ACT&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;precip_rate_sfc&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;ARMBE&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;ARMBE&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,))</span>
+
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;v_wind_sfc&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;ACT&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;ACT&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,),</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;v_wind_sfc&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;ARMBE&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;ARMBE&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,))</span>
+
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;sensible_heat_flux_qcecor&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;ACT&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;ACT&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,))</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;sensible_heat_flux_qcecor&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;ARMBE&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;ARMBE&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,))</span>
+
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;latent_heat_flux_qcecor&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;ACT&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;ACT&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,))</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;latent_heat_flux_qcecor&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;ARMBE&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;ARMBE&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x32cd6bce0&gt;
+</pre></div>
+</div>
+<img alt="../../_images/a9c15d57f4a93b5388fe9005fa740c4464b97e31e6ff52a946a17700bb92ea8f.png" src="../../_images/a9c15d57f4a93b5388fe9005fa740c4464b97e31e6ff52a946a17700bb92ea8f.png" />
+</div>
+</div>
+</section>
+<section id="discussion">
+<h2>Discussion<a class="headerlink" href="#discussion" title="Link to this heading">#</a></h2>
+<p>As you can see in the plot, there are some differences from the original product and the one we are creating. At the time of writing, for the fluxes, this is due to the process here getting the latest data.  QCECOR was reprocessed in 2024, after the ARMBE files were created.  Differences in precipitation are unknown at the moment as this process is using the corrected tipping bucket rain guage precipitation rate.</p>
+</section>
+<section id="radiosonde-data">
+<h2>Radiosonde Data<a class="headerlink" href="#radiosonde-data" title="Link to this heading">#</a></h2>
+<p>Radiosonde data pulled down and resampled to the time and height/pressure grids to align with the ARMBETATM product.  This can always be updated by updating the grids above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the datastream name</span>
+<span class="n">datastream</span> <span class="o">=</span> <span class="n">site</span> <span class="o">+</span> <span class="s1">&#39;sondewnpn&#39;</span> <span class="o">+</span> <span class="n">fac</span> <span class="o">+</span> <span class="s1">&#39;.b1&#39;</span>
+
+<span class="c1"># Use ACT to easily download the data.  Watch for the data citation!  Show some support</span>
+<span class="c1"># for ARM&#39;s instrument experts and cite their data if you use it in a publication</span>
+<span class="c1">#result = act.discovery.download_arm_data(username, token, datastream, start_date.split(&#39; &#39;)[0], end_date.split(&#39; &#39;)[0] + &#39;T23:59:59</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;/Users/atheisen/Code/development-space/data/housondewnpnM1.b1/*202201*&#39;</span><span class="p">)</span>
+<span class="n">result</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is the most complicated data to incorporate in, so please see the comments inline below if you have any questions</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pull the data out so that we can easily edit it and then feed it back in</span>
+<span class="n">t_data_p</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;temperature_p&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">t_data_h</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;temperature_h&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">dp_data_p</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;dewpoint_p&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">dp_data_h</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;dewpoint_h&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="c1"># Create a mapping of ARMBE variables to radiosonde variables</span>
+<span class="n">sonde_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;temperature&#39;</span><span class="p">:</span> <span class="s1">&#39;tdry&#39;</span><span class="p">,</span> <span class="s1">&#39;dewpoint&#39;</span><span class="p">:</span> <span class="s1">&#39;dp&#39;</span><span class="p">,</span> <span class="s1">&#39;u_wind&#39;</span><span class="p">:</span> <span class="s1">&#39;u_wind&#39;</span><span class="p">,</span> <span class="s1">&#39;v_wind&#39;</span><span class="p">:</span> <span class="s1">&#39;v_wind&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;relative_humidity&#39;</span><span class="p">:</span> <span class="s1">&#39;rh&#39;</span><span class="p">,</span> <span class="s1">&#39;pressure&#39;</span><span class="p">:</span> <span class="s1">&#39;alt&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">:</span> <span class="s1">&#39;pres&#39;</span><span class="p">}</span>
+<span class="n">prof_type</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;_h&#39;</span><span class="p">,</span> <span class="s1">&#39;_p&#39;</span><span class="p">]</span>
+
+<span class="c1"># Create a dictionary to easily store the data for each profile</span>
+<span class="n">data_dict</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">sonde_dict</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">prof_type</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">data_dict</span><span class="p">[</span><span class="n">v</span> <span class="o">+</span> <span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="n">v</span> <span class="o">+</span> <span class="n">p</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">continue</span>
+<span class="c1">#data_dict[&#39;pressure_h&#39;] = ds[&#39;pressure_h&#39;].values</span>
+<span class="c1">#data_dict[&#39;height_p&#39;] = ds[&#39;height_p&#39;].values</span>
+
+<span class="c1"># Loop through each radiosonde</span>
+<span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+    <span class="c1"># Read and QC the SONDE data as with all the others</span>
+    <span class="n">ds_sonde</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_arm_netcdf</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    <span class="n">ds_sonde</span><span class="o">.</span><span class="n">clean</span><span class="o">.</span><span class="n">cleanup</span><span class="p">(</span><span class="n">normalize_assessment</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">ds_sonde</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">qc</span><span class="o">.</span><span class="n">add_dqr_to_qc</span><span class="p">(</span><span class="n">ds_sonde</span><span class="p">)</span>
+    <span class="n">ds_sonde</span><span class="o">.</span><span class="n">qcfilter</span><span class="o">.</span><span class="n">datafilter</span><span class="p">(</span><span class="n">rm_assessments</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Incorrect&#39;</span><span class="p">,</span> <span class="s1">&#39;Suspect&#39;</span><span class="p">],</span> <span class="n">del_qc_var</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="n">ds_sonde</span> <span class="o">=</span> <span class="n">ds_sonde</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ds_sonde</span> <span class="o">!=</span> <span class="o">-</span><span class="mf">9999.</span><span class="p">)</span>
+    <span class="c1"># In order to ensure we don&#39;t have duplicate pressure values, we need to apply a rolling average</span>
+    <span class="n">ds_sonde</span><span class="p">[</span><span class="s1">&#39;pres&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds_sonde</span><span class="p">[</span><span class="s1">&#39;pres&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">min_periods</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+    <span class="c1"># We can then set pressure as the primary dimension and grab the data nearest the pressure</span>
+    <span class="c1"># grid points that were defined early on</span>
+    <span class="c1"># This may be different from ARMBE as they may be using an average instead of nearest</span>
+    <span class="n">ds_sonde_p</span> <span class="o">=</span> <span class="n">ds_sonde</span><span class="o">.</span><span class="n">swap_dims</span><span class="p">(</span><span class="n">dims_dict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="s1">&#39;pres&#39;</span><span class="p">})</span>
+    <span class="n">nearest_data</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">ds_sonde_p</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span>
+
+    <span class="c1"># It is assumed that the profile data aligns with the start time of the sonde</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">values</span> <span class="o">==</span> <span class="n">nearest_data</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+
+    <span class="c1"># Create a new object with altitude as the primary dimension</span>
+    <span class="n">ds_sonde_h</span> <span class="o">=</span> <span class="n">ds_sonde</span><span class="o">.</span><span class="n">swap_dims</span><span class="p">(</span><span class="n">dims_dict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;time&#39;</span><span class="p">:</span> <span class="s1">&#39;alt&#39;</span><span class="p">})</span>
+
+    <span class="c1"># Loop through each variable</span>
+    <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">sonde_dict</span><span class="p">:</span>
+        <span class="c1"># Ensure the units align between the input and expectations in the original dataset</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">ds_sonde</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">change_units</span><span class="p">(</span><span class="n">variables</span><span class="o">=</span><span class="n">sonde_dict</span><span class="p">[</span><span class="n">v</span><span class="p">],</span> <span class="n">desired_unit</span><span class="o">=</span><span class="n">ds</span><span class="p">[</span><span class="n">v</span> <span class="o">+</span> <span class="s1">&#39;_p&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;units&#39;</span><span class="p">])</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">ds_sonde</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">change_units</span><span class="p">(</span><span class="n">variables</span><span class="o">=</span><span class="n">sonde_dict</span><span class="p">[</span><span class="n">v</span><span class="p">],</span> <span class="n">desired_unit</span><span class="o">=</span><span class="n">ds</span><span class="p">[</span><span class="n">v</span> <span class="o">+</span> <span class="s1">&#39;_h&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;units&#39;</span><span class="p">])</span>
+
+
+        <span class="c1"># Get Data by pressure</span>
+        <span class="k">if</span> <span class="n">v</span> <span class="o">!=</span> <span class="s1">&#39;pressure&#39;</span><span class="p">:</span>
+            <span class="n">data_p</span> <span class="o">=</span> <span class="n">ds_sonde_p</span><span class="p">[</span><span class="n">sonde_dict</span><span class="p">[</span><span class="n">v</span><span class="p">]]</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">pres</span><span class="o">=</span><span class="n">pressure</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+            <span class="n">data_dict</span><span class="p">[</span><span class="n">v</span> <span class="o">+</span> <span class="s1">&#39;_p&#39;</span><span class="p">][</span><span class="n">index</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">data_p</span>
+
+        <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="s1">&#39;height&#39;</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="c1"># Get Data by Height</span>
+        <span class="c1"># There can be duplicate height values but it is not as common as duplicate pressure</span>
+        <span class="c1"># If that happens, this performs a running average on the altitude data and tries again</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">data_h</span> <span class="o">=</span> <span class="n">ds_sonde_h</span><span class="p">[</span><span class="n">sonde_dict</span><span class="p">[</span><span class="n">v</span><span class="p">]]</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">alt</span><span class="o">=</span><span class="n">height</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">ds_sonde_h</span><span class="p">[</span><span class="s1">&#39;alt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds_sonde_h</span><span class="p">[</span><span class="s1">&#39;alt&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">alt</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">min_periods</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+            <span class="n">data_h</span> <span class="o">=</span> <span class="n">ds_sonde_h</span><span class="p">[</span><span class="n">sonde_dict</span><span class="p">[</span><span class="n">v</span><span class="p">]]</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">alt</span><span class="o">=</span><span class="n">height</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+        <span class="c1"># Data is then added to the dictionary and we move on to the next file</span>
+        <span class="n">data_dict</span><span class="p">[</span><span class="n">v</span> <span class="o">+</span> <span class="s1">&#39;_h&#39;</span><span class="p">][</span><span class="n">index</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">data_h</span>
+
+<span class="c1"># Set Data in DataSet</span>
+<span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">data_dict</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;height_h&#39;</span><span class="p">,</span> <span class="s1">&#39;pressure_p&#39;</span><span class="p">]:</span>
+        <span class="n">ds</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">data_dict</span><span class="p">[</span><span class="n">v</span><span class="p">]</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ds</span> <span class="o">!=</span> <span class="o">-</span><span class="mf">9999.</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s plot out the data to ensure it looks reasonable</span>
+<span class="n">display</span> <span class="o">=</span> <span class="n">act</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">TimeSeriesDisplay</span><span class="p">({</span><span class="s1">&#39;ACT&#39;</span><span class="p">:</span> <span class="n">ds</span><span class="p">,</span> <span class="s1">&#39;ARMBE&#39;</span><span class="p">:</span> <span class="n">ds_armbe</span><span class="p">},</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span> <span class="n">subplot_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,))</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;temperature_p&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;ACT&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;ACT&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,))</span>
+<span class="n">display</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;temperature_p&#39;</span><span class="p">,</span> <span class="n">dsname</span><span class="o">=</span><span class="s1">&#39;ARMBE&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;ARMBE&#39;</span><span class="p">,</span> <span class="n">subplot_index</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;ARMBE temperature_p on 20220101&#39;}, xlabel=&#39;Time [UTC]&#39;, ylabel=&#39;(hPa)&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/18e8e0b614ec4bba9ad73246276f8e9bbc1a5868c870728f01f2184141b0a29a.png" src="../../_images/18e8e0b614ec4bba9ad73246276f8e9bbc1a5868c870728f01f2184141b0a29a.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s fill all NAN values with the fill values</span>
+<span class="c1"># We could do this at the dataset level but in theory,</span>
+<span class="c1"># the _FillValue could be different for each variable</span>
+<span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">ds</span><span class="p">):</span>
+    <span class="k">if</span> <span class="s1">&#39;_FillValue&#39;</span> <span class="ow">in</span> <span class="n">ds</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">:</span>
+        <span class="n">ds</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;_FillValue&#39;</span><span class="p">]))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">ds</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="o">-</span><span class="mf">9999.</span><span class="p">)</span>
+        <span class="n">ds</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;_FillValue&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">9999.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># If you want, you can easily write the file out to a NetCDF file</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">to_netcdf</span><span class="p">(</span><span class="s1">&#39;./sgparmbeatm_act.nc&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="data-citation">
+<h2>Data Citation<a class="headerlink" href="#data-citation" title="Link to this heading">#</a></h2>
+<p>If you use this notebook in your research, please be sure to cite the datasets used!</p>
+<p>Chen, X., &amp; Xie, S. ARM Best Estimate Data Products (ARMBEATM), 2022-01-01 to
+2022-01-31, ARM Mobile Facility (HOU), Houston, TX; AMF1 (main site for TRACER)
+(M1). Atmospheric Radiation Measurement (ARM) User Facility.
+https://doi.org/10.5439/1333748</p>
+<p>Gaustad, K. Quality Controlled Eddy Correlation Flux Measurement (30QCECOR),
+2022-01-01 to 2022-01-31, ARM Mobile Facility (HOU), Houston, TX; AMF1 (main
+site for TRACER)  (M1). Atmospheric Radiation Measurement (ARM) User Facility.
+https://doi.org/10.5439/1097546</p>
+<p>Kyrouac, J., Shi, Y., &amp; Tuftedal, M. Surface Meteorological Instrumentation
+(MET), 2022-01-01 to 2022-01-31, ARM Mobile Facility (HOU), Houston, TX; AMF1
+(main site for TRACER)  (M1). Atmospheric Radiation Measurement (ARM) User
+Facility. https://doi.org/10.5439/1786358</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-env-act_env-py"
+        },
+        kernelOptions: {
+            name: "conda-env-act_env-py",
+            path: "./Tutorials/General_Tutorials"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-env-act_env-py'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-libraries">Import Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-the-initial-date-ranges-and-information">Set up the initial date ranges and information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-xarray-dataset-that-mimics-an-arm-dod">Create a Xarray Dataset that Mimics an ARM DOD</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metadata-and-arm-standards">Metadata and ARM Standards</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#met-data">MET Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ecor">ECOR</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#armbe-data-to-compare">ARMBE Data to Compare</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">Discussion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#radiosonde-data">Radiosonde Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-citation">Data Citation</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ARM Development Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
