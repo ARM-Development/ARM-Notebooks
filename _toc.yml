@@ -19,6 +19,11 @@ parts:
     - file: Tutorials/ACT-Python-Tutorial/3-ACT-Basics.ipynb
     - file: Tutorials/ACT-Python-Tutorial/3-ACT-Basics-BNF.ipynb
     - file: Tutorials/ACT-Python-Tutorial/3a-ACT-TRACER-Dust.ipynb
+  - caption: AAAR 2026 ACT Tutorial
+    chapters:
+    - file: Tutorials/AAAR-2026-ACT-Tutorial/README.md
+      sections:
+        - file: Tutorials/AAAR-2026-ACT-Tutorial/PySP2_raw_SP2b_tutorial.ipynb
   - caption: Value-added Products
     chapters:
     - file: VAPs/README.md
