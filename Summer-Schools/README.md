@@ -16,3 +16,8 @@ Here, we share resources from ARM Summer School events!
 - [Main Landing Page](https://arm-development.github.io/arm-summer-school-2025/)
 - [Github Repository](https://github.com/ARM-Development/arm-summer-school-2025)
 - [Project Cookbooks](https://arm-development.github.io/arm-summer-school-2025/projects)
+
+## 2026 Big Open Data Science Summer School
+- [Main Landing Page](https://arm-development.github.io/arm-summer-school-2026/)
+- [Github Repository](https://github.com/ARM-Development/arm-summer-school-2026)
+- [Project Cookbooks](https://arm-development.github.io/arm-summer-school-2026/final-projects/)
