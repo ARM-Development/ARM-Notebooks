@@ -17,13 +17,13 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        python-version: [3.12]
+        python-version: [3.14]
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
     # Install dependencies
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
       with:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
@@ -35,7 +35,7 @@ jobs:
         jupyter-book build .
     # Deploy the book's HTML to gh-pages branch
     - name: GitHub Pages action
-      uses: peaceiris/actions-gh-pages@v3.6.1
+      uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
       if: github.ref == 'refs/heads/main'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
