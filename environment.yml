@@ -10,13 +10,15 @@ dependencies:
   - distributed
   - arm_pyart
   - act-atmos
-  - metpy=1.3
-  - siphon=0.9
+  - metpy
+  - siphon
   - cartopy
   - emc2
   - cmweather
   - myst-parser
-  - pip
+  - certifi>=2026.10.19
+  - ca-certificates>=2026.10.19
+  - pip>=26.2.2
   - pip:
       - jupyter-book
       - git+https://github.com/eagles-project/ESMAC_diags
