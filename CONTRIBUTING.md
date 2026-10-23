@@ -113,7 +113,7 @@ command line tool for collaborative software version control, while
 GitHub is an online, web-accessible service that greatly simplifies
 using the powerful, yet often complex, Git.
 
-```{Note}
+```{note}
 GitHub operates entirely within a web browser. You do not
 need to install anything, but you will need to set up a free GitHub
 account. Git is a command line tool that is most likely already
@@ -283,7 +283,7 @@ on this later.
 
 For further information see the [GitHub docs on forking a repo](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo).
 
-```{Note}
+```{note}
 At this point you should have a local copy of the repository
 in your current working directory. You can safely make changes to
 any of the contents. Once you are ready to contribute your changes
@@ -347,7 +347,7 @@ $ git commit PATH_TO_NEW_FILE
 
 Which will prompt you for a log message. Please provide something informative. If you make lots of changes, it is best to make multiple commits, broken up into related chunks. E.g. “fixed x”, “added documentation”, “added testing”.
 
-```{Note}
+```{note}
 When executing `git commit` after `git add PATH_TO_NEW_FILE`,
 specifying the path to the new file isn't stricly necessary. However,
 in other instances the file path argument is required. We include it
