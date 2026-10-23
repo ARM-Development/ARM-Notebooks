@@ -3,3 +3,6 @@ _build/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+
+# MyST build outputs
+_build
