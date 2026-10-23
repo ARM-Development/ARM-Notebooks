@@ -1,7 +1,6 @@
 name: deploy
 
 on:
-  # Trigger the workflow on push to main branch
   push:
     branches:
       - main
@@ -10,36 +9,90 @@ on:
       - main
   workflow_dispatch:
 
-# This job installs dependencies, build the book, and pushes it to `gh-pages`
-jobs:
-  build-and-deploy-book:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        python-version: [3.14]
-    steps:
-    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      with:
-        persist-credentials: false
+# Default: all jobs receive read-only repository access.
+permissions:
+  contents: read
 
-    # Install dependencies
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade "pip>=26.2.2" "certifi>=2026.10.19"
-        pip install -r doc-requirements.txt
-    # Build the book
-    - name: Build the book
-      run: |
-        jupyter-book build .
-    # Deploy the book's HTML to gh-pages branch
-    - name: GitHub Pages action
-      uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
-      if: github.ref == 'refs/heads/main'
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: _build/html
+# Avoid competing deployments to the gh-pages branch.
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build-book:
+    name: Build book
+    runs-on: ubuntu-latest
+
+    # Explicitly read-only. This job runs for PRs and main pushes.
+    permissions:
+      contents: read
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.14"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade "pip>=26.2.2" "certifi>=2026.10.19"
+          python -m pip install -r doc-requirements.txt
+
+      - name: Build the book
+        run: |
+          jupyter-book build .
+
+      # This fails here, with a clear message, if Jupyter Book did not
+      # generate the expected output directory.
+      - name: Verify generated HTML site
+        run: |
+          test -d "_build/html"
+          test -f "_build/html/index.html"
+          echo "Generated site:"
+          find _build/html -maxdepth 2 -type f | head -50
+
+      # Pass the generated site to the isolated deployment job.
+      - name: Upload generated site
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: jupyter-book-html
+          path: _build/html
+          if-no-files-found: error
+          retention-days: 1
+
+  deploy-book:
+    name: Deploy book to gh-pages
+    needs: build-book
+
+    # A merged PR results in a push to main.
+    # PR runs and manual workflow runs never receive write access.
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+
+    runs-on: ubuntu-latest
+
+    # Write access exists only in this deployment job.
+    permissions:
+      contents: write
+
+    steps:
+      - name: Download generated site
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: jupyter-book-html
+          path: site
+
+      - name: Verify deployment artifact
+        run: |
+          test -f "site/index.html"
+
+      - name: Publish site to gh-pages
+        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./site
