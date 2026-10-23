@@ -45,7 +45,7 @@ jobs:
 
       - name: Build the book
         run: |
-          jupyter-book build .
+          jupyter-book build --html
 
       # This fails here, with a clear message, if Jupyter Book did not
       # generate the expected output directory.
