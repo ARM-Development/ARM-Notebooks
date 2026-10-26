@@ -19,6 +19,7 @@ dependencies:
   - certifi>=2026.10.19
   - ca-certificates>=2026.10.19
   - pip>=26.2.2
+  - pysp2
   - pip:
       - jupyter-book
       - git+https://github.com/eagles-project/ESMAC_diags
